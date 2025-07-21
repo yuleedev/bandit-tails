@@ -1,3 +1,33 @@
-[gd_scene format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=5 format=3 uid="uid://rcpyya18rmci"]
+
+[ext_resource type="PackedScene" uid="uid://dc4q61lvp4s2e" path="res://Assets/Maps/test.glb" id="1_oj8hd"]
+[ext_resource type="Script" uid="uid://chuevkrc2nhgy" path="res://Scripts/Player/player.gd" id="2_gnif3"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_oj8hd"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gnif3"]
 
 [node name="Main" type="Node3D"]
+
+[node name="Map" parent="." instance=ExtResource("1_oj8hd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.416889, 1.19209e-07, 1.07849)
+
+[node name="Player" type="CharacterBody3D" parent="."]
+script = ExtResource("2_gnif3")
+
+[node name="Pivot" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="Camera" type="Camera3D" parent="Player/Pivot"]
+
+[node name="Light" type="SpotLight3D" parent="Player/Pivot/Camera"]
+spot_range = 100.0
+spot_attenuation = 0.7
+spot_angle = 60.0
+
+[node name="Mesh" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_oj8hd")
+
+[node name="Collider" type="CollisionShape3D" parent="Player"]
+shape = SubResource("CapsuleShape3D_gnif3")
