@@ -17,7 +17,7 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		pivot.rotation.y -= event.relative.x * GM.options.MOUSE_SENSITIVITY
 		camera.rotation.x -= event.relative.y * GM.options.MOUSE_SENSITIVITY
-		camera.rotation.x = clamp(camera.rotation.x, -PI/2, PI/3)
+		camera.rotation.x = clamp(camera.rotation.x, -PI/3, PI/3)
 
 func _process(delta: float) -> void:
 	input_dir = Input.get_vector("left", "right", "up", "down")
