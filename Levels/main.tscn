@@ -30,4 +30,4 @@ mesh = SubResource("CapsuleMesh_oj8hd")
 shape = SubResource("CapsuleShape3D_gnif3")
 
 [node name="collision" parent="." instance=ExtResource("2_lwy2l")]
-transform = Transform3D(0.909431, 0, 0, 0, 1, 0, 0, 0, 0.769761, 2.52678, -0.109582, -2.49926)
+transform = Transform3D(0.909431, 0, 0, 0, 0.832809, 0, 0, 0, 0.769761, 2.52678, -0.109582, -2.49926)
