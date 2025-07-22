@@ -4,8 +4,8 @@ var p_near = false
 var p_ref = null
 
 func _ready():
-	$Area3D.body_entered.connect(_on_body_entered)
-	$Area3D.body_exited.connect(_on_body_exited)
+	$Body/Area.body_entered.connect(_on_body_entered)
+	$Body/Area.body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
 	if body.name == "Player":
