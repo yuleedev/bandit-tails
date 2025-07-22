@@ -19,7 +19,6 @@ script = ExtResource("2_gnif3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera" type="Camera3D" parent="Player/Pivot"]
-fov = 60.0
 
 [node name="Light" type="SpotLight3D" parent="Player/Pivot/Camera"]
 spot_range = 100.0
