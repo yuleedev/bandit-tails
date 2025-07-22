@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=6 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="PackedScene" uid="uid://dc4q61lvp4s2e" path="res://Assets/Maps/test.glb" id="1_oj8hd"]
 [ext_resource type="Script" uid="uid://chuevkrc2nhgy" path="res://Scripts/Player/player.gd" id="2_gnif3"]
+[ext_resource type="PackedScene" uid="uid://bwydvcfxfddhp" path="res://Assets/treasure/treasuretemp.tscn" id="3_lwy2l"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_oj8hd"]
 
@@ -31,3 +32,6 @@ mesh = SubResource("CapsuleMesh_oj8hd")
 
 [node name="Collider" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_gnif3")
+
+[node name="Treasure" parent="." instance=ExtResource("3_lwy2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.87833, 6.11627)

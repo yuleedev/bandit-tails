@@ -10,6 +10,7 @@ extends CharacterBody3D
 
 var input_dir: Vector2
 var move_dir: Vector3
+var interactable: Node = null
 
 ## ================ [ GODOT ] ================ ##
 
@@ -26,6 +27,20 @@ func _process(delta: float) -> void:
 	).normalized()
 	
 	velocity = move_dir * MOVE_SPEED
+	
+	#object pick up
+	if interactable and Input.is_action_just_pressed("interact"):
+		interactable.pick_up()
+
 
 func _physics_process(delta: float) -> void:
 	move_and_slide()
+
+##picking up stuff
+func _on_body_entered(body):
+	if body.is_in_group("pickup"):
+		interactable = body
+
+func _on_body_exited(body):
+	if interactable == body:
+		interactable = null

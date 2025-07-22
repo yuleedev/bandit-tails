@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwydvcfxfddhp"]
+
+[ext_resource type="Script" uid="uid://ca0qt6j6uxdsp" path="res://Scripts/treasure.gd" id="1_2cbb5"]
+[ext_resource type="PackedScene" uid="uid://b03jpayl7gpwi" path="res://Assets/treasure/Box.glb" id="1_bmj8h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2cbb5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bmj8h"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_2cbb5")
+
+[node name="TreasureTemp" parent="." instance=ExtResource("1_bmj8h")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TreasureTemp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0289029, 0, 0)
+shape = SubResource("BoxShape3D_2cbb5")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 0, 0)
+shape = SubResource("BoxShape3D_bmj8h")
