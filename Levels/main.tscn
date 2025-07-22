@@ -1,13 +1,16 @@
 [gd_scene load_steps=5 format=3 uid="uid://rcpyya18rmci"]
 
+[ext_resource type="PackedScene" uid="uid://c48x0p5eus56d" path="res://Assets/Maps/test.glb" id="1_oj8hd"]
 [ext_resource type="Script" uid="uid://chuevkrc2nhgy" path="res://Scripts/Player/player.gd" id="2_gnif3"]
-[ext_resource type="PackedScene" uid="uid://c48x0p5eus56d" path="res://Levels/collision.glb" id="2_lwy2l"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_oj8hd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gnif3"]
 
 [node name="Main" type="Node3D"]
+
+[node name="Map" parent="." instance=ExtResource("1_oj8hd")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 
 [node name="Player" type="CharacterBody3D" parent="."]
 script = ExtResource("2_gnif3")
