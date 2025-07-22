@@ -15,9 +15,9 @@ var mouse_motion: Vector2
 
 ## ================ [ METHODS ] ================ ##
 
-func _rotate_camera(delta: float) -> void:
-	pivot.rotation.y -= mouse_motion.x * delta
-	camera.rotation.x -= mouse_motion.y * delta
+func _rotate_camera() -> void:
+	pivot.rotation.y -= mouse_motion.x * GM.options.MOUSE_SENSITIVITY
+	camera.rotation.x -= mouse_motion.y * GM.options.MOUSE_SENSITIVITY
 	camera.rotation.x = clamp(camera.rotation.x, -PI/2 + Math.NONZERO, PI/3)
 	
 	mouse_motion = Vector2.ZERO
@@ -37,7 +37,7 @@ func _unhandled_input(event: InputEvent):
 		mouse_motion = event.screen_relative
 
 func _process(delta: float) -> void:
-	_rotate_camera(delta)
+	_rotate_camera()
 	_apply_movement()
 
 func _physics_process(_delta: float) -> void:
