@@ -1,5 +1,9 @@
 extends Node
 
+## ================ [ CONST ] ================ ##
+
+const NONZERO: float = 0.01
+
 ## ================ [ VECTOR ] ================ ##
 
 func to_3d(vec: Vector2) -> Vector3:

@@ -11,14 +11,17 @@
 
 [node name="Map" parent="." instance=ExtResource("1_oj8hd")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+visible = false
 
 [node name="Player" type="CharacterBody3D" parent="."]
 script = ExtResource("2_gnif3")
+MOVE_SPEED = null
 
 [node name="Pivot" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera" type="Camera3D" parent="Player/Pivot"]
+fov = 60.0
 
 [node name="Light" type="SpotLight3D" parent="Player/Pivot/Camera"]
 spot_range = 100.0
@@ -31,3 +34,11 @@ mesh = SubResource("CapsuleMesh_oj8hd")
 
 [node name="Collider" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_gnif3")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(10, 1, 10)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 0)
+size = Vector3(1, 10, 10)
