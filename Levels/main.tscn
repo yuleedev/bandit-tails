@@ -1,31 +1,22 @@
-[gd_scene load_steps=14 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=9 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" uid="uid://chuevkrc2nhgy" path="res://Scripts/Player/player.gd" id="2_gnif3"]
 [ext_resource type="PackedScene" uid="uid://bwydvcfxfddhp" path="res://Assets/Props/Loot/loot.tscn" id="3_lwy2l"]
 [ext_resource type="PackedScene" uid="uid://duvv356yh8iwi" path="res://Levels/map.glb" id="3_nj2yk"]
-[ext_resource type="Script" uid="uid://j61uuj8pawed" path="res://Scripts/guard.gd" id="4_nj2yk"]
+[ext_resource type="Script" uid="uid://2upj8o4sck2s" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
+[ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_oj8hd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gnif3"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lwy2l"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_nj2yk"]
-
-[sub_resource type="PrismMesh" id="PrismMesh_lwy2l"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nj2yk"]
-transparency = 1
-albedo_color = Color(1, 0, 0, 0.682353)
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_lwy2l"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_nj2yk"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7pswh"]
-transparency = 1
-albedo_color = Color(0, 0, 1, 0.564706)
+[sub_resource type="Curve3D" id="Curve3D_ovrsl"]
+closed = true
+_data = {
+"points": PackedVector3Array(1.9779, 0, -1.83392, -1.9779, 0, 1.83392, -15.1493, -0.527832, -16.6784, -1.40014, 0, -1.0501, 1.40014, 0, 1.0501, -14.677, -0.527832, -7.89376, -2.40023, 0, 2.25022, 2.40023, 0, -2.25022, -9.42649, -0.527832, -7.99377, 1.80683, 0, 2.24102, -1.80683, 0, -2.24102, -9.23312, -0.527832, -16.3354),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
 
 [node name="Main" type="Node3D"]
 
@@ -55,43 +46,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 [node name="Map" parent="." instance=ExtResource("3_nj2yk")]
 transform = Transform3D(0.697994, 0, 0, 0, 0.781175, 0, 0, 0, 0.695508, 0, 0, 0)
 
-[node name="Guard" type="Node3D" parent="."]
-script = ExtResource("4_nj2yk")
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_ovrsl")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="Guard"]
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.679908, 0, 0.733289, 0, 0.999985, 0, -0.733289, 0, -0.679908, -15.1493, -0.527832, -16.6784)
+script = ExtResource("4_7pswh")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Guard/CharacterBody3D"]
-shape = SubResource("CapsuleShape3D_lwy2l")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Guard/CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
-mesh = SubResource("CapsuleMesh_nj2yk")
-skeleton = NodePath("../..")
-
-[node name="VisionArea3D" type="Area3D" parent="Guard"]
-
-[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="Guard/VisionArea3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
-depth = 5.0
-polygon = PackedVector2Array(0, 0, -3, 5, 3, 5)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Guard/VisionArea3D"]
-transform = Transform3D(6, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 0, 0, 2.5)
-mesh = SubResource("PrismMesh_lwy2l")
-surface_material_override/0 = SubResource("StandardMaterial3D_nj2yk")
-
-[node name="ListeningArea3D" type="Area3D" parent="Guard"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Guard/ListeningArea3D"]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 1.1, 0)
-shape = SubResource("CylinderShape3D_lwy2l")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Guard/ListeningArea3D"]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 1.1, 0)
-mesh = SubResource("CylinderMesh_nj2yk")
-surface_material_override/0 = SubResource("StandardMaterial3D_7pswh")
-
-[connection signal="body_entered" from="Guard/VisionArea3D" to="Guard" method="_on_vision_area_3d_body_entered"]
-[connection signal="body_exited" from="Guard/VisionArea3D" to="Guard" method="_on_vision_area_3d_body_exited"]
-[connection signal="body_entered" from="Guard/ListeningArea3D" to="Guard" method="_on_listening_area_3d_body_entered"]
-[connection signal="body_exited" from="Guard/ListeningArea3D" to="Guard" method="_on_listening_area_3d_body_exited"]
+[node name="Guard" parent="Path3D/PathFollow3D" instance=ExtResource("5_34bfm")]
+transform = Transform3D(-0.999184, 0.016399, -0.0369301, 0.0156731, 0.99968, 0.0198608, 0.0372439, 0.0192658, -0.999121, -0.877678, 0.288032, -0.788836)
