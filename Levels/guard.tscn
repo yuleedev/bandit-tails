@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bm38ygftobcny"]
 
-[ext_resource type="Script" path="res://Scripts/guard.gd" id="1_opr0s"]
+[ext_resource type="Script" uid="uid://j61uuj8pawed" path="res://Scripts/guard.gd" id="1_opr0s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lwy2l"]
 
@@ -58,5 +58,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7pswh")
 
 [connection signal="body_entered" from="VisionArea3D" to="." method="_on_vision_area_3d_body_entered"]
 [connection signal="body_exited" from="VisionArea3D" to="." method="_on_vision_area_3d_body_exited"]
-[connection signal="body_entered" from="ListeningArea3D" to="." method="_on_listening_area_3d_body_entered"]
-[connection signal="body_exited" from="ListeningArea3D" to="." method="_on_listening_area_3d_body_exited"]
+[connection signal="area_entered" from="ListeningArea3D" to="." method="_on_listening_area_3d_area_entered"]
+[connection signal="area_exited" from="ListeningArea3D" to="." method="_on_listening_area_3d_area_exited"]
