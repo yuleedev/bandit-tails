@@ -1,13 +1,23 @@
-[gd_scene load_steps=7 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=9 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" uid="uid://chuevkrc2nhgy" path="res://Scripts/Player/player.gd" id="2_gnif3"]
 [ext_resource type="PackedScene" uid="uid://bwydvcfxfddhp" path="res://Assets/Props/Loot/loot.tscn" id="3_lwy2l"]
 [ext_resource type="PackedScene" uid="uid://duvv356yh8iwi" path="res://Levels/map.glb" id="3_nj2yk"]
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
+[ext_resource type="Script" uid="uid://2upj8o4sck2s" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
+[ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_oj8hd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gnif3"]
+
+[sub_resource type="Curve3D" id="Curve3D_ovrsl"]
+closed = true
+_data = {
+"points": PackedVector3Array(1.9779, 0, -1.83392, -1.9779, 0, 1.83392, -15.1493, -0.527832, -16.6784, -1.40014, 0, -1.0501, 1.40014, 0, 1.0501, -14.677, -0.527832, -7.89376, -2.40023, 0, 2.25022, 2.40023, 0, -2.25022, -9.42649, -0.527832, -7.99377, 1.80683, 0, 2.24102, -1.80683, 0, -2.24102, -9.23312, -0.527832, -16.3354),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
 
 [node name="Main" type="Node3D"]
 
@@ -39,3 +49,12 @@ transform = Transform3D(0.697994, 0, 0, 0, 0.781175, 0, 0, 0, 0.695508, 0, 0, 0)
 
 [node name="Door" parent="." instance=ExtResource("4_nj2yk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32957, -0.0187825, 16.9091)
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_ovrsl")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.679908, 0, 0.733289, 0, 0.999985, 0, -0.733289, 0, -0.679908, -15.1493, -0.527832, -16.6784)
+script = ExtResource("4_7pswh")
+
+[node name="Guard" parent="Path3D/PathFollow3D" instance=ExtResource("5_34bfm")]
+transform = Transform3D(-0.999184, 0.016399, -0.0369301, 0.0156731, 0.99968, 0.0198608, 0.0372439, 0.0192658, -0.999121, -0.877678, 0.288032, -0.788836)

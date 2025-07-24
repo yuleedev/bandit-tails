@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://bm38ygftobcny"]
+
+[ext_resource type="Script" path="res://Scripts/guard.gd" id="1_opr0s"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lwy2l"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_nj2yk"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_lwy2l"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nj2yk"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.682353)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lwy2l"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nj2yk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7pswh"]
+transparency = 1
+albedo_color = Color(0, 0, 1, 0.564706)
+
+[node name="Guard" type="Node3D"]
+script = ExtResource("1_opr0s")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_lwy2l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+mesh = SubResource("CapsuleMesh_nj2yk")
+skeleton = NodePath("../..")
+
+[node name="VisionArea3D" type="Area3D" parent="."]
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="VisionArea3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+depth = 5.0
+polygon = PackedVector2Array(0, 0, -3, 5, 3, 5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="VisionArea3D"]
+transform = Transform3D(6, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 0, 0, 2.5)
+mesh = SubResource("PrismMesh_lwy2l")
+surface_material_override/0 = SubResource("StandardMaterial3D_nj2yk")
+
+[node name="ListeningArea3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ListeningArea3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 1.1, 0)
+shape = SubResource("CylinderShape3D_lwy2l")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ListeningArea3D"]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 1.1, 0)
+mesh = SubResource("CylinderMesh_nj2yk")
+surface_material_override/0 = SubResource("StandardMaterial3D_7pswh")
+
+[connection signal="body_entered" from="VisionArea3D" to="." method="_on_vision_area_3d_body_entered"]
+[connection signal="body_exited" from="VisionArea3D" to="." method="_on_vision_area_3d_body_exited"]
+[connection signal="body_entered" from="ListeningArea3D" to="." method="_on_listening_area_3d_body_entered"]
+[connection signal="body_exited" from="ListeningArea3D" to="." method="_on_listening_area_3d_body_exited"]

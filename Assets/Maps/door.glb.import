@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c21x2x7sdy0hw"
+uid="uid://cdqosxal6n5aq"
 path="res://.godot/imported/door.glb-9ff1e53e772a936e01bec7521995c923.scn"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/door.glb-9ff1e53e772a936e01bec7521995c923.scn
 
 [params]
 
-nodes/root_type="StaticBody3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
