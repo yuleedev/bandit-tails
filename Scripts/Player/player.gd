@@ -32,8 +32,11 @@ func _apply_movement() -> void:
 	velocity = move_dir * MOVE_SPEED
 	
 	#object pick up
-	if interactable and Input.is_action_just_pressed("interact"):
-		interactable.pick_up()
+	if interactable:
+		if interactable.is_in_group("loot") and Input.is_action_just_pressed("interact"):
+			interactable.pick_up()
+		elif interactable.is_in_group("door") and Input.is_action_just_pressed("interact"):
+			interactable.open()
 
 
 ## ================ [ GODOT ] ================ ##
@@ -51,7 +54,7 @@ func _physics_process(_delta: float) -> void:
 
 ##picking up stuff
 func _on_body_entered(body):
-	if body.is_in_group("pickup"):
+	if body.is_in_group("loot") or body.is_in_group("door"):
 		interactable = body
 
 func _on_body_exited(body):

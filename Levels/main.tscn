@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=7 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" uid="uid://chuevkrc2nhgy" path="res://Scripts/Player/player.gd" id="2_gnif3"]
 [ext_resource type="PackedScene" uid="uid://bwydvcfxfddhp" path="res://Assets/Props/Loot/loot.tscn" id="3_lwy2l"]
 [ext_resource type="PackedScene" uid="uid://duvv356yh8iwi" path="res://Levels/map.glb" id="3_nj2yk"]
+[ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_oj8hd"]
 
@@ -31,7 +32,10 @@ mesh = SubResource("CapsuleMesh_oj8hd")
 shape = SubResource("CapsuleShape3D_gnif3")
 
 [node name="Loot" parent="." instance=ExtResource("3_lwy2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 5)
 
 [node name="Map" parent="." instance=ExtResource("3_nj2yk")]
 transform = Transform3D(0.697994, 0, 0, 0, 0.781175, 0, 0, 0, 0.695508, 0, 0, 0)
+
+[node name="Door" parent="." instance=ExtResource("4_nj2yk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32957, -0.0187825, 16.9091)

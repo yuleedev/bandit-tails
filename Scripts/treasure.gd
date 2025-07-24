@@ -9,18 +9,19 @@ func _ready():
 
 func _on_body_entered(body):
 	if body.name == "Player":
+		body.interactable = self
 		p_near = true
 		p_ref = body
 
 func _on_body_exited(body):
 	if body.name == "Player":
-		p_near = false
-		p_ref = null
+		if body.interactable == self:
+			body.interactable = null
+			p_near = false
+			p_ref = null
 
 func _process(delta):
-	if p_near and Input.is_action_just_pressed("interact"):
-		pick_up()
+	pass
 		
 func pick_up():
-	
 	queue_free()  
