@@ -23,7 +23,7 @@ point_count = 4
 
 [node name="Main" type="Node3D"]
 
-[node name="Player" type="CharacterBody3D" parent="."]
+[node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("2_gnif3")
 
@@ -43,7 +43,7 @@ mesh = SubResource("CapsuleMesh_oj8hd")
 [node name="Collider" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_gnif3")
 
-[node name="SoundArea3D" type="Area3D" parent="Player"]
+[node name="SoundArea3D" type="Area3D" parent="Player" groups=["player"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/SoundArea3D"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)

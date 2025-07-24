@@ -12,13 +12,17 @@ func _process(delta: float) -> void:
 
 
 func _on_vision_area_3d_body_entered(body: Node3D) -> void:
-	print("guard has seen " + body.name) 
+	if body.is_in_group("player"):
+		print("guard has seen " + body.name) 
 
 func _on_vision_area_3d_body_exited(body: Node3D) -> void:
-	print("guard has unseen " + body.name)
+	if body.is_in_group("player"):
+		print("guard has unseen " + body.name)
 
 func _on_listening_area_3d_area_entered(area: Area3D) -> void:
-	print("guard has heard " + area.name) 
+	if area.is_in_group("player"):
+		print("guard has heard " + area.name) 
 
 func _on_listening_area_3d_area_exited(area: Area3D) -> void:
-	print("guard has unheard " + area.name) 
+	if area.is_in_group("player"):
+		print("guard has unheard " + area.name) 
