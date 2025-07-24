@@ -13,19 +13,12 @@ func _process(delta: float) -> void:
 
 func _on_vision_area_3d_body_entered(body: Node3D) -> void:
 	print("guard has seen " + body.name) 
-	pass # Replace with function body.
-
 
 func _on_vision_area_3d_body_exited(body: Node3D) -> void:
 	print("guard has unseen " + body.name)
-	pass # Replace with function body.
 
+func _on_listening_area_3d_area_entered(area: Area3D) -> void:
+	print("guard has heard " + area.name) 
 
-func _on_listening_area_3d_body_entered(body: Node3D) -> void:
-	print("guard has heard " + body.name)
-	pass # Replace with function body.
-
-
-func _on_listening_area_3d_body_exited(body: Node3D) -> void:
-	print("guard has unheard " + body.name)
-	pass # Replace with function body.
+func _on_listening_area_3d_area_exited(area: Area3D) -> void:
+	print("guard has unheard " + area.name) 

@@ -5,6 +5,7 @@ extends CharacterBody3D
 @onready var pivot: Node3D = $Pivot
 @onready var camera: Camera3D = $Pivot/Camera
 @onready var light: SpotLight3D = $Pivot/Camera/Light
+@onready var sound: CollisionShape3D = $SoundArea3D/CollisionShape3D
 
 @export var MOVE_SPEED: float = 5
 
@@ -60,3 +61,20 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if interactable == body:
 		interactable = null
+
+#adjusts the radius of the sound collision shape
+func _input(event):
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_0: #when player isn't moving, makes no sound
+			print("0 was pressed")
+			sound.shape.radius = 0
+		if event.keycode == KEY_1: #sneaking
+			print("1 was pressed")
+			sound.shape.radius = 0.5
+		if event.keycode == KEY_2: #normal walking
+			print("2 was pressed")
+			sound.shape.radius = 1
+		if event.keycode == KEY_3: #sprinting
+			print("3 was pressed")
+			sound.shape.radius = 2
+			#change the inputs and radii to make more sense
