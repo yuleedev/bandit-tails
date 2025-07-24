@@ -34,7 +34,7 @@ func _apply_movement() -> void:
 	
 	#object pick up
 	if interactable:
-		if interactable.is_in_group("loot") and Input.is_action_just_pressed("interact"):
+		if interactable.is_in_group("loot") and Input.is_action_pressed("interact"):
 			interactable.pick_up()
 		elif interactable.is_in_group("door") and Input.is_action_just_pressed("interact"):
 			interactable.open()

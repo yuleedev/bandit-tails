@@ -4,8 +4,9 @@ var p_near = false
 var p_ref = null
 
 func _ready():
-	$Model/Area.body_entered.connect(_on_body_entered)
-	$Model/Area.body_exited.connect(_on_body_exited)
+	pass
+	#$Model/Area.body_entered.connect(_on_body_entered)
+	#$Model/Area.body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
 	if body.name == "Player":
