@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bm38ygftobcny"]
+[gd_scene load_steps=10 format=3 uid="uid://bm38ygftobcny"]
 
 [ext_resource type="Script" uid="uid://j61uuj8pawed" path="res://Scripts/guard.gd" id="1_opr0s"]
+[ext_resource type="Script" uid="uid://bnbcevqs35ulp" path="res://Levels/guard_body_3d.gd" id="2_hbmmv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lwy2l"]
 
@@ -23,15 +24,20 @@ albedo_color = Color(0, 0, 1, 0.564706)
 [node name="Guard" type="Node3D"]
 script = ExtResource("1_opr0s")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="GuardBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("2_hbmmv")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GuardBody3D"]
 shape = SubResource("CapsuleShape3D_lwy2l")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GuardBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 mesh = SubResource("CapsuleMesh_nj2yk")
 skeleton = NodePath("../..")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="GuardBody3D"]
+
+[node name="FaceDirection" type="Node3D" parent="GuardBody3D"]
 
 [node name="VisionArea3D" type="Area3D" parent="."]
 
