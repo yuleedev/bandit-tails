@@ -9,17 +9,19 @@ func _process(delta):
 	var state = get_parent().state
 	var target = get_parent().target
 	
-	#if state == "patrolling": #if there is no target, follow the path
-		#target = target #<- placeholder to get rid of error
-	#elif state == "returning":
-		#target = target
-		##reparent($main/Path3D/PathFollow3D)
-	#else: 
-		#reparent($main)
-		#$FaceDirection.look_at(target.global_transform.origin, Vector3.UP)
-		#rotate_y(deg_to_rad($FaceDirection.rotation.y * turn_speed))
-		#$NavigationAgent3D.set_target_position(target.global_transform.origin)
-		#var velocity = ($NavigationAgent3D.get_next_path_position() - transform.origin).normalized() + SPEED * delta
+	if state == "patrolling": #if there is no target, follow the path
+		target = target #<- placeholder to get rid of error
+	elif state == "returning":
+		target = target
+		#reparent($main/Path3D/PathFollow3D)
+	else: 
+		
+		
+		reparent($main)
+		$FaceDirection.look_at(target.global_transform.origin, Vector3.UP)
+		rotate_y(deg_to_rad($FaceDirection.rotation.y * turn_speed))
+		$NavigationAgent3D.set_target_position(target.global_transform.origin)
+#s		var velocity = ($NavigationAgent3D.get_next_path_position() - transform.origin).normalized() + SPEED * delta
 		#move_and_collide(velocity)
 
 ## ================ [ GODOT ] ================ ##
