@@ -76,13 +76,11 @@ func _apply_movement(delta) -> void:
 
 func _manage_interactable() -> void:
 	if interactable:
-		print("we")
 		if interactable.is_in_group("loot") and Input.is_action_pressed("interact"):
 			interactable.pick_up()
-			print("we")
 		elif interactable.is_in_group("door") and Input.is_action_just_pressed("interact"):
 			interactable.open()
-			print("de")
+			
 			
 	
 
@@ -111,9 +109,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _on_body_entered(body):
-	print(body)
 	if body.is_in_group("loot") or body.is_in_group("door"):
-		print("Body is interactable")
 		interactable = body
 
 
