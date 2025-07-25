@@ -1,6 +1,5 @@
 extends CharacterBody3D
 
-
 const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 @export var turn_speed = 4.0
@@ -15,9 +14,7 @@ func _process(delta):
 		target = target
 		#reparent($main/Path3D/PathFollow3D)
 	else: 
-		
-		
-		reparent($main)
+		get_parent().reparent($Main)
 		$FaceDirection.look_at(target.global_transform.origin, Vector3.UP)
 		rotate_y(deg_to_rad($FaceDirection.rotation.y * turn_speed))
 		$NavigationAgent3D.set_target_position(target.global_transform.origin)

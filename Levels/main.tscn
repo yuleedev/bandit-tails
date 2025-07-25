@@ -56,3 +56,5 @@ transform = Transform3D(1.54256, 0, 0, 0, 2.88543, 0, 0, 0, 1.83379, 2.61268, 0.
 transform = Transform3D(60.606, 0, 0, 0, -0.02, 0, 0, 0, 53.856, -0.334768, 0, -1.57124)
 use_collision = true
 size = Vector3(1.5484, 1, 1.8645)
+
+[node name="testNode" type="Node3D" parent="."]

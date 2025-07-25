@@ -12,6 +12,7 @@ class_name Player
 @onready var sound: CollisionShape3D = $SoundArea/Collider
 
 ## ================ [ FIELDS ] ================ ##
+@export var can_move = true
 
 @export_group("Movement")
 @export var MOVE_SPEED: float = 5
@@ -35,6 +36,23 @@ func use_skill() -> void:
 
 ## ================ [ METHODS ] ================ ##
 
+func _punishment() -> void:
+	print("you got caught!")
+	velocity = Vector3.ZERO
+	can_move = false
+	global_position = Vector3(0, 1, 0)
+	var timer := Timer.new()
+	add_child(timer)
+	timer.wait_time = 10.0
+	timer.one_shot = true
+	timer.timeout.connect(_on_timer_timeout)
+	timer.start()
+
+func _on_timer_timeout() -> void:
+	can_move = true
+	print("you're free!")
+	
+
 func _update_timers(delta: float) -> void:
 	if cd > 0:
 		cd -= delta
@@ -47,12 +65,13 @@ func _rotate_camera() -> void:
 	mouse_motion = Vector2.ZERO
 
 func _apply_movement() -> void:
-	input_dir = Input.get_vector("left", "right", "up", "down")
-	move_dir = (
-		pivot.transform.basis * Math.to_3d(input_dir)
-	).normalized()
-	
-	velocity = velocity.move_toward(move_dir * MOVE_SPEED, ACCELERATION)
+	if can_move:
+		input_dir = Input.get_vector("left", "right", "up", "down")
+		move_dir = (
+			pivot.transform.basis * Math.to_3d(input_dir)
+		).normalized()
+		
+		velocity = velocity.move_toward(move_dir * MOVE_SPEED, ACCELERATION)
 
 func _manage_interactable() -> void:
 	if interactable:
