@@ -13,7 +13,7 @@ albedo_color = Color(0.818187, 0.337719, 0.557991, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_gsokc"]
 radius = 1.0
 
-[node name="LootCylinder" type="Node3D"]
+[node name="LootCylinder" type="Node3D" groups=["loot"]]
 script = ExtResource("1_3gr21")
 
 [node name="Body" type="StaticBody3D" parent="."]
