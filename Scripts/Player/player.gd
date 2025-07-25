@@ -16,7 +16,7 @@ class_name Player
 
 @export_group("Movement")
 @export var MOVE_SPEED: float = 5
-@export var ACCELERATION: float = 5
+@export var ACCELERATION: float = 30
 
 @export_group("Ability")
 @export var COOLDOWN: float = 3
@@ -64,14 +64,14 @@ func _rotate_camera() -> void:
 	
 	mouse_motion = Vector2.ZERO
 
-func _apply_movement() -> void:
+func _apply_movement(delta) -> void:
 	if can_move:
 		input_dir = Input.get_vector("left", "right", "up", "down")
 		move_dir = (
 			pivot.transform.basis * Math.to_3d(input_dir)
 		).normalized()
 		
-		velocity = velocity.move_toward(move_dir * MOVE_SPEED, ACCELERATION)
+		velocity = velocity.move_toward(move_dir * MOVE_SPEED, ACCELERATION * delta)
 
 func _manage_interactable() -> void:
 	if interactable:
@@ -91,15 +91,17 @@ func _process(delta: float) -> void:
 	_update_timers(delta)
 	
 	_rotate_camera()
-	_apply_movement()
+	_apply_movement(delta)
 	
 	_manage_interactable()
 	_manage_skill()
 
 func _physics_process(_delta: float) -> void:
+	# print(get_slide_collision(0))
 	move_and_slide()
 
 func _on_body_entered(body):
+	print(body)
 	if body.is_in_group("loot") or body.is_in_group("door"):
 		interactable = body
 

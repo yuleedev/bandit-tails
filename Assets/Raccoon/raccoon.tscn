@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1ta55yk5nxar"]
 
-[ext_resource type="Script" path="res://Scripts/Player/raccoon.gd" id="1_7xmbg"]
+[ext_resource type="Script" uid="uid://cadcistqqj1it" path="res://Scripts/Player/raccoon.gd" id="1_7xmbg"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sykj1"]
 
@@ -32,3 +32,4 @@ shape = SubResource("CapsuleShape3D_bqn1y")
 [node name="Collider" type="CollisionShape3D" parent="SoundArea"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("CylinderShape3D_fmo36")
+disabled = true
