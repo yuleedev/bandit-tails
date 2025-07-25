@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bunav6f5myq81"]
 
-[ext_resource type="Script" uid="uid://bqrtxt2m8f4mw" path="res://gui.gd" id="1_80edf"]
+[ext_resource type="Script" path="res://gui.gd" id="1_80edf"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_k6omp"]
 viewport_path = NodePath("Sprite3D/SubViewport")
@@ -23,9 +23,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -250.0
+offset_left = -180.0
 offset_top = -25.0
-offset_right = 250.0
+offset_right = 170.0
 offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2

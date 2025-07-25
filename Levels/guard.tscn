@@ -23,40 +23,45 @@ albedo_color = Color(0, 0, 1, 0.564706)
 [node name="Guard" type="Node3D"]
 script = ExtResource("1_opr0s")
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="GuardBody3D" type="CharacterBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GuardBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_lwy2l")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GuardBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_nj2yk")
 skeleton = NodePath("../..")
 
-[node name="VisionArea3D" type="Area3D" parent="."]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="GuardBody3D"]
 
-[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="VisionArea3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+[node name="FaceDirection" type="Node3D" parent="GuardBody3D"]
+
+[node name="VisionArea3D" type="Area3D" parent="GuardBody3D"]
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="GuardBody3D/VisionArea3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.53607, 0)
 depth = 5.0
 polygon = PackedVector2Array(0, 0, -3, 5, 3, 5)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="VisionArea3D"]
-transform = Transform3D(6, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 0, 0, 2.5)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GuardBody3D/VisionArea3D"]
+transform = Transform3D(6, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 0, 2.53607, 2.5)
 mesh = SubResource("PrismMesh_lwy2l")
 surface_material_override/0 = SubResource("StandardMaterial3D_nj2yk")
 
-[node name="ListeningArea3D" type="Area3D" parent="."]
+[node name="ListeningArea3D" type="Area3D" parent="GuardBody3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ListeningArea3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GuardBody3D/ListeningArea3D"]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 1.1, 0)
 shape = SubResource("CylinderShape3D_lwy2l")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ListeningArea3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="GuardBody3D/ListeningArea3D"]
 transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 1.1, 0)
 mesh = SubResource("CylinderMesh_nj2yk")
 surface_material_override/0 = SubResource("StandardMaterial3D_7pswh")
 
-[connection signal="body_entered" from="VisionArea3D" to="." method="_on_vision_area_3d_body_entered"]
-[connection signal="body_exited" from="VisionArea3D" to="." method="_on_vision_area_3d_body_exited"]
-[connection signal="area_entered" from="ListeningArea3D" to="." method="_on_listening_area_3d_area_entered"]
-[connection signal="area_exited" from="ListeningArea3D" to="." method="_on_listening_area_3d_area_exited"]
+[connection signal="body_entered" from="GuardBody3D/VisionArea3D" to="." method="_on_vision_area_3d_body_entered"]
+[connection signal="body_exited" from="GuardBody3D/VisionArea3D" to="." method="_on_vision_area_3d_body_exited"]
+[connection signal="area_entered" from="GuardBody3D/ListeningArea3D" to="." method="_on_listening_area_3d_area_entered"]
+[connection signal="area_exited" from="GuardBody3D/ListeningArea3D" to="." method="_on_listening_area_3d_area_exited"]

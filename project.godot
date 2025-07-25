@@ -32,9 +32,9 @@ project/assembly_name="placeholder"
 
 [global_group]
 
-door=""
 loot=""
 player=""
+door=""
 
 [input]
 

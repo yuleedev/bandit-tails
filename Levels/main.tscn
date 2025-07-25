@@ -1,59 +1,30 @@
-[gd_scene load_steps=11 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=10 format=3 uid="uid://rcpyya18rmci"]
 
-[ext_resource type="Script" uid="uid://chuevkrc2nhgy" path="res://Scripts/Player/player.gd" id="2_gnif3"]
+[ext_resource type="Script" path="res://Levels/main.gd" id="1_ovrsl"]
+[ext_resource type="PackedScene" uid="uid://c1ta55yk5nxar" path="res://Assets/Raccoon/raccoon.tscn" id="2_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://bwydvcfxfddhp" path="res://Assets/Props/Loot/loot.tscn" id="3_lwy2l"]
-[ext_resource type="PackedScene" uid="uid://duvv356yh8iwi" path="res://Levels/map.glb" id="3_nj2yk"]
-[ext_resource type="Script" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
+[ext_resource type="Script" uid="uid://2upj8o4sck2s" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_oj8hd"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gnif3"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_34bfm"]
+[ext_resource type="PackedScene" uid="uid://bbf4db1nxi076" path="res://newmap.glb" id="7_ovrsl"]
+[ext_resource type="PackedScene" uid="uid://d2vubc4f38h2c" path="res://Assets/test2.glb" id="8_hbaan"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
 closed = true
 _data = {
-"points": PackedVector3Array(1.9779, 0, -1.83392, -1.9779, 0, 1.83392, -15.1493, -0.527832, -16.6784, -1.40014, 0, -1.0501, 1.40014, 0, 1.0501, -14.677, -0.527832, -7.89376, -2.40023, 0, 2.25022, 2.40023, 0, -2.25022, -9.42649, -0.527832, -7.99377, 1.80683, 0, 2.24102, -1.80683, 0, -2.24102, -9.23312, -0.527832, -16.3354),
+"points": PackedVector3Array(1.9779, 0, -1.83392, -1.9779, 0, 1.83392, -17.0212, -0.614322, -20.8478, -1.40014, 0, -1.0501, 1.40014, 0, 1.0501, -16.5489, -0.614322, -12.0631, -2.40023, 0, 2.25022, 2.40023, 0, -2.25022, -11.2984, -0.614322, -12.1631, 1.80683, 0, 2.24102, -1.80683, 0, -2.24102, -11.105, -0.614322, -20.5047),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
 
 [node name="Main" type="Node3D"]
+script = ExtResource("1_ovrsl")
 
-[node name="Player" type="CharacterBody3D" parent="." groups=["player"]]
+[node name="Raccoon" parent="." instance=ExtResource("2_ovrsl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-script = ExtResource("2_gnif3")
-
-[node name="Pivot" type="Node3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-
-[node name="Camera" type="Camera3D" parent="Player/Pivot"]
-
-[node name="Light" type="SpotLight3D" parent="Player/Pivot/Camera"]
-spot_range = 100.0
-spot_attenuation = 0.7
-spot_angle = 60.0
-
-[node name="Mesh" type="MeshInstance3D" parent="Player"]
-mesh = SubResource("CapsuleMesh_oj8hd")
-
-[node name="Collider" type="CollisionShape3D" parent="Player"]
-shape = SubResource("CapsuleShape3D_gnif3")
-
-[node name="SoundArea3D" type="Area3D" parent="Player" groups=["player"]]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/SoundArea3D"]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
-shape = SubResource("CylinderShape3D_34bfm")
 
 [node name="Loot" parent="." instance=ExtResource("3_lwy2l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 5)
-
-[node name="Map" parent="." instance=ExtResource("3_nj2yk")]
-transform = Transform3D(0.697994, 0, 0, 0, 0.781175, 0, 0, 0, 0.695508, 0, 0, 0)
 
 [node name="Door" parent="." instance=ExtResource("4_nj2yk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32957, -0.0187825, 16.9091)
@@ -62,8 +33,49 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32957, -0.0187825, 16.9091
 curve = SubResource("Curve3D_ovrsl")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.679909, 0, 0.733288, 0, 0.999985, 0, -0.733288, 0, -0.679909, -15.1493, -0.527832, -16.6784)
+transform = Transform3D(-0.679909, 0, 0.733288, 0, 0.999985, 0, -0.733288, 0, -0.679909, -17.0212, -0.614322, -20.8478)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D/PathFollow3D" instance=ExtResource("5_34bfm")]
 transform = Transform3D(-0.999184, 0.016399, -0.0369301, 0.0156731, 0.99968, 0.0198608, 0.0372439, 0.0192658, -0.999121, -0.877678, 0.288032, -0.788836)
+
+[node name="LootSpawns" type="Node3D" parent="."]
+
+[node name="Spawn1" type="Marker3D" parent="LootSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.0871, 0.991108, 7.67695)
+
+[node name="Spawn2" type="Marker3D" parent="LootSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.0399, 0.409405, 2.02124)
+
+[node name="Spawn3" type="Marker3D" parent="LootSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.6388, 0.148306, -4.33948)
+
+[node name="newmap" parent="." instance=ExtResource("7_ovrsl")]
+transform = Transform3D(1.54256, 0, 0, 0, 2.88543, 0, 0, 0, 1.83379, 2.61268, 0.0842686, -2.25814)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(60.606, 0, 0, 0, -0.02, 0, 0, 0, 53.856, -0.334768, 0, -1.57124)
+use_collision = true
+size = Vector3(1.5484, 1, 1.8645)
+
+[node name="testNode" type="Node3D" parent="."]
+
+[node name="test2" parent="." instance=ExtResource("8_hbaan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21403, 0.018341, 1.07577)
+
+[node name="Skeleton3D" parent="test2/mole rig" index="0"]
+bones/0/position = Vector3(0, 0.260179, 0)
+bones/4/rotation = Quaternion(-0.406962, 0.00370496, -0.0777823, 0.91012)
+bones/5/rotation = Quaternion(0.466219, -0.0101574, -0.173763, 0.867377)
+bones/6/rotation = Quaternion(-0.0473863, 0.0367747, -0.287342, 0.955948)
+bones/7/rotation = Quaternion(0.0541867, -0.0433831, 0.0695773, 0.995159)
+bones/9/rotation = Quaternion(-0.416281, -0.0324269, 0.0621066, 0.906533)
+bones/10/rotation = Quaternion(0.410365, -0.0764217, 0.110727, 0.901942)
+bones/11/rotation = Quaternion(-0.00160438, -0.00987845, 0.259112, 0.965796)
+bones/12/rotation = Quaternion(0.0702604, 0.0532992, -0.0697366, 0.99366)
+bones/13/position = Vector3(-0.257162, 0.219579, 0.111442)
+bones/13/rotation = Quaternion(0.998763, 0, 0, 0.0497239)
+bones/14/position = Vector3(0.257162, 0.254136, -0.022711)
+bones/14/rotation = Quaternion(0.999703, 1.45516e-17, -1.03507e-18, 0.0243907)
+
+[editable path="test2"]
