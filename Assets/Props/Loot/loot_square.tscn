@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3cd3joq2wl3d"]
+
+[ext_resource type="Script" uid="uid://47t34linkow5" path="res://Scripts/loot_square.gd" id="1_11bml"]
+[ext_resource type="PackedScene" uid="uid://bunav6f5myq81" path="res://gui.tscn" id="1_ahd7m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_11bml"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aj6sl"]
+albedo_color = Color(0.270588, 0.164706, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7crvk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_gsokc"]
+radius = 1.0
+
+[node name="LootSquare" type="Node3D"]
+script = ExtResource("1_11bml")
+
+[node name="Body" type="StaticBody3D" parent="."]
+
+[node name="Collider" type="CollisionShape3D" parent="Body"]
+shape = SubResource("BoxShape3D_11bml")
+
+[node name="Mesh" type="MeshInstance3D" parent="Body"]
+material_override = SubResource("StandardMaterial3D_aj6sl")
+mesh = SubResource("BoxMesh_7crvk")
+
+[node name="Gui" parent="Body" instance=ExtResource("1_ahd7m")]
+
+[node name="Area" type="Area3D" parent="Body"]
+collision_layer = 3
+
+[node name="Collider" type="CollisionShape3D" parent="Body/Area"]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 0, 0)
+shape = SubResource("SphereShape3D_gsokc")
+
+[connection signal="body_entered" from="Body/Area" to="." method="_on_area_body_entered"]
+[connection signal="body_exited" from="Body/Area" to="." method="_on_area_body_exited"]
