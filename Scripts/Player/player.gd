@@ -9,6 +9,7 @@ class_name Player
 
 @onready var mesh: MeshInstance3D = $Mesh
 @onready var collider: CollisionShape3D = $Collider
+@onready var area: Area3D = $SoundArea
 @onready var sound: CollisionShape3D = $SoundArea/Collider
 
 ## ================ [ FIELDS ] ================ ##
@@ -37,7 +38,7 @@ func use_skill() -> void:
 ## ================ [ METHODS ] ================ ##
 
 func _punishment() -> void:
-	print("you got caught!")
+	#print("you got caught!")
 	velocity = Vector3.ZERO
 	can_move = false
 	global_position = Vector3(0, 1, 0)
@@ -50,7 +51,7 @@ func _punishment() -> void:
 
 func _on_timer_timeout() -> void:
 	can_move = true
-	print("you're free!")
+	#print("you're free!")
 	
 
 func _update_timers(delta: float) -> void:
@@ -75,10 +76,15 @@ func _apply_movement() -> void:
 
 func _manage_interactable() -> void:
 	if interactable:
+		print("we")
 		if interactable.is_in_group("loot") and Input.is_action_pressed("interact"):
 			interactable.pick_up()
+			print("we")
 		elif interactable.is_in_group("door") and Input.is_action_just_pressed("interact"):
 			interactable.open()
+			print("de")
+			
+	
 
 func _manage_skill() -> void:
 	if Input.is_action_just_pressed("skill") and cd <= 0:
@@ -86,6 +92,10 @@ func _manage_skill() -> void:
 		cd = COOLDOWN
 
 ## ================ [ GODOT ] ================ ##
+
+func _ready() -> void:
+	area.body_entered.connect(_on_body_entered)
+	area.body_entered.connect(_on_body_exited)
 
 func _process(delta: float) -> void:
 	_update_timers(delta)
@@ -100,8 +110,11 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _on_body_entered(body):
+	print("Body entered area:", body.name)
 	if body.is_in_group("loot") or body.is_in_group("door"):
+		print("Body is interactable")
 		interactable = body
+
 
 func _on_body_exited(body):
 	if interactable == body:

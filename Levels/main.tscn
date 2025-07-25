@@ -27,7 +27,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 5)
 
 [node name="Door" parent="." instance=ExtResource("4_nj2yk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.32957, -0.0187825, 16.9091)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.67418, -0.0187825, -4.88266)
 
 [node name="Path3D" type="Path3D" parent="."]
 curve = SubResource("Curve3D_ovrsl")

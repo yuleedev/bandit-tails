@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1ta55yk5nxar"]
 
-[ext_resource type="Script" path="res://Scripts/Player/raccoon.gd" id="1_7xmbg"]
+[ext_resource type="Script" uid="uid://cadcistqqj1it" path="res://Scripts/Player/raccoon.gd" id="1_7xmbg"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_sykj1"]
 
@@ -9,6 +9,7 @@
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_fmo36"]
 
 [node name="Raccoon" type="CharacterBody3D" groups=["player"]]
+collision_mask = 3
 script = ExtResource("1_7xmbg")
 
 [node name="Pivot" type="Node3D" parent="."]
@@ -28,6 +29,7 @@ mesh = SubResource("CapsuleMesh_sykj1")
 shape = SubResource("CapsuleShape3D_bqn1y")
 
 [node name="SoundArea" type="Area3D" parent="." groups=["player"]]
+collision_mask = 3
 
 [node name="Collider" type="CollisionShape3D" parent="SoundArea"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
