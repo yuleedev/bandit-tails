@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func _on_vision_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		print("guard has seen " + body.name)
+		print("Guard has seen " + body.name)
 		target = body
 		target._punishment()
 		#last_patrol_pos = position
@@ -22,13 +22,13 @@ func _on_vision_area_3d_body_entered(body: Node3D) -> void:
 
 func _on_vision_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		print("guard has unseen " + body.name)
+		print("Guard has unseen " + body.name)
 		target = null 
 		#state = "returning"
 
 func _on_listening_area_3d_area_entered(area: Area3D) -> void:
 	if area.is_in_group("player"):
-		print("guard has heard " + area.name) 
+		print("Guard has heard " + area.get_parent().name) 
 		target = area.get_parent()
 		target._punishment()
 		#last_patrol_pos = position
@@ -37,6 +37,6 @@ func _on_listening_area_3d_area_entered(area: Area3D) -> void:
 
 func _on_listening_area_3d_area_exited(area: Area3D) -> void:
 	if area.is_in_group("player"):
-		print("guard has unheard " + area.name)
+		print("Guard has unheard " + area.get_parent().name)
 		target = null  
 		#state = "returning"
