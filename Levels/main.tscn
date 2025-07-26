@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=11 format=3 uid="uid://rcpyya18rmci"]
 
-[ext_resource type="Script" path="res://Levels/main.gd" id="1_ovrsl"]
+[ext_resource type="Script" uid="uid://bvpa01djx1mc4" path="res://Levels/main.gd" id="1_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://c1ta55yk5nxar" path="res://Assets/Raccoon/raccoon.tscn" id="2_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://bwydvcfxfddhp" path="res://Assets/Props/Loot/loot.tscn" id="3_lwy2l"]
-[ext_resource type="Script" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
+[ext_resource type="Script" uid="uid://2upj8o4sck2s" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 [ext_resource type="PackedScene" uid="uid://bbf4db1nxi076" path="res://newmap.glb" id="7_ovrsl"]
+[ext_resource type="Texture2D" uid="uid://br7v6dnwflgw1" path="res://crosshair.png" id="8_hbaan"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
 closed = true
@@ -79,3 +80,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128158, 0.444332, -2.99794
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_ovrsl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -12.0
+offset_right = 12.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("8_hbaan")
+expand_mode = 1
