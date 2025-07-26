@@ -40,7 +40,7 @@ transform = Transform3D(-0.541785, 2.22336e-06, 0.840509, 0, 0.999985, -2.64526e
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D/PathFollow3D" instance=ExtResource("5_34bfm")]
-transform = Transform3D(-0.999184, 0.016399, -0.0369301, 0.0156731, 0.99968, 0.0198608, 0.0372439, 0.0192658, -0.999121, -0.877678, 0.288032, -0.788836)
+transform = Transform3D(-0.999184, 0.016399, -0.0369301, 0.0156731, 0.99968, 0.0198608, 0.0372439, 0.0192658, -0.999121, -0.878, 1, -0.789)
 
 [node name="LootSpawns" type="Node3D" parent="."]
 
