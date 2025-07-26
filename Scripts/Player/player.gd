@@ -7,7 +7,7 @@ class_name Player
 @onready var camera: Camera3D = $Pivot/Camera
 @onready var light: SpotLight3D = $Pivot/Camera/Light
 
-@onready var mesh: MeshInstance3D = $Mesh
+@onready var mesh: MeshInstance3D = $"mole_idle4/molerig/Skeleton3D/mole body_001"
 @onready var collider: CollisionShape3D = $Collider
 @onready var area: Area3D = $SoundArea
 @onready var sound: CollisionShape3D = $SoundArea/Collider
@@ -40,6 +40,7 @@ func use_skill() -> void:
 func _punishment() -> void:
 	#print("you got caught!")
 	velocity = Vector3.ZERO
+	#$AnimationTree.set("parameters/conditions/idle", true)
 	can_move = false
 	global_position = Vector3(0, 1, 0)
 	var timer := Timer.new()
@@ -73,6 +74,10 @@ func _apply_movement(delta) -> void:
 		).normalized()
 		
 		velocity = velocity.move_toward(move_dir * MOVE_SPEED, ACCELERATION * delta)
+		
+		$AnimationTree.set("parameters/conditions/idle", input_dir == Vector2.ZERO)
+		$AnimationTree.set("parameters/conditions/walk", input_dir != Vector2.ZERO)
+	
 
 func _manage_interactable() -> void:
 	if interactable:
