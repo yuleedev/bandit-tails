@@ -20,6 +20,7 @@ shape = SubResource("BoxShape3D_50cdl")
 
 [node name="Area" type="Area3D" parent="Model"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08348, 0)
+collision_layer = 2
 
 [node name="Collider" type="CollisionShape3D" parent="Model/Area"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)

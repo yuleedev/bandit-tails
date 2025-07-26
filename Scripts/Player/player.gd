@@ -7,8 +7,9 @@ class_name Player
 @onready var camera: Camera3D = $Pivot/Camera
 @onready var light: SpotLight3D = $Pivot/Camera/Light
 
-@onready var mesh: MeshInstance3D = $Mesh
+@onready var mesh: MeshInstance3D = $"mole_idle4/molerig/Skeleton3D/mole body_001"
 @onready var collider: CollisionShape3D = $Collider
+@onready var area: Area3D = $SoundArea
 @onready var sound: CollisionShape3D = $SoundArea/Collider
 
 ## ================ [ FIELDS ] ================ ##
@@ -16,7 +17,7 @@ class_name Player
 
 @export_group("Movement")
 @export var MOVE_SPEED: float = 5
-@export var ACCELERATION: float = 5
+@export var ACCELERATION: float = 30
 
 @export_group("Ability")
 @export var COOLDOWN: float = 3
@@ -37,8 +38,9 @@ func use_skill() -> void:
 ## ================ [ METHODS ] ================ ##
 
 func _punishment() -> void:
-	print("you got caught!")
+	#print("you got caught!")
 	velocity = Vector3.ZERO
+	#$AnimationTree.set("parameters/conditions/idle", true)
 	can_move = false
 	global_position = Vector3(0, 1, 0)
 	var timer := Timer.new()
@@ -50,7 +52,7 @@ func _punishment() -> void:
 
 func _on_timer_timeout() -> void:
 	can_move = true
-	print("you're free!")
+	#print("you're free!")
 	
 
 func _update_timers(delta: float) -> void:
@@ -64,14 +66,18 @@ func _rotate_camera() -> void:
 	
 	mouse_motion = Vector2.ZERO
 
-func _apply_movement() -> void:
+func _apply_movement(delta) -> void:
 	if can_move:
 		input_dir = Input.get_vector("left", "right", "up", "down")
 		move_dir = (
 			pivot.transform.basis * Math.to_3d(input_dir)
 		).normalized()
 		
-		velocity = velocity.move_toward(move_dir * MOVE_SPEED, ACCELERATION)
+		velocity = velocity.move_toward(move_dir * MOVE_SPEED, ACCELERATION * delta)
+		
+		$AnimationTree.set("parameters/conditions/idle", input_dir == Vector2.ZERO)
+		$AnimationTree.set("parameters/conditions/walk", input_dir != Vector2.ZERO)
+	
 
 func _manage_interactable() -> void:
 	if interactable:
@@ -79,6 +85,9 @@ func _manage_interactable() -> void:
 			interactable.pick_up()
 		elif interactable.is_in_group("door") and Input.is_action_just_pressed("interact"):
 			interactable.open()
+			
+			
+	
 
 func _manage_skill() -> void:
 	if Input.is_action_just_pressed("skill") and cd <= 0:
@@ -87,21 +96,27 @@ func _manage_skill() -> void:
 
 ## ================ [ GODOT ] ================ ##
 
+func _ready() -> void:
+	area.body_entered.connect(_on_body_entered)
+	area.body_entered.connect(_on_body_exited)
+
 func _process(delta: float) -> void:
 	_update_timers(delta)
 	
 	_rotate_camera()
-	_apply_movement()
+	_apply_movement(delta)
 	
 	_manage_interactable()
 	_manage_skill()
 
 func _physics_process(_delta: float) -> void:
+	# print(get_slide_collision(0))
 	move_and_slide()
 
 func _on_body_entered(body):
 	if body.is_in_group("loot") or body.is_in_group("door"):
 		interactable = body
+
 
 func _on_body_exited(body):
 	if interactable == body:

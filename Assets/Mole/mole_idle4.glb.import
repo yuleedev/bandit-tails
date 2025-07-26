@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b4pbtprhnuifi"
-path="res://.godot/imported/MOLEWALK.glb-042f8a8749dce4e653e8643dada9e500.scn"
+uid="uid://3g2gx47aj8eg"
+path="res://.godot/imported/mole_idle4.glb-51ac0ae422e283d40d4cd09fd9b3fd26.scn"
 
 [deps]
 
-source_file="res://Assets/MOLEWALK.glb"
-dest_files=["res://.godot/imported/MOLEWALK.glb-042f8a8749dce4e653e8643dada9e500.scn"]
+source_file="res://Assets/Mole/mole_idle4.glb"
+dest_files=["res://.godot/imported/mole_idle4.glb-51ac0ae422e283d40d4cd09fd9b3fd26.scn"]
 
 [params]
 
