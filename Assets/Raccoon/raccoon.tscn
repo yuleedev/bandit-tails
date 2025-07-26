@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://c1ta55yk5nxar"]
 
-[ext_resource type="Script" uid="uid://cadcistqqj1it" path="res://Scripts/Player/raccoon.gd" id="1_7xmbg"]
+[ext_resource type="Script" path="res://Scripts/Player/raccoon.gd" id="1_7xmbg"]
 [ext_resource type="PackedScene" uid="uid://8fhwph4bojtx" path="res://mole_idle_4.tscn" id="2_sykj1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bqn1y"]
@@ -69,16 +69,15 @@ parameters/conditions/walk = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="Skeleton3D" parent="mole_idle/molerig" index="0"]
-bones/4/rotation = Quaternion(-0.411413, 0.0634546, -0.138598, 0.898612)
-bones/5/rotation = Quaternion(0.402188, 0.0401374, -0.0846306, 0.910753)
-bones/6/rotation = Quaternion(3.44279e-08, 0.00720831, -0.266866, 0.963707)
-bones/7/rotation = Quaternion(0.0356675, -0.000359042, -0.0412589, 0.998512)
-bones/9/rotation = Quaternion(-0.411413, -0.0634546, 0.138598, 0.898612)
-bones/10/rotation = Quaternion(0.402188, -0.0401374, 0.0846307, 0.910753)
-bones/11/rotation = Quaternion(3.58775e-08, -0.00720831, 0.266866, 0.963707)
-bones/12/rotation = Quaternion(0.0356675, 0.000359043, 0.0412589, 0.998512)
-bones/14/position = Vector3(0.257162, 0.197217, 0)
-bones/14/rotation = Quaternion(1, 0, 0, 0)
+bones/4/rotation = Quaternion(-0.415319, 0.0282342, -0.0616694, 0.907144)
+bones/5/rotation = Quaternion(0.497965, -0.0530266, -0.222315, 0.836538)
+bones/6/rotation = Quaternion(-0.00344342, 0.000162441, -0.274506, 0.961579)
+bones/7/rotation = Quaternion(0.0541867, -0.0433831, 0.0695773, 0.995159)
+bones/9/rotation = Quaternion(-0.420725, -0.052097, 0.0638781, 0.903436)
+bones/10/rotation = Quaternion(0.388518, -0.0932633, 0.0733745, 0.913768)
+bones/11/rotation = Quaternion(-0.0543197, -0.0467248, 0.291216, 0.95397)
+bones/12/rotation = Quaternion(0.0541867, 0.0433831, -0.0695773, 0.995159)
+bones/14/rotation = Quaternion(0.991067, -2.96128e-17, 2.08659e-25, -0.133364)
 
 [node name="AnimationPlayer" parent="mole_idle" index="5"]
 autoplay = ""
