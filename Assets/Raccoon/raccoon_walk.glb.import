@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://uy6ykjo5m5vg"
+uid="uid://cuagig623t2c5"
 path="res://.godot/imported/raccoon_walk.glb-3f2f09dafd5237b93b2d415518be1175.scn"
 
 [deps]
@@ -33,5 +33,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
+gltf/naming_version=0
 gltf/embedded_image_handling=1

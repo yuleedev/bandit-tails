@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://ct2v1laxjo67f"]
+
+[ext_resource type="Script" uid="uid://cgxeqnkipyhjt" path="res://Scripts/Player/mole.gd" id="1_swydg"]
+[ext_resource type="PackedScene" uid="uid://8fhwph4bojtx" path="res://mole_idle_4.tscn" id="2_axkot"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_axkot"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_7b7p1"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bqn1y"]
+animation = &"Walk_Cycle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fmo36"]
+animation = &"idle_001"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ea6d0"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fmo36"]
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sykj1"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_djaye"]
+states/Walk_Cycle/node = SubResource("AnimationNodeAnimation_bqn1y")
+states/Walk_Cycle/position = Vector2(499.4, 98.0625)
+states/idle_001/node = SubResource("AnimationNodeAnimation_fmo36")
+states/idle_001/position = Vector2(341, 100.312)
+transitions = ["Start", "idle_001", SubResource("AnimationNodeStateMachineTransition_ea6d0"), "idle_001", "Walk_Cycle", SubResource("AnimationNodeStateMachineTransition_fmo36"), "Walk_Cycle", "idle_001", SubResource("AnimationNodeStateMachineTransition_sykj1")]
+graph_offset = Vector2(-65.0999, -57.9375)
+
+[node name="Mole" type="CharacterBody3D"]
+script = ExtResource("1_swydg")
+metadata/_custom_type_script = "uid://cgxeqnkipyhjt"
+
+[node name="Pivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+
+[node name="Camera" type="Camera3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.318296, 3.70639)
+
+[node name="Light" type="SpotLight3D" parent="Pivot/Camera"]
+spot_range = 100.0
+spot_attenuation = 0.7
+spot_angle = 60.0
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_axkot")
+
+[node name="SoundArea" type="Area3D" parent="." groups=["player"]]
+collision_mask = 3
+
+[node name="Collider" type="CollisionShape3D" parent="SoundArea"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("CylinderShape3D_7b7p1")
+disabled = true
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../mole_idle")
+tree_root = SubResource("AnimationNodeStateMachine_djaye")
+anim_player = NodePath("../mole_idle/AnimationPlayer")
+parameters/conditions/idle = false
+parameters/conditions/walk = false
+
+[node name="mole_idle" parent="." instance=ExtResource("2_axkot")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Skeleton3D" parent="mole_idle/molerig" index="0"]
+bones/4/rotation = Quaternion(-0.415319, 0.0282342, -0.0616694, 0.907144)
+bones/5/rotation = Quaternion(0.497965, -0.0530266, -0.222315, 0.836538)
+bones/6/rotation = Quaternion(-0.00344342, 0.000162441, -0.274506, 0.961579)
+bones/7/rotation = Quaternion(0.0541867, -0.0433831, 0.0695773, 0.995159)
+bones/9/rotation = Quaternion(-0.420725, -0.052097, 0.0638781, 0.903436)
+bones/10/rotation = Quaternion(0.388518, -0.0932633, 0.0733745, 0.913768)
+bones/11/rotation = Quaternion(-0.0543197, -0.0467248, 0.291216, 0.95397)
+bones/12/rotation = Quaternion(0.0541867, 0.0433831, -0.0695773, 0.995159)
+bones/14/rotation = Quaternion(0.991067, -2.96128e-17, 2.08659e-25, -0.133364)
+
+[node name="AnimationPlayer" parent="mole_idle" index="5"]
+autoplay = ""
+
+[editable path="mole_idle"]
