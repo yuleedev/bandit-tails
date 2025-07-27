@@ -21,7 +21,7 @@ shape = SubResource("BoxShape3D_qqa8l")
 [node name="Mesh" type="MeshInstance3D" parent="Body"]
 mesh = SubResource("BoxMesh_fybsu")
 
-[node name="Gui" parent="Body" instance=ExtResource("2_fybsu")]
+[node name="WeightBar" parent="Body" instance=ExtResource("2_fybsu")]
 
 [node name="Area" type="Area3D" parent="Body"]
 collision_layer = 2

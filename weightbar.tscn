@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbrhe230lvcnw"]
+
+[ext_resource type="Script" uid="uid://bqrtxt2m8f4mw" path="res://gui.gd" id="1_r3pgf"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_k6omp"]
+viewport_path = NodePath("Sprite3D/SubViewport")
+
+[node name="WeightBar" type="Node3D"]
+script = ExtResource("1_r3pgf")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+billboard = 2
+no_depth_test = true
+texture = SubResource("ViewportTexture_k6omp")
+
+[node name="SubViewport" type="SubViewport" parent="Sprite3D"]
+transparent_bg = true
+size = Vector2i(1920, 1080)
+
+[node name="ProgressBar" type="ProgressBar" parent="Sprite3D/SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -25.0
+offset_right = 170.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+step = 1.0
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.75108)

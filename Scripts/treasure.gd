@@ -2,7 +2,7 @@ extends Node3D
 
 var p_near = false
 var p_ref = null
-@onready var progress = $Body/Gui/Sprite3D/SubViewport/ProgressBar
+@onready var progress = $Body/WeightBar/Sprite3D/SubViewport/ProgressBar
 
 func _ready():
 	pass

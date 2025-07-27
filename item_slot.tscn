@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://7uvx1y3du88e"]
+
+[ext_resource type="Script" uid="uid://dx8x1dlcy0ek5" path="res://item_slot.gd" id="1_7v0y0"]
+[ext_resource type="Texture2D" uid="uid://dm60uyo7pfk2d" path="res://Assets/UI/inventory.png" id="1_i83bl"]
+[ext_resource type="Texture2D" uid="uid://dg8jbtxa4gxmk" path="res://icon.svg" id="2_7v0y0"]
+[ext_resource type="FontFile" uid="uid://0mou7hqwgtb4" path="res://Assets/UI/UIFont.ttf" id="3_qa65c"]
+
+[node name="ItemSlot" type="Node2D"]
+script = ExtResource("1_7v0y0")
+
+[node name="InventoryBG" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(960, 960)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_i83bl")
+
+[node name="Item Icon" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(903, 969)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_7v0y0")
+
+[node name="Button" type="Button" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 871.0
+offset_top = 937.0
+offset_right = 879.0
+offset_bottom = 945.0
+scale = Vector2(8, 8)
+
+[node name="Value" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 884.0
+offset_top = 1004.0
+offset_right = 924.0
+offset_bottom = 1042.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_qa65c")
+theme_override_font_sizes/font_size = 25
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1

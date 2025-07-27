@@ -5,7 +5,7 @@
 [sub_resource type="ViewportTexture" id="ViewportTexture_k6omp"]
 viewport_path = NodePath("Sprite3D/SubViewport")
 
-[node name="Gui" type="Node3D"]
+[node name="WeightBar" type="Node3D"]
 script = ExtResource("1_80edf")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
