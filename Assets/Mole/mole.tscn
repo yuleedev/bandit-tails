@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://ct2v1laxjo67f"]
 
-[ext_resource type="Script" path="res://Scripts/Player/mole.gd" id="1_swydg"]
+[ext_resource type="Script" uid="uid://cgxeqnkipyhjt" path="res://Scripts/Player/mole.gd" id="1_swydg"]
 [ext_resource type="PackedScene" uid="uid://8fhwph4bojtx" path="res://mole_idle_4.tscn" id="2_axkot"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_axkot"]
@@ -55,7 +55,6 @@ collision_mask = 3
 [node name="Collider" type="CollisionShape3D" parent="SoundArea" groups=["player"]]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("CylinderShape3D_7b7p1")
-disabled = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../mole_idle")
