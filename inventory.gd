@@ -16,8 +16,19 @@ func _ready() -> void:
 		items[x] = instance
 	items[1] = "je"
 	
+func prep_item(new_item):
+	var item = {}
 	
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	item['name'] = new_item.res.name
+	item['inv_icon'] = new_item.res.inv_icon
+	item['item_path'] = new_item.res.item_path
+	item['value'] = new_item.res.value
+	return item
+	
+func add_item(item):
+	for x in range(row_size):
+		var slot = items[x]
+		
+		if slot.add_item(item):
+			return true
+	return false
