@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=11 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" uid="uid://bvpa01djx1mc4" path="res://Levels/main.gd" id="1_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://ct2v1laxjo67f" path="res://Assets/Mole/mole.tscn" id="2_hbaan"]
 [ext_resource type="PackedScene" uid="uid://bwydvcfxfddhp" path="res://Assets/Props/Loot/loot.tscn" id="3_lwy2l"]
-[ext_resource type="Script" uid="uid://2upj8o4sck2s" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
+[ext_resource type="Script" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 [ext_resource type="PackedScene" uid="uid://bbf4db1nxi076" path="res://newmap.glb" id="7_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
+[ext_resource type="PackedScene" uid="uid://cbvne5fpxlq0t" path="res://key.tscn" id="9_u05pv"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
 closed = true
@@ -73,3 +74,6 @@ size = Vector3(100, 1, 100)
 [node name="testNode" type="Node3D" parent="."]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("9_he5fp")]
+
+[node name="Key" parent="." instance=ExtResource("9_u05pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.9062, 0.955179, 3.53153)

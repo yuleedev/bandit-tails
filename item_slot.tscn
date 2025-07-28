@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://7uvx1y3du88e"]
+[gd_scene load_steps=4 format=3 uid="uid://7uvx1y3du88e"]
 
 [ext_resource type="Script" uid="uid://dx8x1dlcy0ek5" path="res://item_slot.gd" id="1_7v0y0"]
 [ext_resource type="Texture2D" uid="uid://dm60uyo7pfk2d" path="res://Assets/UI/inventory.png" id="1_i83bl"]
-[ext_resource type="Texture2D" uid="uid://dg8jbtxa4gxmk" path="res://icon.svg" id="2_7v0y0"]
 [ext_resource type="FontFile" uid="uid://0mou7hqwgtb4" path="res://Assets/UI/UIFont.ttf" id="3_qa65c"]
 
 [node name="ItemSlot" type="Node2D"]
@@ -21,7 +20,6 @@ offset_top = 937.0
 offset_right = 999.0
 offset_bottom = 1065.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_7v0y0")
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
@@ -47,6 +45,5 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_qa65c")
 theme_override_font_sizes/font_size = 25
-text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
