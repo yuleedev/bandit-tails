@@ -2,6 +2,8 @@ extends Node2D
 
 var row_size = 2
 var items = []
+var total_value = 0
+var temp_value = 0
 
 const ITEM_SLOT = preload("res://item_slot.tscn")
 
@@ -14,7 +16,7 @@ func _ready() -> void:
 		instance.slot_num = x
 		add_child(instance)
 		items[x] = instance
-	items[1] = "je"
+
 	
 func prep_item(res):
 	var item = {}
@@ -22,13 +24,13 @@ func prep_item(res):
 	item['inv_icon'] = res.inv_icon
 	item['item_path'] = res.item_path
 	item['value'] = res.value
-	
+	temp_value = res.value
 	return item
 	
 func add_item(item):
 	for x in range(row_size):
-		var slot = items[x]
-		
+		var slot = items[x] 
 		if slot.add_item(item):
+			total_value += temp_value
+			$Label.text = "Total Value: " + str(total_value)
 			return true
-	
