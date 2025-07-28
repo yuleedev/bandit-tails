@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://bvpa01djx1mc4" path="res://Levels/main.gd" id="1_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://ct2v1laxjo67f" path="res://Assets/Mole/mole.tscn" id="2_hbaan"]
 [ext_resource type="PackedScene" uid="uid://bwydvcfxfddhp" path="res://Assets/Props/Loot/loot.tscn" id="3_lwy2l"]
-[ext_resource type="Script" uid="uid://2upj8o4sck2s" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
+[ext_resource type="Script" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
-[ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
-[ext_resource type="PackedScene" uid="uid://cri8b0fot7bju" path="res://Levels/nowalls_coll.glb" id="9_mykqc"]
-[ext_resource type="PackedScene" uid="uid://cbvne5fpxlq0t" path="res://key.tscn" id="9_u05pv"]
+[ext_resource type="PackedScene" uid="uid://bbf4db1nxi076" path="res://newmap.glb" id="7_ovrsl"]
+[ext_resource type="PackedScene" path="res://hud.tscn" id="9_he5fp"]
+[ext_resource type="PackedScene" path="res://key.tscn" id="9_u05pv"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
 closed = true
@@ -20,9 +20,8 @@ point_count = 4
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_ovrsl")
-
-[node name="Mole" parent="." instance=ExtResource("2_hbaan")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, 10)
+PLAYER_1 = ExtResource("2_hbaan")
+PLAYER_2 = ExtResource("2_hbaan")
 
 [node name="Loot" parent="." instance=ExtResource("3_lwy2l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42078, 0.52094, 3.0336)
@@ -70,5 +69,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2035, 0.148306, -4.33948)
 [node name="Key" parent="." instance=ExtResource("9_u05pv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.49677, 0.934485, 4.01415)
 
-[node name="nowalls_coll" parent="." instance=ExtResource("9_mykqc")]
-transform = Transform3D(1.61144, 0, 0, 0, 1.65174, 0, 0, 0, 1.4134, -1.42137, -0.0321665, 8.45496)
+[node name="Spawner" type="MultiplayerSpawner" parent="."]
+_spawnable_scenes = PackedStringArray("uid://ct2v1laxjo67f", "uid://c1ta55yk5nxar")
+spawn_path = NodePath("..")
+spawn_limit = 2
