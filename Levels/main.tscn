@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=12 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" uid="uid://bvpa01djx1mc4" path="res://Levels/main.gd" id="1_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://ct2v1laxjo67f" path="res://Assets/Mole/mole.tscn" id="2_hbaan"]
@@ -7,8 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 [ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
-[ext_resource type="PackedScene" uid="uid://cri8b0fot7bju" path="res://Levels/nowalls_coll.glb" id="9_mykqc"]
+[ext_resource type="PackedScene" uid="uid://dp462hdrk1nlm" path="res://walls.tscn" id="9_mykqc"]
 [ext_resource type="PackedScene" uid="uid://cbvne5fpxlq0t" path="res://key.tscn" id="9_u05pv"]
+[ext_resource type="PackedScene" uid="uid://wfiv2yeh3r1h" path="res://Scripts/furniture_coll1.glb" id="10_hilkn"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
 closed = true
@@ -23,7 +24,7 @@ transform = Transform3D(0.995721, 0, 0, 0, 0.995721, 0, 0, 0, 0.995721, 0, 0, 0)
 script = ExtResource("1_ovrsl")
 
 [node name="Mole" parent="." instance=ExtResource("2_hbaan")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, 2.50722)
 
 [node name="Loot" parent="." instance=ExtResource("3_lwy2l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4689, 0.52094, 8.3919)
@@ -72,4 +73,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2035, 0.148306, -4.33948)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.49677, 0.822882, 4.86663)
 
 [node name="nowalls_coll" parent="." instance=ExtResource("9_mykqc")]
-transform = Transform3D(2.01386, 0, 0, 0, 2.08769, 0, 0, 0, 1.82924, -1.42137, -0.0321665, 8.45496)
+
+[node name="furniture_coll1" parent="." instance=ExtResource("10_hilkn")]
