@@ -34,6 +34,7 @@ graph_offset = Vector2(-65.0999, -57.9375)
 
 [node name="Raccoon" type="CharacterBody3D" groups=["player"]]
 collision_mask = 3
+safe_margin = 0.1
 script = ExtResource("1_7xmbg")
 
 [node name="Pivot" type="Node3D" parent="."]
@@ -67,6 +68,18 @@ parameters/conditions/walk = false
 
 [node name="mole_idle" parent="." instance=ExtResource("2_sykj1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Skeleton3D" parent="mole_idle/molerig" index="0"]
+bones/4/rotation = Quaternion(-0.411413, 0.0634546, -0.138598, 0.898612)
+bones/5/rotation = Quaternion(0.402188, 0.0401374, -0.0846306, 0.910753)
+bones/6/rotation = Quaternion(3.44279e-08, 0.00720831, -0.266866, 0.963707)
+bones/7/rotation = Quaternion(0.0356675, -0.000359042, -0.0412589, 0.998512)
+bones/9/rotation = Quaternion(-0.411413, -0.0634546, 0.138598, 0.898612)
+bones/10/rotation = Quaternion(0.402188, -0.0401374, 0.0846307, 0.910753)
+bones/11/rotation = Quaternion(3.58775e-08, -0.00720831, 0.266866, 0.963707)
+bones/12/rotation = Quaternion(0.0356675, 0.000359043, 0.0412589, 0.998512)
+bones/14/position = Vector3(0.257162, 0.197217, 0)
+bones/14/rotation = Quaternion(1, 0, 0, 0)
 
 [node name="AnimationPlayer" parent="mole_idle" index="5"]
 autoplay = ""
