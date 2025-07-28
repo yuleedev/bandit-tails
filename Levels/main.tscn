@@ -25,13 +25,13 @@ script = ExtResource("1_ovrsl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 1, 10)
 
 [node name="Loot" parent="." instance=ExtResource("3_lwy2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42078, 0.52094, 3.0336)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4689, 0.52094, 8.3919)
 
 [node name="Door" parent="." instance=ExtResource("4_nj2yk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.67418, -0.0187825, -4.88266)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0015, -0.0187825, 2.95682)
 
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.56288, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01161, 0, 5.32817)
 curve = SubResource("Curve3D_ovrsl")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
@@ -42,7 +42,7 @@ script = ExtResource("4_7pswh")
 transform = Transform3D(-0.999184, 0.016399, -0.0369301, 0.0156731, 0.99968, 0.0198608, 0.0372439, 0.0192658, -0.999121, -0.878, 1, -0.789)
 
 [node name="Path3D2" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.2356, 0.707349, 15.9729)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.2356, 0.707349, 26.0166)
 curve = SubResource("Curve3D_ovrsl")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
@@ -68,7 +68,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2035, 0.148306, -4.33948)
 [node name="CanvasLayer" parent="." instance=ExtResource("9_he5fp")]
 
 [node name="Key" parent="." instance=ExtResource("9_u05pv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.49677, 0.934485, 4.01415)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.49677, 0.822882, 4.86663)
 
 [node name="nowalls_coll" parent="." instance=ExtResource("9_mykqc")]
-transform = Transform3D(1.61144, 0, 0, 0, 1.65174, 0, 0, 0, 1.4134, -1.42137, -0.0321665, 8.45496)
+transform = Transform3D(2.01386, 0, 0, 0, 2.08769, 0, 0, 0, 1.82924, -1.42137, -0.0321665, 8.45496)
