@@ -7,7 +7,7 @@ class_name Player
 @onready var camera: Camera3D = $Pivot/Camera
 @onready var light: SpotLight3D = $Pivot/Camera/Light
 
-@onready var mesh: MeshInstance3D = $"mole_idle4/molerig/Skeleton3D/mole body_001"
+@onready var mesh: Node3D = $mole_idle
 @onready var collider: CollisionShape3D = $Collider
 @onready var area: Area3D = $SoundArea
 @onready var sound: CollisionShape3D = $SoundArea/Collider
@@ -54,7 +54,6 @@ func _on_timer_timeout() -> void:
 	can_move = true
 	#print("you're free!")
 	
-
 func _update_timers(delta: float) -> void:
 	if cd > 0:
 		cd -= delta
@@ -65,6 +64,9 @@ func _rotate_camera() -> void:
 	camera.rotation.x = clamp(camera.rotation.x, -PI/2 + Math.NONZERO, PI/3)
 	
 	mouse_motion = Vector2.ZERO
+	
+	mesh.rotation.y = $Pivot.rotation.y
+	
 
 func _apply_movement(delta) -> void:
 	if can_move:
@@ -77,7 +79,6 @@ func _apply_movement(delta) -> void:
 		
 		$AnimationTree.set("parameters/conditions/idle", input_dir == Vector2.ZERO)
 		$AnimationTree.set("parameters/conditions/walk", input_dir != Vector2.ZERO)
-	
 
 func _manage_interactable() -> void:
 	if interactable:
@@ -90,8 +91,6 @@ func _manage_interactable() -> void:
 			GM.keys += 1
 			interactable.pick_up()
 			
-	
-
 func _manage_skill() -> void:
 	if Input.is_action_just_pressed("skill") and cd <= 0:
 		use_skill()
@@ -119,7 +118,6 @@ func _physics_process(_delta: float) -> void:
 func _on_body_entered(body):
 	if body.is_in_group("loot") or body.is_in_group("door"):
 		interactable = body
-
 
 func _on_body_exited(body):
 	if interactable == body:
