@@ -16,13 +16,13 @@ func _ready() -> void:
 		items[x] = instance
 	items[1] = "je"
 	
-func prep_item(new_item):
+func prep_item(res):
 	var item = {}
+	item['name'] = res.name
+	item['inv_icon'] = res.inv_icon
+	item['item_path'] = res.item_path
+	item['value'] = res.value
 	
-	item['name'] = new_item.res.name
-	item['inv_icon'] = new_item.res.inv_icon
-	item['item_path'] = new_item.res.item_path
-	item['value'] = new_item.res.value
 	return item
 	
 func add_item(item):
@@ -31,4 +31,4 @@ func add_item(item):
 		
 		if slot.add_item(item):
 			return true
-	return false
+	

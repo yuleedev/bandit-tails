@@ -1,7 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwydvcfxfddhp"]
+[gd_scene load_steps=9 format=3 uid="uid://bwydvcfxfddhp"]
 
 [ext_resource type="Script" uid="uid://ca0qt6j6uxdsp" path="res://Scripts/treasure.gd" id="1_582qy"]
+[ext_resource type="Texture2D" uid="uid://y1ggum0uihox" path="res://Assets/UI/ItemIcons/tempvase.png" id="2_dsxso"]
 [ext_resource type="PackedScene" uid="uid://bunav6f5myq81" path="res://gui.tscn" id="2_fybsu"]
+[ext_resource type="Script" uid="uid://bj118do4lnnc6" path="res://Scripts/item.gd" id="3_nx1s7"]
+
+[sub_resource type="Resource" id="Resource_4fahp"]
+script = ExtResource("3_nx1s7")
+name = "Vase"
+type = "Vase"
+inv_icon = ExtResource("2_dsxso")
+value = 15
+item_path = ""
+metadata/_custom_type_script = "uid://bj118do4lnnc6"
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qqa8l"]
 
@@ -12,6 +23,7 @@ radius = 1.0
 
 [node name="Loot" type="Node3D" groups=["loot"]]
 script = ExtResource("1_582qy")
+item_res = SubResource("Resource_4fahp")
 
 [node name="Body" type="StaticBody3D" parent="."]
 

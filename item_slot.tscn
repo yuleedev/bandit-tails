@@ -14,9 +14,12 @@ position = Vector2(960, 960)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_i83bl")
 
-[node name="Item Icon" type="Sprite2D" parent="."]
+[node name="ItemIcon" type="TextureRect" parent="."]
 z_index = 1
-position = Vector2(903, 969)
+offset_left = 871.0
+offset_top = 937.0
+offset_right = 999.0
+offset_bottom = 1065.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_7v0y0")
 

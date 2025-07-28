@@ -18,12 +18,15 @@ script = ExtResource("1_r3f2b")
 item_res = SubResource("Resource_hji1t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(570, 518)
+position = Vector2(33.575, 33.1125)
+scale = Vector2(0.075, 0.075)
 texture = ExtResource("2_pf78o")
 
 [node name="Button" type="Button" parent="."]
+offset_top = 1.0
 offset_right = 8.0
-offset_bottom = 8.0
+offset_bottom = 9.0
+scale = Vector2(8, 8)
 
 [node name="Timer" type="Timer" parent="."]
 process_callback = 0

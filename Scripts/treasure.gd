@@ -5,7 +5,7 @@ var p_ref = null
 @onready var progress = $Body/WeightBar/Sprite3D/SubViewport/ProgressBar
 
 @export var item_res : Item
-@onready var inv = get_tree().root.get_node("res://hud.tscn/Inventory")
+@onready var inv = get_node("/root/Main/CanvasLayer/Inventory")
 
 func _ready():
 	pass
@@ -33,5 +33,5 @@ func pick_up():
 	if progress.value < 100:
 		progress.value += 50 * get_process_delta_time()  
 	else:
-		if inv.add_item(inv.prep_item(self)):
+		if inv.add_item(inv.prep_item(item_res)):
 			queue_free()
