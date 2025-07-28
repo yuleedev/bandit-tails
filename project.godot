@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="heist game"
-run/main_scene="uid://cgfjeqjst7bcx"
+run/main_scene="uid://rcpyya18rmci"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 GM="*res://Scripts/gm.gd"
 Math="*res://Scripts/math.gd"
-SM="*res://Scripts/sm.gd"
 
 [display]
 
