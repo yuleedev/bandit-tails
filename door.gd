@@ -9,13 +9,13 @@ func _ready():
 	#$Model/Area.body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
-	if body.name == "Mole":
+	if body.name == "Mole" || body.name == "Raccoon":
 		body.interactable = self
 		p_near = true
 		p_ref = body
 	
 func _on_body_exited(body):
-	if body.name == "Mole":
+	if body.name == "Mole" || body.name == "Raccoon":
 		if body.interactable == self:
 			body.interactable = null
 			p_near = false

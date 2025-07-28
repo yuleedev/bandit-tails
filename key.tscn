@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbvne5fpxlq0t"]
+
+[ext_resource type="Script" uid="uid://cnutf3hodhg6v" path="res://key.gd" id="1_p0yg6"]
+[ext_resource type="PackedScene" uid="uid://cybe76ir5ob5u" path="res://Assets/Props/key.glb" id="1_up4cr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_up4cr"]
+size = Vector3(2, 5, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p0yg6"]
+size = Vector3(7, 6, 6)
+
+[node name="Key" type="Node3D" groups=["key"]]
+script = ExtResource("1_p0yg6")
+
+[node name="Model" parent="." instance=ExtResource("1_up4cr")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="Collider" type="CollisionShape3D" parent="Model"]
+transform = Transform3D(-0.0276774, 0.999617, 0, -0.999617, -0.0276774, 0, 0, 0, 1, 1.48399, 0, 0)
+shape = SubResource("BoxShape3D_up4cr")
+
+[node name="Area" type="Area3D" parent="Model"]
+
+[node name="Collider" type="CollisionShape3D" parent="Model/Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+shape = SubResource("BoxShape3D_p0yg6")
+
+[connection signal="body_entered" from="Model/Area" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Model/Area" to="." method="_on_body_exited"]

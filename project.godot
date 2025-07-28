@@ -37,6 +37,7 @@ project/assembly_name="placeholder"
 loot=""
 player=""
 door=""
+key=""
 
 [input]
 
