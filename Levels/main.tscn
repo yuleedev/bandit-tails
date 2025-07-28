@@ -20,8 +20,7 @@ point_count = 4
 script = ExtResource("1_ovrsl")
 
 [node name="Mole" parent="." instance=ExtResource("2_hbaan")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5.70177)
-safe_margin = 0.1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="Loot" parent="." instance=ExtResource("3_lwy2l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42078, 0.52094, 3.0336)
@@ -63,11 +62,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6046, 0.409405, 2.02124)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2035, 0.148306, -4.33948)
 
 [node name="newmap" parent="." instance=ExtResource("7_ovrsl")]
-transform = Transform3D(1.54256, 0, 0, 0, 2.88543, 0, 0, 0, 1.83379, 2.61268, 0.0842686, -2.25814)
+transform = Transform3D(1.54256, 0, 0, 0, 2.88543, 0, 0, 0, 1.83379, 0, 0, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(60.606, 0, 0, 0, -0.02, 0, 0, 0, 53.856, -0.334768, 0, -1.57124)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
-size = Vector3(1.5484, 1, 1.8645)
+size = Vector3(100, 1, 100)
 
 [node name="testNode" type="Node3D" parent="."]
