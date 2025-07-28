@@ -24,6 +24,8 @@ Math="*res://Scripts/math.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/window_width_override=1000
+window/size/window_height_override=550
 window/stretch/mode="canvas_items"
 
 [dotnet]
