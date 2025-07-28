@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=10 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" path="res://Levels/main.gd" id="1_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://ct2v1laxjo67f" path="res://Assets/Mole/mole.tscn" id="2_hbaan"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 [ext_resource type="PackedScene" uid="uid://bbf4db1nxi076" path="res://newmap.glb" id="7_ovrsl"]
+[ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
 closed = true
@@ -71,3 +72,5 @@ use_collision = true
 size = Vector3(1.5484, 1, 1.8645)
 
 [node name="testNode" type="Node3D" parent="."]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("9_he5fp")]
