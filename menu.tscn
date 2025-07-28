@@ -54,3 +54,5 @@ offset_right = 1966.0
 offset_bottom = 1077.0
 mouse_filter = 2
 texture = ExtResource("4_ecwwl")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
