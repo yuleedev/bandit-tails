@@ -68,18 +68,16 @@ parameters/conditions/walk = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="Skeleton3D" parent="mole_idle/molerig" index="0"]
-bones/0/position = Vector3(0, 0.250443, 0)
-bones/4/rotation = Quaternion(-0.410271, 0.0156817, -0.0761666, 0.908642)
-bones/5/rotation = Quaternion(0.427762, 0.0492757, -0.1301, 0.893121)
-bones/6/rotation = Quaternion(-0.050222, 0.0405206, -0.288098, 0.955424)
-bones/9/rotation = Quaternion(-0.415896, -0.0307446, 0.0619308, 0.90678)
-bones/10/rotation = Quaternion(0.441632, -0.0381329, 0.145692, 0.884466)
-bones/11/rotation = Quaternion(0.0254253, 0.00903241, 0.242119, 0.969871)
-bones/12/rotation = Quaternion(0.0897582, 0.0545873, -0.0672734, 0.992189)
-bones/13/position = Vector3(-0.257162, 0.198331, -0.00315211)
-bones/13/rotation = Quaternion(0.999988, 0, 0, 0.00496746)
-bones/14/position = Vector3(0.257162, 0.275248, 0.0930143)
-bones/14/rotation = Quaternion(0.996481, 1.10333e-17, -8.27451e-19, 0.0838196)
+bones/4/rotation = Quaternion(-0.411413, 0.0634546, -0.138598, 0.898612)
+bones/5/rotation = Quaternion(0.402188, 0.0401374, -0.0846306, 0.910753)
+bones/6/rotation = Quaternion(3.44279e-08, 0.00720831, -0.266866, 0.963707)
+bones/7/rotation = Quaternion(0.0356675, -0.000359042, -0.0412589, 0.998512)
+bones/9/rotation = Quaternion(-0.411413, -0.0634546, 0.138598, 0.898612)
+bones/10/rotation = Quaternion(0.402188, -0.0401374, 0.0846307, 0.910753)
+bones/11/rotation = Quaternion(3.58775e-08, -0.00720831, 0.266866, 0.963707)
+bones/12/rotation = Quaternion(0.0356675, 0.000359043, 0.0412589, 0.998512)
+bones/14/position = Vector3(0.257162, 0.197217, 0)
+bones/14/rotation = Quaternion(1, 0, 0, 0)
 
 [node name="AnimationPlayer" parent="mole_idle" index="5"]
 autoplay = ""

@@ -19,6 +19,7 @@ _data = {
 point_count = 4
 
 [node name="Main" type="Node3D"]
+transform = Transform3D(0.995721, 0, 0, 0, 0.995721, 0, 0, 0, 0.995721, 0, 0, 0)
 script = ExtResource("1_ovrsl")
 
 [node name="Mole" parent="." instance=ExtResource("2_hbaan")]
