@@ -36,7 +36,7 @@ func pick_up():
 		queue_free()
 
 func _on_timer_timeout() -> void:
-	$Button.disable = false
+	$Button.disabled = false
 
 
 func _on_button_pressed() -> void:
