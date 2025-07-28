@@ -29,7 +29,6 @@ var mouse_motion: Vector2
 var cd: float
 
 var interactable: Node3D = null
-var keys = 0
 
 ## ================ [ HELPERS ] ================ ##
 
@@ -55,7 +54,6 @@ func _on_timer_timeout() -> void:
 	can_move = true
 	#print("you're free!")
 	
-
 func _update_timers(delta: float) -> void:
 	if cd > 0:
 		cd -= delta
@@ -78,21 +76,14 @@ func _apply_movement(delta) -> void:
 		
 		$AnimationTree.set("parameters/conditions/idle", input_dir == Vector2.ZERO)
 		$AnimationTree.set("parameters/conditions/walk", input_dir != Vector2.ZERO)
-	
 
 func _manage_interactable() -> void:
 	if interactable:
 		if interactable.is_in_group("loot") and Input.is_action_pressed("interact"):
 			interactable.pick_up()
-		elif interactable.is_in_group("door") and keys > 0 and Input.is_action_just_pressed("interact"):
+		elif interactable.is_in_group("door") and Input.is_action_just_pressed("interact"):
 			interactable.open()
-			keys -= 1
-		elif interactable.is_in_group("key") and Input.is_action_just_pressed("interact"):
-			interactable.pick_up()
-			keys += 1
 			
-	
-
 func _manage_skill() -> void:
 	if Input.is_action_just_pressed("skill") and cd <= 0:
 		use_skill()
@@ -120,7 +111,6 @@ func _physics_process(_delta: float) -> void:
 func _on_body_entered(body):
 	if body.is_in_group("loot") or body.is_in_group("door"):
 		interactable = body
-
 
 func _on_body_exited(body):
 	if interactable == body:
