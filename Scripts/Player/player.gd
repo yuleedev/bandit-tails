@@ -7,7 +7,7 @@ class_name Player
 @onready var camera: Camera3D = $Pivot/Camera
 @onready var light: SpotLight3D = $Pivot/Camera/Light
 
-@onready var mesh: MeshInstance3D = $"mole_idle4/molerig/Skeleton3D/mole body_001"
+@onready var mesh: Node3D = $mole_idle
 @onready var collider: CollisionShape3D = $Collider
 @onready var area: Area3D = $SoundArea
 @onready var sound: CollisionShape3D = $SoundArea/Collider
@@ -64,6 +64,9 @@ func _rotate_camera() -> void:
 	camera.rotation.x = clamp(camera.rotation.x, -PI/2 + Math.NONZERO, PI/3)
 	
 	mouse_motion = Vector2.ZERO
+	
+	mesh.rotation.y = $Pivot.rotation.y
+	
 
 func _apply_movement(delta) -> void:
 	if can_move:
