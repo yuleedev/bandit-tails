@@ -32,7 +32,7 @@ states/idle_001/position = Vector2(341, 100.312)
 transitions = ["Start", "idle_001", SubResource("AnimationNodeStateMachineTransition_ea6d0"), "idle_001", "Walk_Cycle", SubResource("AnimationNodeStateMachineTransition_fmo36"), "Walk_Cycle", "idle_001", SubResource("AnimationNodeStateMachineTransition_sykj1")]
 graph_offset = Vector2(-65.0999, -57.9375)
 
-[node name="Mole" type="CharacterBody3D"]
+[node name="Mole" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_swydg")
 
 [node name="Pivot" type="Node3D" parent="."]
@@ -52,7 +52,7 @@ shape = SubResource("CapsuleShape3D_axkot")
 [node name="SoundArea" type="Area3D" parent="." groups=["player"]]
 collision_mask = 3
 
-[node name="Collider" type="CollisionShape3D" parent="SoundArea"]
+[node name="Collider" type="CollisionShape3D" parent="SoundArea" groups=["player"]]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("CylinderShape3D_7b7p1")
 disabled = true
