@@ -29,7 +29,6 @@ var mouse_motion: Vector2
 var cd: float
 
 var interactable: Node3D = null
-var keys = 0
 
 ## ================ [ HELPERS ] ================ ##
 
@@ -84,12 +83,12 @@ func _manage_interactable() -> void:
 	if interactable:
 		if interactable.is_in_group("loot") and Input.is_action_pressed("interact"):
 			interactable.pick_up()
-		elif interactable.is_in_group("door") and keys > 0 and Input.is_action_just_pressed("interact"):
+		elif interactable.is_in_group("door") and GM.keys > 0 and Input.is_action_just_pressed("interact"):
+			GM.keys -= 1
 			interactable.open()
-			keys -= 1
 		elif interactable.is_in_group("key") and Input.is_action_just_pressed("interact"):
+			GM.keys += 1
 			interactable.pick_up()
-			keys += 1
 			
 	
 

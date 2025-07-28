@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cybe76ir5ob5u" path="res://Assets/Props/key.glb" id="1_up4cr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_up4cr"]
-size = Vector3(2, 5, 2)
+size = Vector3(1.75, 5, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p0yg6"]
 size = Vector3(7, 6, 6)
@@ -20,9 +20,9 @@ transform = Transform3D(-0.0276774, 0.999617, 0, -0.999617, -0.0276774, 0, 0, 0,
 shape = SubResource("BoxShape3D_up4cr")
 
 [node name="Area" type="Area3D" parent="Model"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 
 [node name="Collider" type="CollisionShape3D" parent="Model/Area"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 shape = SubResource("BoxShape3D_p0yg6")
 
 [connection signal="body_entered" from="Model/Area" to="." method="_on_body_entered"]

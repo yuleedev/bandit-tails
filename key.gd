@@ -2,6 +2,7 @@ extends Node3D
 
 var p_near = false
 var p_ref = null
+@onready var inv = get_node("/root/Main/CanvasLayer/Key")
 
 func _ready():
 	pass
@@ -25,4 +26,5 @@ func _process(delta):
 	pass
 	
 func pick_up():
+	inv.add_item()
 	queue_free()  

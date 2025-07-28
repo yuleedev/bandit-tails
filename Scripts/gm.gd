@@ -10,6 +10,7 @@ var round_dur: float = 0
 
 var game_paused: bool = true
 var mouse_captured: bool = false
+var keys = 0
 
 ## ================ [ METHODS ] ================ ##
 
