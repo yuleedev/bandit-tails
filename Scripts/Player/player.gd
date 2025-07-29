@@ -102,15 +102,15 @@ func _ready() -> void:
 	area.body_entered.connect(_on_body_entered)
 	area.body_entered.connect(_on_body_exited)
 	
-	if is_multiplayer_authority():
-		camera.make_current()
-	else:
+	if not is_multiplayer_authority():
+		print(get_multiplayer_authority())
 		camera.queue_free()
 		
 func _process(delta: float) -> void:
 	_update_timers(delta)
 	
-	_rotate_camera()
+	if is_multiplayer_authority():
+		_rotate_camera()
 	_apply_movement(delta)
 	
 	_manage_interactable()

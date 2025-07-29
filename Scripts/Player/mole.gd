@@ -12,6 +12,7 @@ var dig_timer: Timer
 ## ================ [ PLAYER ] ================ ##
 
 func _ready():
+	super._ready()
 	dig_timer = Timer.new()
 	dig_timer.one_shot = true
 	dig_timer.wait_time = DIG_DURATION
