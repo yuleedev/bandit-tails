@@ -1,4 +1,4 @@
 extends Button
 
 func _on_pressed() -> void:
-	SM.join_game("127.0.0.1", 1234)
+	SM.join_game("169.233.113.57", 1234)
