@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kofabbl1ith1"
-path.s3tc="res://.godot/imported/FINAL90TOTAL_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_BaseColor.jpg-a0da99eefd93bf5c3404be1ca704c7be.s3tc.ctex"
+uid="uid://ctr2fy06s2kn7"
+path.s3tc="res://.godot/imported/FINAL90TOTAL_BirdNEW_bird_PBR StoA_Diffuse.png-f5664c38eb999265212140114ad54713.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ceebea6fca95f25210eaaca566137fa0"
+"md5": "5552fd3de805ffa42e776f0aebda7e6c"
 }
 
 [deps]
 
-source_file="res://FINAL90TOTAL_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_BaseColor.jpg"
-dest_files=["res://.godot/imported/FINAL90TOTAL_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_BaseColor.jpg-a0da99eefd93bf5c3404be1ca704c7be.s3tc.ctex"]
+source_file="res://Assets/Maps/FINAL90TOTAL_BirdNEW_bird_PBR StoA_Diffuse.png"
+dest_files=["res://.godot/imported/FINAL90TOTAL_BirdNEW_bird_PBR StoA_Diffuse.png-f5664c38eb999265212140114ad54713.s3tc.ctex"]
 
 [params]
 

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nqy3nbqxubww"
-path.s3tc="res://.godot/imported/FINALTOTAL_uvrugblack.jpg-3a9b54e111a19031d8aae5c77679a187.s3tc.ctex"
+uid="uid://bb8c7ae7rpj37"
+path.s3tc="res://.godot/imported/FINAL90TOTAL_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Roughness.png-4cbf9bb1984277d1f534f9bb438febb2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "ac2a757dc72354c6f47ff4a1deddc7cd"
+"md5": "6c31926edcb512b492a5b4f2ec130457"
 }
 
 [deps]
 
-source_file="res://FINALTOTAL_uvrugblack.jpg"
-dest_files=["res://.godot/imported/FINALTOTAL_uvrugblack.jpg-3a9b54e111a19031d8aae5c77679a187.s3tc.ctex"]
+source_file="res://Assets/Maps/FINAL90TOTAL_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Roughness.png"
+dest_files=["res://.godot/imported/FINAL90TOTAL_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Roughness.png-4cbf9bb1984277d1f534f9bb438febb2.s3tc.ctex"]
 
 [params]
 

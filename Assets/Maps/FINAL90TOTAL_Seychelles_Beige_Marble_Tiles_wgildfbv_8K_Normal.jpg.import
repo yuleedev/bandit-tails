@@ -3,19 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkcp1s8pwq7px"
-path.s3tc="res://.godot/imported/FINAL90TOTAL_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg-aaa9e696d5e897a031d82b4e160d083c.s3tc.ctex"
+path.s3tc="res://.godot/imported/FINAL90TOTAL_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg-f2fed83f05a51e82463e6dd5a6e95d9f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "45134213b246b67597bed75b4a5b85b0"
+"md5": "30572244f93383cc9180eeb557a57a3a"
 }
 
 [deps]
 
-source_file="res://FINAL90TOTAL_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg"
-dest_files=["res://.godot/imported/FINAL90TOTAL_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg-aaa9e696d5e897a031d82b4e160d083c.s3tc.ctex"]
+source_file="res://Assets/Maps/FINAL90TOTAL_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg"
+dest_files=["res://.godot/imported/FINAL90TOTAL_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg-f2fed83f05a51e82463e6dd5a6e95d9f.s3tc.ctex"]
 
 [params]
 

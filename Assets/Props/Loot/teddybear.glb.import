@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cp3mj7txuqyjg"
-path="res://.godot/imported/FINAL90TOTAL.glb-c9781a9cd1a052fece2296c76a031587.scn"
+uid="uid://r2my4vbdaalx"
+path="res://.godot/imported/teddybear.glb-a7da6f056ec346fdf6f1b8ea14e15d80.scn"
 
 [deps]
 
-source_file="res://FINAL90TOTAL.glb"
-dest_files=["res://.godot/imported/FINAL90TOTAL.glb-c9781a9cd1a052fece2296c76a031587.scn"]
+source_file="res://Assets/Props/Loot/teddybear.glb"
+dest_files=["res://.godot/imported/teddybear.glb-a7da6f056ec346fdf6f1b8ea14e15d80.scn"]
 
 [params]
 
