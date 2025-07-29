@@ -12,7 +12,7 @@ func _ready() -> void:
 	for x in range(row_size):
 		items.append([])
 		var instance = ITEM_SLOT.instantiate()
-		instance.global_position = Vector2(x*115, 0)
+		instance.global_position = Vector2(x*200, 0)
 		instance.slot_num = x
 		add_child(instance)
 		items[x] = instance
