@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=11 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" uid="uid://bvpa01djx1mc4" path="res://Levels/main.gd" id="1_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://ct2v1laxjo67f" path="res://Assets/Mole/mole.tscn" id="2_hbaan"]
@@ -7,9 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 [ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
-[ext_resource type="PackedScene" uid="uid://c62r70qnpuohd" path="res://Levels/FINALFINALWALLS.glb" id="9_mykqc"]
+[ext_resource type="PackedScene" uid="uid://b8er2orfbumy5" path="res://FINALTOTAL.glb" id="9_mykqc"]
 [ext_resource type="PackedScene" uid="uid://cbvne5fpxlq0t" path="res://key.tscn" id="9_u05pv"]
-[ext_resource type="PackedScene" uid="uid://bbw2h4jmt3o6f" path="res://FINALFURN.glb" id="10_hilkn"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
 closed = true
@@ -32,7 +31,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4689, 0.52094, 8.3919)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0015, -0.0187825, 2.95682)
 
 [node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01161, 0, 5.32817)
+transform = Transform3D(-0.0271714, 0, 0.999631, 0, 1, 0, -0.999631, 0, -0.0271714, 5.56408, 0, -20.7386)
 curve = SubResource("Curve3D_ovrsl")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
@@ -41,17 +40,6 @@ script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D/PathFollow3D" instance=ExtResource("5_34bfm")]
 transform = Transform3D(-0.999184, 0.016399, -0.0369301, 0.0156731, 0.99968, 0.0198608, 0.0372439, 0.0192658, -0.999121, -0.878, 1, -0.789)
-
-[node name="Path3D2" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.2356, 0.707349, 26.0166)
-curve = SubResource("Curve3D_ovrsl")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(-0.541785, 2.22336e-06, 0.840509, 0, 0.999985, -2.64526e-06, -0.840509, -1.43316e-06, -0.541785, -20.9766, -0.614322, -19.1112)
-script = ExtResource("4_7pswh")
-
-[node name="Guard" parent="Path3D2/PathFollow3D" instance=ExtResource("5_34bfm")]
-transform = Transform3D(-0.999184, 0.016399, -0.0369301, 0.0156731, 0.99968, 0.0198608, 0.0372439, 0.0192658, -0.999121, -0.877678, 0.288032, -0.788836)
 
 [node name="LootSpawns" type="Node3D" parent="."]
 
@@ -76,6 +64,4 @@ _spawnable_scenes = PackedStringArray("uid://ct2v1laxjo67f", "uid://c1ta55yk5nxa
 spawn_path = NodePath("..")
 spawn_limit = 2
 
-[node name="FINALFINALWALLS" parent="." instance=ExtResource("9_mykqc")]
-
-[node name="FINALFURN" parent="." instance=ExtResource("10_hilkn")]
+[node name="FINALTOTAL" parent="." instance=ExtResource("9_mykqc")]
