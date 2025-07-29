@@ -46,7 +46,7 @@ script = ExtResource("1_swydg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera" type="Camera3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000286579, 0.777, -0.665497)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.777, -0.65)
 
 [node name="Light" type="SpotLight3D" parent="Pivot/Camera"]
 spot_range = 100.0
