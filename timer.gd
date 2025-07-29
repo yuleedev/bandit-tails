@@ -7,7 +7,7 @@ func _process(delta: float) -> void:
 		total_time -= delta
 		var minutes = int(total_time) / 60
 		var seconds = int(total_time) % 60
-		text = "%02d %02d" % [minutes, seconds]
+		text = "%02d:%02d" % [minutes, seconds]
 	else:
-		text = "00 00"
+		text = "00:00"
 		# Optionally: call game_over() or emit_signal("time_up")
