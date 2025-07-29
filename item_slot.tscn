@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://0mou7hqwgtb4" path="res://Assets/UI/UIFont.ttf" id="3_qa65c"]
 
 [node name="ItemSlot" type="Node2D"]
+scale = Vector2(1.75, 1.75)
 script = ExtResource("1_7v0y0")
 
 [node name="InventoryBG2" type="Sprite2D" parent="."]
@@ -26,11 +27,10 @@ expand_mode = 3
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 871.0
-offset_top = 937.0
-offset_right = 879.0
-offset_bottom = 945.0
-scale = Vector2(8, 8)
+offset_left = 789.143
+offset_top = 872.0
+offset_right = 933.143
+offset_bottom = 1016.0
 
 [node name="Value" type="Label" parent="."]
 modulate = Color(0, 0, 0, 1)
