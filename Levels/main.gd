@@ -3,10 +3,10 @@ extends Node3D
 @onready var spawner: MultiplayerSpawner = $Spawner
 
 @export var PLAYER_1: PackedScene
-@export var SPAWN_1 := Vector3(-3.5, 1, 10)
+@export var SPAWN_1 := Vector3(18, 1, 1)
 
 @export var PLAYER_2: PackedScene
-@export var SPAWN_2 := Vector3(-1.5, 1, 10)
+@export var SPAWN_2 := Vector3(18, 1, 3)
 
 @onready var spawn_points = $LootSpawns.get_children()
 
