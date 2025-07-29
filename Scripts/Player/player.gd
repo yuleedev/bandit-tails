@@ -102,9 +102,11 @@ func _ready() -> void:
 	area.body_entered.connect(_on_body_entered)
 	area.body_entered.connect(_on_body_exited)
 	
-	if not is_multiplayer_authority():
+	if is_multiplayer_authority():
+		camera.make_current()
+	else:
 		camera.queue_free()
-
+		
 func _process(delta: float) -> void:
 	_update_timers(delta)
 	
