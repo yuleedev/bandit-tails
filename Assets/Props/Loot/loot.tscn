@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwydvcfxfddhp"]
+[gd_scene load_steps=10 format=3 uid="uid://bwydvcfxfddhp"]
 
 [ext_resource type="Script" uid="uid://ca0qt6j6uxdsp" path="res://Scripts/treasure.gd" id="1_582qy"]
 [ext_resource type="Texture2D" uid="uid://f7bppga75j5w" path="res://Assets/Props/Loot/teste.png" id="2_dsxso"]
@@ -21,6 +21,14 @@ metadata/_custom_type_script = "uid://bj118do4lnnc6"
 [sub_resource type="SphereShape3D" id="SphereShape3D_qqa8l"]
 radius = 1.0
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_dsxso"]
+properties/0/path = NodePath(".:visible")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:process_mode")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
 [node name="Loot" type="Node3D" groups=["loot"]]
 script = ExtResource("1_582qy")
 item_res = SubResource("Resource_4fahp")
@@ -41,6 +49,9 @@ collision_layer = 2
 [node name="Collider" type="CollisionShape3D" parent="Body/Area"]
 transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 0, 0)
 shape = SubResource("SphereShape3D_qqa8l")
+
+[node name="Syncer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_dsxso")
 
 [connection signal="body_entered" from="Body/Area" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Body/Area" to="." method="_on_body_exited"]

@@ -35,4 +35,5 @@ func pick_up():
 		progress.value += 50 * get_process_delta_time()  
 	else:
 		if inv.add_item(inv.prep_item(item_res)):
-			queue_free()
+			visible = false
+			process_mode = Node.PROCESS_MODE_DISABLED
