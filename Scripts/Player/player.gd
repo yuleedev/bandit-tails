@@ -66,7 +66,6 @@ func _rotate_camera() -> void:
 	mouse_motion = Vector2.ZERO
 	
 	mesh.rotation.y = $Pivot.rotation.y
-	
 
 func _apply_movement(delta) -> void:
 	if can_move:
@@ -102,6 +101,9 @@ func _manage_skill() -> void:
 func _ready() -> void:
 	area.body_entered.connect(_on_body_entered)
 	area.body_entered.connect(_on_body_exited)
+	
+	if not is_multiplayer_authority():
+		camera.queue_free()
 
 func _process(delta: float) -> void:
 	_update_timers(delta)
