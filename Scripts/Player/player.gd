@@ -42,7 +42,7 @@ func _punishment() -> void:
 	velocity = Vector3.ZERO
 	$AnimationTree.set("parameters/conditions/idle", true)
 	can_move = false
-	global_position = Vector3(-2.5, 1, 10)
+	global_position = Vector3(-1, 0, 6)
 	var timer := Timer.new()
 	add_child(timer)
 	timer.wait_time = 10.0
