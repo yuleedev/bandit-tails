@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 [ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
 [ext_resource type="PackedScene" uid="uid://c62r70qnpuohd" path="res://Levels/FINALFINALWALLS.glb" id="9_mykqc"]
-[ext_resource type="PackedScene" uid="uid://cbvne5fpxlq0t" path="res://key.tscn" id="9_u05pv"]
+[ext_resource type="PackedScene" path="res://key.tscn" id="9_u05pv"]
 [ext_resource type="PackedScene" uid="uid://bbw2h4jmt3o6f" path="res://FINALFURN.glb" id="10_hilkn"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
