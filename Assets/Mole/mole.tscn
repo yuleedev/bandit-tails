@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://8fhwph4bojtx" path="res://mole_idle_4.tscn" id="2_axkot"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_axkot"]
+radius = 0.68
+height = 2.55
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_7b7p1"]
 
@@ -45,7 +47,7 @@ script = ExtResource("1_swydg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera" type="Camera3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000286579, 0.777, -0.665497)
 
 [node name="Light" type="SpotLight3D" parent="Pivot/Camera"]
 spot_range = 100.0
@@ -53,6 +55,7 @@ spot_attenuation = 0.7
 spot_angle = 60.0
 
 [node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.260582, -0.00328255)
 shape = SubResource("CapsuleShape3D_axkot")
 
 [node name="SoundArea" type="Area3D" parent="." groups=["player"]]
