@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cri8b0fot7bju"
-path="res://.godot/imported/nowalls_coll.glb-014685f778cafe00a36d574a4df7c8a5.scn"
+uid="uid://c62r70qnpuohd"
+path="res://.godot/imported/FINALFINALWALLS.glb-e36490b7664844d0174836ed63e64f9b.scn"
 
 [deps]
 
-source_file="res://Levels/nowalls_coll.glb"
-dest_files=["res://.godot/imported/nowalls_coll.glb-014685f778cafe00a36d574a4df7c8a5.scn"]
+source_file="res://Levels/FINALFINALWALLS.glb"
+dest_files=["res://.godot/imported/FINALFINALWALLS.glb-e36490b7664844d0174836ed63e64f9b.scn"]
 
 [params]
 
