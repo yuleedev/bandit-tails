@@ -79,3 +79,6 @@ spawn_limit = 2
 [node name="FINALFINALWALLS" parent="." instance=ExtResource("9_mykqc")]
 
 [node name="FINALFURN" parent="." instance=ExtResource("10_hilkn")]
+
+[node name="Loot2" parent="." instance=ExtResource("3_lwy2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.28329, 0.390095, 0)
