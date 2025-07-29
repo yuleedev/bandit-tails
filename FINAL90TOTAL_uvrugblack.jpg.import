@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnk28leyrgxwv"
-path.s3tc="res://.godot/imported/FINALFINALWALLS_Wooden_Planks_vcznah3g_2K_Roughness.png-a37596540d232124e7ed57f48ac5aa4e.s3tc.ctex"
+uid="uid://diiwugqbn6xq7"
+path.s3tc="res://.godot/imported/FINAL90TOTAL_uvrugblack.jpg-426b925af0263071915feef9366489f9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f908d8515915980283c15995eacb0e3d"
+"md5": "5e1cd997724711a7be8cad9951cb0957"
 }
 
 [deps]
 
-source_file="res://Levels/FINALFINALWALLS_Wooden_Planks_vcznah3g_2K_Roughness.png"
-dest_files=["res://.godot/imported/FINALFINALWALLS_Wooden_Planks_vcznah3g_2K_Roughness.png-a37596540d232124e7ed57f48ac5aa4e.s3tc.ctex"]
+source_file="res://FINAL90TOTAL_uvrugblack.jpg"
+dest_files=["res://.godot/imported/FINAL90TOTAL_uvrugblack.jpg-426b925af0263071915feef9366489f9.s3tc.ctex"]
 
 [params]
 

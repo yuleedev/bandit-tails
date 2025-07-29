@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://da4dvq2ahty2a"]
+[gd_scene load_steps=7 format=3 uid="uid://da4dvq2ahty2a"]
 
+[ext_resource type="FontFile" uid="uid://0mou7hqwgtb4" path="res://Assets/UI/UIFont.ttf" id="1_3qva8"]
 [ext_resource type="Script" uid="uid://cd386dejxy872" path="res://Scripts/Temp/host_game.gd" id="1_34iv6"]
 [ext_resource type="Script" uid="uid://dkw4ydaao82gs" path="res://Scripts/Temp/join_game.gd" id="2_3qva8"]
 [ext_resource type="Script" uid="uid://04cjr0j7j8kr" path="res://Scripts/Temp/start_game.gd" id="3_2iwyu"]
+
+[sub_resource type="FontVariation" id="FontVariation_2iwyu"]
+base_font = ExtResource("1_3qva8")
+
+[sub_resource type="FontVariation" id="FontVariation_wnegk"]
+base_font = ExtResource("1_3qva8")
 
 [node name="HostJoin" type="Control"]
 layout_mode = 3
@@ -36,6 +43,8 @@ theme_override_constants/separation = 20
 [node name="Host" type="Button" parent="Margin/VBox"]
 custom_minimum_size = Vector2(240, 80)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_2iwyu")
 theme_override_font_sizes/font_size = 20
 text = "Host Game"
 script = ExtResource("1_34iv6")
@@ -43,6 +52,7 @@ script = ExtResource("1_34iv6")
 [node name="Join" type="Button" parent="Margin/VBox"]
 custom_minimum_size = Vector2(240, 80)
 layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_wnegk")
 theme_override_font_sizes/font_size = 20
 text = "Join Game
 "
@@ -51,6 +61,7 @@ script = ExtResource("2_3qva8")
 [node name="Start" type="Button" parent="Margin/VBox"]
 custom_minimum_size = Vector2(240, 80)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_3qva8")
 theme_override_font_sizes/font_size = 20
 text = "Start Game
 "

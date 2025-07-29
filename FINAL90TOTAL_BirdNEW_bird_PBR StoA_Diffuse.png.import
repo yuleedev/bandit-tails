@@ -2,23 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://y6eig3cg2sl5"
-path="res://.godot/imported/FINALFURN_Image.png-1af5fe90222ad6f5ee18318c95fdbde0.ctex"
+uid="uid://ctr2fy06s2kn7"
+path.s3tc="res://.godot/imported/FINAL90TOTAL_BirdNEW_bird_PBR StoA_Diffuse.png-1787894ee9ba2f3de91915f06067ade9.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
-"md5": "82fef2cc2cab57e7bca64e811245b6d0"
+"md5": "5552fd3de805ffa42e776f0aebda7e6c"
 }
 
 [deps]
 
-source_file="res://FINALFURN_Image.png"
-dest_files=["res://.godot/imported/FINALFURN_Image.png-1af5fe90222ad6f5ee18318c95fdbde0.ctex"]
+source_file="res://FINAL90TOTAL_BirdNEW_bird_PBR StoA_Diffuse.png"
+dest_files=["res://.godot/imported/FINAL90TOTAL_BirdNEW_bird_PBR StoA_Diffuse.png-1787894ee9ba2f3de91915f06067ade9.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
@@ -34,4 +35,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

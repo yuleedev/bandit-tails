@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjtwl8wvufb8p"
-path.s3tc="res://.godot/imported/FINALFURN_Old_Dusty_Bookshelf_Mat_BaseColor.jpg-cc2c49718d7618a58dc99fe9a28a4eb4.s3tc.ctex"
+uid="uid://dyjbi31hciwlb"
+path.s3tc="res://.godot/imported/FINAL90TOTAL_redblueruguv.jpg-785aef306a566e6769f26c71d9804a18.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d7dfc89e5ac3f986affc6b511f24c70f"
+"md5": "5f535bacd16329235576c2651ee1f5dc"
 }
 
 [deps]
 
-source_file="res://FINALFURN_Old_Dusty_Bookshelf_Mat_BaseColor.jpg"
-dest_files=["res://.godot/imported/FINALFURN_Old_Dusty_Bookshelf_Mat_BaseColor.jpg-cc2c49718d7618a58dc99fe9a28a4eb4.s3tc.ctex"]
+source_file="res://FINAL90TOTAL_redblueruguv.jpg"
+dest_files=["res://.godot/imported/FINAL90TOTAL_redblueruguv.jpg-785aef306a566e6769f26c71d9804a18.s3tc.ctex"]
 
 [params]
 
