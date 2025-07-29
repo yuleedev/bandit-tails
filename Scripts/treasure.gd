@@ -13,14 +13,13 @@ func _ready():
 	#$Body/Area.body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
-	print("body name: " + body.name)
-	if body.name == "1" || body.name == "2":
+	if body.name == "1" || body.name == GM.p2_id:
 		body.interactable = self
 		p_near = true
 		p_ref = body
 
 func _on_body_exited(body):
-	if body.name == "1" || body.name == "2":
+	if body.name == "1" || body.name == GM.p2_id:
 		if body.interactable == self:
 			body.interactable = null
 			progress.value = 0
