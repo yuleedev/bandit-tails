@@ -10,13 +10,13 @@ func _ready():
 	#$Model/Area.body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
-	if body.name == "1" || body.name == GM.p2_id:
+	if body.name == "1" || body.name == str(GM.p2_id):
 		body.interactable = self
 		p_near = true
 		p_ref = body
 	
 func _on_body_exited(body):
-	if body.name == "1" || body.name == GM.p2_id:
+	if body.name == "1" || body.name == str(GM.p2_id):
 		if body.interactable == self:
 			body.interactable = null
 			p_near = false
