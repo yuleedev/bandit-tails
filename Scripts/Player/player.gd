@@ -77,8 +77,8 @@ func _apply_movement(delta) -> void:
 		
 		velocity = velocity.move_toward(move_dir * MOVE_SPEED, ACCELERATION * delta)
 		
-		$AnimationTree.set("parameters/conditions/idle", input_dir == Vector2.ZERO)
-		$AnimationTree.set("parameters/conditions/walk", input_dir != Vector2.ZERO)
+		$AnimationTree.set("parameters/conditions/idle", move_dir.length_squared() < 0.01)
+		$AnimationTree.set("parameters/conditions/walk", move_dir.length_squared() >= 0.01)
 
 func _manage_interactable() -> void:
 	if interactable:
