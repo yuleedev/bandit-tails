@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cieudsxv4021r"
-path.s3tc="res://.godot/imported/FINALTOTAL_redblueruguv.jpg-36aea9e5214aafad8f6658c8ce6cda52.s3tc.ctex"
+uid="uid://cfbdsm335sijx"
+path.s3tc="res://.godot/imported/FINAL90TOTAL_Wooden_Planks_vcznah3g_2K_BaseColor.jpg-5ed49f8cc0d05334f739f57d7b99d977.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "8e5dfca3606f32b9b5666560ce1010f0"
+"md5": "e2e393fe92f541c9279e8d4d75da08de"
 }
 
 [deps]
 
-source_file="res://FINALTOTAL_redblueruguv.jpg"
-dest_files=["res://.godot/imported/FINALTOTAL_redblueruguv.jpg-36aea9e5214aafad8f6658c8ce6cda52.s3tc.ctex"]
+source_file="res://Assets/Maps/FINAL90TOTAL_Wooden_Planks_vcznah3g_2K_BaseColor.jpg"
+dest_files=["res://.godot/imported/FINAL90TOTAL_Wooden_Planks_vcznah3g_2K_BaseColor.jpg-5ed49f8cc0d05334f739f57d7b99d977.s3tc.ctex"]
 
 [params]
 

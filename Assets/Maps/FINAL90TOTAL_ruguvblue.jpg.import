@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy3bfqhkcm73j"
-path.s3tc="res://.godot/imported/FINALTOTAL_ruguvblue.jpg-69490318dd164f871f69d8232c818675.s3tc.ctex"
+uid="uid://cnkp0ry3nhlxq"
+path.s3tc="res://.godot/imported/FINAL90TOTAL_ruguvblue.jpg-970d5627362cee0c0b24246abf36c565.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://FINALTOTAL_ruguvblue.jpg"
-dest_files=["res://.godot/imported/FINALTOTAL_ruguvblue.jpg-69490318dd164f871f69d8232c818675.s3tc.ctex"]
+source_file="res://Assets/Maps/FINAL90TOTAL_ruguvblue.jpg"
+dest_files=["res://.godot/imported/FINAL90TOTAL_ruguvblue.jpg-970d5627362cee0c0b24246abf36c565.s3tc.ctex"]
 
 [params]
 

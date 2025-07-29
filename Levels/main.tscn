@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=14 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" uid="uid://bvpa01djx1mc4" path="res://Levels/main.gd" id="1_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://ct2v1laxjo67f" path="res://Assets/Mole/mole.tscn" id="2_hbaan"]
@@ -7,8 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 [ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
-[ext_resource type="PackedScene" uid="uid://b8er2orfbumy5" path="res://FINALTOTAL.glb" id="9_mykqc"]
+[ext_resource type="PackedScene" uid="uid://cp3mj7txuqyjg" path="res://Assets/Maps/FINAL90TOTAL.glb" id="9_mykqc"]
 [ext_resource type="PackedScene" uid="uid://cbvne5fpxlq0t" path="res://key.tscn" id="9_u05pv"]
+[ext_resource type="PackedScene" uid="uid://dorgr2dm2tj33" path="res://Assets/Props/candleA.glb" id="10_hilkn"]
+[ext_resource type="PackedScene" uid="uid://cwd151g31s48h" path="res://Assets/Props/candleB.glb" id="11_5mxy1"]
+[ext_resource type="PackedScene" uid="uid://cxjcllcih7dt0" path="res://Assets/Props/candleC.glb" id="12_3lhg3"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
 closed = true
@@ -64,4 +67,25 @@ _spawnable_scenes = PackedStringArray("uid://ct2v1laxjo67f", "uid://c1ta55yk5nxa
 spawn_path = NodePath("..")
 spawn_limit = 2
 
-[node name="FINALTOTAL" parent="." instance=ExtResource("9_mykqc")]
+[node name="FINAL90TOTAL" parent="." instance=ExtResource("9_mykqc")]
+
+[node name="candleA" parent="." instance=ExtResource("10_hilkn")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -6.1561, 0.908768, -8.91168)
+
+[node name="candleB" parent="." instance=ExtResource("11_5mxy1")]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.233329, 0.239914, 0.0558535)
+
+[node name="candleC" parent="." instance=ExtResource("12_3lhg3")]
+transform = Transform3D(-0.2, 0, -3.01992e-08, 0, 0.2, 0, 3.01992e-08, 0, -0.2, 9.00129, 1.62117, 6.65854)
+
+[node name="candleC4" parent="." instance=ExtResource("12_3lhg3")]
+transform = Transform3D(2.38498e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, 2.38498e-09, 19.3223, 0.593976, 3.33278)
+
+[node name="candleC5" parent="." instance=ExtResource("12_3lhg3")]
+transform = Transform3D(2.38498e-09, 0, -0.2, 0, 0.2, 0, 0.2, 0, 2.38498e-09, 19.3223, 0.593976, 0.747148)
+
+[node name="candleC2" parent="." instance=ExtResource("12_3lhg3")]
+transform = Transform3D(-0.2, 0, -3.01992e-08, 0, 0.2, 0, 3.01992e-08, 0, -0.2, 0.386779, 1.62117, 6.65854)
+
+[node name="candleC3" parent="." instance=ExtResource("12_3lhg3")]
+transform = Transform3D(-0.2, 0, -3.01992e-08, 0, 0.2, 0, 3.01992e-08, 0, -0.2, -3.63041, 1.62117, 6.65854)

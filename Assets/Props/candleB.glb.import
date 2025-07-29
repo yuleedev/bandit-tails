@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b8er2orfbumy5"
-path="res://.godot/imported/FINALTOTAL.glb-db7bc0c4fc2195bfc0abc5a041841952.scn"
+uid="uid://cwd151g31s48h"
+path="res://.godot/imported/candleB.glb-c9d5659cd6e4c1fdb51032ad1eb4210b.scn"
 
 [deps]
 
-source_file="res://FINALTOTAL.glb"
-dest_files=["res://.godot/imported/FINALTOTAL.glb-db7bc0c4fc2195bfc0abc5a041841952.scn"]
+source_file="res://Assets/Props/candleB.glb"
+dest_files=["res://.godot/imported/candleB.glb-c9d5659cd6e4c1fdb51032ad1eb4210b.scn"]
 
 [params]
 

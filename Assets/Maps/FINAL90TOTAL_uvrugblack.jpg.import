@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyjbi31hciwlb"
-path.s3tc="res://.godot/imported/FINAL90TOTAL_redblueruguv.jpg-785aef306a566e6769f26c71d9804a18.s3tc.ctex"
+uid="uid://diiwugqbn6xq7"
+path.s3tc="res://.godot/imported/FINAL90TOTAL_uvrugblack.jpg-853ba501c1d85ab66b9baa333e2309cd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "5f535bacd16329235576c2651ee1f5dc"
+"md5": "ac2a757dc72354c6f47ff4a1deddc7cd"
 }
 
 [deps]
 
-source_file="res://FINAL90TOTAL_redblueruguv.jpg"
-dest_files=["res://.godot/imported/FINAL90TOTAL_redblueruguv.jpg-785aef306a566e6769f26c71d9804a18.s3tc.ctex"]
+source_file="res://Assets/Maps/FINAL90TOTAL_uvrugblack.jpg"
+dest_files=["res://.godot/imported/FINAL90TOTAL_uvrugblack.jpg-853ba501c1d85ab66b9baa333e2309cd.s3tc.ctex"]
 
 [params]
 
