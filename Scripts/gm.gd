@@ -12,12 +12,19 @@ var game_paused: bool = true
 var mouse_captured: bool = false
 var keys = 0
 
+var p1_id: int = 1
+var p2_id: int
+
 ## ================ [ METHODS ] ================ ##
 
+@rpc("call_local")
+func start_game() -> void:
+	get_tree().change_scene_to_file("res://Levels/main.tscn")
+
+func end_game() -> void:
+	get_tree().change_scene_to_file("res://Levels/Menus/hostjoin.tscn")
+
 func new_round() -> void:
-	var player: CharacterBody3D = get_tree().current_scene.get_child(0)
-	player.position = Vector3(-2.5, 1, 10)
-	
 	round += 1
 	round_dur = ROUND_DURATION
 	game_paused = false
@@ -27,18 +34,15 @@ func end_round() -> void:
 	print("round end")
 	# this is where i would switch to between rounds screen but that doesnt exist
 
-func _capture_mouse() -> void:
+func capture_mouse() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	mouse_captured = true
 
-func _release_mouse() -> void:
+func release_mouse() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	mouse_captured = false
 
 ## ================ [ GODOT ] ================ ##
-
-func _ready() -> void:
-	_capture_mouse()
 
 func _process(delta: float) -> void:
 	if not game_paused:
@@ -50,6 +54,6 @@ func _process(delta: float) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action("escape") and event.is_pressed():
 		if mouse_captured:
-			_release_mouse()
+			release_mouse()
 		else:
-			_capture_mouse()
+			capture_mouse()

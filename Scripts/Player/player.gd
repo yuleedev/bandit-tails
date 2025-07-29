@@ -23,7 +23,7 @@ class_name Player
 @export var COOLDOWN: float = 3
 
 var input_dir: Vector2
-var move_dir: Vector3
+@export var move_dir: Vector3
 var mouse_motion: Vector2
 
 var cd: float
@@ -70,10 +70,11 @@ func _rotate_camera() -> void:
 
 func _apply_movement(delta) -> void:
 	if can_move:
-		input_dir = Input.get_vector("left", "right", "up", "down")
-		move_dir = (
-			pivot.transform.basis * Math.to_3d(input_dir)
-		).normalized()
+		if is_multiplayer_authority():
+			input_dir = Input.get_vector("left", "right", "up", "down")
+			move_dir = (
+				pivot.transform.basis * Math.to_3d(input_dir)
+			).normalized()
 		
 		velocity = velocity.move_toward(move_dir * MOVE_SPEED, ACCELERATION * delta)
 		
