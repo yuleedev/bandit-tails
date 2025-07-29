@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpy2wkbjjg6r6"
-path.s3tc="res://.godot/imported/furniture_coll1_Old_Dusty_Bookshelf_Mat_BaseColor.jpg-974c1fba95d7f27c499c9c2bcb21d151.s3tc.ctex"
+uid="uid://bnk28leyrgxwv"
+path.s3tc="res://.godot/imported/FINALFINALWALLS_Wooden_Planks_vcznah3g_2K_Roughness.png-a37596540d232124e7ed57f48ac5aa4e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "30fe4c96e985d184ad68019c644d8c87"
+"md5": "f908d8515915980283c15995eacb0e3d"
 }
 
 [deps]
 
-source_file="res://Scripts/furniture_coll1_Old_Dusty_Bookshelf_Mat_BaseColor.jpg"
-dest_files=["res://.godot/imported/furniture_coll1_Old_Dusty_Bookshelf_Mat_BaseColor.jpg-974c1fba95d7f27c499c9c2bcb21d151.s3tc.ctex"]
+source_file="res://Levels/FINALFINALWALLS_Wooden_Planks_vcznah3g_2K_Roughness.png"
+dest_files=["res://.godot/imported/FINALFINALWALLS_Wooden_Planks_vcznah3g_2K_Roughness.png-a37596540d232124e7ed57f48ac5aa4e.s3tc.ctex"]
 
 [params]
 

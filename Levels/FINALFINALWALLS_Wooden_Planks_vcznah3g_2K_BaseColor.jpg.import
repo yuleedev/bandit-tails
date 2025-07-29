@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brveonnspe8t8"
-path.s3tc="res://.godot/imported/furniture_coll1_BirdNEW_bird_PBR StoA_Diffuse.png-f6b3757c039f6e67b1814e5d649780e1.s3tc.ctex"
+uid="uid://dpjdvb5mbkmnj"
+path.s3tc="res://.godot/imported/FINALFINALWALLS_Wooden_Planks_vcznah3g_2K_BaseColor.jpg-2f7b278c3f22b220ba618fdbf8c2f18a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "5552fd3de805ffa42e776f0aebda7e6c"
+"md5": "2f38dd317277d633461d2af40acb3514"
 }
 
 [deps]
 
-source_file="res://Scripts/furniture_coll1_BirdNEW_bird_PBR StoA_Diffuse.png"
-dest_files=["res://.godot/imported/furniture_coll1_BirdNEW_bird_PBR StoA_Diffuse.png-f6b3757c039f6e67b1814e5d649780e1.s3tc.ctex"]
+source_file="res://Levels/FINALFINALWALLS_Wooden_Planks_vcznah3g_2K_BaseColor.jpg"
+dest_files=["res://.godot/imported/FINALFINALWALLS_Wooden_Planks_vcznah3g_2K_BaseColor.jpg-2f7b278c3f22b220ba618fdbf8c2f18a.s3tc.ctex"]
 
 [params]
 

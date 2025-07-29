@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d4awyubku2jnk"
-path="res://.godot/imported/furniture_coll5.glb-39ffd6784917542620b68a480df83b1c.scn"
+uid="uid://c62r70qnpuohd"
+path="res://.godot/imported/FINALFINALWALLS.glb-e36490b7664844d0174836ed63e64f9b.scn"
 
 [deps]
 
-source_file="res://furniture_coll5.glb"
-dest_files=["res://.godot/imported/furniture_coll5.glb-39ffd6784917542620b68a480df83b1c.scn"]
+source_file="res://Levels/FINALFINALWALLS.glb"
+dest_files=["res://.godot/imported/FINALFINALWALLS.glb-e36490b7664844d0174836ed63e64f9b.scn"]
 
 [params]
 

@@ -77,8 +77,8 @@ func _apply_movement(delta) -> void:
 		
 		velocity = velocity.move_toward(move_dir * MOVE_SPEED, ACCELERATION * delta)
 		
-		$AnimationTree.set("parameters/conditions/idle", input_dir == Vector2.ZERO)
-		$AnimationTree.set("parameters/conditions/walk", input_dir != Vector2.ZERO)
+		$AnimationTree.set("parameters/conditions/idle", move_dir.length_squared() < 0.01)
+		$AnimationTree.set("parameters/conditions/walk", move_dir.length_squared() >= 0.01)
 
 func _manage_interactable() -> void:
 	if interactable:
@@ -102,15 +102,15 @@ func _ready() -> void:
 	area.body_entered.connect(_on_body_entered)
 	area.body_entered.connect(_on_body_exited)
 	
-	if is_multiplayer_authority():
-		camera.make_current()
-	else:
+	if not is_multiplayer_authority():
+		print(get_multiplayer_authority())
 		camera.queue_free()
 		
 func _process(delta: float) -> void:
 	_update_timers(delta)
 	
-	_rotate_camera()
+	if is_multiplayer_authority():
+		_rotate_camera()
 	_apply_movement(delta)
 	
 	_manage_interactable()
