@@ -35,6 +35,7 @@ graph_offset = Vector2(-208.32, -23.175)
 script = ExtResource("1_opr0s")
 
 [node name="GuardBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GuardBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -73,20 +74,20 @@ tree_root = SubResource("AnimationNodeStateMachine_sqnab")
 anim_player = NodePath("../guard-walk2/AnimationPlayer")
 
 [node name="guard-walk2" parent="." instance=ExtResource("2_hbmmv")]
-transform = Transform3D(-0.4, 0, -3.49691e-08, 0, 0.4, 0, 3.49691e-08, 0, -0.4, 0, 0, 0)
+transform = Transform3D(-0.4, 0, -3.49691e-08, 0, 0.4, 0, 3.49691e-08, 0, -0.4, 0, -1, 0)
 
 [node name="Skeleton3D" parent="guard-walk2/Armature_002" index="0"]
-bones/0/position = Vector3(0, 0.146895, 0)
-bones/0/rotation = Quaternion(-0.00127695, 0.999986, 0.00507976, 0.00028505)
-bones/3/rotation = Quaternion(0.00142534, -0.0758545, 0.887633, -0.45426)
-bones/4/rotation = Quaternion(0.0856067, -0.0626314, -0.0919494, 0.990098)
-bones/6/rotation = Quaternion(-0.00143187, -0.075259, 0.889192, 0.4513)
-bones/7/rotation = Quaternion(0.0556878, 0.0288259, 0.0902022, 0.993947)
-bones/9/position = Vector3(0.558904, -0.107485, -0.0266371)
-bones/9/rotation = Quaternion(0.0269416, -0.146121, 0.988757, -0.0168248)
-bones/10/position = Vector3(-0.558484, 0.0339149, 0.0361803)
-bones/10/rotation = Quaternion(-0.00543432, 0.133691, 0.991007, 0.00156688)
-bones/11/rotation = Quaternion(-0.00631417, 0.33963, 0.940256, 0.0230517)
+bones/0/position = Vector3(0, -0.0563375, 0)
+bones/0/rotation = Quaternion(-0.00117127, 0.999986, 0.00507976, 0.000261464)
+bones/3/rotation = Quaternion(0.00142602, -0.0757945, 0.88779, -0.453962)
+bones/4/rotation = Quaternion(-0.0523167, 0.092632, -0.0824232, 0.990903)
+bones/6/rotation = Quaternion(-0.00143119, -0.075319, 0.889035, 0.451599)
+bones/7/rotation = Quaternion(0.19122, 0.182541, 0.0966459, 0.959569)
+bones/9/position = Vector3(0.558144, 0.149914, 0.100376)
+bones/9/rotation = Quaternion(0.0352722, 0.22533, 0.973584, -0.0107957)
+bones/10/position = Vector3(-0.558281, 0.0869807, -0.133154)
+bones/10/rotation = Quaternion(0.00181026, -0.245716, 0.969333, 0.00383325)
+bones/11/rotation = Quaternion(-0.0171609, 0.334037, 0.925708, -0.176606)
 
 [connection signal="body_entered" from="GuardBody3D/VisionArea3D" to="." method="_on_vision_area_3d_body_entered"]
 [connection signal="body_exited" from="GuardBody3D/VisionArea3D" to="." method="_on_vision_area_3d_body_exited"]
