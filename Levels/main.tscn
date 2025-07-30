@@ -25,7 +25,22 @@ PLAYER_1 = ExtResource("2_hbaan")
 PLAYER_2 = ExtResource("2_hbaan")
 
 [node name="Loot" parent="." instance=ExtResource("3_lwy2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4689, 0.52094, 8.3919)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1913, 0.52094, -22.682)
+
+[node name="Loot2" parent="." instance=ExtResource("3_lwy2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.28329, 0.390095, 0)
+
+[node name="LootSpawns" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Spawn1" type="Marker3D" parent="LootSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9464, 0.991108, 7.67695)
+
+[node name="Spawn2" type="Marker3D" parent="LootSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6046, 0.409405, 2.02124)
+
+[node name="Spawn3" type="Marker3D" parent="LootSpawns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2035, 0.148306, -4.33948)
 
 [node name="Door" parent="." instance=ExtResource("4_nj2yk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0015, -0.0187825, 2.95682)
@@ -52,17 +67,6 @@ script = ExtResource("4_7pswh")
 [node name="Guard" parent="Path3D2/PathFollow3D" instance=ExtResource("5_34bfm")]
 transform = Transform3D(-0.999184, 0.016399, -0.0369301, 0.0156731, 0.99968, 0.0198608, 0.0372439, 0.0192658, -0.999121, -0.877678, 0.288032, -0.788836)
 
-[node name="LootSpawns" type="Node3D" parent="."]
-
-[node name="Spawn1" type="Marker3D" parent="LootSpawns"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9464, 0.991108, 7.67695)
-
-[node name="Spawn2" type="Marker3D" parent="LootSpawns"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6046, 0.409405, 2.02124)
-
-[node name="Spawn3" type="Marker3D" parent="LootSpawns"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2035, 0.148306, -4.33948)
-
 [node name="testNode" type="Node3D" parent="."]
 
 [node name="CanvasLayer" parent="." instance=ExtResource("9_he5fp")]
@@ -75,7 +79,4 @@ _spawnable_scenes = PackedStringArray("uid://ct2v1laxjo67f", "uid://c1ta55yk5nxa
 spawn_path = NodePath("..")
 spawn_limit = 2
 
-[node name="Loot2" parent="." instance=ExtResource("3_lwy2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.28329, 0.390095, 0)
-
-[node name="FINAL90TOTAL" parent="." instance=ExtResource("9_mykqc")]
+[node name="Map" parent="." instance=ExtResource("9_mykqc")]
