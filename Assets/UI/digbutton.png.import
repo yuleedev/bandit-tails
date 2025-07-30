@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://55qdex3th5ty"
-path="res://.godot/imported/title screen.png-58635c07bd542f6dc28a8db4b73e6be7.ctex"
+uid="uid://b34kywskuq1wr"
+path="res://.godot/imported/digbutton.png-f0cf769c4ca83228447b01722581052c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/title screen.png"
-dest_files=["res://.godot/imported/title screen.png-58635c07bd542f6dc28a8db4b73e6be7.ctex"]
+source_file="res://Assets/UI/digbutton.png"
+dest_files=["res://.godot/imported/digbutton.png-f0cf769c4ca83228447b01722581052c.ctex"]
 
 [params]
 
