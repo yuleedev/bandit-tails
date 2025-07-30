@@ -23,6 +23,8 @@ func start_game() -> void:
 	print("GAME STARTED")
 
 func end_game() -> void:
+	game_paused = true
+	print("end game called")
 	get_tree().change_scene_to_file("res://Levels/Menus/hostjoin.tscn")
 
 func new_round() -> void:
