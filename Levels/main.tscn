@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://bwydvcfxfddhp" path="res://Assets/Props/Loot/loot.tscn" id="3_lwy2l"]
 [ext_resource type="Script" uid="uid://2upj8o4sck2s" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
-[ext_resource type="Script" uid="uid://gkeeuy8jy4oq" path="res://Levels/loot_spawner.gd" id="4_u05pv"]
+[ext_resource type="Script" path="res://Levels/loot_spawner.gd" id="4_u05pv"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 [ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
 [ext_resource type="PackedScene" uid="uid://cbvne5fpxlq0t" path="res://key.tscn" id="9_u05pv"]
-[ext_resource type="PackedScene" uid="uid://hoh7ak0sfmki" path="res://100total.glb" id="10_u05pv"]
+[ext_resource type="PackedScene" uid="uid://52s6s4v7c3xm" path="res://100total.glb" id="10_u05pv"]
 [ext_resource type="PackedScene" uid="uid://n02ywmjlls01" path="res://Assets/Props/candleA.glb" id="11_5mxy1"]
 [ext_resource type="PackedScene" uid="uid://cea7edkrb4md8" path="res://Assets/Props/candleB.glb" id="12_3lhg3"]
 [ext_resource type="PackedScene" uid="uid://7xvtyi87oh1h" path="res://Assets/Props/canC.glb" id="13_wgfyn"]
@@ -71,6 +71,12 @@ spawn_limit = 2
 [node name="Map" parent="." instance=ExtResource("10_u05pv")]
 
 [node name="100total" parent="." instance=ExtResource("10_u05pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="100total"]
+transform = Transform3D(1.01115, -0.00655012, 0.0474132, -0.0452902, -0.0356039, 1.05999, 0.00293831, 1.70528, 0.0223134, -3.58014, 2.47678, -3.29038)
+light_color = Color(0.930264, 0.825468, 0.563066, 1)
+light_energy = 0.222
 
 [node name="Candles" type="Node3D" parent="."]
 transform = Transform3D(1.0043, 0, 0, 0, 1.0043, 0, 0, 0, 1.0043, 0, 0, 0)
@@ -81,6 +87,30 @@ transform = Transform3D(0.149358, 0, 0, 0, 0.149358, 0, 0, 0, 0.149358, -9.58368
 [node name="candleA2" parent="Candles" instance=ExtResource("11_5mxy1")]
 transform = Transform3D(0.149358, 0, 0, 0, 0.149358, 0, 0, 0, 0.149358, -12.0572, 2.80611, 22.1724)
 
+[node name="OmniLight3D6" type="OmniLight3D" parent="Candles/candleA2"]
+transform = Transform3D(-2.92661e-07, 0, -6.69531, 0, 6.69531, 0, 6.69531, 0, -2.92661e-07, 0.0575027, 4.03065, 0.677353)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Candles/candleA2"]
+transform = Transform3D(-2.92661e-07, 0, -6.69531, 0, 6.69531, 0, 6.69531, 0, -2.92661e-07, 207.791, -0.798969, -135.788)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Candles/candleA2"]
+transform = Transform3D(-2.92661e-07, 0, -6.69531, 0, 6.69531, 0, 6.69531, 0, -2.92661e-07, -24.0166, 7.79511, -119.397)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Candles/candleA2"]
+transform = Transform3D(-2.92661e-07, 0, -6.69531, 0, 6.69531, 0, 6.69531, 0, -2.92661e-07, -24.0166, 7.79511, -194.154)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
 [node name="candleB3" parent="Candles" instance=ExtResource("12_3lhg3")]
 transform = Transform3D(-6.52865e-09, 0, 0.149358, 0, 0.149358, 0, -0.149358, 0, -6.52865e-09, 18.8429, 2.0995, 1.87883)
 
@@ -90,8 +120,20 @@ transform = Transform3D(-6.52865e-09, 0, 0.149358, 0, 0.149358, 0, -0.149358, 0,
 [node name="canC" parent="Candles" instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-0.149358, 0, -2.25525e-08, 0, 0.149358, 0, 2.25525e-08, 0, -0.149358, -3.58795, 1.52828, 6.57256)
 
+[node name="OmniLight3D5" type="OmniLight3D" parent="Candles/canC"]
+transform = Transform3D(1.30363e-06, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 1.30363e-06, 0.0317173, 3.6388, 2.19031)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
 [node name="canC3" parent="Candles" instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-6.52865e-09, 0, -0.149358, 0, 0.149358, 0, 0.149358, 0, -6.52865e-09, -1.19468, 3.13268, -5.45543)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Candles/canC3"]
+transform = Transform3D(6.69531, 0, 0, 0, 6.69531, 0, 0, 0, 6.69531, 0.13485, 5.37457, 0.803265)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
 
 [node name="canC8" parent="Candles" instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-6.52865e-09, 0, -0.149358, 0, 0.149358, 0, 0.149358, 0, -6.52865e-09, -15.1784, 3.13268, -7.01992)
@@ -101,6 +143,12 @@ transform = Transform3D(-6.52866e-09, 0, -0.149358, 0, 0.149358, 0, 0.149358, 0,
 
 [node name="canC4" parent="Candles" instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-6.52865e-09, 0, -0.149358, 0, 0.149358, 0, 0.149358, 0, -6.52865e-09, -1.19994, 3.13268, -11.2613)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Candles/canC4"]
+transform = Transform3D(6.69531, 0, 0, 0, 6.69531, 0, 0, 0, 6.69531, -1.32915, 4.0724, 1.08348)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.112
+omni_range = 3.659
 
 [node name="canC11" parent="Candles" instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-6.52865e-09, 0, -0.149358, 0, 0.149358, 0, 0.149358, 0, -6.52865e-09, 7.9502, 3.07303, -11.5383)
@@ -117,11 +165,29 @@ transform = Transform3D(-6.52865e-09, 0, 0.149358, 0, 0.149358, 0, -0.149358, 0,
 [node name="canC6" parent="Candles" instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-0.149358, 0, -1.30573e-08, 0, 0.149358, 0, 1.30573e-08, 0, -0.149358, -4.69119, 2.84679, -14.6793)
 
+[node name="OmniLight3D4" type="OmniLight3D" parent="Candles/canC6"]
+transform = Transform3D(8.77984e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77984e-07, 0.370253, 6.47277, 2.17306)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
 [node name="canC7" parent="Candles" instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-0.149358, 0, -1.30573e-08, 0, 0.149358, 0, 1.30573e-08, 0, -0.149358, -11.4877, 2.84679, -14.6795)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Candles/canC7"]
+transform = Transform3D(8.77984e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77984e-07, -1.29349, 6.47277, 2.17173)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
 
 [node name="canC5" parent="Candles" instance=ExtResource("13_wgfyn")]
 transform = Transform3D(0.149358, 0, 0, 0, 0.149358, 0, 0, 0, 0.149358, 0.946042, 3.15125, -2.72492)
 
 [node name="canC2" parent="Candles" instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-0.149358, 0, -2.25525e-08, 0, 0.149358, 0, 2.25525e-08, 0, -0.149358, 0.258296, 1.52828, 6.57256)
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Candles/canC2"]
+transform = Transform3D(1.30363e-06, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 1.30363e-06, 0.483932, 3.6388, 2.19031)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
