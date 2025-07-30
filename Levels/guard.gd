@@ -35,7 +35,7 @@ func detect_player():
 			player = ray_left.get_collider()
 			return true
 	if ray_right.is_colliding():
-		 if ray_right.get_collider().name == "Player":
-			 player = ray_right.get_collider()
-			 return true
+		if ray_right.get_collider().name == "Player":
+			player = ray_right.get_collider()
+			return true
 	return false
