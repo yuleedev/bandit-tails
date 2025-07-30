@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d3imu2v02y8la"
-path.s3tc="res://.godot/imported/100total_simplecarpet.jpg-37a241913b35ab07b2ac892b6b2a1c0c.s3tc.ctex"
+uid="uid://4o3qd1b70g7"
+path.s3tc="res://.godot/imported/100total_Wooden_Planks_vcznah3g_2K_Roughness.png-2093ecc3ddc3f666cb45e7bbcf4a553f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "1620f5d11d0e4670a0f0f7f647ae2c43"
+"md5": "f908d8515915980283c15995eacb0e3d"
 }
 
 [deps]
 
-source_file="res://Assets/100total_simplecarpet.jpg"
-dest_files=["res://.godot/imported/100total_simplecarpet.jpg-37a241913b35ab07b2ac892b6b2a1c0c.s3tc.ctex"]
+source_file="res://100total_Wooden_Planks_vcznah3g_2K_Roughness.png"
+dest_files=["res://.godot/imported/100total_Wooden_Planks_vcznah3g_2K_Roughness.png-2093ecc3ddc3f666cb45e7bbcf4a553f.s3tc.ctex"]
 
 [params]
 

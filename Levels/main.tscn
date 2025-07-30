@@ -8,13 +8,13 @@
 [ext_resource type="Script" uid="uid://gkeeuy8jy4oq" path="res://Levels/loot_spawner.gd" id="4_u05pv"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 [ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
-[ext_resource type="PackedScene" uid="uid://bkgfn064qandd" path="res://Scripts/FINAL90TOTAL.glb" id="9_mykqc"]
 [ext_resource type="PackedScene" uid="uid://cbvne5fpxlq0t" path="res://key.tscn" id="9_u05pv"]
+[ext_resource type="PackedScene" uid="uid://hoh7ak0sfmki" path="res://100total.glb" id="10_u05pv"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
 closed = true
 _data = {
-"points": PackedVector3Array(3.84459, -1.20997e-05, -2.47819, -3.84459, 1.20997e-05, 2.47819, -17.0899, 0.495615, -19.1112, -2.57704, -1.20997e-05, -1.91126, 2.57704, 1.20997e-05, 1.91126, -18.4379, 0.495615, -12.1299, -2.99011, 1.20997e-05, 1.82051, 2.99011, -1.20997e-05, -1.82051, -12.3438, 0.495615, -8.10434, 2.36239, 1.20997e-05, 1.81855, -2.36239, -1.20997e-05, -1.81855, -9.70265, 0.495615, -16.4332),
+"points": PackedVector3Array(3.84459, -1.20997e-05, -2.47819, -3.84459, 1.20997e-05, 2.47819, -17.0899, 0.0345366, -19.1112, -2.57704, -1.20997e-05, -1.91126, 2.57704, 1.20997e-05, 1.91126, -18.4379, 0.243175, -12.1299, -2.99011, 1.20997e-05, 1.82051, 2.99011, -1.20997e-05, -1.82051, -12.3438, 0.156618, -8.10434, 2.36239, 1.20997e-05, 1.81855, -2.36239, -1.20997e-05, -1.81855, -9.70265, 0.120862, -16.4332),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -49,7 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.15561, 0, 5.32817)
 curve = SubResource("Curve3D_ovrsl")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.541785, 2.22336e-06, 0.840509, 0, 0.999985, -2.64526e-06, -0.840509, -1.43316e-06, -0.541785, -17.0899, 0.495615, -19.1112)
+transform = Transform3D(-0.541785, 2.22336e-06, 0.840509, 0, 0.999985, -2.64526e-06, -0.840509, -1.43316e-06, -0.541785, -17.0899, 0.0345366, -19.1112)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -65,4 +65,4 @@ _spawnable_scenes = PackedStringArray("uid://ct2v1laxjo67f", "uid://c1ta55yk5nxa
 spawn_path = NodePath("..")
 spawn_limit = 2
 
-[node name="Map" parent="." instance=ExtResource("9_mykqc")]
+[node name="100total" parent="." instance=ExtResource("10_u05pv")]

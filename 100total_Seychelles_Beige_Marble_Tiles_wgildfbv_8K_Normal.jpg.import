@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cev7q3s8elcmw"
-path.s3tc="res://.godot/imported/100total_Wooden_Planks_vcznah3g_2K_Normal.jpg-eb4dc3108e8e3039e5cfcd441b2f3a19.s3tc.ctex"
+uid="uid://d4m634wfbav45"
+path.s3tc="res://.godot/imported/100total_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg-a65b80a4bd0f5df9866878ba965986f5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "595e958ca6c16a609f0e5c605abe2683"
+"md5": "30572244f93383cc9180eeb557a57a3a"
 }
 
 [deps]
 
-source_file="res://Assets/100total_Wooden_Planks_vcznah3g_2K_Normal.jpg"
-dest_files=["res://.godot/imported/100total_Wooden_Planks_vcznah3g_2K_Normal.jpg-eb4dc3108e8e3039e5cfcd441b2f3a19.s3tc.ctex"]
+source_file="res://100total_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg"
+dest_files=["res://.godot/imported/100total_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg-a65b80a4bd0f5df9866878ba965986f5.s3tc.ctex"]
 
 [params]
 
@@ -28,7 +28,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://Assets/100total_Wooden_Planks_vcznah3g_2K_Normal.jpg"
+roughness/src_normal="res://Assets/100total_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4o3qd1b70g7"
-path.s3tc="res://.godot/imported/100total_Wooden_Planks_vcznah3g_2K_Roughness.png-7f2f02b4af9574791cf842e20e7b408f.s3tc.ctex"
+uid="uid://di8bn4lq08f0f"
+path.s3tc="res://.godot/imported/100total_wowow.jpg-69ded962adbde15460598ef31799d445.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f908d8515915980283c15995eacb0e3d"
+"md5": "0639df4631f44c8ac5fefd919d1238c6"
 }
 
 [deps]
 
-source_file="res://Assets/100total_Wooden_Planks_vcznah3g_2K_Roughness.png"
-dest_files=["res://.godot/imported/100total_Wooden_Planks_vcznah3g_2K_Roughness.png-7f2f02b4af9574791cf842e20e7b408f.s3tc.ctex"]
+source_file="res://100total_wowow.jpg"
+dest_files=["res://.godot/imported/100total_wowow.jpg-69ded962adbde15460598ef31799d445.s3tc.ctex"]
 
 [params]
 

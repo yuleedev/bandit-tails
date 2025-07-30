@@ -31,6 +31,7 @@ func new_round() -> void:
 	
 	if round > 3:
 		end_game()
+		
 	else:
 		if get_tree().current_scene.scene_file_path != "res://Levels/main.tscn":
 			get_tree().change_scene_to_file("res://Levels/main.tscn")
