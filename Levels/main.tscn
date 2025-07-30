@@ -74,7 +74,7 @@ spawn_limit = 2
 [node name="100total" parent="." instance=ExtResource("10_u05pv")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="100total"]
-transform = Transform3D(1.01115, -0.00655012, 0.0474132, -0.0452902, -0.0356039, 1.05999, 0.00293831, 1.70528, 0.0223134, -3.58014, 2.47678, -3.29038)
+transform = Transform3D(1.01115, -0.00655041, 0.0474141, -0.0452913, -0.0356047, 1.05999, 0.00293843, 1.70528, 0.0223138, -3.58014, 2.47678, -3.29038)
 light_color = Color(0.930264, 0.825468, 0.563066, 1)
 light_energy = 0.222
 

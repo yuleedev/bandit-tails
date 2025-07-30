@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1ta55yk5nxar"]
+[gd_scene load_steps=12 format=3 uid="uid://c1ta55yk5nxar"]
 
 [ext_resource type="Script" uid="uid://cadcistqqj1it" path="res://Scripts/Player/raccoon.gd" id="1_7xmbg"]
 [ext_resource type="PackedScene" uid="uid://cuagig623t2c5" path="res://Assets/Raccoon/raccoon_walk.glb" id="2_sykj1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bqn1y"]
+radius = 0.68
+height = 2.55
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_fmo36"]
 
@@ -32,7 +34,19 @@ states/RaccoonWalk/position = Vector2(545.9, 100.039)
 transitions = ["Start", "ArmatureAction", SubResource("AnimationNodeStateMachineTransition_fmo36"), "ArmatureAction", "RaccoonWalk", SubResource("AnimationNodeStateMachineTransition_ea6d0"), "RaccoonWalk", "ArmatureAction", SubResource("AnimationNodeStateMachineTransition_504qi")]
 graph_offset = Vector2(-65.0999, -57.9375)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_sykj1"]
+properties/0/path = NodePath(".:move_dir")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("mole_idle:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:position")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
 [node name="Raccoon" type="CharacterBody3D" groups=["player"]]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 collision_mask = 3
 safe_margin = 0.1
 script = ExtResource("1_7xmbg")
@@ -41,7 +55,7 @@ script = ExtResource("1_7xmbg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera" type="Camera3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.218772, -0.48926)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.794, -0.65)
 
 [node name="Light" type="SpotLight3D" parent="Pivot/Camera"]
 spot_range = 100.0
@@ -49,16 +63,15 @@ spot_attenuation = 0.7
 spot_angle = 60.0
 
 [node name="Collider" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.0153074, -0.018037)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.261, -0.039)
 shape = SubResource("CapsuleShape3D_bqn1y")
 
 [node name="SoundArea" type="Area3D" parent="." groups=["player"]]
 collision_mask = 3
 
-[node name="Collider" type="CollisionShape3D" parent="SoundArea"]
+[node name="Collider" type="CollisionShape3D" parent="SoundArea" groups=["player"]]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("CylinderShape3D_fmo36")
-disabled = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../MeshNode")
@@ -68,6 +81,21 @@ parameters/conditions/idle = false
 parameters/conditions/walk = false
 
 [node name="MeshNode" parent="." instance=ExtResource("2_sykj1")]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.784838, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Skeleton3D" parent="MeshNode/Armature" index="0"]
+bones/4/rotation = Quaternion(0.0273157, 0.0108049, 0.437695, 0.898644)
+bones/5/rotation = Quaternion(-0.0290658, 0.00424995, 0.0685339, 0.997216)
+bones/6/rotation = Quaternion(-0.0226711, -0.00114822, 0.0505632, 0.998463)
+bones/8/rotation = Quaternion(0.0273157, -0.0108049, -0.437695, 0.898644)
+bones/9/rotation = Quaternion(-0.0290658, -0.00424995, -0.0685339, 0.997216)
+bones/10/rotation = Quaternion(-0.0226711, 0.00114822, -0.0505632, 0.998463)
+bones/11/position = Vector3(-0.365829, -0.00686406, 0)
+bones/12/position = Vector3(-1.43281e-14, 0.264022, 0.594049)
+bones/13/rotation = Quaternion(-0.253306, 1.15322e-07, -9.05895e-08, 0.967386)
+bones/14/position = Vector3(0.365829, -0.00686406, 0)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_sykj1")
 
 [editable path="MeshNode"]

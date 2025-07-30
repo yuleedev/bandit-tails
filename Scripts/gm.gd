@@ -3,7 +3,7 @@ extends Node
 ## ================ [ FIELDS ] ================ ##
 
 @export var options: Options = Options.new()
-@export var ROUND_DURATION: float = 5
+@export var ROUND_DURATION: float = 60
 
 var round: int = 0
 var round_dur: float = 0

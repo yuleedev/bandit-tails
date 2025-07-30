@@ -144,11 +144,11 @@ func _input(event):
 			sound.shape.radius = 0
 		if event.keycode == KEY_1: #sneaking
 			print("1 was pressed")
-			sound.shape.radius = 0.5
+			sound.shape.radius = 1
 		if event.keycode == KEY_2: #normal walking
 			print("2 was pressed")
-			sound.shape.radius = 1
+			sound.shape.radius = 2
 		if event.keycode == KEY_3: #sprinting
 			print("3 was pressed")
-			sound.shape.radius = 2
+			sound.shape.radius = 3
 			#change the inputs and radii to make more sense
