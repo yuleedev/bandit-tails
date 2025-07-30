@@ -20,17 +20,12 @@ var p2_id: int
 @rpc("call_local")
 func start_game() -> void:
 	get_tree().change_scene_to_file("res://Levels/main.tscn")
-	print("GAME STARTED")
 
 func end_game() -> void:
 	game_paused = true
-	print("end game called")
 	get_tree().change_scene_to_file("res://Levels/hostjoin.tscn")
 
 func new_round() -> void:
-	print("new round called")
-	print("the current round is " + str(round))
-	
 	if round > 3:
 		end_game()
 		
@@ -42,7 +37,6 @@ func new_round() -> void:
 		
 func end_round() -> void:
 	game_paused = true
-	print("round end")
 	get_tree().change_scene_to_file("res://postround.tscn")
 
 func capture_mouse() -> void:
