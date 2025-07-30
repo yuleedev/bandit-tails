@@ -3,12 +3,14 @@ extends Node3D
 var p_near = false
 var p_ref = null
 @onready var progress = $Body/WeightBar/Sprite3D/SubViewport/ProgressBar
+@onready var mesh_instance: MeshInstance3D = $Body/Mesh
 
 @export var item_res : Item
 @onready var inv = get_node("/root/Main/CanvasLayer/Inventory")
+@export var mesh_options: Array[Mesh] = []
 
 func _ready():
-	pass
+	mesh_instance.mesh = mesh_options[randi() % mesh_options.size()]
 	#$Body/Area.body_entered.connect(_on_body_entered)
 	#$Body/Area.body_exited.connect(_on_body_exited)
 
@@ -36,3 +38,4 @@ func pick_up():
 		if inv.add_item(inv.prep_item(item_res)):
 			visible = false
 			process_mode = Node.PROCESS_MODE_DISABLED
+			
