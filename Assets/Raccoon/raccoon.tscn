@@ -1,35 +1,35 @@
 [gd_scene load_steps=11 format=3 uid="uid://c1ta55yk5nxar"]
 
 [ext_resource type="Script" uid="uid://cadcistqqj1it" path="res://Scripts/Player/raccoon.gd" id="1_7xmbg"]
-[ext_resource type="PackedScene" uid="uid://8fhwph4bojtx" path="res://mole_idle_4.tscn" id="2_sykj1"]
+[ext_resource type="PackedScene" uid="uid://cuagig623t2c5" path="res://Assets/Raccoon/raccoon_walk.glb" id="2_sykj1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bqn1y"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_fmo36"]
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sykj1"]
+animation = &"ArmatureAction"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bqn1y"]
-animation = &"Walk_Cycle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fmo36"]
-animation = &"idle_001"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ea6d0"]
-advance_mode = 2
+animation = &"RaccoonWalk"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fmo36"]
 advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ea6d0"]
+advance_mode = 2
 advance_condition = &"walk"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sykj1"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_504qi"]
 advance_mode = 2
 advance_condition = &"idle"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_504qi"]
-states/Walk_Cycle/node = SubResource("AnimationNodeAnimation_bqn1y")
-states/Walk_Cycle/position = Vector2(499.4, 98.0625)
-states/idle_001/node = SubResource("AnimationNodeAnimation_fmo36")
-states/idle_001/position = Vector2(341, 100.312)
-transitions = ["Start", "idle_001", SubResource("AnimationNodeStateMachineTransition_ea6d0"), "idle_001", "Walk_Cycle", SubResource("AnimationNodeStateMachineTransition_fmo36"), "Walk_Cycle", "idle_001", SubResource("AnimationNodeStateMachineTransition_sykj1")]
+states/ArmatureAction/node = SubResource("AnimationNodeAnimation_sykj1")
+states/ArmatureAction/position = Vector2(359.9, 100.016)
+states/RaccoonWalk/node = SubResource("AnimationNodeAnimation_bqn1y")
+states/RaccoonWalk/position = Vector2(545.9, 100.039)
+transitions = ["Start", "ArmatureAction", SubResource("AnimationNodeStateMachineTransition_fmo36"), "ArmatureAction", "RaccoonWalk", SubResource("AnimationNodeStateMachineTransition_ea6d0"), "RaccoonWalk", "ArmatureAction", SubResource("AnimationNodeStateMachineTransition_504qi")]
 graph_offset = Vector2(-65.0999, -57.9375)
 
 [node name="Raccoon" type="CharacterBody3D" groups=["player"]]
@@ -41,7 +41,7 @@ script = ExtResource("1_7xmbg")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="Camera" type="Camera3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.318296, 3.70639)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.218772, -0.48926)
 
 [node name="Light" type="SpotLight3D" parent="Pivot/Camera"]
 spot_range = 100.0
@@ -49,6 +49,7 @@ spot_attenuation = 0.7
 spot_angle = 60.0
 
 [node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.0153074, -0.018037)
 shape = SubResource("CapsuleShape3D_bqn1y")
 
 [node name="SoundArea" type="Area3D" parent="." groups=["player"]]
@@ -60,28 +61,13 @@ shape = SubResource("CylinderShape3D_fmo36")
 disabled = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-root_node = NodePath("../mole_idle")
+root_node = NodePath("../MeshNode")
 tree_root = SubResource("AnimationNodeStateMachine_504qi")
-anim_player = NodePath("../mole_idle/AnimationPlayer")
+anim_player = NodePath("../MeshNode/AnimationPlayer")
 parameters/conditions/idle = false
 parameters/conditions/walk = false
 
-[node name="mole_idle" parent="." instance=ExtResource("2_sykj1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+[node name="MeshNode" parent="." instance=ExtResource("2_sykj1")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, -0.784838, 0)
 
-[node name="Skeleton3D" parent="mole_idle/molerig" index="0"]
-bones/4/rotation = Quaternion(-0.411413, 0.0634546, -0.138598, 0.898612)
-bones/5/rotation = Quaternion(0.402188, 0.0401374, -0.0846306, 0.910753)
-bones/6/rotation = Quaternion(3.44279e-08, 0.00720831, -0.266866, 0.963707)
-bones/7/rotation = Quaternion(0.0356675, -0.000359042, -0.0412589, 0.998512)
-bones/9/rotation = Quaternion(-0.411413, -0.0634546, 0.138598, 0.898612)
-bones/10/rotation = Quaternion(0.402188, -0.0401374, 0.0846307, 0.910753)
-bones/11/rotation = Quaternion(3.58775e-08, -0.00720831, 0.266866, 0.963707)
-bones/12/rotation = Quaternion(0.0356675, 0.000359043, 0.0412589, 0.998512)
-bones/14/position = Vector3(0.257162, 0.197217, 0)
-bones/14/rotation = Quaternion(1, 0, 0, 0)
-
-[node name="AnimationPlayer" parent="mole_idle" index="5"]
-autoplay = ""
-
-[editable path="mole_idle"]
+[editable path="MeshNode"]

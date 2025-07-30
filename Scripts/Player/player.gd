@@ -7,7 +7,7 @@ class_name Player
 @onready var camera: Camera3D = $Pivot/Camera
 @onready var light: SpotLight3D = $Pivot/Camera/Light
 
-@onready var mesh: Node3D = $mole_idle
+@onready var mesh: Node3D = $MeshNode
 @onready var collider: CollisionShape3D = $Collider
 @onready var area: Area3D = $SoundArea
 @onready var sound: CollisionShape3D = $SoundArea/Collider
