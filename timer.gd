@@ -1,10 +1,12 @@
 extends Label
 
 var total_time: float
+var current_round: int
 
 func _ready():
 	total_time = GM.ROUND_DURATION
-
+	current_round = GM.round
+	
 func _process(delta: float) -> void:
 	if total_time > 0:
 		total_time -= delta

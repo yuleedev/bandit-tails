@@ -3,7 +3,7 @@ extends Node
 ## ================ [ FIELDS ] ================ ##
 
 @export var options: Options = Options.new()
-@export var ROUND_DURATION: float = 70
+@export var ROUND_DURATION: float = 10
 
 var round: int = 0
 var round_dur: float = 0
@@ -26,9 +26,17 @@ func end_game() -> void:
 
 func new_round() -> void:
 	round += 1
-	round_dur = ROUND_DURATION
-	game_paused = false
-
+	print("new round called")
+	print("the current round is " + str(round))
+	
+	if round > 3:
+		end_game()
+	else:
+		if get_tree().current_scene.scene_file_path != "res://Levels/main.tscn":
+			get_tree().change_scene_to_file("res://Levels/main.tscn")
+		round_dur = ROUND_DURATION
+		game_paused = false
+		
 func end_round() -> void:
 	game_paused = true
 	print("round end")
@@ -47,7 +55,7 @@ func release_mouse() -> void:
 func _process(delta: float) -> void:
 	if not game_paused:
 		round_dur -= delta
-		
+	
 		if round_dur < 0:
 			end_round()
 
