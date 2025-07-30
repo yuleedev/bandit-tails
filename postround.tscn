@@ -38,4 +38,11 @@ ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("4_a30c7")
 
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 1110.0
+offset_top = 21.0
+offset_right = 1290.0
+offset_bottom = 120.0
+text = "0"
+
 [connection signal="pressed" from="CanvasLayer/ReadyButton" to="CanvasLayer/ReadyButton" method="_on_ready_button_pressed"]

@@ -26,18 +26,17 @@ func end_game() -> void:
 	get_tree().change_scene_to_file("res://Levels/hostjoin.tscn")
 
 func new_round() -> void:
-	if round > 3:
-		end_game()
-		
-	else:
-		if get_tree().current_scene.scene_file_path != "res://Levels/main.tscn":
-			get_tree().change_scene_to_file("res://Levels/main.tscn")
+	if get_tree().current_scene.scene_file_path != "res://Levels/main.tscn":
+		get_tree().change_scene_to_file("res://Levels/main.tscn")
 		round_dur = ROUND_DURATION
 		game_paused = false
 		
 func end_round() -> void:
 	game_paused = true
-	get_tree().change_scene_to_file("res://postround.tscn")
+	if round < 3:
+		get_tree().change_scene_to_file("res://postround.tscn")
+	else:
+		end_game()
 
 func capture_mouse() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
