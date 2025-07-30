@@ -25,10 +25,9 @@ func start_game() -> void:
 func end_game() -> void:
 	game_paused = true
 	print("end game called")
-	get_tree().change_scene_to_file("res://Levels/Menus/hostjoin.tscn")
+	get_tree().change_scene_to_file("res://Levels/hostjoin.tscn")
 
 func new_round() -> void:
-	round += 1
 	print("new round called")
 	print("the current round is " + str(round))
 	
