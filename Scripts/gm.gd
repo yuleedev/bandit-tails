@@ -3,7 +3,7 @@ extends Node
 ## ================ [ FIELDS ] ================ ##
 
 @export var options: Options = Options.new()
-@export var ROUND_DURATION: float = 10
+@export var ROUND_DURATION: float = 15
 
 var round: int = 0
 var round_dur: float = 0
@@ -20,6 +20,7 @@ var p2_id: int
 @rpc("call_local")
 func start_game() -> void:
 	get_tree().change_scene_to_file("res://Levels/main.tscn")
+	print("GAME STARTED")
 
 func end_game() -> void:
 	get_tree().change_scene_to_file("res://Levels/Menus/hostjoin.tscn")
