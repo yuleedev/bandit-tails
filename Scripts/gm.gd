@@ -3,7 +3,7 @@ extends Node
 ## ================ [ FIELDS ] ================ ##
 
 @export var options: Options = Options.new()
-@export var ROUND_DURATION: float = 180
+@export var ROUND_DURATION: float = 70
 
 var round: int = 0
 var round_dur: float = 0
@@ -32,7 +32,7 @@ func new_round() -> void:
 func end_round() -> void:
 	game_paused = true
 	print("round end")
-	# this is where i would switch to between rounds screen but that doesnt exist
+	get_tree().change_scene_to_file("res://postround.tscn")
 
 func capture_mouse() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

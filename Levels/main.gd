@@ -8,7 +8,7 @@ extends Node3D
 @export var PLAYER_2: PackedScene
 @export var SPAWN_2 := Vector3(18, 1, 3)
 
-@onready var spawn_points = $LootSpawns.get_children()
+@onready var spawn_points = $LootSpawner.get_children()
 
 ## ================ [ METHODS ] ================ ##
 
