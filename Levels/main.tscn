@@ -55,8 +55,6 @@ script = ExtResource("4_7pswh")
 [node name="Guard" parent="Path3D/PathFollow3D" instance=ExtResource("5_34bfm")]
 transform = Transform3D(-0.999184, 0.016399, -0.0369301, 0.0156731, 0.99968, 0.0198608, 0.0372439, 0.0192658, -0.999121, -0.878, 1, -0.789)
 
-[node name="testNode" type="Node3D" parent="."]
-
 [node name="CanvasLayer" parent="." instance=ExtResource("9_he5fp")]
 
 [node name="Key" parent="." instance=ExtResource("9_u05pv")]

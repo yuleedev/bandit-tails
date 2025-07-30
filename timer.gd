@@ -1,6 +1,9 @@
 extends Label
 
-var total_time := 180.0  # 3 minutes in seconds
+var total_time: float
+
+func _ready():
+	total_time = GM.ROUND_DURATION
 
 func _process(delta: float) -> void:
 	if total_time > 0:
