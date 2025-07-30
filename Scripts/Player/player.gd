@@ -118,6 +118,10 @@ func _process(delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
 	# print(get_slide_collision(0))
+	
+	if not is_on_floor():
+		velocity.y -= 9.8 * _delta
+		
 	move_and_slide()
 
 func _on_body_entered(body):
