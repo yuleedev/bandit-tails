@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh0ghabbec10x"
-path="res://.godot/imported/mole_skill.png-a69f2b0999f71bf6b95c43885275010c.ctex"
+uid="uid://spy68jayuh1g"
+path="res://.godot/imported/inv.png-755a65734a9d767e11b014f56b178f66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/mole_skill.png"
-dest_files=["res://.godot/imported/mole_skill.png-a69f2b0999f71bf6b95c43885275010c.ctex"]
+source_file="res://Assets/UI/inv.png"
+dest_files=["res://.godot/imported/inv.png-755a65734a9d767e11b014f56b178f66.ctex"]
 
 [params]
 

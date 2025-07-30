@@ -1,23 +1,27 @@
 [gd_scene load_steps=12 format=3 uid="uid://c2qe3orxf746b"]
 
 [ext_resource type="FontFile" uid="uid://0mou7hqwgtb4" path="res://Assets/UI/UIFont.ttf" id="1_8sq4i"]
-[ext_resource type="Texture2D" uid="uid://dfcx1yblfds4v" path="res://Assets/UI/timer.png" id="1_37p78"]
+[ext_resource type="Texture2D" uid="uid://spy68jayuh1g" path="res://Assets/UI/inv.png" id="1_61f8s"]
 [ext_resource type="Script" uid="uid://du1i67dg4pg13" path="res://timer.gd" id="1_64ctp"]
 [ext_resource type="Script" uid="uid://bn1x10tatbkur" path="res://inventory.gd" id="4_a2258"]
-[ext_resource type="Texture2D" uid="uid://dm60uyo7pfk2d" path="res://Assets/UI/inventory.png" id="5_1xsix"]
+[ext_resource type="Texture2D" uid="uid://c3p8xsiuan0j0" path="res://timer.png" id="4_amv7k"]
 [ext_resource type="Texture2D" uid="uid://br7v6dnwflgw1" path="res://Assets/UI/crosshair.png" id="6_1xsix"]
-[ext_resource type="Texture2D" uid="uid://cs58712d0rbl1" path="res://Assets/UI/ItemIcons/key_bg.png" id="7_61f8s"]
 [ext_resource type="Script" path="res://keyinv.gd" id="7_g10ll"]
 [ext_resource type="Texture2D" uid="uid://dkuosjlkujeel" path="res://Assets/UI/ItemIcons/key_icon.png" id="8_g10ll"]
-[ext_resource type="Texture2D" uid="uid://dnrotsgn68xxm" path="res://Assets/UI/crouch.png" id="10_amv7k"]
-[ext_resource type="Texture2D" uid="uid://dh0ghabbec10x" path="res://Assets/UI/mole_skill.png" id="11_1fv7p"]
+[ext_resource type="Texture2D" uid="uid://bqbktdw6745di" path="res://Assets/UI/crouch.png" id="10_amv7k"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g10ll"]
+load_path = "res://.godot/imported/key.png-e8e8692bdca67e3f30183e8f067d8541.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gpiub"]
+load_path = "res://.godot/imported/digbutton.png-0c678ad5e0bbef1c68b77d0819d63ae0.ctex"
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="InventoryBG" type="Sprite2D" parent="."]
-position = Vector2(960, 930)
-scale = Vector2(0.175, 0.175)
-texture = ExtResource("5_1xsix")
+position = Vector2(959, 950)
+scale = Vector2(0.279702, 0.267912)
+texture = ExtResource("1_61f8s")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -46,9 +50,9 @@ vertical_alignment = 1
 script = ExtResource("1_64ctp")
 
 [node name="Timer" type="Sprite2D" parent="Control"]
-position = Vector2(960, 100)
-scale = Vector2(0.2, 0.2)
-texture = ExtResource("1_37p78")
+position = Vector2(958, 100)
+scale = Vector2(0.282627, 0.220427)
+texture = ExtResource("4_amv7k")
 
 [node name="Inventory" type="Node2D" parent="."]
 script = ExtResource("4_a2258")
@@ -83,9 +87,9 @@ position = Vector2(5, 11)
 script = ExtResource("7_g10ll")
 
 [node name="KeyBg" type="Sprite2D" parent="Key"]
-position = Vector2(1769, 152)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("7_61f8s")
+position = Vector2(1775, 149)
+scale = Vector2(0.212288, 0.226829)
+texture = SubResource("CompressedTexture2D_g10ll")
 
 [node name="KeyIcon" type="Sprite2D" parent="Key"]
 visible = false
@@ -134,97 +138,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Crouch" type="Sprite2D" parent="."]
-position = Vector2(150, 950)
-scale = Vector2(0.1, 0.1)
+position = Vector2(225, 897)
+scale = Vector2(0.164634, 0.164634)
 texture = ExtResource("10_amv7k")
 
-[node name="Label" type="Label" parent="Crouch"]
-modulate = Color(0, 0, 0, 1)
-z_index = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -2184.0
-offset_top = -1790.0
-offset_right = -1279.0
-offset_bottom = -1399.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_8sq4i")
-theme_override_font_sizes/font_size = 300
-text = "L Shift"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="Crouch"]
-visible = false
-modulate = Color(0, 0, 0, 1)
-z_index = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -2254.0
-offset_top = -3430.0
-offset_right = -1349.0
-offset_bottom = -3039.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_8sq4i")
-theme_override_font_sizes/font_size = 300
-text = "Crouch"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="MoleSkill" type="Sprite2D" parent="."]
-position = Vector2(1770, 950)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("11_1fv7p")
-
-[node name="Label" type="Label" parent="MoleSkill"]
-modulate = Color(0, 0, 0, 1)
-z_index = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -2184.0
-offset_top = -1730.0
-offset_right = -1279.0
-offset_bottom = -1339.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_8sq4i")
-theme_override_font_sizes/font_size = 300
-text = "Q"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Label2" type="Label" parent="MoleSkill"]
-visible = false
-modulate = Color(0, 0, 0, 1)
-z_index = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -2134.0
-offset_top = -3380.0
-offset_right = -1229.0
-offset_bottom = -2989.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("1_8sq4i")
-theme_override_font_sizes/font_size = 300
-text = "Skill"
-horizontal_alignment = 1
-vertical_alignment = 1
+position = Vector2(1670, 897)
+scale = Vector2(0.161281, 0.161281)
+texture = SubResource("CompressedTexture2D_gpiub")

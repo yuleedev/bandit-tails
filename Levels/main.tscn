@@ -65,4 +65,4 @@ _spawnable_scenes = PackedStringArray("uid://ct2v1laxjo67f", "uid://c1ta55yk5nxa
 spawn_path = NodePath("..")
 spawn_limit = 2
 
-[node name="100total" parent="." instance=ExtResource("10_u05pv")]
+[node name="Map" parent="." instance=ExtResource("10_u05pv")]
