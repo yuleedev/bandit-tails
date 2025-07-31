@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=22 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" uid="uid://bvpa01djx1mc4" path="res://Levels/main.gd" id="1_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://c1ta55yk5nxar" path="res://Assets/Raccoon/raccoon.tscn" id="2_5mxy1"]
@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bwydvcfxfddhp" path="res://Assets/Props/Loot/loot.tscn" id="3_lwy2l"]
 [ext_resource type="Script" uid="uid://2upj8o4sck2s" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
-[ext_resource type="Script" path="res://Levels/loot_spawner.gd" id="4_u05pv"]
+[ext_resource type="Script" uid="uid://gkeeuy8jy4oq" path="res://Levels/loot_spawner.gd" id="4_u05pv"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 [ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
 [ext_resource type="PackedScene" uid="uid://cbvne5fpxlq0t" path="res://key.tscn" id="9_u05pv"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://n02ywmjlls01" path="res://Assets/Props/candleA.glb" id="11_5mxy1"]
 [ext_resource type="PackedScene" uid="uid://cea7edkrb4md8" path="res://Assets/Props/candleB.glb" id="12_3lhg3"]
 [ext_resource type="PackedScene" uid="uid://7xvtyi87oh1h" path="res://Assets/Props/canC.glb" id="13_wgfyn"]
-[ext_resource type="PackedScene" uid="uid://cm5mrhlr4ft2u" path="res://door_idle.glb" id="15_wgfyn"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
 closed = true
@@ -109,7 +108,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5339, 1.16708, -7.16799)
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 16.9295, 1.16708, 4.84954)
 
 [node name="Door" parent="." instance=ExtResource("4_nj2yk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0015, -0.0187825, 2.95682)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 8.09669, -0.041, -8.423)
+
+[node name="Door3" parent="." instance=ExtResource("4_nj2yk")]
+transform = Transform3D(-4.37114e-08, 0, -0.999999, 0, 0.999999, 0, 0.999999, 0, -4.37114e-08, 10.519, -0.041, 6.73312)
+
+[node name="Door4" parent="." instance=ExtResource("4_nj2yk")]
+transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 0.999999, 0, 8.74227e-08, 0, -0.999999, -15.1059, -0.041, 13.8898)
+
+[node name="Door2" parent="." instance=ExtResource("4_nj2yk")]
+transform = Transform3D(-4.37114e-08, 0, 0.999999, 0, 0.999999, 0, -0.999999, 0, -4.37114e-08, 5.547, -0.041, -15.215)
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.15561, 0, 5.32817)
@@ -341,7 +349,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41893, 0, 0)
 curve = SubResource("Curve3D_3lhg3")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(-0.158788, 0, 0.987307, 0, 0.99998, 0, -0.987309, 0, -0.158787, 10.5934, 0, 0.994187)
+transform = Transform3D(-0.158788, 0, 0.987306, 0, 0.99998, 0, -0.987309, 0, -0.158787, 10.5934, 0, 0.994187)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D2/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -376,7 +384,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6131, 0, -20.2113)
 curve = SubResource("Curve3D_5uk0a")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D6"]
-transform = Transform3D(0.0568682, 0, -0.998379, 0, 1, 0, 0.998379, 0, 0.0568682, 3.71079, 0, 1.8322)
+transform = Transform3D(0.0568681, 0, -0.998378, 0, 1, 0, 0.998378, 0, 0.0568681, 3.71079, 0, 1.8322)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -395,15 +403,3 @@ transform = Transform3D(0.487068, 0, -0.873363, 0, 1, 0, 0.873363, 0, 0.487068, 
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D3/PathFollow3D" instance=ExtResource("5_34bfm")]
-
-[node name="door_idle" parent="." instance=ExtResource("15_wgfyn")]
-transform = Transform3D(-0.000648575, 0, 1.0043, 0, 1.0043, 0, -1.0043, 0, -0.000648575, 5.54679, -0.0412426, -15.2146)
-
-[node name="door_idle2" parent="." instance=ExtResource("15_wgfyn")]
-transform = Transform3D(1.00427, 0, -0.00769479, 0, 1.0043, 0, 0.00769479, 0, 1.00427, 7.93595, -0.0412426, -8.42341)
-
-[node name="door_idle3" parent="." instance=ExtResource("15_wgfyn")]
-transform = Transform3D(-0.00928982, 0, -1.00425, 0, 1.0043, 0, 1.00425, 0, -0.00928982, 10.5189, -0.0412426, 6.6556)
-
-[node name="door_idle4" parent="." instance=ExtResource("15_wgfyn")]
-transform = Transform3D(-1.00417, 0, 0.0157572, 0, 1.0043, 0, -0.0157572, 0, -1.00417, -15.0441, -0.0412426, 13.9297)
