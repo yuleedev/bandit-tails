@@ -45,4 +45,4 @@ func _on_select_b_pressed() -> void:
 		#set host to raccoon
 		#set p1 to mole
 		pass
-	GM.start_game()
+	GM.start_game.rpc()

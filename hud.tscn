@@ -15,7 +15,7 @@
 [node name="CanvasLayer" type="CanvasLayer"]
 
 [node name="InventoryBG" type="Sprite2D" parent="."]
-position = Vector2(959, 950)
+position = Vector2(960, 950)
 scale = Vector2(0.279702, 0.267912)
 texture = ExtResource("1_61f8s")
 
@@ -51,11 +51,12 @@ scale = Vector2(0.282627, 0.220427)
 texture = ExtResource("4_amv7k")
 
 [node name="Inventory" type="Node2D" parent="."]
+z_index = 2
 script = ExtResource("4_a2258")
 
 [node name="Label" type="Label" parent="Inventory"]
 modulate = Color(0, 0, 0, 1)
-z_index = 1
+z_index = 2
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
