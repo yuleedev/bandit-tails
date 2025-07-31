@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bunav6f5myq81"]
 
-[ext_resource type="Script" path="res://gui.gd" id="1_80edf"]
+[ext_resource type="Script" uid="uid://bqrtxt2m8f4mw" path="res://gui.gd" id="1_80edf"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_k6omp"]
 viewport_path = NodePath("Sprite3D/SubViewport")
@@ -9,7 +9,7 @@ viewport_path = NodePath("Sprite3D/SubViewport")
 script = ExtResource("1_80edf")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-billboard = 2
+billboard = 1
 no_depth_test = true
 texture = SubResource("ViewportTexture_k6omp")
 
@@ -32,3 +32,19 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 step = 1.0
+
+[node name="Label" type="Label" parent="Sprite3D/SubViewport"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.5
+offset_top = -90.0
+offset_right = 47.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1

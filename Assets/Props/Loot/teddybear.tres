@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ceaipixx1t87o"]
+
+[ext_resource type="Script" uid="uid://bj118do4lnnc6" path="res://Scripts/item.gd" id="1_4isds"]
+[ext_resource type="Texture2D" uid="uid://io3xf1svx0f" path="res://Assets/UI/ItemIcons/teddybear.png" id="1_ftop3"]
+
+[resource]
+script = ExtResource("1_4isds")
+name = ""
+type = ""
+inv_icon = ExtResource("1_ftop3")
+value = 0
+item_path = ""
+metadata/_custom_type_script = "uid://bj118do4lnnc6"
