@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://da4dvq2ahty2a"]
+[gd_scene load_steps=8 format=3 uid="uid://da4dvq2ahty2a"]
 
-[ext_resource type="Texture2D" uid="uid://dqgkkxoosrka0" path="res://hostjoinui.png" id="1_2iwyu"]
+[ext_resource type="Script" uid="uid://26xanfkcfckd" path="res://Levels/hostjoin.gd" id="1_5fplv"]
 [ext_resource type="Script" uid="uid://cd386dejxy872" path="res://Scripts/Temp/host_game.gd" id="1_34iv6"]
 [ext_resource type="Script" uid="uid://dkw4ydaao82gs" path="res://Scripts/Temp/join_game.gd" id="2_3qva8"]
+[ext_resource type="Texture2D" uid="uid://blxh5ys0emcrv" path="res://newhostjoin.png" id="2_5fplv"]
 [ext_resource type="Script" uid="uid://04cjr0j7j8kr" path="res://Scripts/Temp/start_game.gd" id="3_2iwyu"]
 [ext_resource type="Texture2D" uid="uid://b41suvy2fugo5" path="res://Assets/UI/hoststartbutton.png" id="5_5fplv"]
 
@@ -17,6 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_5fplv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -25,7 +27,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_2iwyu")
+texture = ExtResource("2_5fplv")
 expand_mode = 1
 
 [node name="Start" type="TextureButton" parent="."]

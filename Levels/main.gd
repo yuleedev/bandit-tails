@@ -6,7 +6,7 @@ extends Node3D
 @export var SPAWN_1 := Vector3(18, 1, 1)
 
 @export var PLAYER_2: PackedScene
-@export var SPAWN_2 := Vector3(18, 1, 3)
+@export var SPAWN_2 := Vector3(18, 1, 5)
 
 @onready var spawn_points = $LootSpawner.get_children()
 

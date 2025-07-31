@@ -3,9 +3,9 @@ extends Node
 ## ================ [ FIELDS ] ================ ##
 
 @export var options: Options = Options.new()
-@export var ROUND_DURATION: float = 5
+@export var ROUND_DURATION: float = 20
 
-var round: int = 0
+var round: int = 1
 var round_dur: float = 0
 
 var game_paused: bool = true
@@ -26,7 +26,7 @@ func start_game() -> void:
 
 func end_game() -> void:
 	game_paused = true
-	get_tree().change_scene_to_file("res://Levels/hostjoin.tscn")
+	get_tree().change_scene_to_file("res://menu.tscn")
 
 func new_round() -> void:
 	if get_tree().current_scene.scene_file_path != "res://Levels/main.tscn":
