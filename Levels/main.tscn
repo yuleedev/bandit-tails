@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bwydvcfxfddhp" path="res://Assets/Props/Loot/loot.tscn" id="3_lwy2l"]
 [ext_resource type="Script" uid="uid://2upj8o4sck2s" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
-[ext_resource type="Script" path="res://Levels/loot_spawner.gd" id="4_u05pv"]
+[ext_resource type="Script" uid="uid://gkeeuy8jy4oq" path="res://Levels/loot_spawner.gd" id="4_u05pv"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 [ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
 [ext_resource type="PackedScene" uid="uid://cbvne5fpxlq0t" path="res://key.tscn" id="9_u05pv"]
@@ -331,7 +331,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41893, 0, 0)
 curve = SubResource("Curve3D_3lhg3")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(0.913122, 0.000267435, 0.407677, 4.36556e-11, 0.99998, -0.000656004, -0.407678, 0.000599005, 0.91312, 10.5934, 0, 0.994187)
+transform = Transform3D(0.913122, 0.000267435, 0.407677, 2.91037e-11, 0.99998, -0.000656004, -0.407678, 0.000599005, 0.91312, 10.5934, 0, 0.994187)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D2/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -346,33 +346,37 @@ transform = Transform3D(0.240966, -0.0104467, -0.970476, 4.65661e-10, 0.999939, 
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D3/PathFollow3D" instance=ExtResource("5_34bfm")]
+transform = Transform3D(-0.617695, -0.00846493, -0.786372, 0.00846493, 0.999813, -0.0174117, 0.786372, -0.0174117, -0.617507, 0, 1.0744, -0.0115652)
 
 [node name="Path3D4" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9888, 0, -21.6006)
 curve = SubResource("Curve3D_5uk0a")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D4"]
-transform = Transform3D(0.97249, 0.000158276, 0.232924, -1.45518e-11, 0.999996, -0.000679521, -0.232923, 0.000660828, 0.972496, 0.242697, 0.220245, 3.62449)
+transform = Transform3D(0.97249, 0.000158275, 0.232923, 0, 0.999996, -0.000679518, -0.232922, 0.000660825, 0.972496, 0.242697, 0.220245, 3.62449)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D4/PathFollow3D" instance=ExtResource("5_34bfm")]
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 5.82077e-11, 0, 0, 1, 0, 0.894404, -0.000606537)
 
 [node name="Path3D5" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9782, 0.370912, 3.17125)
 curve = SubResource("Curve3D_ouevp")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D5"]
-transform = Transform3D(-0.951989, 0.000212039, -0.306124, -7.27594e-12, 0.999996, 0.000692652, 0.306125, 0.000659399, -0.951986, -0.264627, -0.232357, 9.31149)
+transform = Transform3D(-0.951989, 0.00021204, -0.306125, -4.36556e-11, 0.999996, 0.000692653, 0.306126, 0.000659401, -0.951986, -0.264627, -0.232357, 9.31149)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D5/PathFollow3D" instance=ExtResource("5_34bfm")]
+transform = Transform3D(-0.946204, 0.000224123, -0.323571, -0.000224123, 0.999999, 0.00134805, 0.323571, 0.00134805, -0.946203, 0, 1.10518, 0.0007658)
 
 [node name="Path3D6" type="Path3D" parent="."]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -20.3774, 0.37091, -8.82238)
 curve = SubResource("Curve3D_ja5tu")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D6"]
-transform = Transform3D(-0.944175, -0.000259045, 0.329443, 0, 1, 0.000786312, -0.329443, 0.000742417, -0.944175, 0.0675316, 0.00132474, 3.73006)
+transform = Transform3D(-0.944175, -0.000259045, 0.329443, 2.91038e-11, 1, 0.000786313, -0.329443, 0.000742418, -0.944175, 0.0675316, 0.00132474, 3.73006)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]
+transform = Transform3D(-0.908887, 0.000327926, -0.417042, -0.000327926, 0.999999, 0.00150098, 0.417042, 0.00150098, -0.908886, 0, 0.638411, 0.00050211)
