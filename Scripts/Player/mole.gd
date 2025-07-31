@@ -9,6 +9,7 @@ class_name Mole
 @export var is_digging = false
 var dig_timer: Timer
 
+
 ## ================ [ PLAYER ] ================ ##
 
 func _ready():
@@ -24,7 +25,6 @@ func use_skill() -> void:
 		stop_dig()
 	else:
 		start_dig()
-	
 
 func start_dig() -> void:
 	if is_digging:
@@ -33,15 +33,23 @@ func start_dig() -> void:
 
 	if is_in_group("player"):
 		remove_from_group("player")
-		
-	sound.disabled = true
+	
+	if sound == null:
+		push_error("Sound node is null")
+	else:
+		sound.disabled = true
+
+	if camera == null:
+		push_error("Camera node is null")
+		return
 	
 	var tween = create_tween()
 	tween.tween_property(camera, "rotation_degrees:x", -60.0, 1)
 	tween.parallel().tween_property(camera, "position:y", camera.position.y - DIG_DEPTH, 0.3)
 	tween.tween_property(camera, "rotation_degrees:x", 0.0, 0.3)
-	
+
 	dig_timer.start()
+	
 func stop_dig():
 	if not is_digging:
 		return
