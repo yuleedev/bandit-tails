@@ -9,7 +9,7 @@ viewport_path = NodePath("Sprite3D/SubViewport")
 script = ExtResource("1_r3pgf")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-billboard = 2
+billboard = 1
 no_depth_test = true
 texture = SubResource("ViewportTexture_k6omp")
 
@@ -32,6 +32,10 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 step = 1.0
+
+[node name="Label" type="Label" parent="Sprite3D/SubViewport"]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.75108)

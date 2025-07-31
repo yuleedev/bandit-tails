@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bojxh375yy14q"]
+
+[ext_resource type="Texture2D" uid="uid://dydioqodwl617" path="res://Assets/UI/ItemIcons/rings.png" id="1_1vjrb"]
+[ext_resource type="Script" uid="uid://bj118do4lnnc6" path="res://Scripts/item.gd" id="1_ltx4g"]
+
+[resource]
+script = ExtResource("1_ltx4g")
+name = "rings"
+type = ""
+inv_icon = ExtResource("1_1vjrb")
+value = 0
+item_path = ""
+metadata/_custom_type_script = "uid://bj118do4lnnc6"
