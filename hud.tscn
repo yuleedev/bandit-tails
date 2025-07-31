@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://bn1x10tatbkur" path="res://inventory.gd" id="4_a2258"]
 [ext_resource type="Texture2D" uid="uid://c3p8xsiuan0j0" path="res://timer.png" id="4_amv7k"]
 [ext_resource type="Texture2D" uid="uid://br7v6dnwflgw1" path="res://Assets/UI/crosshair.png" id="6_1xsix"]
-[ext_resource type="Script" uid="uid://byhg3qjh6vhhh" path="res://keyinv.gd" id="7_g10ll"]
+[ext_resource type="Script" path="res://keyinv.gd" id="7_g10ll"]
 [ext_resource type="Texture2D" uid="uid://bigqiiac2owpp" path="res://keybg.png" id="8_amv7k"]
 [ext_resource type="Texture2D" uid="uid://dkuosjlkujeel" path="res://Assets/UI/ItemIcons/key_icon.png" id="8_g10ll"]
 [ext_resource type="Texture2D" uid="uid://bqbktdw6745di" path="res://Assets/UI/crouch.png" id="10_amv7k"]
@@ -134,11 +134,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Crouch" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(225, 897)
 scale = Vector2(0.164634, 0.164634)
 texture = ExtResource("10_amv7k")
 
 [node name="MoleSkill" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1670, 897)
 scale = Vector2(0.161281, 0.161281)
 texture = ExtResource("11_1fv7p")

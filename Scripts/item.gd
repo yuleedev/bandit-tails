@@ -21,3 +21,6 @@ func _process(_delta: float) -> void:
 
 func randomize_value() -> void:
 	value = randi_range(10, 50)
+	
+func set_icon(i : Texture2D) -> void:
+	inv_icon = i

@@ -8,9 +8,12 @@ var p_ref = null
 @export var item_res : Item
 @onready var inv = get_node("/root/Main/CanvasLayer/Inventory")
 @export var mesh_options: Array[Mesh] = []
+@export var icon_options: Array[Texture2D] = []
 
 func _ready():
-	mesh_instance.mesh = mesh_options[randi() % mesh_options.size()]
+	var n = randi() % mesh_options.size()
+	mesh_instance.mesh = mesh_options[n]
+	item_res.set_icon(icon_options[n])
 	item_res.randomize_value()
 
 func _on_body_entered(body):
