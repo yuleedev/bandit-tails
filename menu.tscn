@@ -22,11 +22,15 @@ expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecwwl"]
 bg_color = Color(0.138055, 0.0917605, 0.0715031, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
 border_color = Color(0.664349, 0.585552, 0.346259, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l48gv"]
 bg_color = Color(0.270588, 0.192157, 0.156863, 1)
@@ -54,11 +58,15 @@ expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kk3ma"]
 bg_color = Color(0.137255, 0.0901961, 0.0705882, 1)
-border_width_left = 10
-border_width_top = 10
-border_width_right = 10
-border_width_bottom = 10
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
 border_color = Color(0.662745, 0.584314, 0.345098, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
 
 [node name="Control" type="Control"]
 layout_mode = 3

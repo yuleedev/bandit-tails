@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://da4dvq2ahty2a"]
 
-[ext_resource type="Script" path="res://Levels/hostjoin.gd" id="1_5fplv"]
+[ext_resource type="Script" uid="uid://26xanfkcfckd" path="res://Levels/hostjoin.gd" id="1_5fplv"]
 [ext_resource type="Script" uid="uid://cd386dejxy872" path="res://Scripts/Temp/host_game.gd" id="1_34iv6"]
 [ext_resource type="Script" uid="uid://dkw4ydaao82gs" path="res://Scripts/Temp/join_game.gd" id="2_3qva8"]
 [ext_resource type="Texture2D" uid="uid://blxh5ys0emcrv" path="res://newhostjoin.png" id="2_5fplv"]

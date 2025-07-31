@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2x43pm04gy48"
-path="res://.godot/imported/piggybank.png-8edd2138a8da3544eee115c52e245fe7.ctex"
+uid="uid://gv7lmsc7lgwd"
+path="res://.godot/imported/newreadyhover.png-f338eb58fba35754caa68a0d215628ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/ItemIcons/piggybank.png"
-dest_files=["res://.godot/imported/piggybank.png-8edd2138a8da3544eee115c52e245fe7.ctex"]
+source_file="res://Assets/UI/newreadyhover.png"
+dest_files=["res://.godot/imported/newreadyhover.png-f338eb58fba35754caa68a0d215628ab.ctex"]
 
 [params]
 
