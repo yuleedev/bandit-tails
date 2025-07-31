@@ -1,7 +1,6 @@
-[gd_scene load_steps=26 format=3 uid="uid://bwydvcfxfddhp"]
+[gd_scene load_steps=25 format=3 uid="uid://bwydvcfxfddhp"]
 
 [ext_resource type="Script" uid="uid://ca0qt6j6uxdsp" path="res://Scripts/treasure.gd" id="1_582qy"]
-[ext_resource type="Texture2D" uid="uid://f7bppga75j5w" path="res://Assets/Props/Loot/teste.png" id="2_dsxso"]
 [ext_resource type="PackedScene" uid="uid://bunav6f5myq81" path="res://gui.tscn" id="2_fybsu"]
 [ext_resource type="Script" uid="uid://bj118do4lnnc6" path="res://Scripts/item.gd" id="3_nx1s7"]
 [ext_resource type="ArrayMesh" uid="uid://cdikvwqgxg1f1" path="res://Assets/Props/Loot/testrings.obj" id="4_4fahp"]
@@ -14,7 +13,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c6gmvb7atnold" path="res://Assets/Props/Loot/watch.obj" id="11_od7cy"]
 [ext_resource type="Texture2D" uid="uid://dydioqodwl617" path="res://Assets/UI/ItemIcons/rings.png" id="12_doqif"]
 [ext_resource type="Texture2D" uid="uid://dy7ujg6woorg4" path="res://Assets/UI/ItemIcons/hairbrush.png" id="13_rfdsn"]
-[ext_resource type="Texture2D" uid="uid://c5grvw7opyck" path="res://Assets/UI/ItemIcons/book.png" id="14_fwg60"]
+[ext_resource type="Texture2D" uid="uid://bsj41t6r4yq5d" path="res://Assets/UI/ItemIcons/ring.png" id="14_doqif"]
 [ext_resource type="Texture2D" uid="uid://io3xf1svx0f" path="res://Assets/UI/ItemIcons/teddybear.png" id="15_np4xh"]
 [ext_resource type="Texture2D" uid="uid://vdlsht58cvba" path="res://Assets/UI/ItemIcons/vaseA.png" id="16_yrbdw"]
 [ext_resource type="Texture2D" uid="uid://b65u8m2esxikx" path="res://Assets/UI/ItemIcons/teacup.png" id="17_wa50y"]
@@ -23,10 +22,9 @@
 
 [sub_resource type="Resource" id="Resource_4fahp"]
 script = ExtResource("3_nx1s7")
-name = "Vase"
-type = "Vase"
-inv_icon = ExtResource("2_dsxso")
-value = 15
+name = ""
+type = ""
+value = 0
 item_path = ""
 metadata/_custom_type_script = "uid://bj118do4lnnc6"
 
@@ -49,7 +47,7 @@ properties/1/replication_mode = 1
 script = ExtResource("1_582qy")
 item_res = SubResource("Resource_4fahp")
 mesh_options = Array[Mesh]([ExtResource("4_4fahp"), ExtResource("5_jgq70"), ExtResource("6_yjhj0"), ExtResource("9_3aec1"), ExtResource("10_mdsk6"), ExtResource("8_cstq0"), ExtResource("7_cstq0"), ExtResource("11_od7cy")])
-icon_options = Array[Texture2D]([ExtResource("12_doqif"), ExtResource("13_rfdsn"), ExtResource("14_fwg60"), ExtResource("15_np4xh"), ExtResource("16_yrbdw"), ExtResource("17_wa50y"), ExtResource("18_bc24m"), ExtResource("19_t7biv")])
+icon_options = Array[Texture2D]([ExtResource("12_doqif"), ExtResource("13_rfdsn"), ExtResource("14_doqif"), ExtResource("15_np4xh"), ExtResource("16_yrbdw"), ExtResource("17_wa50y"), ExtResource("18_bc24m"), ExtResource("19_t7biv")])
 
 [node name="Body" type="StaticBody3D" parent="."]
 
