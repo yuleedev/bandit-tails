@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=23 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" uid="uid://bvpa01djx1mc4" path="res://Levels/main.gd" id="1_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://c1ta55yk5nxar" path="res://Assets/Raccoon/raccoon.tscn" id="2_5mxy1"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://n02ywmjlls01" path="res://Assets/Props/candleA.glb" id="11_5mxy1"]
 [ext_resource type="PackedScene" uid="uid://cea7edkrb4md8" path="res://Assets/Props/candleB.glb" id="12_3lhg3"]
 [ext_resource type="PackedScene" uid="uid://7xvtyi87oh1h" path="res://Assets/Props/canC.glb" id="13_wgfyn"]
+[ext_resource type="PackedScene" uid="uid://cm5mrhlr4ft2u" path="res://door_idle.glb" id="15_wgfyn"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
 closed = true
@@ -115,7 +116,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.15561, 0, 5.32817)
 curve = SubResource("Curve3D_ovrsl")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.542774, -1.61372e-05, 0.839869, 0, 0.999985, 1.92139e-05, -0.839869, 1.04288e-05, -0.542774, -17.4486, 0.0345366, -18.1004)
+transform = Transform3D(-0.542773, -1.61372e-05, 0.839869, 0, 0.999985, 1.92139e-05, -0.839869, 1.04288e-05, -0.542773, -17.4486, 0.0345366, -18.1004)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -365,7 +366,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5695, 0, -7.12015)
 curve = SubResource("Curve3D_ja5tu")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D7"]
-transform = Transform3D(-0.0766959, 0, -0.997044, 0, 1, 0, 0.997044, 0, -0.0766959, 2.21924, 0, -0.827996)
+transform = Transform3D(-0.0766961, 0, -0.997044, 0, 1, 0, 0.997044, 0, -0.0766961, 2.21924, 0, -0.827996)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D7/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -380,10 +381,11 @@ script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.908887, 0.000327926, -0.417042, -0.000327926, 0.999999, 0.00150098, 0.417042, 0.00150098, -0.908886, 0, 0.638411, 0.00050211)
 mesh = SubResource("QuadMesh_3lhg3")
 skeleton = NodePath("../Path3D5")
+
 [node name="Path3D3" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6246, 0, -8.57979)
 curve = SubResource("Curve3D_wgfyn")
@@ -393,3 +395,15 @@ transform = Transform3D(0.487068, 0, -0.873363, 0, 1, 0, 0.873363, 0, 0.487068, 
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D3/PathFollow3D" instance=ExtResource("5_34bfm")]
+
+[node name="door_idle" parent="." instance=ExtResource("15_wgfyn")]
+transform = Transform3D(-0.000648575, 0, 1.0043, 0, 1.0043, 0, -1.0043, 0, -0.000648575, 5.54679, -0.0412426, -15.2146)
+
+[node name="door_idle2" parent="." instance=ExtResource("15_wgfyn")]
+transform = Transform3D(1.00427, 0, -0.00769479, 0, 1.0043, 0, 0.00769479, 0, 1.00427, 7.93595, -0.0412426, -8.42341)
+
+[node name="door_idle3" parent="." instance=ExtResource("15_wgfyn")]
+transform = Transform3D(-0.00928982, 0, -1.00425, 0, 1.0043, 0, 1.00425, 0, -0.00928982, 10.5189, -0.0412426, 6.6556)
+
+[node name="door_idle4" parent="." instance=ExtResource("15_wgfyn")]
+transform = Transform3D(-1.00417, 0, 0.0157572, 0, 1.0043, 0, -0.0157572, 0, -1.00417, -15.0441, -0.0412426, 13.9297)
