@@ -380,6 +380,10 @@ script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.908887, 0.000327926, -0.417042, -0.000327926, 0.999999, 0.00150098, 0.417042, 0.00150098, -0.908886, 0, 0.638411, 0.00050211)
+mesh = SubResource("QuadMesh_3lhg3")
+skeleton = NodePath("../Path3D5")
 [node name="Path3D3" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6246, 0, -8.57979)
 curve = SubResource("Curve3D_wgfyn")

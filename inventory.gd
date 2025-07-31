@@ -25,6 +25,7 @@ func prep_item(res):
 	item['item_path'] = res.item_path
 	item['value'] = res.value
 	temp_value = res.value
+	
 	return item
 	
 func add_item(item):
