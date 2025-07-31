@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oy6owwfn3uwq"
+uid="uid://dyty83ub1hl4a"
 path.s3tc="res://.godot/imported/100total_Wooden_Planks_vcznah3g_2K_BaseColor.jpg-6481a7d55e4482a030ac8ab790d8e277.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "e2e393fe92f541c9279e8d4d75da08de"
 }
 
 [deps]
