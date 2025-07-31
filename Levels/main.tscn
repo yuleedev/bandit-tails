@@ -133,7 +133,16 @@ transform = Transform3D(-0.999184, 0.016399, -0.0369301, 0.0156731, 0.99968, 0.0
 [node name="CanvasLayer" parent="." instance=ExtResource("9_he5fp")]
 
 [node name="Key" parent="." instance=ExtResource("9_u05pv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.49677, 0.822882, 4.86663)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.9932, 1.40382, -1.0227)
+
+[node name="Key2" parent="." instance=ExtResource("9_u05pv")]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -6.08015, 0.772433, -8.06497)
+
+[node name="Key3" parent="." instance=ExtResource("9_u05pv")]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 11.9817, 1.28781, -5.44618)
+
+[node name="Key4" parent="." instance=ExtResource("9_u05pv")]
+transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 0.999998, 4.83981, 1.22582, 11.2082)
 
 [node name="Spawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("uid://ct2v1laxjo67f", "uid://c1ta55yk5nxar")
