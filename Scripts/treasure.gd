@@ -11,6 +11,7 @@ var p_ref = null
 
 func _ready():
 	mesh_instance.mesh = mesh_options[randi() % mesh_options.size()]
+	item_res.randomize_value()
 	#$Body/Area.body_entered.connect(_on_body_entered)
 	#$Body/Area.body_exited.connect(_on_body_exited)
 
@@ -28,7 +29,7 @@ func _on_body_exited(body):
 			p_near = false
 			p_ref = null
 
-func _process(delta):
+func _process(_delta):
 	pass
 		
 func pick_up():
