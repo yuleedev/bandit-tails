@@ -18,6 +18,9 @@ var p2_id: int
 ## ================ [ METHODS ] ================ ##
 
 @rpc("call_local")
+func select_char() -> void:
+	get_tree().change_scene_to_file("res://character_select.tscn")
+
 func start_game() -> void:
 	get_tree().change_scene_to_file("res://Levels/main.tscn")
 
