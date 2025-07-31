@@ -1,4 +1,4 @@
 extends Button
 
 func _on_pressed() -> void:
-	GM.start_game.rpc()
+	GM.select_char.rpc()
