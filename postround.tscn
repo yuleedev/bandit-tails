@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cqetw17vlv8ho"]
 
-[ext_resource type="Texture2D" uid="uid://b70tkh7khdt0o" path="res://newpostround.png" id="1_ohbq3"]
+[ext_resource type="Texture2D" uid="uid://cjaekcsjnglmb" path="res://newnewpostround.png" id="1_djhin"]
 [ext_resource type="Texture2D" uid="uid://bgsdj3k71fbx8" path="res://Assets/UI/readynormal.png" id="2_ntqpw"]
 [ext_resource type="Texture2D" uid="uid://crnalryaej6xy" path="res://Assets/UI/readyhover.png" id="3_a30c7"]
 [ext_resource type="Texture2D" uid="uid://cgm7cwnt75gvc" path="res://Assets/UI/readypressed.png" id="3_ohbq3"]
@@ -25,7 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_ohbq3")
+texture = ExtResource("1_djhin")
 expand_mode = 1
 
 [node name="ReadyButton" type="TextureButton" parent="CanvasLayer"]
@@ -50,5 +50,29 @@ theme_override_fonts/font = ExtResource("6_djhin")
 theme_override_font_sizes/font_size = 90
 text = "0"
 script = ExtResource("7_odhdd")
+
+[node name="HostVal" type="Label" parent="CanvasLayer"]
+offset_left = 391.0
+offset_top = 701.0
+offset_right = 523.0
+offset_bottom = 744.0
+
+[node name="HostWins" type="Label" parent="CanvasLayer"]
+offset_left = 14.0
+offset_top = 774.0
+offset_right = 353.0
+offset_bottom = 822.0
+
+[node name="JoinVal" type="Label" parent="CanvasLayer"]
+offset_left = 1775.0
+offset_top = 277.0
+offset_right = 1892.0
+offset_bottom = 315.0
+
+[node name="JoinWins" type="Label" parent="CanvasLayer"]
+offset_left = 1369.0
+offset_top = 345.0
+offset_right = 1754.0
+offset_bottom = 396.0
 
 [connection signal="pressed" from="CanvasLayer/ReadyButton" to="CanvasLayer/ReadyButton" method="_on_ready_button_pressed"]
