@@ -353,7 +353,7 @@ transform = Transform3D(-0.158788, 0, 0.987306, 0, 0.99998, 0, -0.987309, 0, -0.
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D2/PathFollow3D" instance=ExtResource("5_34bfm")]
-transform = Transform3D(-0.6257, 4.36557e-11, -0.0702939, 5.82077e-11, 0.629637, -5.82077e-11, 0.0702939, -5.82077e-11, -0.6257, 0, 1.04253, 0)
+transform = Transform3D(-0.6257, 4.36557e-11, -0.0702939, 5.82077e-11, 0.629637, -5.82077e-11, 0.0702939, -5.82077e-11, -0.6257, 0, 0.590453, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.908887, 0.000327926, -0.417042, -0.000327926, 0.999999, 0.00150098, 0.417042, 0.00150098, -0.908886, 0, 0.638411, 0.00050211)
@@ -368,6 +368,7 @@ curve = SubResource("Curve3D_ouevp")
 transform = Transform3D(0.999942, 0, -0.0106368, 0, 0.999999, 0, 0.0106368, 0, 0.999941, 0.781304, 0, 0.140287)
 
 [node name="Guard" parent="Path3D5/PathFollow3D" instance=ExtResource("5_34bfm")]
+transform = Transform3D(1, 0, -9.31323e-10, 0, 1, 0, -9.31323e-10, 0, 1, 0, 0.984444, 0)
 
 [node name="Path3D7" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5695, 0, -7.12015)
@@ -388,6 +389,7 @@ transform = Transform3D(0.0568681, 0, -0.998378, 0, 1, 0, 0.998378, 0, 0.0568681
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00886, 0)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.908887, 0.000327926, -0.417042, -0.000327926, 0.999999, 0.00150098, 0.417042, 0.00150098, -0.908886, 0, 0.638411, 0.00050211)
@@ -403,3 +405,17 @@ transform = Transform3D(0.487068, 0, -0.873363, 0, 1, 0, 0.873363, 0, 0.487068, 
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D3/PathFollow3D" instance=ExtResource("5_34bfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.717995, 0)
+
+[node name="door_idle" parent="." instance=ExtResource("15_wgfyn")]
+transform = Transform3D(-0.000648575, 0, 1.0043, 0, 1.0043, 0, -1.0043, 0, -0.000648575, 5.54679, -0.0412426, -15.2146)
+
+[node name="door_idle2" parent="." instance=ExtResource("15_wgfyn")]
+transform = Transform3D(1.00427, 0, -0.00769479, 0, 1.0043, 0, 0.00769479, 0, 1.00427, 7.93595, -0.0412426, -8.42341)
+
+[node name="door_idle3" parent="." instance=ExtResource("15_wgfyn")]
+transform = Transform3D(-0.00928982, 0, -1.00425, 0, 1.0043, 0, 1.00425, 0, -0.00928982, 10.5189, -0.0412426, 6.6556)
+
+[node name="door_idle4" parent="." instance=ExtResource("15_wgfyn")]
+transform = Transform3D(-1.00417, 0, 0.0157572, 0, 1.0043, 0, -0.0157572, 0, -1.00417, -15.0441, -0.0412426, 13.9297)
+
