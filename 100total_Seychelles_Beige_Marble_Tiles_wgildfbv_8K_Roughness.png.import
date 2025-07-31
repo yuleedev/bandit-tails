@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2pj2l5pcywpi"
+uid="uid://bagj82j4202rh"
 path.s3tc="res://.godot/imported/100total_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Roughness.png-24d9519a8fea50623457d9bb4ed966c2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "6c31926edcb512b492a5b4f2ec130457"
 }
 
 [deps]
