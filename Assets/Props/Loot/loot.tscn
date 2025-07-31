@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ca0qt6j6uxdsp" path="res://Scripts/treasure.gd" id="1_582qy"]
 [ext_resource type="Texture2D" uid="uid://f7bppga75j5w" path="res://Assets/Props/Loot/teste.png" id="2_dsxso"]
 [ext_resource type="PackedScene" uid="uid://bunav6f5myq81" path="res://gui.tscn" id="2_fybsu"]
-[ext_resource type="Script" uid="uid://bj118do4lnnc6" path="res://Scripts/item.gd" id="3_nx1s7"]
+[ext_resource type="Script" path="res://Scripts/item.gd" id="3_nx1s7"]
 [ext_resource type="ArrayMesh" uid="uid://cdikvwqgxg1f1" path="res://Assets/Props/Loot/testrings.obj" id="4_4fahp"]
 [ext_resource type="ArrayMesh" uid="uid://ibaeel2yvujb" path="res://Assets/Props/Loot/testbrush.obj" id="5_jgq70"]
 [ext_resource type="ArrayMesh" uid="uid://dwkt3qan651qo" path="res://Assets/Props/Loot/ring.obj" id="6_yjhj0"]
