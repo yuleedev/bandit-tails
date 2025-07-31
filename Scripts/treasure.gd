@@ -12,8 +12,6 @@ var p_ref = null
 func _ready():
 	mesh_instance.mesh = mesh_options[randi() % mesh_options.size()]
 	item_res.randomize_value()
-	#$Body/Area.body_entered.connect(_on_body_entered)
-	#$Body/Area.body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
 	if body.name == "1" || body.name == str(GM.p2_id):
