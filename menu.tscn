@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbkgjs80tadds"]
+[gd_scene load_steps=9 format=3 uid="uid://cbkgjs80tadds"]
 
 [ext_resource type="Texture2D" uid="uid://ckyl7lju8gu3c" path="res://Assets/UI/menubg.png" id="1_4hy44"]
 [ext_resource type="Script" uid="uid://dkf0hk10dchsj" path="res://menu.gd" id="1_l48gv"]
@@ -27,6 +27,18 @@ border_width_top = 15
 border_width_right = 15
 border_width_bottom = 15
 border_color = Color(0.945098, 0.909804, 0.796078, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hy44"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.737255, 0.658824, 0.407843, 1)
 expand_margin_left = 10.0
 expand_margin_top = 10.0
 expand_margin_right = 10.0
@@ -90,6 +102,7 @@ rotation = -0.0874159
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_4hy44")
 theme_override_font_sizes/font_size = 90
+theme_override_styles/hover = SubResource("StyleBoxFlat_4hy44")
 theme_override_styles/normal = SubResource("StyleBoxFlat_l48gv")
 text = "Tutorial"
 
