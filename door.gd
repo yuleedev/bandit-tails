@@ -27,4 +27,5 @@ func _process(delta):
 	
 func open():
 	inv.add_item()
-	queue_free()  
+	#queue_free()
+	$AnimationTree.set("parameters/conditions/unlock", true)
