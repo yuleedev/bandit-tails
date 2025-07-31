@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://cqetw17vlv8ho"]
 
 [ext_resource type="Texture2D" uid="uid://dd4rsppsxqswo" path="res://postround.png" id="1_djhin"]
-[ext_resource type="Texture2D" uid="uid://bgsdj3k71fbx8" path="res://Assets/UI/readynormal.png" id="2_ntqpw"]
-[ext_resource type="Texture2D" uid="uid://crnalryaej6xy" path="res://Assets/UI/readyhover.png" id="3_a30c7"]
-[ext_resource type="Texture2D" uid="uid://cgm7cwnt75gvc" path="res://Assets/UI/readypressed.png" id="3_ohbq3"]
+[ext_resource type="Texture2D" uid="uid://l5ayqu80o3xf" path="res://Assets/UI/newready.png" id="2_ohbq3"]
+[ext_resource type="Texture2D" uid="uid://dfrhlw1nng88u" path="res://Assets/UI/newreadypressed.png" id="3_djhin"]
 [ext_resource type="Script" uid="uid://c1gj0lo0wlrjm" path="res://ready.gd" id="4_a30c7"]
+[ext_resource type="Texture2D" uid="uid://gv7lmsc7lgwd" path="res://Assets/UI/newreadyhover.png" id="4_odhdd"]
 [ext_resource type="FontFile" uid="uid://0mou7hqwgtb4" path="res://Assets/UI/UIFont.ttf" id="6_djhin"]
-[ext_resource type="Script" path="res://round_counter.gd" id="7_odhdd"]
+[ext_resource type="Script" uid="uid://de6hym73uuw0v" path="res://round_counter.gd" id="7_odhdd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -29,13 +29,13 @@ texture = ExtResource("1_djhin")
 expand_mode = 1
 
 [node name="ReadyButton" type="TextureButton" parent="CanvasLayer"]
-offset_left = 726.0
-offset_top = 554.0
-offset_right = 1171.0
-offset_bottom = 668.0
-texture_normal = ExtResource("2_ntqpw")
-texture_pressed = ExtResource("3_ohbq3")
-texture_hover = ExtResource("3_a30c7")
+offset_left = 728.0
+offset_top = 538.0
+offset_right = 1161.0
+offset_bottom = 694.0
+texture_normal = ExtResource("2_ohbq3")
+texture_pressed = ExtResource("3_djhin")
+texture_hover = ExtResource("4_odhdd")
 ignore_texture_size = true
 stretch_mode = 0
 script = ExtResource("4_a30c7")

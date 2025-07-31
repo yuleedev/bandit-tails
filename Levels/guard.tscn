@@ -59,17 +59,17 @@ anim_player = NodePath("../guard-walk2/AnimationPlayer")
 transform = Transform3D(-0.4, 0, -3.49691e-08, 0, 0.4, 0, 3.49691e-08, 0, -0.4, 0, -1, 0)
 
 [node name="Skeleton3D" parent="guard-walk2/Armature_002" index="0"]
-bones/0/position = Vector3(0, 0.120048, 0)
-bones/0/rotation = Quaternion(5.74884e-05, 0.999987, 0.00507976, -1.2754e-05)
-bones/3/rotation = Quaternion(0.00142521, -0.0758658, 0.887603, -0.454316)
-bones/4/rotation = Quaternion(0.11824, -0.0995849, -0.0936495, 0.98353)
-bones/6/rotation = Quaternion(-0.00143199, -0.0752477, 0.889221, 0.451244)
-bones/7/rotation = Quaternion(0.0227199, -0.00834401, 0.088071, 0.99582)
-bones/9/position = Vector3(0.558462, -0.0750596, -0.112505)
-bones/9/rotation = Quaternion(0.0143397, -0.133342, 0.990905, -0.0110724)
-bones/10/position = Vector3(-0.558589, 0.0305501, 0.119613)
-bones/10/rotation = Quaternion(-0.0189729, 0.158935, 0.987086, 0.00633701)
-bones/11/rotation = Quaternion(-0.00057802, 0.338724, 0.937622, 0.0782946)
+bones/0/position = Vector3(0, -0.0673725, 0)
+bones/0/rotation = Quaternion(0.0016785, 0.999986, 0.00507976, -0.000374509)
+bones/3/rotation = Quaternion(0.00143195, -0.0752636, 0.88918, -0.451323)
+bones/4/rotation = Quaternion(0.194133, -0.185862, -0.0967416, 0.958336)
+bones/6/rotation = Quaternion(-0.00142526, -0.0758499, 0.887645, 0.454237)
+bones/7/rotation = Quaternion(-0.0553509, -0.0960311, 0.0821716, 0.990435)
+bones/9/position = Vector3(0.558225, 0.0555163, -0.184372)
+bones/9/rotation = Quaternion(-0.00173004, -0.229715, 0.973249, -0.00383362)
+bones/10/position = Vector3(-0.558091, 0.16669, 0.129593)
+bones/10/rotation = Quaternion(-0.0355379, 0.250522, 0.967412, 0.00946409)
+bones/11/rotation = Quaternion(0.0167352, 0.333937, 0.925393, 0.178478)
 
 [connection signal="body_entered" from="GuardBody3D/VisionArea3D" to="." method="_on_vision_area_3d_body_entered"]
 [connection signal="body_exited" from="GuardBody3D/VisionArea3D" to="." method="_on_vision_area_3d_body_exited"]
