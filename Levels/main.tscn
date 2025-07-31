@@ -4,13 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://c1ta55yk5nxar" path="res://Assets/Raccoon/raccoon.tscn" id="2_5mxy1"]
 [ext_resource type="PackedScene" uid="uid://ct2v1laxjo67f" path="res://Assets/Mole/mole.tscn" id="2_hbaan"]
 [ext_resource type="PackedScene" uid="uid://bwydvcfxfddhp" path="res://Assets/Props/Loot/loot.tscn" id="3_lwy2l"]
-[ext_resource type="Script" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
+[ext_resource type="Script" uid="uid://2upj8o4sck2s" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
 [ext_resource type="Script" path="res://Levels/loot_spawner.gd" id="4_u05pv"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 [ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
 [ext_resource type="PackedScene" uid="uid://cbvne5fpxlq0t" path="res://key.tscn" id="9_u05pv"]
-[ext_resource type="PackedScene" uid="uid://hoh7ak0sfmki" path="res://100total.glb" id="10_u05pv"]
+[ext_resource type="PackedScene" uid="uid://52s6s4v7c3xm" path="res://100total.glb" id="10_u05pv"]
 [ext_resource type="PackedScene" uid="uid://n02ywmjlls01" path="res://Assets/Props/candleA.glb" id="11_5mxy1"]
 [ext_resource type="PackedScene" uid="uid://cea7edkrb4md8" path="res://Assets/Props/candleB.glb" id="12_3lhg3"]
 [ext_resource type="PackedScene" uid="uid://7xvtyi87oh1h" path="res://Assets/Props/canC.glb" id="13_wgfyn"]
@@ -118,6 +118,11 @@ transform = Transform3D(1.01115, -0.00655041, 0.0474141, -0.0452913, -0.0356047,
 light_color = Color(0.930264, 0.825468, 0.563066, 1)
 light_energy = 0.222
 
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="100total"]
+transform = Transform3D(1.00329, -0.00385688, 0.0448681, -0.0449391, -0.0209641, 1.00307, 0.00291558, 1.00407, 0.0211156, -3.23592, 2.13545, -21.7981)
+light_color = Color(0.930264, 0.825468, 0.563066, 1)
+light_energy = 0.111
+
 [node name="Candles" type="Node3D" parent="."]
 transform = Transform3D(1.0043, 0, 0, 0, 1.0043, 0, 0, 0, 1.0043, 0, 0, 0)
 
@@ -129,6 +134,12 @@ transform = Transform3D(0.149358, 0, 0, 0, 0.149358, 0, 0, 0, 0.149358, -12.0572
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="Candles/candleA2"]
 transform = Transform3D(-2.92661e-07, 0, -6.69531, 0, 6.69531, 0, 6.69531, 0, -2.92661e-07, 0.0575027, 4.03065, 0.677353)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="Candles/candleA2"]
+transform = Transform3D(-2.92661e-07, 0, -6.69531, 0, 6.69531, 0, 6.69531, 0, -2.92661e-07, -72.6063, 4.03065, -69.9742)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
@@ -147,6 +158,12 @@ omni_range = 3.659
 
 [node name="OmniLight3D9" type="OmniLight3D" parent="Candles/candleA2"]
 transform = Transform3D(-2.92661e-07, 0, -6.69531, 0, 6.69531, 0, 6.69531, 0, -2.92661e-07, -24.0166, 7.79511, -194.154)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="Candles/candleA2"]
+transform = Transform3D(-2.92661e-07, 0, -6.69531, 0, 6.69531, 0, 6.69531, 0, -2.92661e-07, -58.2306, -5.51099, -158.239)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
@@ -220,6 +237,72 @@ light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
+[node name="OmniLight3D4" type="OmniLight3D" parent="Candles/canC7"]
+transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -12.7429, -5.22283, 47.6575)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Candles/canC7"]
+transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -105.337, -9.10878, 54.7294)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Candles/canC7"]
+transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -145.478, -9.10878, 54.7294)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Candles/canC7"]
+transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -161.372, -9.10878, 25.2954)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="Candles/canC7"]
+transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -128.854, 5.48794, -21.1147)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="Candles/canC7"]
+transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -100.174, 5.48794, -21.1147)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="Candles/canC7"]
+transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -128.854, 5.48794, -62.7736)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="Candles/canC7"]
+transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -99.8598, 5.48794, -62.7736)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Candles/canC7"]
+transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -158.105, -9.10878, -64.2322)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Candles/canC7"]
+transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -198.245, -9.10878, -64.2322)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
+[node name="OmniLight3D14" type="OmniLight3D" parent="Candles/canC7"]
+transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -158.717, -5.61493, -86.2289)
+light_color = Color(0.891056, 0.714115, 0.259406, 1)
+light_energy = 1.445
+omni_range = 3.659
+
 [node name="canC5" parent="Candles" instance=ExtResource("13_wgfyn")]
 transform = Transform3D(0.149358, 0, 0, 0, 0.149358, 0, 0, 0, 0.149358, 0.946042, 3.15125, -2.72492)
 
@@ -247,7 +330,7 @@ transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 8.62978,
 curve = SubResource("Curve3D_wgfyn")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D3"]
-transform = Transform3D(0.240966, -0.0104467, -0.970476, -4.65661e-10, 0.999939, -0.0107639, 0.970533, 0.00259372, 0.240952, 3.03901, -0.0250592, -0.528999)
+transform = Transform3D(0.240966, -0.0104467, -0.970476, 0, 0.999939, -0.0107639, 0.970533, 0.00259373, 0.240952, 3.03901, -0.0250592, -0.528999)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D3/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -257,7 +340,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0694, 0, -21.6006)
 curve = SubResource("Curve3D_5uk0a")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D4"]
-transform = Transform3D(0.277628, -0.010849, -0.960631, 0, 0.999936, -0.011293, 0.960686, 0.00313524, 0.277612, 0.242697, 0.220245, 3.62449)
+transform = Transform3D(0.277625, -0.0108488, -0.960632, -4.6566e-10, 0.999936, -0.0112928, 0.960687, 0.00313516, 0.277609, 0.242697, 0.220245, 3.62449)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D4/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -267,7 +350,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9782, 0.370912, 3.17125)
 curve = SubResource("Curve3D_ouevp")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D5"]
-transform = Transform3D(-0.754917, 0.0547727, -0.653526, -1.86264e-09, 0.996505, 0.083518, 0.655818, 0.0630492, -0.752279, -0.264627, -0.767145, 9.31149)
+transform = Transform3D(-0.754914, 0.054773, -0.65353, 1.86264e-09, 0.996505, 0.0835178, 0.655822, 0.0630489, -0.752276, -0.264627, -0.767145, 9.31149)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D5/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -277,7 +360,7 @@ transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -20.3774
 curve = SubResource("Curve3D_ja5tu")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D6"]
-transform = Transform3D(-0.999808, -4.49447e-07, 0.0195955, 0, 1, 2.29363e-05, -0.0195955, 2.29319e-05, -0.999808, 0.0675316, 0.00132474, 3.73006)
+transform = Transform3D(-0.999808, -4.49436e-07, 0.0195952, 0, 1, 2.2936e-05, -0.0195952, 2.29316e-05, -0.999808, 0.0675316, 0.00132474, 3.73006)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]
