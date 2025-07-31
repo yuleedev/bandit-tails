@@ -12,7 +12,7 @@ func add_item(new_item):
 		item_value = item['value'] 
 		item_icon.texture = item['inv_icon']
 		refresh_label()
-		$ItemIcon.visible = true
+		item_icon.visible = true
 		return true
 	return false
 

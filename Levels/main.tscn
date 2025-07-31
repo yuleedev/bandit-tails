@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bwydvcfxfddhp" path="res://Assets/Props/Loot/loot.tscn" id="3_lwy2l"]
 [ext_resource type="Script" uid="uid://2upj8o4sck2s" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
-[ext_resource type="Script" uid="uid://gkeeuy8jy4oq" path="res://Levels/loot_spawner.gd" id="4_u05pv"]
+[ext_resource type="Script" path="res://Levels/loot_spawner.gd" id="4_u05pv"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 [ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
 [ext_resource type="PackedScene" uid="uid://cbvne5fpxlq0t" path="res://key.tscn" id="9_u05pv"]
@@ -26,9 +26,7 @@ point_count = 6
 [sub_resource type="Curve3D" id="Curve3D_3lhg3"]
 closed = true
 _data = {
-
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, 10.5934, 0, 0.994187, 0, 0, 0, 0, 0, 0, 6.53067, 0, 1.64759, 0, 0, 0, 0, 0, 0, 3.09868, 0, 0.774545, 0, 0, 0, 0, 0, 0, 1.473, 0, -1.63387, 0, 0, 0, 0, 0, 0, 0.274767, 0, -1.90481, 0, 0, 0, 0, 0, 0, -0.0988955, 0, 2.7704, 0, 0, 0, 0, 0, 0, 0.18298, 0, 4.23199, 0, 0, 0, 0, 0, 0, 3.39046, 0, 4.50758),
-
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 8
@@ -117,7 +115,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.15561, 0, 5.32817)
 curve = SubResource("Curve3D_ovrsl")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.542773, -1.61372e-05, 0.83987, 9.09488e-13, 0.999985, 1.92139e-05, -0.83987, 1.04288e-05, -0.542773, -17.4486, 0.0345366, -18.1004)
+transform = Transform3D(-0.542774, -1.61372e-05, 0.83987, 0, 0.999985, 1.92139e-05, -0.83987, 1.04288e-05, -0.542774, -17.4486, 0.0345366, -18.1004)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -342,7 +340,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41893, 0, 0)
 curve = SubResource("Curve3D_3lhg3")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(0.913122, 0.000267435, 0.407677, 2.91037e-11, 0.99998, -0.000656004, -0.407678, 0.000599005, 0.91312, 10.5934, 0, 0.994187)
+transform = Transform3D(-0.158788, 0, 0.987307, 0, 0.99998, 0, -0.987309, 0, -0.158787, 10.5934, 0, 0.994187)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D2/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -375,7 +373,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9782, 0.370912, 3.17125)
 curve = SubResource("Curve3D_ouevp")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D5"]
-transform = Transform3D(-0.951989, 0.00021204, -0.306125, -4.36556e-11, 0.999996, 0.000692653, 0.306126, 0.000659401, -0.951986, -0.264627, -0.232357, 9.31149)
+transform = Transform3D(-0.951989, 0.00021204, -0.306125, -4.36557e-11, 0.999996, 0.000692654, 0.306126, 0.000659401, -0.951986, -0.264627, -0.232357, 9.31149)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D5/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -392,7 +390,6 @@ script = ExtResource("4_7pswh")
 [node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(55.1019, 0, 0, 0, -0.262257, 1.04513, 0, -56.4897, -0.0048521, -1.81058, 6.41984, 3.17125)
+transform = Transform3D(-0.908887, 0.000327926, -0.417042, -0.000327926, 0.999999, 0.00150098, 0.417042, 0.00150098, -0.908886, 0, 0.638411, 0.00050211)
 mesh = SubResource("QuadMesh_3lhg3")
 skeleton = NodePath("../Path3D5")
-transform = Transform3D(-0.908887, 0.000327926, -0.417042, -0.000327926, 0.999999, 0.00150098, 0.417042, 0.00150098, -0.908886, 0, 0.638411, 0.00050211)
