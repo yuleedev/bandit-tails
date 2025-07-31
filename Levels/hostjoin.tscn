@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://da4dvq2ahty2a"]
+[gd_scene load_steps=9 format=3 uid="uid://da4dvq2ahty2a"]
 
 [ext_resource type="Script" path="res://Levels/hostjoin.gd" id="1_5fplv"]
 [ext_resource type="Script" uid="uid://cd386dejxy872" path="res://Scripts/Temp/host_game.gd" id="1_34iv6"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://blxh5ys0emcrv" path="res://newhostjoin.png" id="2_5fplv"]
 [ext_resource type="Script" uid="uid://04cjr0j7j8kr" path="res://Scripts/Temp/start_game.gd" id="3_2iwyu"]
 [ext_resource type="Texture2D" uid="uid://b41suvy2fugo5" path="res://Assets/UI/hoststartbutton.png" id="5_5fplv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5fplv"]
+bg_color = Color(0.270588, 0.192157, 0.156863, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iwyu"]
 bg_color = Color(0.270588, 0.192157, 0.156863, 1)
@@ -54,13 +57,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -902.0
+offset_left = -905.0
 offset_top = 234.0
-offset_right = -369.0
+offset_right = -372.0
 offset_bottom = 366.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxFlat_5fplv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2iwyu")
 text = "Press to host
 "
