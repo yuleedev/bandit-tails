@@ -12,48 +12,48 @@ height = 2.55
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_axkot"]
 animation = &"Dig"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7b7p1"]
-animation = &"New_Idle"
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_bqn1y"]
 animation = &"Walk_Cycle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fmo36"]
+animation = &"idle_001"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ea6d0"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fmo36"]
+advance_mode = 2
+advance_condition = &"walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sykj1"]
+advance_mode = 2
+advance_condition = &"idle"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7b7p1"]
+advance_mode = 2
+advance_condition = &"skill"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_djaye"]
 advance_mode = 2
 advance_condition = &"skill"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_axkot"]
+advance_mode = 2
+advance_condition = &"idle"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gf7sc"]
 advance_mode = 2
 advance_condition = &"walk"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_m7vr8"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_aj8w7"]
-advance_mode = 2
-advance_condition = &"idle"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qiv4s"]
-advance_mode = 2
-advance_condition = &"walk"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_b0itv"]
-advance_mode = 2
-advance_condition = &"skill"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sp7wj"]
-advance_mode = 2
-advance_condition = &"idle"
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_djaye"]
 states/Dig/node = SubResource("AnimationNodeAnimation_axkot")
 states/Dig/position = Vector2(415.9, -22.025)
-states/New_Idle/node = SubResource("AnimationNodeAnimation_7b7p1")
-states/New_Idle/position = Vector2(328.002, 96.225)
 states/Walk_Cycle/node = SubResource("AnimationNodeAnimation_bqn1y")
 states/Walk_Cycle/position = Vector2(499.4, 98.0625)
-transitions = ["Walk_Cycle", "Dig", SubResource("AnimationNodeStateMachineTransition_djaye"), "Dig", "Walk_Cycle", SubResource("AnimationNodeStateMachineTransition_gf7sc"), "Start", "New_Idle", SubResource("AnimationNodeStateMachineTransition_m7vr8"), "Walk_Cycle", "New_Idle", SubResource("AnimationNodeStateMachineTransition_aj8w7"), "New_Idle", "Walk_Cycle", SubResource("AnimationNodeStateMachineTransition_qiv4s"), "New_Idle", "Dig", SubResource("AnimationNodeStateMachineTransition_b0itv"), "Dig", "New_Idle", SubResource("AnimationNodeStateMachineTransition_sp7wj")]
-graph_offset = Vector2(51.502, -81.1125)
+states/idle_001/node = SubResource("AnimationNodeAnimation_fmo36")
+states/idle_001/position = Vector2(341, 100.312)
+transitions = ["Start", "idle_001", SubResource("AnimationNodeStateMachineTransition_ea6d0"), "idle_001", "Walk_Cycle", SubResource("AnimationNodeStateMachineTransition_fmo36"), "Walk_Cycle", "idle_001", SubResource("AnimationNodeStateMachineTransition_sykj1"), "idle_001", "Dig", SubResource("AnimationNodeStateMachineTransition_7b7p1"), "Walk_Cycle", "Dig", SubResource("AnimationNodeStateMachineTransition_djaye"), "Dig", "idle_001", SubResource("AnimationNodeStateMachineTransition_axkot"), "Dig", "Walk_Cycle", SubResource("AnimationNodeStateMachineTransition_gf7sc")]
+graph_offset = Vector2(183.502, -100.425)
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_axkot"]
 properties/0/path = NodePath(".:move_dir")
@@ -106,17 +106,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="Skeleton3D" parent="MeshNode/molerig" index="0"]
 bones/0/position = Vector3(0, 0.197217, 0)
-bones/0/rotation = Quaternion(0, 1, 0, -7.5498e-08)
+bones/0/rotation = Quaternion(0, 1, 0, -7.54979e-08)
 bones/1/rotation = Quaternion(0, 0, 0, 1)
 bones/2/rotation = Quaternion(0, 0, 0, 1)
-bones/4/rotation = Quaternion(-0.413727, -0.0460145, 0.100505, 0.903666)
-bones/5/rotation = Quaternion(0.401561, -0.0466643, 0.0983923, 0.909335)
-bones/6/rotation = Quaternion(-4.48199e-09, 1.69757e-07, -2.13875e-07, 1)
-bones/7/rotation = Quaternion(0.0355667, 0.000745156, 0.0856329, 0.995691)
-bones/9/rotation = Quaternion(-0.413727, 0.0460145, -0.100505, 0.903666)
-bones/10/rotation = Quaternion(0.401561, 0.0466643, -0.0983923, 0.909335)
-bones/11/rotation = Quaternion(-4.48199e-09, -1.69757e-07, 2.13875e-07, 1)
-bones/12/rotation = Quaternion(0.0355667, -0.000745156, -0.0856329, 0.995691)
+bones/4/rotation = Quaternion(-0.411413, 0.0634546, -0.138598, 0.898612)
+bones/5/rotation = Quaternion(0.402188, 0.0401374, -0.0846306, 0.910753)
+bones/6/rotation = Quaternion(3.44279e-08, 0.00720831, -0.266866, 0.963707)
+bones/7/rotation = Quaternion(0.0356675, -0.000359042, -0.0412589, 0.998512)
+bones/9/rotation = Quaternion(-0.411413, -0.0634546, 0.138598, 0.898612)
+bones/10/rotation = Quaternion(0.402188, -0.0401374, 0.0846307, 0.910753)
+bones/11/rotation = Quaternion(3.58775e-08, -0.00720831, 0.266866, 0.963707)
+bones/12/rotation = Quaternion(0.0356675, 0.000359043, 0.0412589, 0.998512)
 bones/13/position = Vector3(-0.257162, 0.197217, 0)
 bones/14/position = Vector3(0.257162, 0.197217, 0)
 
