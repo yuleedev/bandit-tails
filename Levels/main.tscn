@@ -31,39 +31,39 @@ _data = {
 }
 point_count = 8
 
-[sub_resource type="Curve3D" id="Curve3D_wgfyn"]
-closed = true
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 3.03901, -0.0250592, -0.528999, -1.64874, 0.000122596, -0.475377, 1.64874, -0.000122596, 0.475377, 8.3354, 0.0336849, -1.844, 0, 0, 0, 0, 0, 0, 10.0378, -0.0455498, 1.70227, 1.07769, -0.000630215, 1.08211, -1.07769, 0.000630215, -1.08211, 10.0176, 0.0910632, -4.50894, 1.57903, 0.000507891, -0.340703, -1.57903, -0.000507891, 0.340703, 6.07432, 0.236838, -4.55696),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
-}
-point_count = 5
-
-[sub_resource type="Curve3D" id="Curve3D_5uk0a"]
-closed = true
-_data = {
-"points": PackedVector3Array(0.241429, -0.000704333, 1.00801, -0.241429, 0.000704333, -1.00801, 0.242697, 0.220245, 3.62449, 0, 0, 0, 0, 0, 0, 4.02668, 0.264728, 2.53097, -0.545216, 0.000916287, -1.29719, 0.545216, -0.000916287, 1.29719, 9.24218, 0.248323, 1.73235, 1.7924, 0.000617791, -0.439264, -1.7924, -0.000617791, 0.439264, 4.47953, -0.0179688, 5.50378),
-"tilts": PackedFloat32Array(0, 0, 0, 0)
-}
-point_count = 4
+[sub_resource type="QuadMesh" id="QuadMesh_3lhg3"]
 
 [sub_resource type="Curve3D" id="Curve3D_ouevp"]
 closed = true
 _data = {
-"points": PackedVector3Array(-0.685006, 0.00154993, -2.13023, 0.685006, -0.00154993, 2.13023, -0.264627, -0.232357, 9.31149, -0.934826, 0.000862602, -1.29789, 0.934826, -0.000862602, 1.29789, 1.61029, 0.0571371, 11.4697, -0.823411, -0.000300527, 0.381019, 0.823411, 0.000300527, -0.381019, 4.05897, 0.0811201, 15.8926, -0.0334678, -0.00100967, 1.30596, 0.0334678, 0.00100967, -1.30596, 4.16402, -0.349904, 9.07189, 0.245116, -0.000688702, 0.949954, -0.245116, 0.000688702, -0.949954, 4.1309, -0.349861, 2.9675, 1.85054, 0.000284309, 0.0405946, -1.85054, -0.000284309, -0.0405946, 1.19107, 0.0108918, -2.85369, 0, 0, 0, 0, 0, 0, -0.607052, 0.226266, 0.38471),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(-0.0201426, 0, 1.89356, 0.0201426, 0, -1.89356, 0.781304, 0, 0.140287, -1.95399, 0, -0.584183, 1.95399, 0, 0.584183, 4.2864, 0, -1.57197, 0, 0, 0, 0, 0, 0, 6.40155, 0, 3.82669, 1.34966, 0, -0.261874, -1.34966, 0, 0.261874, 5.99867, 0, 11.6829, 0.0201445, 0, -0.0805779, -0.0201445, 0, 0.0805779, 3.94395, 0, 5.76053),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
 }
-point_count = 7
+point_count = 5
 
 [sub_resource type="Curve3D" id="Curve3D_ja5tu"]
 closed = true
 _data = {
-"points": PackedVector3Array(0.444927, 0.00106195, -1.27515, -0.444927, -0.00106195, 1.27515, 0.0675316, 0.00132474, 3.73006, 0.0896092, -0.00105762, 1.37144, -0.0896092, 0.00105762, -1.37144, -0.0830212, 0.00114852, 11.4117, -1.38424, -0.000382394, 0.197403, 1.38424, 0.000382394, -0.197403, 2.03144, -0.000692308, 15.5804, -0.372919, -0.000863162, 0.992473, 0.372919, 0.000863162, -0.992473, 4.30748, -0.00239909, 12.8567, 0.380368, -0.00102121, 1.35578, -0.380368, 0.00102121, -1.35578, 4.35117, -0.00204661, 2.80408, 1.00599, 0.000174076, -0.0140382, -1.00599, -0.000174076, 0.0140382, 2.12036, -0.000182778, 0.52728),
+"points": PackedVector3Array(-1.41966, 0, -0.109205, 1.41966, 0, 0.109205, 2.21924, 0, -0.827996, 0, 0, 0, 0, 0, 0, 3.72626, 0, 1.53083, 0, 0, 0, 0, 0, 0, 3.39865, 0, 13.1065, 1.13573, 0, 0.283932, -1.13573, 0, -0.283932, 1.21455, 0, 13.9365, 0, 0, 0, 0, 0, 0, -0.510883, 0, 9.87408, 0, 0, 0, 0, 0, 0, -0.489042, 0, 0.831917),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
 point_count = 6
 
-[sub_resource type="QuadMesh" id="QuadMesh_3lhg3"]
+[sub_resource type="Curve3D" id="Curve3D_5uk0a"]
+closed = true
+_data = {
+"points": PackedVector3Array(-1.53106, 0, 0.0872097, 1.53106, 0, -0.0872097, 3.71079, 0, 1.8322, -0.891501, 0, -1.21128, 0.891501, 0, 1.21128, 7.90667, 0, 0.533701, 1.64734, 0, -0.00969124, -1.64734, 0, 0.00969124, 2.29602, 0, 4.82648, 0.339158, 0, 0.862432, -0.339158, 0, -0.862432, -1.05681, 0, 2.25857, -0.949645, 0, 0.581415, 0.949645, 0, -0.581415, -0.591678, 0, -0.590368),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_wgfyn"]
+closed = true
+_data = {
+"points": PackedVector3Array(-1.09619, 0, 0.611337, 1.09619, 0, -0.611337, 1.39447, 0, -2.7445, -1.07511, 0, -0.527015, 1.07511, 0, 0.527015, 7.25487, 0, -4.70499, 0, 0, 0, 0, 0, 0, 7.99269, 0, -1.26886, 1.34916, 0, -0.105403, -1.34916, 0, 0.105403, 2.19553, 0, -0.910487, 0, 0, 0, 0, 0, 0, 0.024229, 0, -0.952648),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
 
 [node name="Main" type="Node3D"]
 transform = Transform3D(0.995721, 0, 0, 0, 0.995721, 0, 0, 0, 0.995721, 0, 0, 0)
@@ -115,7 +115,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.15561, 0, 5.32817)
 curve = SubResource("Curve3D_ovrsl")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.542774, -1.61372e-05, 0.83987, 0, 0.999985, 1.92139e-05, -0.83987, 1.04288e-05, -0.542774, -17.4486, 0.0345366, -18.1004)
+transform = Transform3D(-0.542774, -1.61372e-05, 0.839869, 0, 0.999985, 1.92139e-05, -0.839869, 1.04288e-05, -0.542774, -17.4486, 0.0345366, -18.1004)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -346,45 +346,36 @@ script = ExtResource("4_7pswh")
 [node name="Guard" parent="Path3D2/PathFollow3D" instance=ExtResource("5_34bfm")]
 transform = Transform3D(-0.6257, 4.36557e-11, -0.0702939, 5.82077e-11, 0.629637, -5.82077e-11, 0.0702939, -5.82077e-11, -0.6257, 0, 1.04253, 0)
 
-[node name="Path3D3" type="Path3D" parent="."]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 8.62978, 0, -8.80379)
-curve = SubResource("Curve3D_wgfyn")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D3"]
-transform = Transform3D(0.240966, -0.0104467, -0.970476, 4.65661e-10, 0.999939, -0.0107639, 0.970532, 0.00259373, 0.240952, 3.03901, -0.0250592, -0.528999)
-script = ExtResource("4_7pswh")
-
-[node name="Guard" parent="Path3D3/PathFollow3D" instance=ExtResource("5_34bfm")]
-transform = Transform3D(-0.617695, -0.00846493, -0.786372, 0.00846493, 0.999813, -0.0174117, 0.786372, -0.0174117, -0.617507, 0, 1.0744, -0.0115652)
-
-[node name="Path3D4" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9888, 0, -21.6006)
-curve = SubResource("Curve3D_5uk0a")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D4"]
-transform = Transform3D(0.97249, 0.000158274, 0.232923, 0, 0.999996, -0.000679518, -0.232922, 0.000660825, 0.972496, 0.242697, 0.220245, 3.62449)
-script = ExtResource("4_7pswh")
-
-[node name="Guard" parent="Path3D4/PathFollow3D" instance=ExtResource("5_34bfm")]
-transform = Transform3D(-0.6956, 0.000488188, 0.71843, -0.000488188, 0.999999, -0.0011522, -0.71843, -0.0011522, -0.695599, -9.53674e-07, 0.894404, -0.000606537)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.908887, 0.000327926, -0.417042, -0.000327926, 0.999999, 0.00150098, 0.417042, 0.00150098, -0.908886, 0, 0.638411, 0.00050211)
+mesh = SubResource("QuadMesh_3lhg3")
+skeleton = NodePath("")
 
 [node name="Path3D5" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9782, 0.370912, 3.17125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3956, 0, 8.84157)
 curve = SubResource("Curve3D_ouevp")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D5"]
-transform = Transform3D(-0.951989, 0.00021204, -0.306125, -4.36557e-11, 0.999996, 0.000692654, 0.306126, 0.000659401, -0.951986, -0.264627, -0.232357, 9.31149)
-script = ExtResource("4_7pswh")
+transform = Transform3D(0.999942, 0, -0.0106368, 0, 0.999999, 0, 0.0106368, 0, 0.999941, 0.781304, 0, 0.140287)
 
 [node name="Guard" parent="Path3D5/PathFollow3D" instance=ExtResource("5_34bfm")]
-transform = Transform3D(-0.946204, 0.000224123, -0.323571, -0.000224123, 0.999999, 0.00134805, 0.323571, 0.00134805, -0.946203, 0, 1.10518, 0.0007658)
 
-[node name="Path3D6" type="Path3D" parent="."]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -20.3774, 0.37091, -8.82238)
+[node name="Path3D7" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5695, 0, -7.12015)
 curve = SubResource("Curve3D_ja5tu")
 
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D7"]
+transform = Transform3D(-0.0766959, 0, -0.997044, 0, 1, 0, 0.997044, 0, -0.0766959, 2.21924, 0, -0.827996)
+script = ExtResource("4_7pswh")
+
+[node name="Guard" parent="Path3D7/PathFollow3D" instance=ExtResource("5_34bfm")]
+
+[node name="Path3D6" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6131, 0, -20.2113)
+curve = SubResource("Curve3D_5uk0a")
+
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D6"]
-transform = Transform3D(-0.944175, -0.000259045, 0.329443, 2.91038e-11, 1, 0.000786313, -0.329443, 0.000742418, -0.944175, 0.0675316, 0.00132474, 3.73006)
+transform = Transform3D(0.0568682, 0, -0.998379, 0, 1, 0, 0.998379, 0, 0.0568682, 3.71079, 0, 1.8322)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -393,3 +384,12 @@ script = ExtResource("4_7pswh")
 transform = Transform3D(-0.908887, 0.000327926, -0.417042, -0.000327926, 0.999999, 0.00150098, 0.417042, 0.00150098, -0.908886, 0, 0.638411, 0.00050211)
 mesh = SubResource("QuadMesh_3lhg3")
 skeleton = NodePath("../Path3D5")
+[node name="Path3D3" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6246, 0, -8.57979)
+curve = SubResource("Curve3D_wgfyn")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D3"]
+transform = Transform3D(0.487068, 0, -0.873363, 0, 1, 0, 0.873363, 0, 0.487068, 1.39447, 0, -2.7445)
+script = ExtResource("4_7pswh")
+
+[node name="Guard" parent="Path3D3/PathFollow3D" instance=ExtResource("5_34bfm")]
