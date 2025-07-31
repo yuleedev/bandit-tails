@@ -37,7 +37,7 @@ func use_skill() -> void:
 
 ## ================ [ METHODS ] ================ ##
 
-func _punishment() -> void:
+func punishment() -> void:
 	velocity = Vector3.ZERO
 	$AnimationTree.set("parameters/conditions/idle", true)
 	can_move = false
