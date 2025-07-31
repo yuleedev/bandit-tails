@@ -15,8 +15,6 @@ func _ready():
 	mesh_instance.mesh = mesh_options[n]
 	item_res.set_icon(icon_options[n])
 	item_res.randomize_value()
-	#$Body/Area.body_entered.connect(_on_body_entered)
-	#$Body/Area.body_exited.connect(_on_body_exited)
 
 func _on_body_entered(body):
 	if body.name == "1" || body.name == str(GM.p2_id):
