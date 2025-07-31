@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bm38ygftobcny"]
+[gd_scene load_steps=9 format=3 uid="uid://bm38ygftobcny"]
 
 [ext_resource type="Script" uid="uid://j61uuj8pawed" path="res://Scripts/guard.gd" id="1_opr0s"]
 [ext_resource type="PackedScene" uid="uid://djr846t4owjop" path="res://guard_walk_2.tscn" id="2_hbmmv"]
@@ -10,14 +10,6 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nj2yk"]
 transparency = 1
 albedo_color = Color(1, 0, 0, 0.682353)
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_lwy2l"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_nj2yk"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7pswh"]
-transparency = 1
-albedo_color = Color(0, 0, 1, 0.564706)
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ifdhy"]
 animation = &"GuardWalk"
@@ -46,6 +38,7 @@ shape = SubResource("CapsuleShape3D_lwy2l")
 [node name="FaceDirection" type="Node3D" parent="GuardBody3D"]
 
 [node name="VisionArea3D" type="Area3D" parent="GuardBody3D"]
+transform = Transform3D(0.776098, 0, 0, 0, 0.531671, 0, 0, 0, 0.831909, 0, 0, 0)
 
 [node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="GuardBody3D/VisionArea3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.53607, 0)
@@ -57,17 +50,6 @@ transform = Transform3D(6, 0, 0, 0, -2.18557e-07, 5, 0, -5, -2.18557e-07, 0, 2.5
 mesh = SubResource("PrismMesh_lwy2l")
 surface_material_override/0 = SubResource("StandardMaterial3D_nj2yk")
 
-[node name="ListeningArea3D" type="Area3D" parent="GuardBody3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GuardBody3D/ListeningArea3D"]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 1.1, 0)
-shape = SubResource("CylinderShape3D_lwy2l")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="GuardBody3D/ListeningArea3D"]
-transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 1.1, 0)
-mesh = SubResource("CylinderMesh_nj2yk")
-surface_material_override/0 = SubResource("StandardMaterial3D_7pswh")
-
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath("../guard-walk2")
 tree_root = SubResource("AnimationNodeStateMachine_sqnab")
@@ -77,21 +59,19 @@ anim_player = NodePath("../guard-walk2/AnimationPlayer")
 transform = Transform3D(-0.4, 0, -3.49691e-08, 0, 0.4, 0, 3.49691e-08, 0, -0.4, 0, -1, 0)
 
 [node name="Skeleton3D" parent="guard-walk2/Armature_002" index="0"]
-bones/0/position = Vector3(0, -0.0563375, 0)
-bones/0/rotation = Quaternion(-0.00117127, 0.999986, 0.00507976, 0.000261464)
-bones/3/rotation = Quaternion(0.00142602, -0.0757945, 0.88779, -0.453962)
-bones/4/rotation = Quaternion(-0.0523167, 0.092632, -0.0824232, 0.990903)
-bones/6/rotation = Quaternion(-0.00143119, -0.075319, 0.889035, 0.451599)
-bones/7/rotation = Quaternion(0.19122, 0.182541, 0.0966459, 0.959569)
-bones/9/position = Vector3(0.558144, 0.149914, 0.100376)
-bones/9/rotation = Quaternion(0.0352722, 0.22533, 0.973584, -0.0107957)
-bones/10/position = Vector3(-0.558281, 0.0869807, -0.133154)
-bones/10/rotation = Quaternion(0.00181026, -0.245716, 0.969333, 0.00383325)
-bones/11/rotation = Quaternion(-0.0171609, 0.334037, 0.925708, -0.176606)
+bones/0/position = Vector3(0, 0.0884001, 0)
+bones/0/rotation = Quaternion(0.00173114, 0.999986, 0.00507975, -0.000386257)
+bones/3/rotation = Quaternion(0.00142506, -0.0758797, 0.887567, -0.454385)
+bones/4/rotation = Quaternion(0.153785, -0.139932, -0.095251, 0.973497)
+bones/6/rotation = Quaternion(-0.00143215, -0.0752338, 0.889258, 0.451175)
+bones/7/rotation = Quaternion(-0.0135947, -0.0491901, 0.085476, 0.995032)
+bones/9/position = Vector3(0.557942, -0.0368319, -0.193042)
+bones/9/rotation = Quaternion(0.000170032, -0.117807, 0.993027, -0.00432577)
+bones/10/position = Vector3(-0.558672, 0.0297734, 0.218394)
+bones/10/rotation = Quaternion(-0.0338482, 0.166255, 0.985429, 0.0119789)
+bones/11/rotation = Quaternion(0.00406519, 0.337397, 0.933804, 0.118983)
 
 [connection signal="body_entered" from="GuardBody3D/VisionArea3D" to="." method="_on_vision_area_3d_body_entered"]
 [connection signal="body_exited" from="GuardBody3D/VisionArea3D" to="." method="_on_vision_area_3d_body_exited"]
-[connection signal="area_entered" from="GuardBody3D/ListeningArea3D" to="." method="_on_listening_area_3d_area_entered"]
-[connection signal="area_exited" from="GuardBody3D/ListeningArea3D" to="." method="_on_listening_area_3d_area_exited"]
 
 [editable path="guard-walk2"]
