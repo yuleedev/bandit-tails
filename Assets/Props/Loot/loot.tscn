@@ -8,7 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dwkt3qan651qo" path="res://Assets/Props/Loot/ring.obj" id="6_yjhj0"]
 [ext_resource type="ArrayMesh" uid="uid://d2g8n3hwcxkao" path="res://Assets/Props/Loot/necklace.obj" id="7_cstq0"]
 [ext_resource type="ArrayMesh" uid="uid://ca8kan0651f7u" path="res://Assets/Props/Loot/piggybank.obj" id="8_cstq0"]
-[ext_resource type="Texture2D" uid="uid://dg8jbtxa4gxmk" path="res://icon.svg" id="8_yrbdw"]
+[ext_resource type="Texture2D" uid="uid://c2x43pm04gy48" path="res://Assets/UI/ItemIcons/piggybank.png" id="8_wa50y"]
 [ext_resource type="ArrayMesh" uid="uid://c7csnstxk8agt" path="res://Assets/Props/Loot/teddybear.obj" id="9_3aec1"]
 [ext_resource type="ArrayMesh" uid="uid://cuj42c2cups5x" path="res://Assets/Props/Loot/vaseArecol.obj" id="10_mdsk6"]
 [ext_resource type="ArrayMesh" uid="uid://dxlx3ynvrd8xw" path="res://Assets/Props/Loot/rings.obj" id="11_fwg60"]
@@ -57,7 +57,7 @@ metadata/_custom_type_script = "uid://bj118do4lnnc6"
 script = ExtResource("3_nx1s7")
 name = "piggybank"
 type = ""
-inv_icon = ExtResource("8_yrbdw")
+inv_icon = ExtResource("8_wa50y")
 value = 0
 item_path = ""
 metadata/_custom_type_script = "uid://bj118do4lnnc6"

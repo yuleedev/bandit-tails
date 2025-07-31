@@ -76,10 +76,10 @@ SPAWN_2 = Vector3(4, 1, 5)
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 8.09669, -0.041, -8.423)
 
 [node name="Key" parent="Keys" instance=ExtResource("9_u05pv")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.0899, 1.44482, 7.40031)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24.6805, 1.44482, 7.40031)
 
 [node name="Key2" parent="Keys" instance=ExtResource("9_u05pv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1769, 0.813434, 0.358027)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1769, 0.813434, 0.497425)
 
 [node name="Key3" parent="Keys" instance=ExtResource("9_u05pv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.88503, 1.32881, 2.97682)
@@ -102,7 +102,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -23.20
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.54969, 0, -6.79201)
 
 [node name="Loot" parent="." instance=ExtResource("3_lwy2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4689, 0.52094, 8.3919)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5907, 0.52094, 8.3919)
 visible = false
 
 [node name="LootSpawner" type="Node3D" parent="."]
