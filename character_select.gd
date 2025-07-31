@@ -16,19 +16,19 @@ func _on_next_pressed() -> void:
 		$Start.visible = false
 		$Mole.visible = true
 		$Prev.visible = true
-		if multiplayer.get_unique_id() == GM.p1_id:
-			$SelectB.visible = true
 	elif $Mole.visible:
 		$Mole.visible = false
 		$Raccoon.visible = true
 		$Next.visible = false
+		if multiplayer.get_unique_id() == GM.p1_id:
+			$SelectB.visible = true
 
 func _on_prev_pressed() -> void:
 	if $Mole.visible:
 		$Mole.visible = false
 		$Start.visible = true
 		$Prev.visible = false
-		$SelectB.visible = false
+		#$SelectB.visible = false
 	elif $Raccoon.visible:
 		$Raccoon.visible = false
 		$Mole.visible = true
