@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=22 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" uid="uid://bvpa01djx1mc4" path="res://Levels/main.gd" id="1_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://c1ta55yk5nxar" path="res://Assets/Raccoon/raccoon.tscn" id="2_5mxy1"]
@@ -62,6 +62,8 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
 point_count = 6
+
+[sub_resource type="QuadMesh" id="QuadMesh_3lhg3"]
 
 [node name="Main" type="Node3D"]
 transform = Transform3D(0.995721, 0, 0, 0, 0.995721, 0, 0, 0, 0.995721, 0, 0, 0)
@@ -376,3 +378,8 @@ transform = Transform3D(-0.944175, -0.000259045, 0.329443, 0, 1, 0.000786312, -0
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(55.1019, 0, 0, 0, -0.262257, 1.04513, 0, -56.4897, -0.0048521, -1.81058, 6.41984, 3.17125)
+mesh = SubResource("QuadMesh_3lhg3")
+skeleton = NodePath("../Path3D5")
