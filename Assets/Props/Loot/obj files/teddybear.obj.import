@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cel03ogeg1st0"
+path="res://.godot/imported/teddybear.obj-76f5961907cf363a5b9dddc605285ae8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/teddybear.obj-76f5961907cf363a5b9dddc605285ae8.mesh"]
+
+source_file="res://Assets/Props/Loot/obj files/teddybear.obj"
+dest_files=["res://.godot/imported/teddybear.obj-76f5961907cf363a5b9dddc605285ae8.mesh", "res://.godot/imported/teddybear.obj-76f5961907cf363a5b9dddc605285ae8.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
