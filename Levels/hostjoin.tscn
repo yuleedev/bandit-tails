@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://da4dvq2ahty2a"]
+[gd_scene load_steps=8 format=3 uid="uid://da4dvq2ahty2a"]
 
+[ext_resource type="Script" uid="uid://26xanfkcfckd" path="res://Levels/hostjoin.gd" id="1_5fplv"]
 [ext_resource type="Script" uid="uid://cd386dejxy872" path="res://Scripts/Temp/host_game.gd" id="1_34iv6"]
 [ext_resource type="Script" uid="uid://dkw4ydaao82gs" path="res://Scripts/Temp/join_game.gd" id="2_3qva8"]
+[ext_resource type="Texture2D" uid="uid://blxh5ys0emcrv" path="res://newhostjoin.png" id="2_5fplv"]
 [ext_resource type="Script" uid="uid://04cjr0j7j8kr" path="res://Scripts/Temp/start_game.gd" id="3_2iwyu"]
+[ext_resource type="Texture2D" uid="uid://b41suvy2fugo5" path="res://Assets/UI/hoststartbutton.png" id="5_5fplv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2iwyu"]
+bg_color = Color(0.270588, 0.192157, 0.156863, 1)
 
 [node name="HostJoin" type="Control"]
 layout_mode = 3
@@ -12,6 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_5fplv")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -20,51 +27,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_5fplv")
 expand_mode = 1
 
-[node name="Margin" type="MarginContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
-theme_override_constants/margin_right = 40
-theme_override_constants/margin_bottom = 40
-
-[node name="VBox" type="VBoxContainer" parent="Margin"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-mouse_filter = 2
-theme_override_constants/separation = 20
-
-[node name="Host" type="Button" parent="Margin/VBox"]
-custom_minimum_size = Vector2(240, 80)
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Host Game"
-script = ExtResource("1_34iv6")
-
-[node name="Join" type="Button" parent="Margin/VBox"]
-custom_minimum_size = Vector2(240, 80)
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Join Game
-"
-script = ExtResource("2_3qva8")
-
-[node name="Start" type="Button" parent="Margin/VBox"]
-custom_minimum_size = Vector2(240, 80)
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Start Game
-"
+[node name="Start" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 361.0
+offset_right = 1399.0
+offset_bottom = 639.0
+texture_normal = ExtResource("5_5fplv")
 script = ExtResource("3_2iwyu")
 
-[connection signal="pressed" from="Margin/VBox/Host" to="Margin/VBox/Host" method="_on_pressed"]
-[connection signal="pressed" from="Margin/VBox/Join" to="Margin/VBox/Join" method="_on_pressed"]
-[connection signal="pressed" from="Margin/VBox/Start" to="Margin/VBox/Start" method="_on_pressed"]
+[node name="Join" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 1367.0
+offset_top = 814.0
+offset_right = 1778.0
+offset_bottom = 887.0
+script = ExtResource("2_3qva8")
+
+[node name="Host" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -902.0
+offset_top = 234.0
+offset_right = -369.0
+offset_bottom = 366.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_2iwyu")
+text = "Press to host
+"
+script = ExtResource("1_34iv6")
+
+[connection signal="pressed" from="Start" to="Start" method="_on_host_start_pressed"]
+[connection signal="text_submitted" from="Join" to="Join" method="_on_ip_submitted"]
+[connection signal="pressed" from="Host" to="Host" method="_on_host_pressed"]
