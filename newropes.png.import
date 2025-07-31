@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bje4yjm2ibhgm"
-path="res://.godot/imported/menupins.png-d4a045b6ea6acca94b9983373079e827.ctex"
+uid="uid://bmh36os0difkq"
+path="res://.godot/imported/newropes.png-ee9f862d84313842dca99cb9c6ed7021.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/menupins.png"
-dest_files=["res://.godot/imported/menupins.png-d4a045b6ea6acca94b9983373079e827.ctex"]
+source_file="res://newropes.png"
+dest_files=["res://.godot/imported/newropes.png-ee9f862d84313842dca99cb9c6ed7021.ctex"]
 
 [params]
 

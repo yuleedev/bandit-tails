@@ -11,12 +11,12 @@ base_font = ExtResource("3_ehuit")
 base_font = ExtResource("3_ehuit")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5mrt3"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.137255, 0.0901961, 0.0705882, 1)
 border_width_left = 10
 border_width_top = 10
 border_width_right = 10
 border_width_bottom = 10
-border_color = Color(0.737255, 0.658824, 0.407843, 1)
+border_color = Color(0.662745, 0.584314, 0.345098, 1)
 expand_margin_left = 10.0
 expand_margin_top = 10.0
 expand_margin_right = 10.0
@@ -24,6 +24,11 @@ expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehuit"]
 bg_color = Color(0.270588, 0.192157, 0.156863, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.945098, 0.909804, 0.796078, 1)
 expand_margin_left = 10.0
 expand_margin_top = 10.0
 expand_margin_right = 10.0
@@ -105,17 +110,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -200.0
-offset_top = -185.0
-offset_right = 248.0
-offset_bottom = -111.0
+offset_left = -224.0
+offset_top = -165.0
+offset_right = 224.0
+offset_bottom = -79.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = SubResource("FontVariation_rwowx")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/hover = SubResource("StyleBoxFlat_5mrt3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ehuit")
-text = "BACK TO MENU
-"
+text = "Back to Menu"
 
 [connection signal="pressed" from="Button" to="." method="_on_tutorial_button_pressed"]
