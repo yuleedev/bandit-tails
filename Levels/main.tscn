@@ -1,4 +1,3 @@
-[gd_scene load_steps=21 format=3 uid="uid://rcpyya18rmci"]
 [gd_scene load_steps=23 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" uid="uid://bvpa01djx1mc4" path="res://Levels/main.gd" id="1_ovrsl"]
@@ -32,6 +31,8 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 8
+
+[sub_resource type="QuadMesh" id="QuadMesh_3lhg3"]
 
 [sub_resource type="Curve3D" id="Curve3D_ouevp"]
 closed = true
@@ -369,6 +370,11 @@ script = ExtResource("4_7pswh")
 [node name="Guard" parent="Path3D2/PathFollow3D" instance=ExtResource("5_34bfm")]
 transform = Transform3D(-0.6257, 4.36557e-11, -0.0702939, 5.82077e-11, 0.629637, -5.82077e-11, 0.0702939, -5.82077e-11, -0.6257, 0, 0.60592, 0)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.908887, 0.000327926, -0.417042, -0.000327926, 0.999999, 0.00150098, 0.417042, 0.00150098, -0.908886, 0, 0.638411, 0.00050211)
+mesh = SubResource("QuadMesh_3lhg3")
+skeleton = NodePath("")
+
 [node name="Path3D5" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3956, 0, 8.84157)
 curve = SubResource("Curve3D_ouevp")
@@ -400,6 +406,11 @@ script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]
 transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, 0, 0.96344, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.908887, 0.000327926, -0.417042, -0.000327926, 0.999999, 0.00150098, 0.417042, 0.00150098, -0.908886, 0, 0.638411, 0.00050211)
+mesh = SubResource("QuadMesh_3lhg3")
+skeleton = NodePath("../Path3D5")
 
 [node name="Path3D3" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6246, 0, -8.57979)

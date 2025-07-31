@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5yp2lg1v5w4p"]
+[gd_scene load_steps=10 format=3 uid="uid://b5yp2lg1v5w4p"]
 
 [ext_resource type="Texture2D" uid="uid://bsda1otsb1m2b" path="res://Assets/UI/cselect0.png" id="1_aoibv"]
 [ext_resource type="Script" uid="uid://byy5wudyh3w27" path="res://character_select.gd" id="1_mn8d4"]
@@ -11,31 +11,19 @@
 base_font = ExtResource("6_7yigr")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lqqhx"]
-bg_color = Color(0.207843, 0.145098, 0.117647, 1)
+bg_color = Color(0.0430983, 0.0219612, 0.0154765, 1)
 border_width_left = 15
 border_width_top = 15
 border_width_right = 15
 border_width_bottom = 15
-border_color = Color(0.835294, 0.756863, 0.521569, 1)
-expand_margin_left = 10.0
-expand_margin_top = 10.0
-expand_margin_right = 10.0
-expand_margin_bottom = 10.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7yigr"]
-bg_color = Color(0.137255, 0.0901961, 0.0705882, 1)
-border_width_left = 15
-border_width_top = 15
-border_width_right = 15
-border_width_bottom = 15
-border_color = Color(0.662745, 0.584314, 0.345098, 1)
+border_color = Color(0.735674, 0.657719, 0.406991, 1)
 expand_margin_left = 10.0
 expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8vty7"]
-bg_color = Color(0.270588, 0.192157, 0.156863, 1)
+bg_color = Color(0.137255, 0.0901961, 0.0705882, 1)
 border_width_left = 15
 border_width_top = 15
 border_width_right = 15
@@ -120,7 +108,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_4hbjg")
 theme_override_font_sizes/font_size = 90
 theme_override_styles/hover = SubResource("StyleBoxFlat_lqqhx")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7yigr")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8vty7")
 text = "Start"
 
