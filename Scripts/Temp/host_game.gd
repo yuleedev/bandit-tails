@@ -1,5 +1,5 @@
 extends Button
 
-func _on_pressed() -> void:
+func _on_host_pressed() -> void:
 	SM.host_game(1234)
 	disabled = true

@@ -40,21 +40,50 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -573.0
-offset_top = -283.5
-offset_right = 573.0
-offset_bottom = 283.5
+offset_left = 48.0
+offset_top = -293.0
+offset_right = 869.0
+offset_bottom = 274.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.945098, 0.909804, 0.796078, 1)
 theme_override_fonts/font = SubResource("FontVariation_5mrt3")
-theme_override_font_sizes/font_size = 70
-text = "- Move camera with mouse
+theme_override_font_sizes/font_size = 50
+text = "Gameplay Instructions:
+
+- Move camera with mouse
 - Move character with WASD
 - Pick up loot and keys by holding E
 
 Your objective is to find and steal
 the highest value items each round!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -893.0
+offset_top = -305.0
+offset_right = -10.0
+offset_bottom = 313.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.945098, 0.909804, 0.796078, 1)
+theme_override_fonts/font = SubResource("FontVariation_5mrt3")
+theme_override_font_sizes/font_size = 50
+text = "Initialization Instructions:
+
+- One player is the Host, and the
+other is the Joiner
+- The Host must click the Host
+button first
+- The Joiner must then input the Host's
+IP address and click Enter
+- The Host must click Start Game"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="."]

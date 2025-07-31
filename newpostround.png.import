@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch46vv6wwbxpe"
-path="res://.godot/imported/postround.png-af7206b094cd0f7bba5e3c1080d159a6.ctex"
+uid="uid://b70tkh7khdt0o"
+path="res://.godot/imported/newpostround.png-59afe669c59175fffa31cbe1951570de.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://postround.png"
-dest_files=["res://.godot/imported/postround.png-af7206b094cd0f7bba5e3c1080d159a6.ctex"]
+source_file="res://newpostround.png"
+dest_files=["res://.godot/imported/newpostround.png-59afe669c59175fffa31cbe1951570de.ctex"]
 
 [params]
 
