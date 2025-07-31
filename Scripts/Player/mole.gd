@@ -46,6 +46,7 @@ func start_dig() -> void:
 	var tween = create_tween()
 	tween.tween_property(camera, "rotation_degrees:x", -60.0, 1)
 	tween.parallel().tween_property(camera, "position:y", camera.position.y - DIG_DEPTH, 0.3)
+	tween.parallel().tween_property(camera, "position:z", camera.position.z - 0.5, 0.3)
 	tween.tween_property(camera, "rotation_degrees:x", 0.0, 0.3)
 
 	dig_timer.start()
@@ -63,4 +64,5 @@ func stop_dig():
 	var tween = create_tween()
 	tween.tween_property(camera, "rotation_degrees:x", 60.0, 1)
 	tween.parallel().tween_property(camera, "position:y", camera.position.y + DIG_DEPTH, 0.3)
+	tween.parallel().tween_property(camera, "position:z", camera.position.z + 0.5, 0.3)
 	tween.tween_property(camera, "rotation_degrees:x", 0.0, 0.3)
