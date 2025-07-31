@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bwydvcfxfddhp" path="res://Assets/Props/Loot/loot.tscn" id="3_lwy2l"]
 [ext_resource type="Script" uid="uid://2upj8o4sck2s" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
-[ext_resource type="Script" path="res://Levels/loot_spawner.gd" id="4_u05pv"]
+[ext_resource type="Script" uid="uid://gkeeuy8jy4oq" path="res://Levels/loot_spawner.gd" id="4_u05pv"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 [ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
 [ext_resource type="PackedScene" uid="uid://cbvne5fpxlq0t" path="res://key.tscn" id="9_u05pv"]
@@ -115,7 +115,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.15561, 0, 5.32817)
 curve = SubResource("Curve3D_ovrsl")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.542774, -1.61372e-05, 0.839869, 0, 0.999985, 1.92139e-05, -0.839869, 1.04288e-05, -0.542774, -17.4486, 0.0345366, -18.1004)
+transform = Transform3D(-0.542773, -1.61372e-05, 0.839869, 0, 0.999985, 1.92139e-05, -0.839869, 1.04288e-05, -0.542773, -17.4486, 0.0345366, -18.1004)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -365,7 +365,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5695, 0, -7.12015)
 curve = SubResource("Curve3D_ja5tu")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D7"]
-transform = Transform3D(-0.0766959, 0, -0.997044, 0, 1, 0, 0.997044, 0, -0.0766959, 2.21924, 0, -0.827996)
+transform = Transform3D(-0.0766961, 0, -0.997044, 0, 1, 0, 0.997044, 0, -0.0766961, 2.21924, 0, -0.827996)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D7/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -380,10 +380,11 @@ script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.908887, 0.000327926, -0.417042, -0.000327926, 0.999999, 0.00150098, 0.417042, 0.00150098, -0.908886, 0, 0.638411, 0.00050211)
 mesh = SubResource("QuadMesh_3lhg3")
 skeleton = NodePath("../Path3D5")
+
 [node name="Path3D3" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6246, 0, -8.57979)
 curve = SubResource("Curve3D_wgfyn")
