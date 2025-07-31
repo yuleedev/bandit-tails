@@ -1,44 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://bptqi1gcph16o"]
+[gd_scene load_steps=5 format=3 uid="uid://bptqi1gcph16o"]
 
 [ext_resource type="Script" uid="uid://bppa1yiwichdp" path="res://door.gd" id="1_v6xrn"]
-[ext_resource type="PackedScene" uid="uid://cnpfmgg2u5n6d" path="res://door_opening_animation_colored.tscn" id="2_v6xrn"]
+[ext_resource type="PackedScene" uid="uid://cdqosxal6n5aq" path="res://Assets/Maps/door.glb" id="2_0phs7"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_50cdl"]
+size = Vector3(1, 2.1, 0.5)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_y5njw"]
 height = 1.99854
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_50cdl"]
-animation = &"Action"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y5njw"]
-advance_mode = 2
-advance_condition = &"unlock"
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4xadh"]
-states/Action/node = SubResource("AnimationNodeAnimation_50cdl")
-states/Action/position = Vector2(378.5, 99.25)
-states/Start/position = Vector2(200, 99.625)
-transitions = ["Start", "Action", SubResource("AnimationNodeStateMachineTransition_y5njw")]
-
 [node name="Door" type="Node3D" groups=["door"]]
 script = ExtResource("1_v6xrn")
 
-[node name="door_opening_animation_colored" parent="." instance=ExtResource("2_v6xrn")]
+[node name="Model" parent="." instance=ExtResource("2_0phs7")]
 
-[node name="Area" type="Area3D" parent="door_opening_animation_colored"]
+[node name="Collider" type="CollisionShape3D" parent="Model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
+shape = SubResource("BoxShape3D_50cdl")
+
+[node name="Area" type="Area3D" parent="Model"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08348, 0)
 collision_layer = 2
 
-[node name="Collider" type="CollisionShape3D" parent="door_opening_animation_colored/Area"]
+[node name="Collider" type="CollisionShape3D" parent="Model/Area"]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 shape = SubResource("CylinderShape3D_y5njw")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-root_node = NodePath("../door_opening_animation_colored")
-tree_root = SubResource("AnimationNodeStateMachine_4xadh")
-anim_player = NodePath("../door_opening_animation_colored/AnimationPlayer")
-parameters/conditions/unlock = false
-
-[connection signal="body_entered" from="door_opening_animation_colored/Area" to="." method="_on_body_entered"]
-[connection signal="body_exited" from="door_opening_animation_colored/Area" to="." method="_on_body_exited"]
-
-[editable path="door_opening_animation_colored"]
+[connection signal="body_entered" from="Model/Area" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Model/Area" to="." method="_on_body_exited"]
