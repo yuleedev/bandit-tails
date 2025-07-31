@@ -37,7 +37,8 @@ func use_skill() -> void:
 
 ## ================ [ METHODS ] ================ ##
 
-func punishment() -> void:
+func _punishment() -> void:
+	#print("you got caught!")
 	velocity = Vector3.ZERO
 	$AnimationTree.set("parameters/conditions/idle", true)
 	can_move = false
@@ -51,6 +52,7 @@ func punishment() -> void:
 
 func _on_timer_timeout() -> void:
 	can_move = true
+	#print("you're free!")
 	
 func _update_timers(delta: float) -> void:
 	if cd > 0:
