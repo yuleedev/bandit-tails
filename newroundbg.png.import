@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crnalryaej6xy"
-path="res://.godot/imported/readyhover.png-0f6ffee224587ca3d4eca0f91f26793b.ctex"
+uid="uid://pqbmcb5tnuye"
+path="res://.godot/imported/newroundbg.png-cb6a4418f864e1d902444b58c9d2279a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/readyhover.png"
-dest_files=["res://.godot/imported/readyhover.png-0f6ffee224587ca3d4eca0f91f26793b.ctex"]
+source_file="res://newroundbg.png"
+dest_files=["res://.godot/imported/newroundbg.png-cb6a4418f864e1d902444b58c9d2279a.ctex"]
 
 [params]
 

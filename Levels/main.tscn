@@ -1,4 +1,5 @@
-[gd_scene load_steps=22 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=21 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=23 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" uid="uid://bvpa01djx1mc4" path="res://Levels/main.gd" id="1_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://c1ta55yk5nxar" path="res://Assets/Raccoon/raccoon.tscn" id="2_5mxy1"]
@@ -6,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bwydvcfxfddhp" path="res://Assets/Props/Loot/loot.tscn" id="3_lwy2l"]
 [ext_resource type="Script" uid="uid://2upj8o4sck2s" path="res://Levels/path_follow_3d.gd" id="4_7pswh"]
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
-[ext_resource type="Script" path="res://Levels/loot_spawner.gd" id="4_u05pv"]
+[ext_resource type="Script" uid="uid://gkeeuy8jy4oq" path="res://Levels/loot_spawner.gd" id="4_u05pv"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
 [ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
 [ext_resource type="PackedScene" uid="uid://cbvne5fpxlq0t" path="res://key.tscn" id="9_u05pv"]
@@ -14,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://n02ywmjlls01" path="res://Assets/Props/candleA.glb" id="11_5mxy1"]
 [ext_resource type="PackedScene" uid="uid://cea7edkrb4md8" path="res://Assets/Props/candleB.glb" id="12_3lhg3"]
 [ext_resource type="PackedScene" uid="uid://7xvtyi87oh1h" path="res://Assets/Props/canC.glb" id="13_wgfyn"]
+[ext_resource type="PackedScene" uid="uid://b3b4miaesghpu" path="res://Assets/Props/tallcabinet.glb" id="15_wgfyn"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
 closed = true
@@ -30,8 +32,6 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 8
-
-[sub_resource type="QuadMesh" id="QuadMesh_3lhg3"]
 
 [sub_resource type="Curve3D" id="Curve3D_ouevp"]
 closed = true
@@ -73,6 +73,35 @@ SPAWN_1 = Vector3(0, 1, 5)
 PLAYER_2 = ExtResource("2_hbaan")
 SPAWN_2 = Vector3(4, 1, 5)
 
+[node name="Keys" type="Node3D" parent="."]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 8.09669, -0.041, -8.423)
+
+[node name="Key" parent="Keys" instance=ExtResource("9_u05pv")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -25.0899, 1.44482, 7.40031)
+
+[node name="Key2" parent="Keys" instance=ExtResource("9_u05pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1769, 0.813434, 0.358027)
+
+[node name="Key3" parent="Keys" instance=ExtResource("9_u05pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.88503, 1.32881, 2.97682)
+
+[node name="Key4" parent="Keys" instance=ExtResource("9_u05pv")]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -3.25689, 1.26682, 19.6312)
+
+[node name="Doors" type="Node3D" parent="."]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 8.09669, -0.041, -8.423)
+
+[node name="Door" parent="Doors" instance=ExtResource("4_nj2yk")]
+
+[node name="Door3" parent="Doors" instance=ExtResource("4_nj2yk")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.42231, 0, 15.1561)
+
+[node name="Door4" parent="Doors" instance=ExtResource("4_nj2yk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -23.2026, 0, 22.3128)
+
+[node name="Door2" parent="Doors" instance=ExtResource("4_nj2yk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.54969, 0, -6.79201)
+
 [node name="Loot" parent="." instance=ExtResource("3_lwy2l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4689, 0.52094, 8.3919)
 
@@ -87,37 +116,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6261, 0.247855, -20.7443)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4808, 0.326836, -16.2177)
 
 [node name="Spawn3" type="Marker3D" parent="LootSpawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1414, 1.16708, 4.75385)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1414, 1.05244, 4.75385)
 
 [node name="Spawn7" type="Marker3D" parent="LootSpawner"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -16.3262, 1.16708, 15.1072)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -16.3262, 0.166514, 15.1072)
 
 [node name="Spawn8" type="Marker3D" parent="LootSpawner"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -13.3786, 1.16708, 20.3132)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -8.91678, 0.236592, 20.8707)
 
 [node name="Spawn4" type="Marker3D" parent="LootSpawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53833, 0.247855, -7.78505)
 
 [node name="Spawn5" type="Marker3D" parent="LootSpawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0093, 0.326836, 13.4432)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0093, 0.175807, 13.4432)
 
 [node name="Spawn6" type="Marker3D" parent="LootSpawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.5339, 1.16708, -7.16799)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9498, 0.108439, -7.16799)
 
 [node name="Spawn9" type="Marker3D" parent="LootSpawner"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 16.9295, 1.16708, 4.84954)
-
-[node name="Door" parent="." instance=ExtResource("4_nj2yk")]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 8.09669, -0.041, -8.423)
-
-[node name="Door3" parent="." instance=ExtResource("4_nj2yk")]
-transform = Transform3D(-4.37114e-08, 0, -0.999999, 0, 0.999999, 0, 0.999999, 0, -4.37114e-08, 10.519, -0.041, 6.73312)
-
-[node name="Door4" parent="." instance=ExtResource("4_nj2yk")]
-transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 0.999999, 0, 8.74227e-08, 0, -0.999999, -15.1059, -0.041, 13.8898)
-
-[node name="Door2" parent="." instance=ExtResource("4_nj2yk")]
-transform = Transform3D(-4.37114e-08, 0, 0.999999, 0, 0.999999, 0, -0.999999, 0, -4.37114e-08, 5.547, -0.041, -15.215)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 16.9295, 0.119439, 4.84954)
 
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.15561, 0, 5.32817)
@@ -131,18 +148,6 @@ script = ExtResource("4_7pswh")
 transform = Transform3D(-0.999184, 0.016399, -0.0369301, 0.0156731, 0.99968, 0.0198608, 0.0372439, 0.0192658, -0.999121, -0.878, 1, -0.789)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("9_he5fp")]
-
-[node name="Key" parent="." instance=ExtResource("9_u05pv")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.9932, 1.40382, -1.0227)
-
-[node name="Key2" parent="." instance=ExtResource("9_u05pv")]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -6.08015, 0.772433, -8.06497)
-
-[node name="Key3" parent="." instance=ExtResource("9_u05pv")]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 11.9817, 1.28781, -5.44618)
-
-[node name="Key4" parent="." instance=ExtResource("9_u05pv")]
-transform = Transform3D(0.999998, 0, 0, 0, 0.999998, 0, 0, 0, 0.999998, 4.83981, 1.22582, 11.2082)
 
 [node name="Spawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("uid://ct2v1laxjo67f", "uid://c1ta55yk5nxar")
@@ -362,12 +367,7 @@ transform = Transform3D(-0.158788, 0, 0.987306, 0, 0.99998, 0, -0.987309, 0, -0.
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D2/PathFollow3D" instance=ExtResource("5_34bfm")]
-transform = Transform3D(-0.6257, 4.36557e-11, -0.0702939, 5.82077e-11, 0.629637, -5.82077e-11, 0.0702939, -5.82077e-11, -0.6257, 0, 1.04253, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.908887, 0.000327926, -0.417042, -0.000327926, 0.999999, 0.00150098, 0.417042, 0.00150098, -0.908886, 0, 0.638411, 0.00050211)
-mesh = SubResource("QuadMesh_3lhg3")
-skeleton = NodePath("")
+transform = Transform3D(-0.6257, 4.36557e-11, -0.0702939, 5.82077e-11, 0.629637, -5.82077e-11, 0.0702939, -5.82077e-11, -0.6257, 0, 0.60592, 0)
 
 [node name="Path3D5" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3956, 0, 8.84157)
@@ -377,6 +377,7 @@ curve = SubResource("Curve3D_ouevp")
 transform = Transform3D(0.999942, 0, -0.0106368, 0, 0.999999, 0, 0.0106368, 0, 0.999941, 0.781304, 0, 0.140287)
 
 [node name="Guard" parent="Path3D5/PathFollow3D" instance=ExtResource("5_34bfm")]
+transform = Transform3D(1, 0, -9.31323e-10, 0, 1, 0, -1.86265e-09, 0, 1, 0, 0.971921, 0)
 
 [node name="Path3D7" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5695, 0, -7.12015)
@@ -387,6 +388,7 @@ transform = Transform3D(-0.0766961, 0, -0.997044, 0, 1, 0, 0.997044, 0, -0.07669
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D7/PathFollow3D" instance=ExtResource("5_34bfm")]
+transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 0, 0.971091, 0)
 
 [node name="Path3D6" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6131, 0, -20.2113)
@@ -397,11 +399,7 @@ transform = Transform3D(0.056868, 0, -0.998377, 0, 1, 0, 0.998377, 0, 0.056868, 
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(-0.908887, 0.000327926, -0.417042, -0.000327926, 0.999999, 0.00150098, 0.417042, 0.00150098, -0.908886, 0, 0.638411, 0.00050211)
-mesh = SubResource("QuadMesh_3lhg3")
-skeleton = NodePath("../Path3D5")
+transform = Transform3D(1, 0, -3.72529e-09, 0, 1, 0, 3.72529e-09, 0, 1, 0, 0.96344, 0)
 
 [node name="Path3D3" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6246, 0, -8.57979)
@@ -412,3 +410,7 @@ transform = Transform3D(0.487068, 0, -0.873363, 0, 1, 0, 0.873363, 0, 0.487068, 
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D3/PathFollow3D" instance=ExtResource("5_34bfm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.962358, 0)
+
+[node name="HoleCover" parent="." instance=ExtResource("15_wgfyn")]
+transform = Transform3D(-4.38992e-08, 0, -1.0043, 0, 1.0043, 0, 1.0043, 0, -4.38992e-08, -7.28822, 0.038271, 18.9446)

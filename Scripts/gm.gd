@@ -38,7 +38,6 @@ func new_round() -> void:
 	game_paused = false
 		
 func end_round() -> void:
-	print("End round")
 	game_paused = true
 	if round < 3:
 		get_tree().change_scene_to_file("res://postround.tscn")

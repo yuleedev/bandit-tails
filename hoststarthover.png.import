@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgsdj3k71fbx8"
-path="res://.godot/imported/readynormal.png-9c40083b9c92c977396b76e3175980d7.ctex"
+uid="uid://cotrmpkb63em0"
+path="res://.godot/imported/hoststarthover.png-675978b4d4a152e8dff92a9bd0c557bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/UI/readynormal.png"
-dest_files=["res://.godot/imported/readynormal.png-9c40083b9c92c977396b76e3175980d7.ctex"]
+source_file="res://hoststarthover.png"
+dest_files=["res://.godot/imported/hoststarthover.png-675978b4d4a152e8dff92a9bd0c557bf.ctex"]
 
 [params]
 
