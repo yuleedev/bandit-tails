@@ -3,15 +3,15 @@
 [ext_resource type="Script" uid="uid://ca0qt6j6uxdsp" path="res://Scripts/treasure.gd" id="1_582qy"]
 [ext_resource type="Texture2D" uid="uid://f7bppga75j5w" path="res://Assets/Props/Loot/teste.png" id="2_dsxso"]
 [ext_resource type="PackedScene" uid="uid://bunav6f5myq81" path="res://gui.tscn" id="2_fybsu"]
-[ext_resource type="Script" path="res://Scripts/item.gd" id="3_nx1s7"]
+[ext_resource type="Script" uid="uid://bj118do4lnnc6" path="res://Scripts/item.gd" id="3_nx1s7"]
 [ext_resource type="ArrayMesh" uid="uid://cdikvwqgxg1f1" path="res://Assets/Props/Loot/testrings.obj" id="4_4fahp"]
 [ext_resource type="ArrayMesh" uid="uid://ibaeel2yvujb" path="res://Assets/Props/Loot/testbrush.obj" id="5_jgq70"]
 [ext_resource type="ArrayMesh" uid="uid://dwkt3qan651qo" path="res://Assets/Props/Loot/ring.obj" id="6_yjhj0"]
-[ext_resource type="ArrayMesh" uid="uid://dmfj16g6kovdb" path="res://Assets/Props/Loot/necklace.obj" id="7_cstq0"]
-[ext_resource type="ArrayMesh" uid="uid://de2euxnjt1ihe" path="res://Assets/Props/Loot/piggybank.obj" id="8_cstq0"]
+[ext_resource type="ArrayMesh" uid="uid://d2g8n3hwcxkao" path="res://Assets/Props/Loot/necklace.obj" id="7_cstq0"]
+[ext_resource type="ArrayMesh" uid="uid://ca8kan0651f7u" path="res://Assets/Props/Loot/piggybank.obj" id="8_cstq0"]
 [ext_resource type="ArrayMesh" uid="uid://c7csnstxk8agt" path="res://Assets/Props/Loot/teddybear.obj" id="9_3aec1"]
 [ext_resource type="ArrayMesh" uid="uid://cuj42c2cups5x" path="res://Assets/Props/Loot/vaseArecol.obj" id="10_mdsk6"]
-[ext_resource type="ArrayMesh" uid="uid://bp0veoykaxw7q" path="res://Assets/Props/Loot/watch.obj" id="11_od7cy"]
+[ext_resource type="ArrayMesh" uid="uid://c6gmvb7atnold" path="res://Assets/Props/Loot/watch.obj" id="11_od7cy"]
 
 [sub_resource type="Resource" id="Resource_4fahp"]
 script = ExtResource("3_nx1s7")
@@ -40,7 +40,7 @@ properties/1/replication_mode = 1
 [node name="Loot" type="Node3D" groups=["loot"]]
 script = ExtResource("1_582qy")
 item_res = SubResource("Resource_4fahp")
-mesh_options = Array[Mesh]([ExtResource("4_4fahp"), ExtResource("5_jgq70"), ExtResource("6_yjhj0"), ExtResource("7_cstq0"), ExtResource("8_cstq0"), ExtResource("9_3aec1"), ExtResource("10_mdsk6"), ExtResource("11_od7cy")])
+mesh_options = Array[Mesh]([ExtResource("4_4fahp"), ExtResource("5_jgq70"), ExtResource("6_yjhj0"), ExtResource("9_3aec1"), ExtResource("10_mdsk6"), ExtResource("8_cstq0"), ExtResource("7_cstq0"), ExtResource("11_od7cy")])
 
 [node name="Body" type="StaticBody3D" parent="."]
 
