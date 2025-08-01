@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://n02ywmjlls01" path="res://Assets/Props/candleA.glb" id="11_5mxy1"]
 [ext_resource type="PackedScene" uid="uid://cea7edkrb4md8" path="res://Assets/Props/candleB.glb" id="12_3lhg3"]
 [ext_resource type="PackedScene" uid="uid://7xvtyi87oh1h" path="res://Assets/Props/canC.glb" id="13_wgfyn"]
-[ext_resource type="PackedScene" uid="uid://dnqmjr5jw51qp" path="res://tallcabinet.tscn" id="17_ja5tu"]
+[ext_resource type="PackedScene" path="res://tallcabinet.tscn" id="17_ja5tu"]
 [ext_resource type="AudioStream" uid="uid://cjedw1rj4c7qn" path="res://Chase.wav" id="17_ouevp"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]

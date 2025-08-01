@@ -3,7 +3,7 @@ class_name Raccoon
 
 ## ================ [ FIELDS ] ================ ##
 
-@export var DASH_ABILITY: float = 100
+@export var DASH_ABILITY: float = 50
 
 ## ================ [ PLAYER ] ================ ##
 
