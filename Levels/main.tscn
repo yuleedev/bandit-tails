@@ -435,9 +435,9 @@ stream = ExtResource("17_ouevp")
 autoplay = true
 
 [node name="Ceiling" type="CSGBox3D" parent="."]
-transform = Transform3D(51.3212, 0, 0, 0, 0.999994, 0, 0, 0, 5.26264, -0.0270149, 6.66114, 1.94166)
+transform = Transform3D(51.529, 0, 0, 0, 1.00404, 0, 0, 0, 5.28394, -2.61124, 6.66114, 1.94166)
 use_collision = true
-size = Vector3(1, 0.150879, 10.223)
+size = Vector3(0.899292, 0.150879, 10.223)
 material = SubResource("StandardMaterial3D_ouevp")
 
 [node name="Key" parent="." instance=ExtResource("9_u05pv")]
