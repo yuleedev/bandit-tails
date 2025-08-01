@@ -10,7 +10,8 @@ var round: int = 1
 var round_dur: float = 0
 var game_paused: bool = true
 var mouse_captured: bool = false
-var keys = 0
+var p1_keys = 0
+var p2_keys = 0
 var p1_id: int = 1
 var p2_id: int
 

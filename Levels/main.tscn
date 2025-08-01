@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=25 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" uid="uid://bvpa01djx1mc4" path="res://Levels/main.gd" id="1_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://c1ta55yk5nxar" path="res://Assets/Raccoon/raccoon.tscn" id="2_5mxy1"]
@@ -65,6 +65,9 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
 }
 point_count = 6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouevp"]
+albedo_color = Color(0.395288, 0.322571, 0.308367, 1)
 
 [node name="Main" type="Node3D"]
 transform = Transform3D(0.995721, 0, 0, 0, 0.995721, 0, 0, 0, 0.995721, 0, 0, 0)
@@ -133,6 +136,10 @@ key_scene = ExtResource("9_u05pv")
 
 [node name="Marker3D" type="Marker3D" parent="KeySpawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.13391)
+
+[node name="Spawner" type="MultiplayerSpawner" parent="KeySpawner"]
+_spawnable_scenes = PackedStringArray("uid://cbvne5fpxlq0t")
+spawn_path = NodePath("../../Key")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("9_he5fp")]
 
@@ -418,4 +425,11 @@ transform = Transform3D(-4.38992e-08, 0, -1.0043, 0, 1.0043, 0, 1.0043, 0, -4.38
 stream = ExtResource("17_ouevp")
 autoplay = true
 
+[node name="Ceiling" type="CSGBox3D" parent="."]
+transform = Transform3D(51.3212, 0, 0, 0, 0.999994, 0, 0, 0, 5.26264, -0.0270149, 6.66114, 1.94166)
+use_collision = true
+size = Vector3(1, 0.150879, 10.223)
+material = SubResource("StandardMaterial3D_ouevp")
+[node name="Key" parent="." instance=ExtResource("9_u05pv")]
+visible = false
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
