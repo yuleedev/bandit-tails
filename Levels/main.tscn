@@ -135,11 +135,20 @@ script = ExtResource("7_wgfyn")
 key_scene = ExtResource("9_u05pv")
 
 [node name="Marker3D" type="Marker3D" parent="KeySpawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.13391)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18416, 3.13391)
 
 [node name="Spawner" type="MultiplayerSpawner" parent="KeySpawner"]
 _spawnable_scenes = PackedStringArray("uid://cbvne5fpxlq0t")
 spawn_path = NodePath("../../Key")
+
+[node name="Marker3D2" type="Marker3D" parent="KeySpawner"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -5.62592, 0.844501, -8.05085)
+
+[node name="Marker3D3" type="Marker3D" parent="KeySpawner"]
+transform = Transform3D(0.999997, 0, 0, 0, 0.999997, 0, 0, 0, 0.999997, -18.7057, 1.4694, -1.40058)
+
+[node name="Marker3D4" type="Marker3D" parent="KeySpawner"]
+transform = Transform3D(0.999993, 0, 0, 0, 0.999993, 0, 0, 0, 0.999993, 17.1808, 0.118509, -1.28503)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("9_he5fp")]
 
@@ -430,6 +439,6 @@ transform = Transform3D(51.3212, 0, 0, 0, 0.999994, 0, 0, 0, 5.26264, -0.0270149
 use_collision = true
 size = Vector3(1, 0.150879, 10.223)
 material = SubResource("StandardMaterial3D_ouevp")
+
 [node name="Key" parent="." instance=ExtResource("9_u05pv")]
 visible = false
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
