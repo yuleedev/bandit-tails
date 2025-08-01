@@ -34,7 +34,7 @@ func start_game() -> void:
 	hud.visible = true
 	await get_tree().process_frame
 
-@rpc("call_local")
+@rpc
 func show_result_screen(result: String) -> void:
 	match result:
 		"host":
@@ -44,7 +44,7 @@ func show_result_screen(result: String) -> void:
 		"tie":
 			get_tree().change_scene_to_file("res://tie.tscn")
 
-@rpc("call_local")
+@rpc
 func end_game() -> void:
 	game_paused = true
 
