@@ -71,7 +71,6 @@ offset_bottom = 40.0
 texture = ExtResource("5_4hbjg")
 
 [node name="Next" type="TextureButton" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 1607.0
 offset_top = 766.0
@@ -106,13 +105,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -40.9999
-offset_top = 301.0
-offset_right = 434.0
-offset_bottom = 451.0
+offset_left = 121.0
+offset_top = -57.0001
+offset_right = 521.0
+offset_bottom = 92.9999
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 0.0453786
+rotation = -0.0523599
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = SubResource("FontVariation_4hbjg")
 theme_override_font_sizes/font_size = 90
