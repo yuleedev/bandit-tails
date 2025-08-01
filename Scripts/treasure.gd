@@ -7,7 +7,6 @@ var selected_index: int = -1
 @onready var progress = $Body/WeightBar/Sprite3D/SubViewport/ProgressBar
 @onready var value_label = $Body/WeightBar/Sprite3D/SubViewport/Label
 @onready var mesh_instance: MeshInstance3D = $Body/Mesh
-@onready var invM = get_node("/root/Mole/CanvasLayer/Inventory")
 @onready var inv = get_node("/root/Main/CanvasLayer/Inventory")
 
 @export var item_res: Array[Item] = []

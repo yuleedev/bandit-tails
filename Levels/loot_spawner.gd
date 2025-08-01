@@ -12,17 +12,21 @@ func _ready() -> void:
 
 func initialize_spawning():
 	if not multiplayer.is_server():
-		print("no")
 		return
-	for marker in get_children():
-		if marker is Marker3D:
-			for int in range(0,6):
-				var spawn_data = {
-				"position": marker.global_position, 
-				"peer_id": 1,
-				"seed": randi()
-				}
-				spawner.spawn(spawn_data)
+	
+	var all_markers = []
+	for child in get_children():
+		if child is Marker3D:
+			all_markers.append(child)
+	all_markers.shuffle()
+	
+	for i in range(6):
+		var spawn_data = {
+		"position": all_markers[i].global_position, 
+		"peer_id": 1,
+		"seed": randi()
+		}
+		spawner.spawn(spawn_data)
 
 func _spawn_loot(data: Dictionary) -> Node:
 	var loot = loot_scene.instantiate()

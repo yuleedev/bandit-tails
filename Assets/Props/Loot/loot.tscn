@@ -117,7 +117,7 @@ properties/1/replication_mode = 1
 script = ExtResource("1_582qy")
 item_res = Array[ExtResource("3_nx1s7")]([ExtResource("3_fwg60"), SubResource("Resource_wa50y"), SubResource("Resource_bc24m"), ExtResource("6_np4xh"), SubResource("Resource_t7biv"), SubResource("Resource_j3ljx"), SubResource("Resource_yp1y5"), SubResource("Resource_jftan"), SubResource("Resource_sw7te"), SubResource("Resource_w5isi")])
 mesh_options = Array[Mesh]([ExtResource("11_fwg60"), ExtResource("12_np4xh"), ExtResource("6_yjhj0"), ExtResource("9_3aec1"), ExtResource("10_mdsk6"), ExtResource("8_cstq0"), ExtResource("7_cstq0"), ExtResource("11_od7cy"), ExtResource("19_wa50y"), ExtResource("20_bc24m")])
-icon_options = Array[Texture2D]([ExtResource("12_doqif"), ExtResource("13_rfdsn"), ExtResource("14_doqif"), ExtResource("15_np4xh"), ExtResource("16_yrbdw"), ExtResource("17_wa50y"), ExtResource("18_bc24m"), ExtResource("19_t7biv"), ExtResource("24_t7biv"), ExtResource("17_wa50y")])
+icon_options = Array[Texture2D]([ExtResource("12_doqif"), ExtResource("13_rfdsn"), ExtResource("14_doqif"), ExtResource("15_np4xh"), ExtResource("16_yrbdw"), ExtResource("8_wa50y"), ExtResource("18_bc24m"), ExtResource("19_t7biv"), ExtResource("24_t7biv"), ExtResource("17_wa50y")])
 
 [node name="Body" type="StaticBody3D" parent="."]
 
