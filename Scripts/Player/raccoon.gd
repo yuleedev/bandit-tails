@@ -3,10 +3,9 @@ class_name Raccoon
 
 ## ================ [ FIELDS ] ================ ##
 
-@export var DASH_ABILITY: float = 50
+@export var DASH_ABILITY: float = 40
 
 ## ================ [ PLAYER ] ================ ##
 
 func use_skill() -> void:
-	print("raccoon skill")
 	velocity = move_dir * DASH_ABILITY
