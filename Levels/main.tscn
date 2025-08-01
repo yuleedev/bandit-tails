@@ -134,6 +134,10 @@ key_scene = ExtResource("9_u05pv")
 [node name="Marker3D" type="Marker3D" parent="KeySpawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.13391)
 
+[node name="Spawner" type="MultiplayerSpawner" parent="KeySpawner"]
+_spawnable_scenes = PackedStringArray("uid://cbvne5fpxlq0t")
+spawn_path = NodePath("../../Key")
+
 [node name="CanvasLayer" parent="." instance=ExtResource("9_he5fp")]
 
 [node name="Spawner" type="MultiplayerSpawner" parent="."]
@@ -417,3 +421,6 @@ transform = Transform3D(-4.38992e-08, 0, -1.0043, 0, 1.0043, 0, 1.0043, 0, -4.38
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_ouevp")
 autoplay = true
+
+[node name="Key" parent="." instance=ExtResource("9_u05pv")]
+visible = false
