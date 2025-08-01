@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bptqi1gcph16o"]
+[gd_scene load_steps=8 format=3 uid="uid://bptqi1gcph16o"]
 
 [ext_resource type="Script" uid="uid://bppa1yiwichdp" path="res://door.gd" id="1_v6xrn"]
 [ext_resource type="PackedScene" uid="uid://cnpfmgg2u5n6d" path="res://door_opening_animation_colored.tscn" id="2_v6xrn"]
@@ -19,6 +19,11 @@ states/Action/position = Vector2(378.5, 99.25)
 states/Start/position = Vector2(200, 99.625)
 transitions = ["Start", "Action", SubResource("AnimationNodeStateMachineTransition_y5njw")]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_v6xrn"]
+properties/0/path = NodePath("AnimationTree:parameters/conditions/unlock")
+properties/0/spawn = true
+properties/0/replication_mode = 2
+
 [node name="Door" type="Node3D" groups=["door"]]
 script = ExtResource("1_v6xrn")
 
@@ -37,6 +42,9 @@ root_node = NodePath("../door_opening_animation_colored")
 tree_root = SubResource("AnimationNodeStateMachine_4xadh")
 anim_player = NodePath("../door_opening_animation_colored/AnimationPlayer")
 parameters/conditions/unlock = false
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_v6xrn")
 
 [connection signal="body_entered" from="door_opening_animation_colored/Area" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="door_opening_animation_colored/Area" to="." method="_on_body_exited"]
