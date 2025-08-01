@@ -82,16 +82,16 @@ func _apply_movement(delta) -> void:
 
 func _manage_interactable() -> void:
 	if interactable:
-		if interactable.is_in_group("loot") and Input.is_action_pressed("interact"):
-			interactable.rpc_id(interactable.get_multiplayer_authority(), "request_pick_up", multiplayer.get_unique_id())
-
+		if interactable.is_in_group("loot") and Input.is_action_pressed("interact") and not interactable.is_picked:
+			interactable.start_pickup(multiplayer.get_unique_id())
+		if interactable.is_in_group("loot") and Input.is_action_just_released("interact"):
+			interactable.stop_pickup()
 		elif interactable.is_in_group("door") and GM.keys > 0 and Input.is_action_just_pressed("interact"):
 			GM.keys -= 1
 			interactable.open()
 		elif interactable.is_in_group("key") and Input.is_action_just_pressed("interact"):
 			GM.keys += 1
-			interactable.rpc_id(interactable.get_multiplayer_authority(), "request_pick_up", multiplayer.get_unique_id())
-
+			interactable.pick_up()
 			
 func _manage_skill() -> void:
 	if Input.is_action_just_pressed("skill") and cd <= 0:
@@ -154,3 +154,4 @@ func _input(event):
 			print("3 was pressed")
 			sound.shape.radius = 3
 			#change the inputs and radii to make more sense
+	

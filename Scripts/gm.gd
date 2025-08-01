@@ -4,14 +4,13 @@ extends Node
 
 @export var options: Options = Options.new()
 @export var ROUND_DURATION: float = 50
+var loot_spawner: Node = null
 
 var round: int = 1
 var round_dur: float = 0
-
 var game_paused: bool = true
 var mouse_captured: bool = false
 var keys = 0
-
 var p1_id: int = 1
 var p2_id: int
 
@@ -28,6 +27,8 @@ func select_char() -> void:
 @rpc("call_local")
 func start_game() -> void:
 	get_tree().change_scene_to_file("res://Levels/main.tscn")
+	await get_tree().process_frame
+	
 
 @rpc("call_local")
 func end_game() -> void:
