@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dq1hiq81r8oug"]
+[gd_scene load_steps=8 format=3 uid="uid://dq1hiq81r8oug"]
 
 [ext_resource type="Texture2D" uid="uid://dutnsim8blqb3" path="res://credits.png" id="1_c1t8d"]
+[ext_resource type="Script" uid="uid://c8iiowjw8f2o1" path="res://credits.gd" id="1_g4wvt"]
 [ext_resource type="FontFile" uid="uid://0mou7hqwgtb4" path="res://Assets/UI/UIFont.ttf" id="2_g4wvt"]
 
 [sub_resource type="FontVariation" id="FontVariation_pjc1l"]
@@ -40,6 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_g4wvt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -147,3 +149,5 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/hover = SubResource("StyleBoxFlat_g4wvt")
 theme_override_styles/normal = SubResource("StyleBoxFlat_pjc1l")
 text = "Back to Menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
