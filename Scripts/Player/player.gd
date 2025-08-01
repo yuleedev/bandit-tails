@@ -108,7 +108,6 @@ func _ready() -> void:
 		camera.queue_free()
 		
 func _process(delta: float) -> void:
-	_update_timers(delta)
 	
 	if is_multiplayer_authority():
 		_rotate_camera()
