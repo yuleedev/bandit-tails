@@ -57,10 +57,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 48.0
-offset_top = -293.0
-offset_right = 869.0
-offset_bottom = 274.0
+offset_left = 47.0
+offset_top = -302.5
+offset_right = 870.0
+offset_bottom = 315.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.945098, 0.909804, 0.796078, 1)
@@ -73,7 +73,8 @@ text = "Gameplay Instructions:
 - Pick up loot and keys by holding E
 
 Your objective is to find and steal
-the highest value items each round!"
+the highest value items each round! 
+The game is played best out of 3."
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
