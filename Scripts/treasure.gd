@@ -143,3 +143,20 @@ func receive_item(index: int):
 @rpc("call_local", "reliable")
 func hide_item():
 	visible = false
+
+func initialize_as_dropped(item: Item):
+	if is_multiplayer_authority():
+		var index = item_res.find(item)
+		if index != -1:
+			selected_index = index
+			mesh_instance.mesh = mesh_options[index]
+			item_res[index] = item
+			rpc("_sync_dropped_loot", index, item.value)
+
+@rpc("call_local", "reliable")
+func _sync_dropped_loot(index: int, value: float):
+	selected_index = index
+	mesh_instance.mesh = mesh_options[index]
+	item_res[index].value = value
+	visible = true
+	is_picked = false  

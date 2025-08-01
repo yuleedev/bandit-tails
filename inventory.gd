@@ -4,10 +4,10 @@ var row_size = 2
 var items = []
 var total_value = 0
 var temp_value = 0
-
 var player_id : int = 1
 
 const ITEM_SLOT = preload("res://item_slot.tscn")
+signal item_dropped(item, position)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void: 
@@ -18,7 +18,6 @@ func _ready() -> void:
 		instance.slot_num = x
 		add_child(instance)
 		items[x] = instance
-
 	
 func prep_item(res):
 	var item = {}
@@ -43,3 +42,18 @@ func add_item(item):
 			
 			$Label.text = "Total Value: " + str(total_value)
 			return true
+
+func drop_item(slot_num: int):
+	var slot = items[slot_num]
+	if slot.has_item():
+		var item = slot.remove_item()
+		total_value -= item['value']
+		$Label.text = "Total Value: " + str(total_value)
+	if player_id == GM.p1_id:
+		GM.p1_round_value = total_value
+	else:
+		GM.p2_round_value = total_value
+
+		emit_signal("item_dropped", items[slot_num], global_position)
+		return true
+	return false
