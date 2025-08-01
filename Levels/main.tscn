@@ -91,10 +91,6 @@ transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 0.999999, 0, 8.74227e-08,
 [node name="Door2" parent="Doors" instance=ExtResource("4_nj2yk")]
 transform = Transform3D(-4.37114e-08, 0, 0.999999, 0, 0.999999, 0, -0.999999, 0, -4.37114e-08, 5.547, -0.041, -15.215)
 
-[node name="Loot" parent="." instance=ExtResource("3_lwy2l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5907, 0.52094, 8.3919)
-visible = false
-
 [node name="LootSpawner" type="Node3D" parent="."]
 script = ExtResource("4_u05pv")
 loot_scene = ExtResource("3_lwy2l")
