@@ -1,4 +1,5 @@
 extends Label
 
 func _process(delta):
-	text = str(int(GM.p2_wins))
+	if multiplayer.get_unique_id() == GM.p1_id:
+		text = str(int(GM.p2_wins))
