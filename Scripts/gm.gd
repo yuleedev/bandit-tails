@@ -4,10 +4,10 @@ extends Node
 
 @export var options: Options = Options.new()
 @export var ROUND_DURATION: float = 50
+var loot_spawner: Node = null
 
 var round: int = 1
 var round_dur: float = 0
-
 var game_paused: bool = true
 var mouse_captured: bool = false
 var keys = 0
@@ -21,14 +21,37 @@ var p2_id: int
 func select_char() -> void:
 	get_tree().change_scene_to_file("res://character_select.tscn")
 
+func register_spawner(spawner: Node):
+	loot_spawner = spawner
+	if multiplayer.is_server() and spawner.has_method("initialize_spawning"):
+		spawner.initialize_spawning()
+
+func _print_node_tree(node: Node, indent: String = ""):
+	print(indent + node.name)
+	for child in node.get_children():
+		_print_node_tree(child, indent + "  ")
+
 @rpc("call_local")
 func start_game() -> void:
+	print("Current scene tree before change:")
+	_print_node_tree(get_tree().root)
 	get_tree().change_scene_to_file("res://Levels/main.tscn")
+	await get_tree().process_frame
+	
+	if multiplayer.is_server():
+		loot_spawner = get_tree().root.find_child("LootSpawner", true, false)
+		if loot_spawner:
+			loot_spawner.initialize_spawning()
+		else:
+			push_error("LootSpawner not found after scene change")
+	print("\nNew scene tree after change:")
+
 
 @rpc("call_local")
 func end_game() -> void:
 	game_paused = true
 	get_tree().change_scene_to_file("res://menu.tscn")
+	_print_node_tree(get_tree().root)
 
 @rpc
 func new_round() -> void:
