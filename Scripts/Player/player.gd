@@ -90,7 +90,7 @@ func _manage_interactable() -> void:
 				GM.p1_keys -= 1
 			elif GM.p2_keys > 0:
 				GM.p2_keys -= 1
-			interactable.open()
+			interactable.open(multiplayer.get_unique_id())
 		elif interactable.is_in_group("key") and Input.is_action_just_pressed("interact"):
 			interactable.pick_up(multiplayer.get_unique_id())
 			
