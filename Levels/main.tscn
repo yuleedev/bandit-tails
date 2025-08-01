@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://n02ywmjlls01" path="res://Assets/Props/candleA.glb" id="11_5mxy1"]
 [ext_resource type="PackedScene" uid="uid://cea7edkrb4md8" path="res://Assets/Props/candleB.glb" id="12_3lhg3"]
 [ext_resource type="PackedScene" uid="uid://7xvtyi87oh1h" path="res://Assets/Props/canC.glb" id="13_wgfyn"]
-[ext_resource type="PackedScene" uid="uid://b3b4miaesghpu" path="res://Assets/Props/tallcabinet.glb" id="15_wgfyn"]
+[ext_resource type="PackedScene" uid="uid://dnqmjr5jw51qp" path="res://tallcabinet.tscn" id="17_ja5tu"]
 [ext_resource type="AudioStream" uid="uid://cjedw1rj4c7qn" path="res://Chase.wav" id="17_ouevp"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
@@ -424,9 +424,6 @@ script = ExtResource("4_7pswh")
 [node name="Guard" parent="Path3D3/PathFollow3D" instance=ExtResource("5_34bfm")]
 transform = Transform3D(-1.5, 0, -1.78814e-07, 0, 1.5, 0, 1.78814e-07, 0, -1.5, 0, 1.53439, 0)
 
-[node name="HoleCover" parent="." instance=ExtResource("15_wgfyn")]
-transform = Transform3D(-4.38992e-08, 0, -1.0043, 0, 1.0043, 0, 1.0043, 0, -4.38992e-08, -7.28822, 0.038271, 18.9446)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_ouevp")
 autoplay = true
@@ -440,3 +437,6 @@ material = SubResource("StandardMaterial3D_ouevp")
 [node name="Key" parent="." instance=ExtResource("9_u05pv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 57.4698)
 visible = false
+
+[node name="tallcabinet" parent="." instance=ExtResource("17_ja5tu")]
+transform = Transform3D(-4.38992e-08, 0, -1.0043, 0, 1.0043, 0, 1.0043, 0, -4.38992e-08, -7.29412, 0.0382712, 19.1424)

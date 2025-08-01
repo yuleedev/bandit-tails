@@ -37,28 +37,21 @@ func start_game() -> void:
 @rpc("call_local")
 func show_result_screen(result: String) -> void:
 	match result:
-		"win":
-			get_tree().change_scene_to_file("res://victory.tscn")
-		"lose":
-			get_tree().change_scene_to_file("res://loss.tscn")
+		"host":
+			get_tree().change_scene_to_file("res://hostwin.tscn")
+		"joiner":
+			get_tree().change_scene_to_file("res://joinerwin.tscn")
 		"tie":
 			get_tree().change_scene_to_file("res://tie.tscn")
 
 @rpc("call_local")
 func end_game() -> void:
 	game_paused = true
-	var my_id = multiplayer.get_unique_id()
 
 	if p1_wins > p2_wins:
-		if my_id == p1_id:
-			show_result_screen.rpc("win")
-		else:
-			show_result_screen.rpc("lose")
+		show_result_screen.rpc("host")
 	elif p2_wins > p1_wins:
-		if my_id == p2_id:
-			show_result_screen.rpc("win")
-		else:
-			show_result_screen.rpc("lose")
+		show_result_screen.rpc("joiner")
 	else:
 		show_result_screen.rpc("tie")
 
