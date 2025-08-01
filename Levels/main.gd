@@ -19,6 +19,7 @@ func _spawn(id: int) -> Player:
 		player.position = SPAWN_1
 		
 		player.set_multiplayer_authority(id)
+		$CanvasLayer/Inventory.player_id = id
 		return player
 	else:
 		var player: Player = PLAYER_2.instantiate()
@@ -26,6 +27,7 @@ func _spawn(id: int) -> Player:
 		player.position = SPAWN_2
 		
 		player.set_multiplayer_authority(id)
+		$CanvasLayer/Inventory.player_id = id
 		return player
 
 ## ================ [ GODOT ] ================ ##
