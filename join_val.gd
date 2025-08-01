@@ -1,4 +1,4 @@
 extends Label
 
 func _process(delta):
-	text = str(GM.p2_round_value)
+	text = str(int(GM.p2_round_value))

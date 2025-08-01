@@ -93,7 +93,6 @@ func end_round() -> void:
 		pass
 	
 	
-	
 	if round < 3:
 		get_tree().change_scene_to_file("res://postround.tscn")
 	else:
