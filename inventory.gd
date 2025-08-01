@@ -35,10 +35,13 @@ func add_item(item):
 		if slot.add_item(item):
 			total_value += temp_value
 			
-			if player_id == GM.p1_id:
-				GM.p1_round_value = total_value
-			else:
-				GM.p2_round_value = total_value
+			#print(player_id)
+			#if player_id == GM.p1_id:
+				#GM.p1_round_value = total_value
+				#print("p1: " + str(GM.p1_round_value))
+			#else:
+				#GM.p2_round_value = total_value
+				#print("p2: " + str(GM.p2_round_value))
 			
 			$Label.text = "Total Value: " + str(total_value)
 			return true

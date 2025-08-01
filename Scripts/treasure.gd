@@ -116,6 +116,7 @@ func complete_pickup():
 	is_picked = true
 	if is_multiplayer_authority():
 		if inv.add_item(inv.prep_item(item_res[selected_index])):
+			GM.p1_round_value += item_res[selected_index].value
 			#rpc_id(current_picker_id, "receive_item", selected_index)
 			rpc("hide_item")
 			queue_free()
@@ -130,6 +131,7 @@ func request_pickup_completion(picker_id: int):
 		current_picker_id = picker_id
 		#inv.add_item(inv.prep_item(item_res[selected_index]))
 		rpc_id(current_picker_id, "receive_item", selected_index)
+		GM.p2_round_value += item_res[selected_index].value
 		rpc("hide_item")
 		queue_free()
 
