@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene load_steps=25 format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" uid="uid://bvpa01djx1mc4" path="res://Levels/main.gd" id="1_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://c1ta55yk5nxar" path="res://Assets/Raccoon/raccoon.tscn" id="2_5mxy1"]
@@ -66,6 +66,9 @@ _data = {
 }
 point_count = 6
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouevp"]
+albedo_color = Color(0.395288, 0.322571, 0.308367, 1)
+
 [node name="Main" type="Node3D"]
 transform = Transform3D(0.995721, 0, 0, 0, 0.995721, 0, 0, 0, 0.995721, 0, 0, 0)
 script = ExtResource("1_ovrsl")
@@ -132,11 +135,20 @@ script = ExtResource("7_wgfyn")
 key_scene = ExtResource("9_u05pv")
 
 [node name="Marker3D" type="Marker3D" parent="KeySpawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.13391)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18416, 3.13391)
 
 [node name="Spawner" type="MultiplayerSpawner" parent="KeySpawner"]
 _spawnable_scenes = PackedStringArray("uid://cbvne5fpxlq0t")
 spawn_path = NodePath("../../Key")
+
+[node name="Marker3D2" type="Marker3D" parent="KeySpawner"]
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -5.62592, 0.844501, -8.05085)
+
+[node name="Marker3D3" type="Marker3D" parent="KeySpawner"]
+transform = Transform3D(0.999997, 0, 0, 0, 0.999997, 0, 0, 0, 0.999997, -18.7057, 1.4694, -1.40058)
+
+[node name="Marker3D4" type="Marker3D" parent="KeySpawner"]
+transform = Transform3D(0.999993, 0, 0, 0, 0.999993, 0, 0, 0, 0.999993, 17.1808, 0.118509, -1.28503)
 
 [node name="CanvasLayer" parent="." instance=ExtResource("9_he5fp")]
 
@@ -421,6 +433,12 @@ transform = Transform3D(-4.38992e-08, 0, -1.0043, 0, 1.0043, 0, 1.0043, 0, -4.38
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_ouevp")
 autoplay = true
+
+[node name="Ceiling" type="CSGBox3D" parent="."]
+transform = Transform3D(51.529, 0, 0, 0, 1.00404, 0, 0, 0, 5.28394, -2.61124, 6.66114, 1.94166)
+use_collision = true
+size = Vector3(0.899292, 0.150879, 10.223)
+material = SubResource("StandardMaterial3D_ouevp")
 
 [node name="Key" parent="." instance=ExtResource("9_u05pv")]
 visible = false
