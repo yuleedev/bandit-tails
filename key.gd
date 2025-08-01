@@ -24,7 +24,10 @@ func _on_body_exited(body):
 
 func _process(delta):
 	pass
-	
+
+@rpc("any_peer")
 func pick_up():
 	inv.add_item()
+	visible = false
+	process_mode = Node.PROCESS_MODE_DISABLED
 	queue_free()  
