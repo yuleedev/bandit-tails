@@ -38,11 +38,14 @@ func use_skill() -> void:
 ## ================ [ METHODS ] ================ ##
 
 func punishment() -> void:
-	#print("you got caught!")
 	velocity = Vector3.ZERO
 	$AnimationTree.set("parameters/conditions/idle", true)
 	can_move = false
 	global_position = Vector3(-1, 0, 6)
+	
+	cd = 10.0
+	hud.show_punishment_label(cd)
+
 	var timer := Timer.new()
 	add_child(timer)
 	timer.wait_time = 10.0
@@ -52,11 +55,7 @@ func punishment() -> void:
 
 func _on_timer_timeout() -> void:
 	can_move = true
-	#print("you're free!")
-	
-func _update_timers(delta: float) -> void:
-	if cd > 0:
-		cd -= delta
+	hud.hide_punishment_label()
 
 func _rotate_camera() -> void:
 	pivot.rotation.y -= mouse_motion.x * GM.options.MOUSE_SENSITIVITY

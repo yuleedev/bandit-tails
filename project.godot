@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GM="*res://Scripts/gm.gd"
 Math="*res://Scripts/math.gd"
 SM="*res://Scripts/sm.gd"
+hud="*res://hud.tscn"
 
 [display]
 
