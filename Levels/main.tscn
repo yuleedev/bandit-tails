@@ -398,7 +398,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6131, 0, -20.2113)
 curve = SubResource("Curve3D_5uk0a")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D6"]
-transform = Transform3D(0.0568678, 0, -0.998372, 0, 1, 0, 0.998372, 0, 0.0568678, 3.71079, 0, 1.8322)
+transform = Transform3D(0.0568677, 0, -0.998371, 0, 1, 0, 0.998371, 0, 0.0568677, 3.71079, 0, 1.8322)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -424,3 +424,4 @@ autoplay = true
 
 [node name="Key" parent="." instance=ExtResource("9_u05pv")]
 visible = false
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
