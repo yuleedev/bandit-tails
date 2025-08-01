@@ -8,4 +8,5 @@ class_name Raccoon
 ## ================ [ PLAYER ] ================ ##
 
 func use_skill() -> void:
+	print("raccoon skill")
 	velocity = move_dir * DASH_ABILITY
