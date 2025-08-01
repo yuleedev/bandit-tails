@@ -98,6 +98,7 @@ loot_scene = ExtResource("3_lwy2l")
 [node name="Spawner" type="MultiplayerSpawner" parent="LootSpawner"]
 _spawnable_scenes = PackedStringArray("uid://bwydvcfxfddhp")
 spawn_path = NodePath("..")
+spawn_limit = 6
 
 [node name="Spawn1" type="Marker3D" parent="LootSpawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6261, 0.247855, -20.7443)
@@ -437,4 +438,5 @@ size = Vector3(0.899292, 0.150879, 10.223)
 material = SubResource("StandardMaterial3D_ouevp")
 
 [node name="Key" parent="." instance=ExtResource("9_u05pv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 57.4698)
 visible = false
