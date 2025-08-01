@@ -438,5 +438,3 @@ material = SubResource("StandardMaterial3D_ouevp")
 
 [node name="Key" parent="." instance=ExtResource("9_u05pv")]
 visible = false
-
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
