@@ -98,7 +98,7 @@ loot_scene = ExtResource("3_lwy2l")
 [node name="Spawner" type="MultiplayerSpawner" parent="LootSpawner"]
 _spawnable_scenes = PackedStringArray("uid://bwydvcfxfddhp")
 spawn_path = NodePath("..")
-spawn_limit = 9
+spawn_limit = 6
 
 [node name="Spawn1" type="Marker3D" parent="LootSpawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6261, 0.247855, -20.7443)
@@ -394,7 +394,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6131, 0, -20.2113)
 curve = SubResource("Curve3D_5uk0a")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D6"]
-transform = Transform3D(0.0568679, 0, -0.998374, 0, 1, 0, 0.998374, 0, 0.0568679, 3.71079, 0, 1.8322)
+transform = Transform3D(0.0568678, 0, -0.998373, 0, 1, 0, 0.998373, 0, 0.0568678, 3.71079, 0, 1.8322)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]

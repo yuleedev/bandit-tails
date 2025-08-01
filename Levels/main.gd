@@ -36,6 +36,7 @@ func _ready() -> void:
 	if multiplayer.is_server():
 		spawner.spawn(GM.p1_id)
 		spawner.spawn(GM.p2_id)
+		$LootSpawner.initialize_spawning()
 	
 	GM.new_round()
 	GM.capture_mouse()
