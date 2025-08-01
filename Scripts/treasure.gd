@@ -7,6 +7,7 @@ var selected_index: int = -1
 @onready var progress = $Body/WeightBar/Sprite3D/SubViewport/ProgressBar
 @onready var value_label = $Body/WeightBar/Sprite3D/SubViewport/Label
 @onready var mesh_instance: MeshInstance3D = $Body/Mesh
+@onready var invM = get_node("/root/Mole/CanvasLayer/Inventory")
 @onready var inv = get_node("/root/Main/CanvasLayer/Inventory")
 
 @export var item_res: Array[Item] = []
@@ -24,7 +25,7 @@ func _ready():
 	await get_tree().process_frame
 	if is_multiplayer_authority(): 
 		_initialize_loot()
-		rpc("_sync_loot", selected_index, item_res[selected_index].value)
+		rpc("_sync_loot", selected_index, item_res[selected_index].value, random_seed)
 	else:
 		visible = false
 	progress.value = 0
@@ -116,23 +117,27 @@ func complete_pickup():
 	is_picked = true
 	if is_multiplayer_authority():
 		if inv.add_item(inv.prep_item(item_res[selected_index])):
-			rpc_id(current_picker_id, "receive_item", selected_index)
+			#rpc_id(current_picker_id, "receive_item", selected_index)
 			rpc("hide_item")
 			queue_free()
 	else:
 		rpc_id(1, "request_pickup_completion", current_picker_id)
 
 @rpc("any_peer")
-func request_pickup_completion(picker_id: int, index: int):
+func request_pickup_completion(picker_id: int):
+	print("requesting pickup")
 	if is_multiplayer_authority() and not is_picked:
 		is_picked = true
 		current_picker_id = picker_id
+		#inv.add_item(inv.prep_item(item_res[selected_index]))
+		rpc_id(current_picker_id, "receive_item", selected_index)
 		rpc("hide_item")
 		queue_free()
 
 @rpc("authority")
 func receive_item(index: int):
 	if inv.add_item(inv.prep_item(item_res[index])):
+		rpc_id(current_picker_id, "receive_item", selected_index)
 		print("Item added to player", multiplayer.get_unique_id(), "'s inventory")
 
 @rpc("call_local", "reliable")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://c1ta55yk5nxar"]
+[gd_scene load_steps=13 format=3 uid="uid://c1ta55yk5nxar"]
 
 [ext_resource type="Script" uid="uid://cadcistqqj1it" path="res://Scripts/Player/raccoon.gd" id="1_7xmbg"]
 [ext_resource type="PackedScene" uid="uid://cuagig623t2c5" path="res://Assets/Raccoon/raccoon_walk.glb" id="2_sykj1"]
+[ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="3_bqn1y"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bqn1y"]
 radius = 0.68
@@ -97,5 +98,8 @@ bones/14/position = Vector3(0.365829, -0.00686406, 0)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_sykj1")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_bqn1y")]
+visible = false
 
 [editable path="MeshNode"]

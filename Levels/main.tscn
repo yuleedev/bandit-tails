@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bptqi1gcph16o" path="res://door.tscn" id="4_nj2yk"]
 [ext_resource type="Script" uid="uid://gkeeuy8jy4oq" path="res://Levels/loot_spawner.gd" id="4_u05pv"]
 [ext_resource type="PackedScene" uid="uid://bm38ygftobcny" path="res://Levels/guard.tscn" id="5_34bfm"]
-[ext_resource type="Script" path="res://Levels/key_spawner.gd" id="7_wgfyn"]
+[ext_resource type="Script" uid="uid://fix44h35m5rv" path="res://Levels/key_spawner.gd" id="7_wgfyn"]
 [ext_resource type="PackedScene" uid="uid://c2qe3orxf746b" path="res://hud.tscn" id="9_he5fp"]
 [ext_resource type="PackedScene" uid="uid://cbvne5fpxlq0t" path="res://key.tscn" id="9_u05pv"]
 [ext_resource type="PackedScene" uid="uid://52s6s4v7c3xm" path="res://100total.glb" id="10_u05pv"]
