@@ -40,12 +40,35 @@ func _on_body_exited(body):
 
 func _process(_delta):
 	pass
-		
-func pick_up():
-	if progress.value < 100:
-		progress.value += 50 * get_process_delta_time()  
-	else:
-		if selected_index >= 0 and selected_index < item_res.size():
-			if inv.add_item(inv.prep_item(item_res[selected_index])):
-				visible = false
-				process_mode = Node.PROCESS_MODE_DISABLED
+
+@rpc("any_peer")
+func request_pick_up(peer_id: int):
+	if not is_multiplayer_authority():
+		return  # only the authority handles pickup logic
+	
+	if selected_index >= 0 and selected_index < item_res.size():
+		# Give item to the requesting player
+		rpc_id(peer_id, "receive_item", selected_index)
+
+		# Hide item for all players
+		rpc("hide_item")
+		process_mode = Node.PROCESS_MODE_DISABLED
+
+@rpc("authority")
+func receive_item(index: int):
+	if inv.add_item(inv.prep_item(item_res[index])):
+		print("Item added to inventory")
+
+@rpc("authority")
+func hide_item():
+	visible = false
+
+
+#func pick_up():
+	#if progress.value < 100:
+		#progress.value += 50 * get_process_delta_time()  
+	#else:
+		#if selected_index >= 0 and selected_index < item_res.size():
+			#if inv.add_item(inv.prep_item(item_res[selected_index])):
+				#visible = false
+				#process_mode = Node.PROCESS_MODE_DISABLED

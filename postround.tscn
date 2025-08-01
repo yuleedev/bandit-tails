@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cgm7cwnt75gvc" path="res://Assets/UI/readypressed.png" id="3_ohbq3"]
 [ext_resource type="Script" uid="uid://c1gj0lo0wlrjm" path="res://ready.gd" id="4_a30c7"]
 [ext_resource type="FontFile" uid="uid://0mou7hqwgtb4" path="res://Assets/UI/UIFont.ttf" id="6_djhin"]
-[ext_resource type="Script" uid="uid://de6hym73uuw0v" path="res://round_counter.gd" id="7_odhdd"]
+[ext_resource type="Script" path="res://round_counter.gd" id="7_odhdd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -29,6 +29,7 @@ texture = ExtResource("1_djhin")
 expand_mode = 1
 
 [node name="ReadyButton" type="TextureButton" parent="CanvasLayer"]
+visible = false
 offset_left = 726.0
 offset_top = 554.0
 offset_right = 1171.0

@@ -25,18 +25,23 @@ func select_char() -> void:
 func start_game() -> void:
 	get_tree().change_scene_to_file("res://Levels/main.tscn")
 
+@rpc("call_local")
 func end_game() -> void:
 	game_paused = true
 	get_tree().change_scene_to_file("res://menu.tscn")
 
+@rpc
 func new_round() -> void:
+	await get_tree().process_frame
+	
 	if get_tree().current_scene.scene_file_path != "res://Levels/main.tscn":
-		get_tree().change_scene_to_file("res://Levels/main.tscn")
-		round_dur = ROUND_DURATION
-		game_paused = false
+		if !multiplayer.is_server():  
+			get_tree().change_scene_to_file("res://Levels/main.tscn")
+	
 	round_dur = ROUND_DURATION
 	game_paused = false
-		
+
+@rpc
 func end_round() -> void:
 	game_paused = true
 	if round < 3:
