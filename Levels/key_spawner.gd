@@ -23,7 +23,7 @@ func initialize_spawning():
 			all_markers.append(child)
 	all_markers.shuffle()
 	
-	for i in range(1):
+	for i in range(4):
 		var spawn_data = {
 		"position": all_markers[i].global_position, 
 		"peer_id": 1,
