@@ -74,7 +74,7 @@ text = "Gameplay Instructions:
 
 Your objective is to find and steal
 the highest value items each round! 
-The game is played best out of 3."
+The game is best out of 3."
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="."]
@@ -95,12 +95,11 @@ theme_override_fonts/font = SubResource("FontVariation_5mrt3")
 theme_override_font_sizes/font_size = 50
 text = "Initialization Instructions:
 
-- One player is the Host, and the
-other is the Joiner
+- Pick one person to host
 - The Host must click the Host
 button first
 - The Joiner must then input the Host's
-IP address and click Enter
+IP address and press enter
 - The Host must click Start Game"
 horizontal_alignment = 1
 
@@ -111,9 +110,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -224.0
+offset_left = -492.0
 offset_top = -165.0
-offset_right = 224.0
+offset_right = -44.0
 offset_bottom = -79.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -123,4 +122,24 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_5mrt3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ehuit")
 text = "Back to Menu"
 
+[node name="CreditsButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -165.0
+offset_right = 487.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = SubResource("FontVariation_rwowx")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_5mrt3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ehuit")
+text = "View Credits"
+
 [connection signal="pressed" from="Button" to="." method="_on_tutorial_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
