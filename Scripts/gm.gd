@@ -67,6 +67,8 @@ func new_round() -> void:
 	
 	p1_round_value = 0
 	p2_round_value = 0
+	p1_keys = 0
+	p2_keys = 0
 	
 	await get_tree().process_frame
 	print("awaited")
