@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5yp2lg1v5w4p"]
+[gd_scene load_steps=11 format=3 uid="uid://b5yp2lg1v5w4p"]
 
 [ext_resource type="Texture2D" uid="uid://bsda1otsb1m2b" path="res://Assets/UI/cselect0.png" id="1_aoibv"]
 [ext_resource type="Script" uid="uid://byy5wudyh3w27" path="res://character_select.gd" id="1_mn8d4"]
 [ext_resource type="Texture2D" uid="uid://dty012wbk5bfx" path="res://Assets/UI/cselectmole.png" id="2_mn8d4"]
 [ext_resource type="Texture2D" uid="uid://d3qlbeyboyo4c" path="res://Assets/UI/cselectraccoon.png" id="3_7yigr"]
 [ext_resource type="Texture2D" uid="uid://dh2fykcdiwv61" path="res://Assets/UI/nextchar.png" id="4_4hbjg"]
+[ext_resource type="Texture2D" uid="uid://dmfsw8ol5xo83" path="res://Assets/UI/cselectloot.png" id="5_4hbjg"]
 [ext_resource type="FontFile" uid="uid://0mou7hqwgtb4" path="res://Assets/UI/UIFont.ttf" id="6_7yigr"]
 
 [sub_resource type="FontVariation" id="FontVariation_4hbjg"]
@@ -62,7 +63,15 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("3_7yigr")
 
+[node name="Treasure" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_4hbjg")
+
 [node name="Next" type="TextureButton" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1607.0
 offset_top = 766.0

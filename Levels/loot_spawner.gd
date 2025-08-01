@@ -16,13 +16,13 @@ func initialize_spawning():
 		return
 	for marker in get_children():
 		if marker is Marker3D:
-			var spawn_data = {
-			"position": marker.global_position, 
-			"peer_id": 1,
-			"seed": randi()
-			}
-			spawner.spawn(spawn_data)
-
+			for int in range(0,6):
+				var spawn_data = {
+				"position": marker.global_position, 
+				"peer_id": 1,
+				"seed": randi()
+				}
+				spawner.spawn(spawn_data)
 
 func _spawn_loot(data: Dictionary) -> Node:
 	var loot = loot_scene.instantiate()
@@ -32,3 +32,4 @@ func _spawn_loot(data: Dictionary) -> Node:
 	loot.visible = true
 	loot.process_mode = Node.PROCESS_MODE_INHERIT
 	return loot
+	
