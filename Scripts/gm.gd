@@ -63,6 +63,10 @@ func end_game() -> void:
 
 @rpc("any_peer", "call_local")
 func new_round() -> void:
+	
+	p1_round_value = 0
+	p2_round_value = 0
+	
 	await get_tree().process_frame
 	print("awaited")
 	if get_tree().current_scene.scene_file_path != "res://Levels/main.tscn":
@@ -88,8 +92,7 @@ func end_round() -> void:
 	else: 
 		pass
 	
-	p1_round_value = 0
-	p2_round_value = 0
+	
 	
 	if round < 4:
 		get_tree().change_scene_to_file("res://postround.tscn")
