@@ -6,6 +6,7 @@ var p_ref = null
 var current_picker_id = -1
 
 func _ready():
+	visible = true
 	pass
 
 @rpc
@@ -13,6 +14,7 @@ func multiplayer_spawned():
 	var spawn_data = multiplayer.get_spawn_data()
 	global_position = spawn_data.get("position", global_position)
 	set_multiplayer_authority(spawn_data.get("authority", 1))
+	visible = true
 
 func _on_body_entered(body):
 	if body.name == "1" || body.name == str(GM.p2_id):
@@ -28,7 +30,7 @@ func _on_body_exited(body):
 			p_ref = null
 
 func _process(delta):
-	visible = true
+	
 	pass
 
 @rpc("any_peer")
@@ -36,17 +38,18 @@ func pick_up(player_id: int):
 	current_picker_id = player_id
 	if is_multiplayer_authority():
 		GM.p1_keys += 1
+		inv.add_item()
 		visible = false
 		process_mode = Node.PROCESS_MODE_DISABLED
 		queue_free() 
 	else:
+		GM.p2_keys += 1
+		inv.add_item()
 		rpc_id(1, "request_pickup_completion", current_picker_id)
 
 @rpc("any_peer")
 func request_pickup_completion(picker_id: int):
-	print("requesting pickup")
 	if is_multiplayer_authority():
 		current_picker_id = picker_id
-		GM.p2_keys += 1
-		rpc("hide_item")
+		visible = false
 		queue_free()
