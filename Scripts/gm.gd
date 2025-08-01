@@ -32,12 +32,34 @@ func start_game() -> void:
 	get_tree().change_scene_to_file("res://Levels/main.tscn")
 	hud.visible = true
 	await get_tree().process_frame
-	
+
+@rpc("call_local")
+func show_result_screen(result: String) -> void:
+	match result:
+		"win":
+			get_tree().change_scene_to_file("res://victory.tscn")
+		"lose":
+			get_tree().change_scene_to_file("res://loss.tscn")
+		"tie":
+			get_tree().change_scene_to_file("res://tie.tscn")
 
 @rpc("call_local")
 func end_game() -> void:
 	game_paused = true
-	get_tree().change_scene_to_file("res://menu.tscn")
+	var my_id = multiplayer.get_unique_id()
+
+	if p1_wins > p2_wins:
+		if my_id == p1_id:
+			show_result_screen.rpc("win")
+		else:
+			show_result_screen.rpc("lose")
+	elif p2_wins > p1_wins:
+		if my_id == p2_id:
+			show_result_screen.rpc("win")
+		else:
+			show_result_screen.rpc("lose")
+	else:
+		show_result_screen.rpc("tie")
 
 @rpc("any_peer", "call_local")
 func new_round() -> void:
@@ -61,8 +83,10 @@ func end_round() -> void:
 	
 	if p1_round_value > p2_round_value:
 		p1_wins += 1
-	else:
+	if p2_round_value > p1_round_value:
 		p2_wins += 1
+	else: 
+		pass
 	
 	p1_round_value = 0
 	p2_round_value = 0

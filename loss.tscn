@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=3 uid="uid://476hg7s1tix5"]
+
+[ext_resource type="Texture2D" uid="uid://drs4hgda0o27a" path="res://Assets/UI/loss.png" id="1_g34te"]
+[ext_resource type="FontFile" uid="uid://0mou7hqwgtb4" path="res://Assets/UI/UIFont.ttf" id="2_lni3f"]
+[ext_resource type="Script" uid="uid://mcyrmteb182l" path="res://restart.gd" id="3_a5dxr"]
+
+[sub_resource type="FontVariation" id="FontVariation_jnws2"]
+base_font = ExtResource("2_lni3f")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trm4n"]
+bg_color = Color(0.207843, 0.145098, 0.117647, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.833387, 0.758725, 0.520124, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4j3gv"]
+bg_color = Color(0.137255, 0.0901961, 0.0705882, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.662745, 0.584314, 0.345098, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3ipb"]
+bg_color = Color(0.270588, 0.192157, 0.156863, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.945098, 0.909804, 0.796078, 1)
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_g34te")
+
+[node name="Restart" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -253.0
+offset_top = 109.0
+offset_right = 253.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_jnws2")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/hover = SubResource("StyleBoxFlat_trm4n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4j3gv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f3ipb")
+text = "Restart"
+script = ExtResource("3_a5dxr")
+
+[connection signal="pressed" from="Restart" to="Restart" method="_on_restart_pressed"]
