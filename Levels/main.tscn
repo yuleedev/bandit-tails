@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://n02ywmjlls01" path="res://Assets/Props/candleA.glb" id="11_5mxy1"]
 [ext_resource type="PackedScene" uid="uid://cea7edkrb4md8" path="res://Assets/Props/candleB.glb" id="12_3lhg3"]
 [ext_resource type="PackedScene" uid="uid://7xvtyi87oh1h" path="res://Assets/Props/canC.glb" id="13_wgfyn"]
-[ext_resource type="PackedScene" path="res://tallcabinet.tscn" id="17_ja5tu"]
+[ext_resource type="PackedScene" uid="uid://dnqmjr5jw51qp" path="res://tallcabinet.tscn" id="17_ja5tu"]
 [ext_resource type="AudioStream" uid="uid://cjedw1rj4c7qn" path="res://Chase.wav" id="17_ouevp"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
@@ -101,28 +101,28 @@ spawn_path = NodePath("..")
 spawn_limit = 6
 
 [node name="Spawn1" type="Marker3D" parent="LootSpawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.6261, 0.247855, -20.7443)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13017, 0.247855, -19.0356)
 
 [node name="Spawn2" type="Marker3D" parent="LootSpawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4808, 0.326836, -16.2177)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0474, 0.326836, -16.7178)
 
 [node name="Spawn3" type="Marker3D" parent="LootSpawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1414, 1.05244, 4.75385)
 
 [node name="Spawn7" type="Marker3D" parent="LootSpawner"]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -16.3262, 0.166514, 15.1072)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -18.4879, 0.628769, 15.1072)
 
 [node name="Spawn8" type="Marker3D" parent="LootSpawner"]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -8.91678, 0.236592, 20.8707)
 
 [node name="Spawn4" type="Marker3D" parent="LootSpawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.53833, 0.247855, -7.78505)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42679, 0.247855, -8.61733)
 
 [node name="Spawn5" type="Marker3D" parent="LootSpawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0093, 0.175807, 13.4432)
 
 [node name="Spawn6" type="Marker3D" parent="LootSpawner"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9498, 0.108439, -7.16799)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9498, 0.108439, -8.11521)
 
 [node name="Spawn9" type="Marker3D" parent="LootSpawner"]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 16.9295, 0.119439, 4.84954)
@@ -143,10 +143,10 @@ transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -6.09459
 visible = false
 
 [node name="Marker3D3" type="Marker3D" parent="KeySpawner"]
-transform = Transform3D(0.999997, 0, 0, 0, 0.999997, 0, 0, 0, 0.999997, -18.7057, 1.4694, -1.40058)
+transform = Transform3D(0.999997, 0, 0, 0, 0.999997, 0, 0, 0, 0.999997, -18.8513, 1.4694, -1.40058)
 
 [node name="Marker3D4" type="Marker3D" parent="KeySpawner"]
-transform = Transform3D(0.999993, 0, 0, 0, 0.999993, 0, 0, 0, 0.999993, 17.1808, 0.118509, -1.28503)
+transform = Transform3D(0.999993, 0, 0, 0, 0.999993, 0, 0, 0, 0.999993, 11.9666, 0.118509, -1.04604)
 
 [node name="Marker3D5" type="Marker3D" parent="KeySpawner"]
 transform = Transform3D(0.999993, 0, 0, 0, 0.999993, 0, 0, 0, 0.999993, -4.66891, 0.215068, -19.908)
@@ -434,6 +434,7 @@ autoplay = true
 
 [node name="Ceiling" type="CSGBox3D" parent="."]
 transform = Transform3D(51.529, 0, 0, 0, 1.00404, 0, 0, 0, 5.28394, -2.61124, 6.66114, 1.94166)
+visible = false
 use_collision = true
 size = Vector3(0.899292, 0.150879, 10.223)
 material = SubResource("StandardMaterial3D_ouevp")
