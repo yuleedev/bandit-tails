@@ -15,8 +15,10 @@ var keys = 0
 var p1_id: int = 1
 var p2_id: int
 
-## ================ [ METHODS ] ================ ##
+var p1_total_value: float
+var p2_total_value: float
 
+## ================ [ METHODS ] ================ ##
 @rpc("call_local")
 func select_char() -> void:
 	get_tree().change_scene_to_file("res://character_select.tscn")
@@ -44,6 +46,10 @@ func new_round() -> void:
 @rpc
 func end_round() -> void:
 	game_paused = true
+	
+	print("p1's total val: " + str(p1_total_value))
+	print("p2's total val: " + str(p2_total_value))
+	
 	if round < 3:
 		get_tree().change_scene_to_file("res://postround.tscn")
 	else:

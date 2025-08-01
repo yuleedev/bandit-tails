@@ -5,10 +5,16 @@ var items = []
 var total_value = 0
 var temp_value = 0
 
+var player_id : int = 1
+
 const ITEM_SLOT = preload("res://item_slot.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	if multiplayer.is_server():
+		player_id = get_parent().multiplayer.get_unique_id() 
+	
 	for x in range(row_size):
 		items.append([])
 		var instance = ITEM_SLOT.instantiate()
@@ -33,5 +39,11 @@ func add_item(item):
 		var slot = items[x] 
 		if slot.add_item(item):
 			total_value += temp_value
+			
+			if player_id == GM.p1_id:
+				GM.p1_total_value = total_value
+			else:
+				GM.p2_total_value = total_value
+			
 			$Label.text = "Total Value: " + str(total_value)
 			return true
