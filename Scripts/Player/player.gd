@@ -26,6 +26,7 @@ var input_dir: Vector2
 @export var move_dir: Vector3
 var mouse_motion: Vector2
 
+var cooldown: float
 var cd: float
 
 var interactable: Node3D = null
@@ -95,11 +96,9 @@ func _manage_interactable() -> void:
 			interactable.pick_up(multiplayer.get_unique_id())
 			
 func _manage_skill() -> void:
-	if Input.is_action_just_pressed("skill") and cd <= 0:
+	if Input.is_action_just_pressed("skill"):
 		use_skill()
-		cd = COOLDOWN
-
-## ================ [ GODOT ] ================ ##
+		
 
 func _ready() -> void:
 	area.body_entered.connect(_on_body_entered)
@@ -110,7 +109,6 @@ func _ready() -> void:
 		camera.queue_free()
 		
 func _process(delta: float) -> void:
-	
 	if is_multiplayer_authority():
 		_rotate_camera()
 	_apply_movement(delta)
@@ -125,6 +123,11 @@ func _physics_process(_delta: float) -> void:
 		velocity.y -= 50 * _delta
 		
 	move_and_slide()
+
+func _move_speed(speed: int):
+	MOVE_SPEED = speed
+	await get_tree().create_timer(5.0).timeout
+	MOVE_SPEED = 5
 
 func _on_body_entered(body):
 	if body.is_in_group("loot") or body.is_in_group("door"):

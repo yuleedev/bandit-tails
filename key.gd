@@ -29,9 +29,6 @@ func _on_body_exited(body):
 			p_near = false
 			p_ref = null
 
-func _process(delta):
-	
-	pass
 
 @rpc("any_peer")
 func pick_up(player_id: int):

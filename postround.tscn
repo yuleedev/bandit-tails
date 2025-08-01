@@ -25,21 +25,6 @@ base_font = ExtResource("6_djhin")
 base_font = ExtResource("6_djhin")
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_2crs4"]
-properties/0/path = NodePath("CanvasLayer/HostVal:text")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-properties/1/path = NodePath("CanvasLayer/JoinVal:text")
-properties/1/spawn = true
-properties/1/replication_mode = 1
-properties/2/path = NodePath("CanvasLayer/RoundCounter:text")
-properties/2/spawn = true
-properties/2/replication_mode = 1
-properties/3/path = NodePath("CanvasLayer/JoinWins:text")
-properties/3/spawn = true
-properties/3/replication_mode = 1
-properties/4/path = NodePath("CanvasLayer/HostWins:text")
-properties/4/spawn = true
-properties/4/replication_mode = 1
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -82,7 +67,6 @@ offset_bottom = 139.0
 theme_override_colors/font_color = Color(0.94902, 0.909804, 0.788235, 1)
 theme_override_fonts/font = ExtResource("6_djhin")
 theme_override_font_sizes/font_size = 90
-text = "0"
 script = ExtResource("7_odhdd")
 
 [node name="HostVal" type="Label" parent="CanvasLayer"]

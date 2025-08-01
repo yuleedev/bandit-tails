@@ -19,6 +19,7 @@ func _ready():
 	dig_timer.wait_time = DIG_DURATION
 	dig_timer.timeout.connect(stop_dig)
 	add_child(dig_timer)
+	
 
 func use_skill() -> void:
 	if is_digging:
