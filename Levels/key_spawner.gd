@@ -28,6 +28,7 @@ func initialize_spawning():
 		"position": all_markers[i].global_position, 
 		"peer_id": 1,
 		}
+		print("spawned " + str(all_markers[i].global_position))
 		spawner.spawn(spawn_data)
 
 func _spawn_key(data: Dictionary) -> Node:

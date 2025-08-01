@@ -30,7 +30,7 @@ func _on_body_exited(body):
 			p_ref = null
 
 func _process(delta):
-	
+	visible = true
 	pass
 
 @rpc("any_peer")
