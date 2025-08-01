@@ -91,7 +91,7 @@ func end_round() -> void:
 	p1_round_value = 0
 	p2_round_value = 0
 	
-	if round < 4:
+	if round < 3:
 		get_tree().change_scene_to_file("res://postround.tscn")
 	else:
 		end_game()
