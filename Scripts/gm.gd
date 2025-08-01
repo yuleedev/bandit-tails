@@ -3,7 +3,7 @@ extends Node
 ## ================ [ FIELDS ] ================ ##
 
 @export var options: Options = Options.new()
-@export var ROUND_DURATION: float = 50
+@export var ROUND_DURATION: float = 30
 var loot_spawner: Node = null
 
 var round: int = 1
