@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://n02ywmjlls01" path="res://Assets/Props/candleA.glb" id="11_5mxy1"]
 [ext_resource type="PackedScene" uid="uid://cea7edkrb4md8" path="res://Assets/Props/candleB.glb" id="12_3lhg3"]
 [ext_resource type="PackedScene" uid="uid://7xvtyi87oh1h" path="res://Assets/Props/canC.glb" id="13_wgfyn"]
-[ext_resource type="PackedScene" path="res://tallcabinet.tscn" id="17_ja5tu"]
+[ext_resource type="PackedScene" uid="uid://dnqmjr5jw51qp" path="res://tallcabinet.tscn" id="17_ja5tu"]
 [ext_resource type="AudioStream" uid="uid://cjedw1rj4c7qn" path="res://Chase.wav" id="17_ouevp"]
 
 [sub_resource type="Curve3D" id="Curve3D_ovrsl"]
@@ -61,10 +61,10 @@ point_count = 3
 [sub_resource type="Curve3D" id="Curve3D_wgfyn"]
 closed = true
 _data = {
-"points": PackedVector3Array(-1.09619, 0, 0.611337, 1.09619, 0, -0.611337, 2.26213, 0, -2.42027, -1.07511, 0, -0.527015, 1.07511, 0, 0.527015, 7.25487, 0, -4.70499, 0, 0, 0, 0, 0, 0, 7.99269, 0, -1.26886, 1.05243, 0.0633649, -0.303326, -1.05243, -0.0633649, 0.303326, 2.19553, 0, -0.910487, 0.584983, 0.000261817, 0.336236, -0.584983, -0.000261817, -0.336236, -0.138927, -0.00261392, 0.700868, -0.460091, -0.143935, 0.638373, 0.460091, 0.143935, -0.638373, -0.0364923, 0.0086267, -1.12938),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(-1.09619, 0, 0.611337, 1.09619, 0, -0.611337, 1.2817, -0.000359343, -5.03337, -1.07511, 0, -0.527015, 1.07511, 0, 0.527015, 7.00713, -9.08012e-05, -4.70499, 1.4346, 0.000571905, 0.39018, -1.4346, -0.000571905, -0.39018, 2.32992, -0.00207551, -1.80019),
+"tilts": PackedFloat32Array(0, 0, 0)
 }
-point_count = 6
+point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouevp"]
 albedo_color = Color(0.395288, 0.322571, 0.308367, 1)
@@ -411,7 +411,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6131, 0, -20.2113)
 curve = SubResource("Curve3D_5uk0a")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D6"]
-transform = Transform3D(0.0568677, 0, -0.998371, 0, 1, 0, 0.998371, 0, 0.0568677, 3.71079, 0, 1.8322)
+transform = Transform3D(0.0568677, 0, -0.99837, 0, 1, 0, 0.99837, 0, 0.0568677, 3.71079, 0, 1.8322)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -422,7 +422,7 @@ transform = Transform3D(0.999999, 0.000366519, 0, -0.000366519, 0.999999, 0, 0, 
 curve = SubResource("Curve3D_wgfyn")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D3"]
-transform = Transform3D(0.487068, 0, -0.873363, 0, 1, 0, 0.873363, 0, 0.487068, 2.26213, 0, -2.42027)
+transform = Transform3D(0.487068, 0, -0.873363, 0, 1, 0, 0.873363, 0, 0.487068, 1.2817, -0.000359343, -5.03337)
 script = ExtResource("4_7pswh")
 
 [node name="Guard" parent="Path3D3/PathFollow3D" instance=ExtResource("5_34bfm")]
@@ -434,7 +434,6 @@ autoplay = true
 
 [node name="Ceiling" type="CSGBox3D" parent="."]
 transform = Transform3D(51.529, 0, 0, 0, 1.00404, 0, 0, 0, 5.28394, -2.61124, 6.66114, 1.94166)
-visible = false
 use_collision = true
 size = Vector3(0.899292, 0.150879, 10.223)
 material = SubResource("StandardMaterial3D_ouevp")

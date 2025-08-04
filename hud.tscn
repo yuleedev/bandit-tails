@@ -26,8 +26,8 @@ expand_margin_right = 20.0
 script = ExtResource("1_1fv7p")
 
 [node name="InventoryBG" type="Sprite2D" parent="."]
-position = Vector2(957.589, 927.67)
-scale = Vector2(0.328465, 0.314232)
+position = Vector2(950, 931.17)
+scale = Vector2(0.341525, 0.327037)
 texture = ExtResource("1_61f8s")
 
 [node name="Control" type="Control" parent="."]
@@ -73,10 +73,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 836.0
-offset_top = 748.0
-offset_right = 1090.0
-offset_bottom = 801.0
+offset_left = 831.0
+offset_top = 746.0
+offset_right = 1085.0
+offset_bottom = 799.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_8sq4i")

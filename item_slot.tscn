@@ -28,9 +28,9 @@ expand_mode = 3
 
 [node name="Button" type="Button" parent="."]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = 448.0
+offset_left = 452.571
 offset_top = 498.0
-offset_right = 536.0
+offset_right = 540.571
 offset_bottom = 576.0
 
 [node name="Value" type="Label" parent="."]
@@ -41,14 +41,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 478.286
-offset_top = 570.286
-offset_right = 518.286
-offset_bottom = 623.286
+offset_left = 456.0
+offset_top = 557.715
+offset_right = 496.0
+offset_bottom = 610.715
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_qa65c")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 20
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
