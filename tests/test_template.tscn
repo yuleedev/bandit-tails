@@ -1,4 +1,4 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://dm1yldpmlrmo1"]
 
 [node name="TestRunner" type="Node"]
 

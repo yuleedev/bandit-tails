@@ -6,7 +6,6 @@ func _ready():
 			visible = true
 
 func _on_ready_button_pressed() -> void:
-	GM.round += 1
 	print("ready button pressed")
 	GM.rpc("new_round")
 	print("new round sent")

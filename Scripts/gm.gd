@@ -57,17 +57,18 @@ func end_game() -> void:
 
 @rpc("authority", "call_local")
 func new_round() -> void:
-	
+
+	round += 1
 	p1_round_value = 0
 	p2_round_value = 0
 	p1_keys = 0
 	p2_keys = 0
-	
+
 	await get_tree().process_frame
 	print("awaited")
 	if get_tree().current_scene.scene_file_path != "res://Levels/main.tscn":
 		get_tree().change_scene_to_file("res://Levels/main.tscn")
-	
+
 	round_dur = ROUND_DURATION
 	game_paused = false
 
@@ -92,6 +93,13 @@ func end_round() -> void:
 		get_tree().change_scene_to_file("res://postround.tscn")
 	else:
 		end_game()
+
+@rpc("any_peer", "call_local", "reliable")
+func update_round_value(player_id: int, value_to_add: float):
+	if player_id == p1_id:
+		p1_round_value += value_to_add
+	else:
+		p2_round_value += value_to_add
 
 func capture_mouse() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
