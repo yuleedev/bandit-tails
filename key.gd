@@ -30,26 +30,21 @@ func _on_body_exited(body):
 			p_ref = null
 
 func _process(delta):
-	visible = true
 	pass
 
-@rpc("any_peer")
+@rpc("any_peer", "call_local")
 func pick_up(player_id: int):
 	current_picker_id = player_id
-	if is_multiplayer_authority():
+	if player_id == GM.p1_id:
 		GM.p1_keys += 1
-		inv.add_item()
-		visible = false
-		process_mode = Node.PROCESS_MODE_DISABLED
-		queue_free() 
 	else:
 		GM.p2_keys += 1
-		inv.add_item()
-		rpc_id(1, "request_pickup_completion", current_picker_id)
+	inv.add_item()
+	visible = false
+	process_mode = Node.PROCESS_MODE_DISABLED
+	queue_free()
 
 @rpc("any_peer")
 func request_pickup_completion(picker_id: int):
 	if is_multiplayer_authority():
-		current_picker_id = picker_id
-		visible = false
-		queue_free()
+		pick_up.rpc(picker_id)

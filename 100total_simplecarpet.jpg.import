@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://drum6mewctvps"
 path.s3tc="res://.godot/imported/100total_simplecarpet.jpg-a263f16c2d8a1b6cb802c798486ab8ce.s3tc.ctex"
+path.etc2="res://.godot/imported/100total_simplecarpet.jpg-a263f16c2d8a1b6cb802c798486ab8ce.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://100total_simplecarpet.jpg"
-dest_files=["res://.godot/imported/100total_simplecarpet.jpg-a263f16c2d8a1b6cb802c798486ab8ce.s3tc.ctex"]
+dest_files=["res://.godot/imported/100total_simplecarpet.jpg-a263f16c2d8a1b6cb802c798486ab8ce.s3tc.ctex", "res://.godot/imported/100total_simplecarpet.jpg-a263f16c2d8a1b6cb802c798486ab8ce.etc2.ctex"]
 
 [params]
 

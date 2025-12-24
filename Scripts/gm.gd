@@ -55,7 +55,7 @@ func end_game() -> void:
 	else:
 		show_result_screen.rpc("tie")
 
-@rpc("any_peer", "call_local")
+@rpc("authority", "call_local")
 func new_round() -> void:
 	
 	p1_round_value = 0
@@ -71,7 +71,7 @@ func new_round() -> void:
 	round_dur = ROUND_DURATION
 	game_paused = false
 
-@rpc
+@rpc("call_local")
 func end_round() -> void:
 	game_paused = true
 	hud.visible = false
@@ -83,10 +83,9 @@ func end_round() -> void:
 	
 	if p1_round_value > p2_round_value:
 		p1_wins += 1
-	if p2_round_value > p1_round_value:
+	elif p2_round_value > p1_round_value:
 		p2_wins += 1
-	else: 
-		pass
+	# Tie case: no wins awarded
 	
 	
 	if round < 3:
@@ -107,9 +106,9 @@ func release_mouse() -> void:
 func _process(delta: float) -> void:
 	if not game_paused:
 		round_dur -= delta
-	
-		if round_dur <= 0:
-			end_round()
+
+		if round_dur <= 0 and multiplayer.is_server():
+			end_round.rpc()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action("escape") and event.is_pressed():

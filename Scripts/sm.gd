@@ -44,19 +44,22 @@ func _on_peer_disconnected(id: int) -> void:
 	if multiplayer.get_unique_id() == 1:
 		if GM.p2_id == id:
 			GM.p2_id = 0
+			print("Player 2 disconnected")
 		elif GM.p1_id == id:
 			GM.p1_id = 0
+			print("Player 1 disconnected")
 	else:
-		if GM.p1_id == id:
-			GM.end_game()
-		else:
-			GM.end_game()
+		print("Opponent disconnected. Returning to menu...")
+		GM.end_game()
 
 func _on_connected_to_server() -> void:
-	print(":)")
+	print("Successfully connected to server")
 
 func _on_connection_failed() -> void:
-	print(":(")
+	print("ERROR: Failed to connect to server")
+	push_error("Connection failed. Please check the IP address and try again.")
+	# Return to menu
+	get_tree().change_scene_to_file("res://menu.tscn")
 
 ## ================ [ GODOT ] ================ ##
 
@@ -65,5 +68,3 @@ func _ready() -> void:
 	multiplayer.peer_disconnected.connect(_on_peer_disconnected)
 	multiplayer.connected_to_server.connect(_on_connected_to_server)
 	multiplayer.connection_failed.connect(_on_connection_failed)
-	
-	multiplayer.allow_object_decoding = true

@@ -34,11 +34,13 @@ func _spawn(id: int) -> Player:
 
 func _ready() -> void:
 	spawner.spawn_function = _spawn
-	
+
 	if multiplayer.is_server():
 		spawner.spawn(GM.p1_id)
 		spawner.spawn(GM.p2_id)
+		await get_tree().process_frame
 		$LootSpawner.initialize_spawning()
-	
-	GM.new_round()
+		await get_tree().process_frame
+		GM.new_round.rpc()
+
 	GM.capture_mouse()

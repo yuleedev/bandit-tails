@@ -1,0 +1,21 @@
+[gd_scene format=3]
+
+[node name="TestRunner" type="Node"]
+
+[node name="Label" type="Label" parent="."]
+offset_right = 400.0
+offset_bottom = 300.0
+text = "Integration Test Runner
+
+Instructions:
+1. Attach a test script to the TestRunner node
+2. Run this scene (F6)
+3. Check the Output console for results
+
+Available tests:
+- test_round_timer_sync.gd
+- test_loot_pickup.gd
+- test_key_collection.gd
+- test_door_opening.gd
+- test_connection_failure.gd
+- test_round_wins.gd"

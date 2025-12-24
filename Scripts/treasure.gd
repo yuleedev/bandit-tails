@@ -22,9 +22,8 @@ var is_picked = false
 
 func _ready():
 	await get_tree().process_frame
-	if is_multiplayer_authority(): 
+	if is_multiplayer_authority():
 		_initialize_loot()
-		rpc("_sync_loot", selected_index, item_res[selected_index].value, random_seed)
 	else:
 		visible = false
 	progress.value = 0
@@ -69,7 +68,7 @@ func _on_body_entered(body):
 		value_label.visible = true
 
 func _on_body_exited(body):
-	if body.name == str(GM.p2_id) || body.name == str(GM.p2_id):
+	if body.name == str(GM.p1_id) || body.name == str(GM.p2_id):
 		progress.visible = false
 		value_label.visible = false
 		if body.interactable == self:
@@ -79,11 +78,9 @@ func _on_body_exited(body):
 			p_ref = null
 
 func _process(_delta):
-	if not visible:
-		visible = true
 	if mesh_instance and mesh_instance.mesh == null and selected_index >= 0:
 		mesh_instance.mesh = mesh_options[selected_index]
-	
+
 	if p_near and p_ref and is_being_picked_up:
 		if multiplayer.get_unique_id() == current_picker_id:
 			progress.value += 50 * _delta

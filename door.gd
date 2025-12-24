@@ -27,25 +27,16 @@ func _on_body_exited(body):
 func _process(delta):
 	pass
 
-@rpc("any_peer")
-
-
-	
+@rpc("any_peer", "call_local")
 func open(player_id: int):
 	current_opener_id = player_id
 	if is_open:
 		return
 	is_open = true
-	inv.add_item()
-	if is_multiplayer_authority():
-		$AnimationTree.set("parameters/conditions/unlock", true)
-	else:
-		rpc_id(1, "request_door_open", current_opener_id)
+	$AnimationTree.set("parameters/conditions/unlock", true)
 
 @rpc("any_peer")
-func request_door_open(picker_id: int):
+func request_door_open(opener_id: int):
 	print("requesting open")
 	if is_multiplayer_authority() and not is_open:
-		is_open = true
-		current_opener_id = picker_id
-		$AnimationTree.set("parameters/conditions/unlock", true)
+		open.rpc(opener_id)
