@@ -98,8 +98,9 @@ text = "Initialization Instructions:
 - Pick one person to host
 - The Host must click the Host
 button first
-- The Joiner must then input the Host's
-IP address and press enter
+- The Host will then see a room code
+- The Joiner must input that room
+code and press enter
 - The Host must click Start Game"
 horizontal_alignment = 1
 
