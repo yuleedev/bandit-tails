@@ -127,7 +127,6 @@ func _ready() -> void:
 		print(get_multiplayer_authority())
 		camera.queue_free()
 
-# Footstep audio is a 3D player so other players hear it positionally.
 func _setup_footsteps() -> void:
 	footsteps = AudioStreamPlayer3D.new()
 	footsteps.name = "Footsteps"
@@ -135,8 +134,8 @@ func _setup_footsteps() -> void:
 	if stream is AudioStreamMP3:
 		stream.loop = true
 	footsteps.stream = stream
-	footsteps.volume_db = -14.0   # keep footsteps quiet
-	footsteps.unit_size = 3.0     # falls off quickly so distant players are faint
+	footsteps.volume_db = -14.0
+	footsteps.unit_size = 3.0
 	footsteps.max_db = -6.0
 	add_child(footsteps)
 

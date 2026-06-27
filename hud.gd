@@ -2,7 +2,6 @@ extends CanvasLayer
 
 @onready var punishment_label: Label = $Punishment
 
-# Feedback SFX live on the HUD autoload so they keep playing across scene changes.
 var _sfx: Dictionary = {}
 
 func _ready():

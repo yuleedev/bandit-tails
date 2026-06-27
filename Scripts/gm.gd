@@ -38,14 +38,12 @@ func start_game() -> void:
 func show_result_screen(result: String) -> void:
 	match result:
 		"host":
-			# Host (player 1 / Raccoon) won.
 			if multiplayer.is_server():
 				hud.play_win()
 			else:
 				hud.play_defeat()
 			get_tree().change_scene_to_file("res://hostwin.tscn")
 		"joiner":
-			# Joiner (player 2 / Mole) won.
 			if multiplayer.is_server():
 				hud.play_defeat()
 			else:
@@ -104,6 +102,24 @@ func end_round() -> void:
 		get_tree().change_scene_to_file("res://postround.tscn")
 	else:
 		end_game()
+
+var menu_music: AudioStreamPlayer
+
+func play_menu_music() -> void:
+	if menu_music == null:
+		menu_music = AudioStreamPlayer.new()
+		var stream := load("res://menu.mp3")
+		if stream is AudioStreamMP3:
+			stream.loop = true
+		menu_music.stream = stream
+		menu_music.volume_db = -12.0
+		add_child(menu_music)
+	if not menu_music.playing:
+		menu_music.play()
+
+func stop_menu_music() -> void:
+	if menu_music and menu_music.playing:
+		menu_music.stop()
 
 func capture_mouse() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
