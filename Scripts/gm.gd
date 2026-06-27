@@ -122,6 +122,37 @@ func stop_menu_music() -> void:
 	if menu_music and menu_music.playing:
 		menu_music.stop()
 
+var ui_hover: AudioStreamPlayer
+var ui_click: AudioStreamPlayer
+
+func play_ui_hover() -> void:
+	if ui_hover == null:
+		ui_hover = AudioStreamPlayer.new()
+		ui_hover.stream = load("res://hover.mp3")
+		ui_hover.volume_db = -12.0
+		add_child(ui_hover)
+	ui_hover.play()
+
+func play_ui_click() -> void:
+	if ui_click == null:
+		ui_click = AudioStreamPlayer.new()
+		ui_click.stream = load("res://click.mp3")
+		ui_click.volume_db = -8.0
+		add_child(ui_click)
+	ui_click.play()
+
+func wire_ui_sounds(root: Node) -> void:
+	if root == null:
+		return
+	var buttons := root.find_children("*", "BaseButton", true, false)
+	if root is BaseButton:
+		buttons.append(root)
+	for button in buttons:
+		if not button.mouse_entered.is_connected(play_ui_hover):
+			button.mouse_entered.connect(play_ui_hover)
+		if not button.pressed.is_connected(play_ui_click):
+			button.pressed.connect(play_ui_click)
+
 func capture_mouse() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	mouse_captured = true
