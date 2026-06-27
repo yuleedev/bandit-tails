@@ -149,10 +149,15 @@ func wire_ui_sounds(root: Node) -> void:
 	if root is BaseButton:
 		buttons.append(root)
 	for button in buttons:
-		if not button.mouse_entered.is_connected(play_ui_hover):
-			button.mouse_entered.connect(play_ui_hover)
+		var hover_cb := _on_ui_button_hover.bind(button)
+		if not button.mouse_entered.is_connected(hover_cb):
+			button.mouse_entered.connect(hover_cb)
 		if not button.pressed.is_connected(play_ui_click):
 			button.pressed.connect(play_ui_click)
+
+func _on_ui_button_hover(button: BaseButton) -> void:
+	if is_instance_valid(button) and not button.disabled:
+		play_ui_hover()
 
 func capture_mouse() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
