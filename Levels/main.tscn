@@ -430,6 +430,7 @@ transform = Transform3D(-1.5, 0, -1.78814e-07, 0, 1.5, 0, 1.78814e-07, 0, -1.5, 
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_ouevp")
+volume_db = -12.0
 autoplay = true
 
 [node name="Ceiling" type="CSGBox3D" parent="."]
