@@ -1,0 +1,111 @@
+[gd_scene load_steps=16 format=3 uid="uid://cqetw17vlv8ho"]
+
+[ext_resource type="Texture2D" uid="uid://pqbmcb5tnuye" path="res://Assets/Textures/newroundbg.png" id="1_djhin"]
+[ext_resource type="Texture2D" uid="uid://bgsdj3k71fbx8" path="res://Assets/UI/readynormal.png" id="2_ntqpw"]
+[ext_resource type="Texture2D" uid="uid://crnalryaej6xy" path="res://Assets/UI/readyhover.png" id="3_a30c7"]
+[ext_resource type="Texture2D" uid="uid://cgm7cwnt75gvc" path="res://Assets/UI/readypressed.png" id="3_ohbq3"]
+[ext_resource type="Script" uid="uid://c1gj0lo0wlrjm" path="res://Scripts/ready.gd" id="4_a30c7"]
+[ext_resource type="FontFile" uid="uid://0mou7hqwgtb4" path="res://Assets/UI/UIFont.ttf" id="6_djhin"]
+[ext_resource type="Script" uid="uid://de6hym73uuw0v" path="res://Scripts/round_counter.gd" id="7_odhdd"]
+[ext_resource type="Script" uid="uid://dgvtqrfbf0msm" path="res://Scripts/host_val.gd" id="8_odhdd"]
+[ext_resource type="Script" uid="uid://djwr83gp6hebc" path="res://Scripts/join_val.gd" id="9_1v4ot"]
+[ext_resource type="Script" uid="uid://bd8b8u475yck2" path="res://Scripts/host_wins.gd" id="9_2crs4"]
+[ext_resource type="Script" uid="uid://23oi85l1556t" path="res://Scripts/join_wins.gd" id="11_kr47s"]
+
+[sub_resource type="FontVariation" id="FontVariation_1v4ot"]
+base_font = ExtResource("6_djhin")
+
+[sub_resource type="FontVariation" id="FontVariation_2crs4"]
+base_font = ExtResource("6_djhin")
+
+[sub_resource type="FontVariation" id="FontVariation_unbdv"]
+base_font = ExtResource("6_djhin")
+
+[sub_resource type="FontVariation" id="FontVariation_kr47s"]
+base_font = ExtResource("6_djhin")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_djhin")
+expand_mode = 1
+
+[node name="ReadyButton" type="TextureButton" parent="CanvasLayer"]
+visible = false
+offset_left = 726.0
+offset_top = 554.0
+offset_right = 1171.0
+offset_bottom = 668.0
+texture_normal = ExtResource("2_ntqpw")
+texture_pressed = ExtResource("3_ohbq3")
+texture_hover = ExtResource("3_a30c7")
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("4_a30c7")
+
+[node name="RoundCounter" type="Label" parent="CanvasLayer"]
+offset_left = 1100.0
+offset_top = 21.0
+offset_right = 1280.0
+offset_bottom = 139.0
+theme_override_colors/font_color = Color(0.94902, 0.909804, 0.788235, 1)
+theme_override_fonts/font = ExtResource("6_djhin")
+theme_override_font_sizes/font_size = 90
+text = "0"
+script = ExtResource("7_odhdd")
+
+[node name="HostVal" type="Label" parent="CanvasLayer"]
+offset_left = 394.0
+offset_top = 701.0
+offset_right = 523.0
+offset_bottom = 744.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_1v4ot")
+theme_override_font_sizes/font_size = 30
+script = ExtResource("8_odhdd")
+
+[node name="HostWins" type="Label" parent="CanvasLayer"]
+offset_left = 302.0
+offset_top = 794.0
+offset_right = 410.0
+offset_bottom = 842.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_2crs4")
+theme_override_font_sizes/font_size = 30
+script = ExtResource("9_2crs4")
+
+[node name="JoinVal" type="Label" parent="CanvasLayer"]
+offset_left = 1775.0
+offset_top = 257.0
+offset_right = 1892.0
+offset_bottom = 301.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_unbdv")
+theme_override_font_sizes/font_size = 30
+script = ExtResource("9_1v4ot")
+
+[node name="JoinWins" type="Label" parent="CanvasLayer"]
+offset_left = 1683.0
+offset_top = 351.0
+offset_right = 1774.0
+offset_bottom = 402.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_kr47s")
+theme_override_font_sizes/font_size = 30
+script = ExtResource("11_kr47s")
+
+[connection signal="pressed" from="CanvasLayer/ReadyButton" to="CanvasLayer/ReadyButton" method="_on_ready_button_pressed"]

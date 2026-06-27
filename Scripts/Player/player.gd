@@ -138,7 +138,7 @@ func _ready() -> void:
 func _setup_footsteps() -> void:
 	footsteps = AudioStreamPlayer3D.new()
 	footsteps.name = "Footsteps"
-	var stream := load("res://steps.mp3")
+	var stream := load("res://Assets/Audio/steps.mp3")
 	if stream is AudioStreamMP3:
 		stream.loop = true
 	footsteps.stream = stream

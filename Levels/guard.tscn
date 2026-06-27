@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bm38ygftobcny"]
 
 [ext_resource type="Script" uid="uid://j61uuj8pawed" path="res://Scripts/guard.gd" id="1_opr0s"]
-[ext_resource type="PackedScene" uid="uid://djr846t4owjop" path="res://guard_walk_2.tscn" id="2_hbmmv"]
+[ext_resource type="PackedScene" uid="uid://djr846t4owjop" path="res://Scenes/guard_walk_2.tscn" id="2_hbmmv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lwy2l"]
 

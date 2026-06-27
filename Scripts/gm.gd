@@ -26,7 +26,7 @@ var p2_wins: float = 0
 ## ================ [ METHODS ] ================ ##
 @rpc("call_local")
 func select_char() -> void:
-	get_tree().change_scene_to_file("res://character_select.tscn")
+	get_tree().change_scene_to_file("res://Scenes/character_select.tscn")
 
 @rpc("call_local")
 func start_game() -> void:
@@ -43,16 +43,16 @@ func show_result_screen(result: String) -> void:
 				hud.play_win()
 			else:
 				hud.play_defeat()
-			get_tree().change_scene_to_file("res://hostwin.tscn")
+			get_tree().change_scene_to_file("res://Scenes/hostwin.tscn")
 		"joiner":
 			if multiplayer.is_server():
 				hud.play_defeat()
 			else:
 				hud.play_win()
-			get_tree().change_scene_to_file("res://joinerwin.tscn")
+			get_tree().change_scene_to_file("res://Scenes/joinerwin.tscn")
 		"tie":
 			hud.play_defeat()
-			get_tree().change_scene_to_file("res://tie.tscn")
+			get_tree().change_scene_to_file("res://Scenes/tie.tscn")
 
 @rpc("call_local")
 func end_game() -> void:
@@ -101,7 +101,7 @@ func end_round() -> void:
 	
 	
 	if round < 3:
-		get_tree().change_scene_to_file("res://postround.tscn")
+		get_tree().change_scene_to_file("res://Scenes/postround.tscn")
 	else:
 		end_game()
 
@@ -110,7 +110,7 @@ var menu_music: AudioStreamPlayer
 func play_menu_music() -> void:
 	if menu_music == null:
 		menu_music = AudioStreamPlayer.new()
-		var stream := load("res://menu.mp3")
+		var stream := load("res://Assets/Audio/menu.mp3")
 		if stream is AudioStreamMP3:
 			stream.loop = true
 		menu_music.stream = stream
@@ -129,7 +129,7 @@ var ui_click: AudioStreamPlayer
 func play_ui_hover() -> void:
 	if ui_hover == null:
 		ui_hover = AudioStreamPlayer.new()
-		ui_hover.stream = load("res://hover.mp3")
+		ui_hover.stream = load("res://Assets/Audio/hover.mp3")
 		ui_hover.volume_db = -12.0
 		add_child(ui_hover)
 	ui_hover.play()
@@ -137,7 +137,7 @@ func play_ui_hover() -> void:
 func play_ui_click() -> void:
 	if ui_click == null:
 		ui_click = AudioStreamPlayer.new()
-		ui_click.stream = load("res://click.mp3")
+		ui_click.stream = load("res://Assets/Audio/click.mp3")
 		ui_click.volume_db = -8.0
 		add_child(ui_click)
 	ui_click.play()
