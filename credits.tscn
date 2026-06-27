@@ -34,6 +34,30 @@ expand_margin_top = 10.0
 expand_margin_right = 10.0
 expand_margin_bottom = 10.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_back_normal"]
+bg_color = Color(0.270588, 0.192157, 0.156863, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.152941, 0.101961, 0.0784314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_back_hover"]
+bg_color = Color(0.186262, 0.127715, 0.10136, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.107814, 0.0678125, 0.0493485, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_back_pressed"]
+bg_color = Color(0.0929319, 0.0588293, 0.0417737, 1)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(0.0511134, 0.026636, 0.0191077, 1)
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -144,10 +168,12 @@ offset_right = 230.0
 offset_bottom = -107.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.945098, 0.909804, 0.796078, 1)
 theme_override_fonts/font = SubResource("FontVariation_c1t8d")
 theme_override_font_sizes/font_size = 50
-theme_override_styles/hover = SubResource("StyleBoxFlat_g4wvt")
-theme_override_styles/normal = SubResource("StyleBoxFlat_pjc1l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_back_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_back_pressed")
+theme_override_styles/normal = SubResource("StyleBoxFlat_back_normal")
 text = "Back to Menu"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

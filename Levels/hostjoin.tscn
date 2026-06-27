@@ -94,7 +94,7 @@ theme_override_colors/font_color = Color(0.945098, 0.909804, 0.796078, 1)
 theme_override_fonts/font = SubResource("FontVariation_n4wok")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_5kr0o")
-placeholder_text = "  Enter IP here..."
+placeholder_text = "  Enter room code..."
 script = ExtResource("2_3qva8")
 
 [node name="Host" type="Button" parent="."]
@@ -119,6 +119,21 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_2iwyu")
 text = "Host Game"
 script = ExtResource("1_34iv6")
 
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 40.0
+offset_right = 280.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.945098, 0.909804, 0.796078, 1)
+theme_override_fonts/font = SubResource("FontVariation_3lk6o")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_5fplv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3lk6o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2iwyu")
+text = "Back"
+
 [connection signal="pressed" from="Start" to="Start" method="_on_host_start_pressed"]
 [connection signal="text_submitted" from="Join" to="Join" method="_on_ip_submitted"]
 [connection signal="pressed" from="Host" to="Host" method="_on_host_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

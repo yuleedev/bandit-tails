@@ -2,28 +2,63 @@ extends Node
 
 ## ================ [ FIELDS ] ================ ##
 
-var peer: ENetMultiplayerPeer
+## Public address of the relay server (see relay/relay.js + relay/README.md).
+## After you deploy the relay, replace this with your own URL, e.g.
+##   "wss://mole-heist-relay.onrender.com"
+## Use ws:// (not wss://) only for local testing against `node relay.js`.
+const RELAY_URL := "wss://mole-heist-2.onrender.com"
+
+var peer: RelayMultiplayerPeer
+
+## Room code shown to the host so the joiner can type it in.
+var room_code: String = ""
+
+## Emitted once the relay hands the host its room code.
+signal room_code_ready(code: String)
+## Emitted when a host/join attempt fails (relay down, bad code, room full).
+signal connection_error(reason: String)
+## Emitted on the joiner once it successfully reaches the host.
+signal connected_to_host()
 
 ## ================ [ HELPERS ] ================ ##
 
 func is_same_client(a: Node, b: Node):
 	return a.get_multiplayer_authority() == b.get_multiplayer_authority()
 
+func _relay_configured() -> bool:
+	if RELAY_URL.contains("CHANGE-ME"):
+		push_warning("SM.RELAY_URL is not set. Deploy relay/ and set RELAY_URL in Scripts/sm.gd.")
+		connection_error.emit("relay_not_configured")
+		return false
+	return true
+
 ## ================ [ METHODS ] ================ ##
 
-func host_game(port: int) -> void:
-	peer = ENetMultiplayerPeer.new()
-	peer.create_server(port, 2)
-	peer.host.compress(ENetConnection.COMPRESS_RANGE_CODER)
-	
+func host_game() -> void:
+	if not _relay_configured():
+		return
+	room_code = ""
+	peer = RelayMultiplayerPeer.new()
+	peer.code_received.connect(_on_code_received)
+	peer.error_occurred.connect(_on_peer_error)
+	peer.host(RELAY_URL)
 	multiplayer.multiplayer_peer = peer
 
-func join_game(ip: String, port: int) -> void:
-	peer = ENetMultiplayerPeer.new()
-	peer.create_client(ip, port)
-	peer.host.compress(ENetConnection.COMPRESS_RANGE_CODER)
-	
+func join_game(code: String) -> void:
+	if not _relay_configured():
+		return
+	peer = RelayMultiplayerPeer.new()
+	peer.code_received.connect(_on_code_received)
+	peer.error_occurred.connect(_on_peer_error)
+	peer.join(RELAY_URL, code)
 	multiplayer.multiplayer_peer = peer
+
+func _on_code_received(code: String) -> void:
+	room_code = code
+	room_code_ready.emit(code)
+
+func _on_peer_error(reason: String) -> void:
+	connection_error.emit(reason)
 
 @rpc
 func send_player_info(p1_id: int, p2_id: int) -> void:
@@ -54,6 +89,7 @@ func _on_peer_disconnected(id: int) -> void:
 
 func _on_connected_to_server() -> void:
 	print(":)")
+	connected_to_host.emit()
 
 func _on_connection_failed() -> void:
 	print(":(")
