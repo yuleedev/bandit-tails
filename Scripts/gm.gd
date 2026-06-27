@@ -30,6 +30,7 @@ func select_char() -> void:
 
 @rpc("call_local")
 func start_game() -> void:
+	stop_menu_music()
 	get_tree().change_scene_to_file("res://Levels/main.tscn")
 	hud.visible = true
 	await get_tree().process_frame

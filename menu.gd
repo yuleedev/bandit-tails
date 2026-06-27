@@ -6,7 +6,6 @@ func _ready():
 	GM.wire_ui_sounds(self)
 
 func _on_start_game_pressed() -> void:
-	GM.stop_menu_music()
 	get_tree().change_scene_to_file("res://Levels/hostjoin.tscn")
 
 func _on_tutorial_pressed() -> void:
