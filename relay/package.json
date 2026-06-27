@@ -1,0 +1,16 @@
+{
+  "name": "mole-heist-relay",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Room-code relay server for Mole Heist co-op (cross-network play).",
+  "main": "relay.js",
+  "scripts": {
+    "start": "node relay.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

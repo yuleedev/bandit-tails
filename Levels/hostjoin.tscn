@@ -94,7 +94,7 @@ theme_override_colors/font_color = Color(0.945098, 0.909804, 0.796078, 1)
 theme_override_fonts/font = SubResource("FontVariation_n4wok")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_5kr0o")
-placeholder_text = "  Enter IP here..."
+placeholder_text = "  Enter room code..."
 script = ExtResource("2_3qva8")
 
 [node name="Host" type="Button" parent="."]
