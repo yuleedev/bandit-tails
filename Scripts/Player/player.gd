@@ -28,6 +28,8 @@ var mouse_motion: Vector2
 
 var cd: float
 
+var punish_time_left: float = 0.0
+
 var interactable: Node3D = null
 
 ## ================ [ HELPERS ] ================ ##
@@ -43,8 +45,8 @@ func punishment() -> void:
 	can_move = false
 	global_position = Vector3(-1, 0, 6)
 	
-	cd = 10.0
-	hud.show_punishment_label(cd)
+	punish_time_left = 10.0
+	hud.show_punishment_label(punish_time_left)
 
 	var timer := Timer.new()
 	add_child(timer)
@@ -55,7 +57,13 @@ func punishment() -> void:
 
 func _on_timer_timeout() -> void:
 	can_move = true
+	punish_time_left = 0.0
 	hud.hide_punishment_label()
+
+func _update_punishment_countdown(delta: float) -> void:
+	if punish_time_left > 0.0:
+		punish_time_left = max(punish_time_left - delta, 0.0)
+		hud.update_punishment_label(punish_time_left)
 
 func _rotate_camera() -> void:
 	pivot.rotation.y -= mouse_motion.x * GM.options.MOUSE_SENSITIVITY
@@ -113,8 +121,9 @@ func _process(delta: float) -> void:
 	
 	if is_multiplayer_authority():
 		_rotate_camera()
+		_update_punishment_countdown(delta)
 	_apply_movement(delta)
-	
+
 	_manage_interactable()
 	_manage_skill()
 
