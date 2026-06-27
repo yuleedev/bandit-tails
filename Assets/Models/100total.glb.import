@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://52s6s4v7c3xm"
-path="res://.godot/imported/100total.glb-dc7c490e1fdc7b548f0aa70a7f41855f.scn"
+path="res://.godot/imported/100total.glb-12d0adc05b30f6e6189e8bba92f8072b.scn"
 
 [deps]
 
-source_file="res://100total.glb"
-dest_files=["res://.godot/imported/100total.glb-dc7c490e1fdc7b548f0aa70a7f41855f.scn"]
+source_file="res://Assets/Models/100total.glb"
+dest_files=["res://.godot/imported/100total.glb-12d0adc05b30f6e6189e8bba92f8072b.scn"]
 
 [params]
 

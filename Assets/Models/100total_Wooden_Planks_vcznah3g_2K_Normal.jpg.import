@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://iuh2disstx7s"
-path.s3tc="res://.godot/imported/100total_Wooden_Planks_vcznah3g_2K_Normal.jpg-8e79df926b6aac6ec350b71b273d52dc.s3tc.ctex"
+path.s3tc="res://.godot/imported/100total_Wooden_Planks_vcznah3g_2K_Normal.jpg-5a1e01b7c0e8d370d40bf9de7bd2444b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://100total_Wooden_Planks_vcznah3g_2K_Normal.jpg"
-dest_files=["res://.godot/imported/100total_Wooden_Planks_vcznah3g_2K_Normal.jpg-8e79df926b6aac6ec350b71b273d52dc.s3tc.ctex"]
+source_file="res://Assets/Models/100total_Wooden_Planks_vcznah3g_2K_Normal.jpg"
+dest_files=["res://.godot/imported/100total_Wooden_Planks_vcznah3g_2K_Normal.jpg-5a1e01b7c0e8d370d40bf9de7bd2444b.s3tc.ctex"]
 
 [params]
 

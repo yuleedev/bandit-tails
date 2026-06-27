@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1v5s86e5m44x"
-path.s3tc="res://.godot/imported/100total_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg-a65b80a4bd0f5df9866878ba965986f5.s3tc.ctex"
+path.s3tc="res://.godot/imported/100total_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg-9a9e05f6fca3cf90c7bae83e50e7f22f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://100total_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg"
-dest_files=["res://.godot/imported/100total_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg-a65b80a4bd0f5df9866878ba965986f5.s3tc.ctex"]
+source_file="res://Assets/Models/100total_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg"
+dest_files=["res://.godot/imported/100total_Seychelles_Beige_Marble_Tiles_wgildfbv_8K_Normal.jpg-9a9e05f6fca3cf90c7bae83e50e7f22f.s3tc.ctex"]
 
 [params]
 

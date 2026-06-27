@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wimktm3y01tr"
-path="res://.godot/imported/starthover.png-4e593969680fead858b2c777f50d1248.ctex"
+path="res://.godot/imported/starthover.png-5f7ba20b672d26cc6d6debdc7c3f3205.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://starthover.png"
-dest_files=["res://.godot/imported/starthover.png-4e593969680fead858b2c777f50d1248.ctex"]
+source_file="res://Assets/Textures/starthover.png"
+dest_files=["res://.godot/imported/starthover.png-5f7ba20b672d26cc6d6debdc7c3f3205.ctex"]
 
 [params]
 

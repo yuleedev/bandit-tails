@@ -1,7 +1,7 @@
 [gd_scene load_steps=38 format=3 uid="uid://bwydvcfxfddhp"]
 
 [ext_resource type="Script" uid="uid://ca0qt6j6uxdsp" path="res://Scripts/treasure.gd" id="1_582qy"]
-[ext_resource type="PackedScene" uid="uid://bunav6f5myq81" path="res://gui.tscn" id="2_fybsu"]
+[ext_resource type="PackedScene" uid="uid://bunav6f5myq81" path="res://Scenes/gui.tscn" id="2_fybsu"]
 [ext_resource type="Resource" uid="uid://bojxh375yy14q" path="res://Assets/Props/Loot/ring.tres" id="3_fwg60"]
 [ext_resource type="Script" uid="uid://bj118do4lnnc6" path="res://Scripts/item.gd" id="3_nx1s7"]
 [ext_resource type="Resource" uid="uid://ceaipixx1t87o" path="res://Assets/Props/Loot/teddybear.tres" id="6_np4xh"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bunav6f5myq81"]
 
-[ext_resource type="Script" uid="uid://bqrtxt2m8f4mw" path="res://gui.gd" id="1_80edf"]
+[ext_resource type="Script" uid="uid://bqrtxt2m8f4mw" path="res://Scripts/gui.gd" id="1_80edf"]
 
 [node name="WeightBar" type="Node3D"]
 script = ExtResource("1_80edf")

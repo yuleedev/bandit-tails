@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cccadyfi5rtcb"
-path.s3tc="res://.godot/imported/100total_wowow.jpg-69ded962adbde15460598ef31799d445.s3tc.ctex"
+path.s3tc="res://.godot/imported/100total_wowow.jpg-c6ece1d948f8f64b04a3812d7ab82c6e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://100total_wowow.jpg"
-dest_files=["res://.godot/imported/100total_wowow.jpg-69ded962adbde15460598ef31799d445.s3tc.ctex"]
+source_file="res://Assets/Models/100total_wowow.jpg"
+dest_files=["res://.godot/imported/100total_wowow.jpg-c6ece1d948f8f64b04a3812d7ab82c6e.s3tc.ctex"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cm5mrhlr4ft2u"
-path="res://.godot/imported/door_idle.glb-3db6ca4886aec0bf2b2fb7f23fdf137d.scn"
+path="res://.godot/imported/door_idle.glb-a4741bb1851b118a10b653450d46e64f.scn"
 
 [deps]
 
-source_file="res://door_idle.glb"
-dest_files=["res://.godot/imported/door_idle.glb-3db6ca4886aec0bf2b2fb7f23fdf137d.scn"]
+source_file="res://Assets/Models/door_idle.glb"
+dest_files=["res://.godot/imported/door_idle.glb-a4741bb1851b118a10b653450d46e64f.scn"]
 
 [params]
 

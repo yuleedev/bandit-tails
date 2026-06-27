@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cpgrttjuggbq"]
 
-[ext_resource type="Script" uid="uid://dgw4l8bx8eqke" path="res://tutorial.gd" id="1_7n6eb"]
-[ext_resource type="Texture2D" uid="uid://bcb2f0m5m683y" path="res://tutorialscreen.png" id="2_yb1ct"]
+[ext_resource type="Script" uid="uid://dgw4l8bx8eqke" path="res://Scripts/tutorial.gd" id="1_7n6eb"]
+[ext_resource type="Texture2D" uid="uid://bcb2f0m5m683y" path="res://Assets/Textures/tutorialscreen.png" id="2_yb1ct"]
 [ext_resource type="FontFile" uid="uid://0mou7hqwgtb4" path="res://Assets/UI/UIFont.ttf" id="3_ehuit"]
 
 [sub_resource type="FontVariation" id="FontVariation_5mrt3"]

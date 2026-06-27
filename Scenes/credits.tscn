@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://dq1hiq81r8oug"]
 
-[ext_resource type="Texture2D" uid="uid://dutnsim8blqb3" path="res://credits.png" id="1_c1t8d"]
-[ext_resource type="Script" uid="uid://c8iiowjw8f2o1" path="res://credits.gd" id="1_g4wvt"]
+[ext_resource type="Texture2D" uid="uid://dutnsim8blqb3" path="res://Assets/Textures/credits.png" id="1_c1t8d"]
+[ext_resource type="Script" uid="uid://c8iiowjw8f2o1" path="res://Scripts/credits.gd" id="1_g4wvt"]
 [ext_resource type="FontFile" uid="uid://0mou7hqwgtb4" path="res://Assets/UI/UIFont.ttf" id="2_g4wvt"]
 
 [sub_resource type="FontVariation" id="FontVariation_pjc1l"]

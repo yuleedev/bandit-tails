@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://dqox807fql7pj"]
 
-[ext_resource type="Texture2D" uid="uid://d4hyuae2xsnjk" path="res://results.png" id="1_iau5h"]
+[ext_resource type="Texture2D" uid="uid://d4hyuae2xsnjk" path="res://Assets/Textures/results.png" id="1_iau5h"]
 [ext_resource type="FontFile" uid="uid://0mou7hqwgtb4" path="res://Assets/UI/UIFont.ttf" id="2_5qiq8"]
-[ext_resource type="Script" uid="uid://mcyrmteb182l" path="res://restart.gd" id="3_jeujy"]
+[ext_resource type="Script" uid="uid://mcyrmteb182l" path="res://Scripts/restart.gd" id="3_jeujy"]
 
 [sub_resource type="FontVariation" id="FontVariation_7jyyn"]
 base_font = ExtResource("2_5qiq8")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cbvne5fpxlq0t"]
 
-[ext_resource type="Script" uid="uid://cnutf3hodhg6v" path="res://key.gd" id="1_p0yg6"]
+[ext_resource type="Script" uid="uid://cnutf3hodhg6v" path="res://Scripts/key.gd" id="1_p0yg6"]
 [ext_resource type="PackedScene" uid="uid://cybe76ir5ob5u" path="res://Assets/Props/key.glb" id="1_up4cr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_up4cr"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://blxh5ys0emcrv"
-path="res://.godot/imported/newhostjoin.png-a22550c61351f71f66fcfa0bb4521895.ctex"
+path="res://.godot/imported/newhostjoin.png-7868d986c55fee53720b241984a30667.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://newhostjoin.png"
-dest_files=["res://.godot/imported/newhostjoin.png-a22550c61351f71f66fcfa0bb4521895.ctex"]
+source_file="res://Assets/Textures/newhostjoin.png"
+dest_files=["res://.godot/imported/newhostjoin.png-7868d986c55fee53720b241984a30667.ctex"]
 
 [params]
 

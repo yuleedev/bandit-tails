@@ -1,16 +1,16 @@
 [gd_scene load_steps=16 format=3 uid="uid://cqetw17vlv8ho"]
 
-[ext_resource type="Texture2D" uid="uid://pqbmcb5tnuye" path="res://newroundbg.png" id="1_djhin"]
+[ext_resource type="Texture2D" uid="uid://pqbmcb5tnuye" path="res://Assets/Textures/newroundbg.png" id="1_djhin"]
 [ext_resource type="Texture2D" uid="uid://bgsdj3k71fbx8" path="res://Assets/UI/readynormal.png" id="2_ntqpw"]
 [ext_resource type="Texture2D" uid="uid://crnalryaej6xy" path="res://Assets/UI/readyhover.png" id="3_a30c7"]
 [ext_resource type="Texture2D" uid="uid://cgm7cwnt75gvc" path="res://Assets/UI/readypressed.png" id="3_ohbq3"]
-[ext_resource type="Script" uid="uid://c1gj0lo0wlrjm" path="res://ready.gd" id="4_a30c7"]
+[ext_resource type="Script" uid="uid://c1gj0lo0wlrjm" path="res://Scripts/ready.gd" id="4_a30c7"]
 [ext_resource type="FontFile" uid="uid://0mou7hqwgtb4" path="res://Assets/UI/UIFont.ttf" id="6_djhin"]
-[ext_resource type="Script" uid="uid://de6hym73uuw0v" path="res://round_counter.gd" id="7_odhdd"]
-[ext_resource type="Script" uid="uid://dgvtqrfbf0msm" path="res://host_val.gd" id="8_odhdd"]
-[ext_resource type="Script" uid="uid://djwr83gp6hebc" path="res://join_val.gd" id="9_1v4ot"]
-[ext_resource type="Script" uid="uid://bd8b8u475yck2" path="res://host_wins.gd" id="9_2crs4"]
-[ext_resource type="Script" uid="uid://23oi85l1556t" path="res://join_wins.gd" id="11_kr47s"]
+[ext_resource type="Script" uid="uid://de6hym73uuw0v" path="res://Scripts/round_counter.gd" id="7_odhdd"]
+[ext_resource type="Script" uid="uid://dgvtqrfbf0msm" path="res://Scripts/host_val.gd" id="8_odhdd"]
+[ext_resource type="Script" uid="uid://djwr83gp6hebc" path="res://Scripts/join_val.gd" id="9_1v4ot"]
+[ext_resource type="Script" uid="uid://bd8b8u475yck2" path="res://Scripts/host_wins.gd" id="9_2crs4"]
+[ext_resource type="Script" uid="uid://23oi85l1556t" path="res://Scripts/join_wins.gd" id="11_kr47s"]
 
 [sub_resource type="FontVariation" id="FontVariation_1v4ot"]
 base_font = ExtResource("6_djhin")
