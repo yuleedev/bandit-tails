@@ -8,11 +8,11 @@ var _notice_timer: Timer
 
 func _ready():
 	hud.visible = false
-	_add_sfx("collect", "res://collect.mp3", 0.0)
-	_add_sfx("caught", "res://caught.mp3", -6.0)
-	_add_sfx("win", "res://win.mp3", -6.0)
-	_add_sfx("defeat", "res://defeat.mp3", -6.0)
-	_add_sfx("door", "res://door.mp3", -2.0)
+	_add_sfx("collect", "res://Assets/Audio/collect.mp3", 0.0)
+	_add_sfx("caught", "res://Assets/Audio/caught.mp3", -6.0)
+	_add_sfx("win", "res://Assets/Audio/win.mp3", -6.0)
+	_add_sfx("defeat", "res://Assets/Audio/defeat.mp3", -6.0)
+	_add_sfx("door", "res://Assets/Audio/door.mp3", -2.0)
 
 	_notice_timer = Timer.new()
 	_notice_timer.one_shot = true

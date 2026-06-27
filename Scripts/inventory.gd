@@ -6,7 +6,7 @@ var total_value = 0
 var temp_value = 0
 var player_id : int = 1
 
-const ITEM_SLOT = preload("res://item_slot.tscn")
+const ITEM_SLOT = preload("res://Scenes/item_slot.tscn")
 signal item_dropped(item, position)
 
 # Called when the node enters the scene tree for the first time.
