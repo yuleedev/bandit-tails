@@ -1,3 +1,15 @@
 .godot/
 /android/
 .DS_Store
+
+# Godot web export output (regenerated on every export, do not commit)
+index.html
+index.js
+index.wasm
+index.pck
+index.audio.position.worklet.js
+index.audio.worklet.js
+index.png
+index.icon.png
+index.apple-touch-icon.png
+index.*.import

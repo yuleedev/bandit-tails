@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bbrhe230lvcnw"]
+[gd_scene load_steps=2 format=3 uid="uid://bbrhe230lvcnw"]
 
 [ext_resource type="Script" uid="uid://bqrtxt2m8f4mw" path="res://gui.gd" id="1_r3pgf"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_k6omp"]
-viewport_path = NodePath("Sprite3D/SubViewport")
 
 [node name="WeightBar" type="Node3D"]
 script = ExtResource("1_r3pgf")
@@ -11,7 +8,6 @@ script = ExtResource("1_r3pgf")
 [node name="Sprite3D" type="Sprite3D" parent="."]
 billboard = 1
 no_depth_test = true
-texture = SubResource("ViewportTexture_k6omp")
 
 [node name="SubViewport" type="SubViewport" parent="Sprite3D"]
 transparent_bg = true
