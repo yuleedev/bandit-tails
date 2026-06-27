@@ -30,6 +30,8 @@ var cd: float
 
 var punish_time_left: float = 0.0
 
+var footsteps: AudioStreamPlayer3D
+
 var interactable: Node3D = null
 
 ## ================ [ HELPERS ] ================ ##
@@ -44,7 +46,11 @@ func punishment() -> void:
 	$AnimationTree.set("parameters/conditions/idle", true)
 	can_move = false
 	global_position = Vector3(-1, 0, 6)
-	
+
+	if footsteps and footsteps.playing:
+		footsteps.stop()
+	hud.play_caught()
+
 	punish_time_left = 10.0
 	hud.show_punishment_label(punish_time_left)
 
@@ -83,9 +89,11 @@ func _apply_movement(delta) -> void:
 			).normalized()
 		
 		velocity = velocity.move_toward(move_dir * MOVE_SPEED, ACCELERATION * delta)
-		
-		$AnimationTree.set("parameters/conditions/idle", move_dir.length_squared() < 0.01)
-		$AnimationTree.set("parameters/conditions/walk", move_dir.length_squared() >= 0.01)
+
+		var is_walking := move_dir.length_squared() >= 0.01
+		$AnimationTree.set("parameters/conditions/idle", not is_walking)
+		$AnimationTree.set("parameters/conditions/walk", is_walking)
+		_update_footsteps(is_walking)
 
 func _manage_interactable() -> void:
 	if interactable:
@@ -112,10 +120,34 @@ func _manage_skill() -> void:
 func _ready() -> void:
 	area.body_entered.connect(_on_body_entered)
 	area.body_entered.connect(_on_body_exited)
-	
+
+	_setup_footsteps()
+
 	if not is_multiplayer_authority():
 		print(get_multiplayer_authority())
 		camera.queue_free()
+
+# Footstep audio is a 3D player so other players hear it positionally.
+func _setup_footsteps() -> void:
+	footsteps = AudioStreamPlayer3D.new()
+	footsteps.name = "Footsteps"
+	var stream := load("res://steps.mp3")
+	if stream is AudioStreamMP3:
+		stream.loop = true
+	footsteps.stream = stream
+	footsteps.volume_db = -14.0   # keep footsteps quiet
+	footsteps.unit_size = 3.0     # falls off quickly so distant players are faint
+	footsteps.max_db = -6.0
+	add_child(footsteps)
+
+func _update_footsteps(is_walking: bool) -> void:
+	if not footsteps:
+		return
+	if is_walking and is_on_floor():
+		if not footsteps.playing:
+			footsteps.play()
+	elif footsteps.playing:
+		footsteps.stop()
 		
 func _process(delta: float) -> void:
 	

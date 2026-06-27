@@ -38,10 +38,21 @@ func start_game() -> void:
 func show_result_screen(result: String) -> void:
 	match result:
 		"host":
+			# Host (player 1 / Raccoon) won.
+			if multiplayer.is_server():
+				hud.play_win()
+			else:
+				hud.play_defeat()
 			get_tree().change_scene_to_file("res://hostwin.tscn")
 		"joiner":
+			# Joiner (player 2 / Mole) won.
+			if multiplayer.is_server():
+				hud.play_defeat()
+			else:
+				hud.play_win()
 			get_tree().change_scene_to_file("res://joinerwin.tscn")
 		"tie":
+			hud.play_defeat()
 			get_tree().change_scene_to_file("res://tie.tscn")
 
 @rpc("call_local")
