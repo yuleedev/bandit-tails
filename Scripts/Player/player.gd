@@ -49,10 +49,11 @@ func punishment() -> void:
 
 	if footsteps and footsteps.playing:
 		footsteps.stop()
-	hud.play_caught()
 
 	punish_time_left = 10.0
-	hud.show_punishment_label(punish_time_left)
+	if is_multiplayer_authority():
+		hud.play_caught()
+		hud.show_punishment_label(punish_time_left)
 
 	var timer := Timer.new()
 	add_child(timer)
@@ -64,7 +65,8 @@ func punishment() -> void:
 func _on_timer_timeout() -> void:
 	can_move = true
 	punish_time_left = 0.0
-	hud.hide_punishment_label()
+	if is_multiplayer_authority():
+		hud.hide_punishment_label()
 
 func _update_punishment_countdown(delta: float) -> void:
 	if punish_time_left > 0.0:
