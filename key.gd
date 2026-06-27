@@ -36,6 +36,7 @@ func _process(delta):
 @rpc("any_peer")
 func pick_up(player_id: int):
 	current_picker_id = player_id
+	hud.play_collect()
 	if is_multiplayer_authority():
 		GM.p1_keys += 1
 		inv.add_item()
