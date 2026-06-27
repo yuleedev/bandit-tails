@@ -104,14 +104,17 @@ func _manage_interactable() -> void:
 		if interactable.is_in_group("loot") and Input.is_action_just_released("interact"):
 			interactable.stop_pickup()
 		elif interactable.is_in_group("door") and Input.is_action_just_pressed("interact"):
-			if multiplayer.get_unique_id() == GM.p1_id:
-				if GM.p1_keys > 0:
+			var is_p1 := multiplayer.get_unique_id() == GM.p1_id
+			var keys: int = GM.p1_keys if is_p1 else GM.p2_keys
+			if keys > 0:
+				if is_p1:
 					GM.p1_keys -= 1
-					interactable.open(multiplayer.get_unique_id())
-			else:
-				if GM.p2_keys > 0:
+				else:
 					GM.p2_keys -= 1
-					interactable.open(multiplayer.get_unique_id())
+				interactable.open(multiplayer.get_unique_id())
+			elif is_multiplayer_authority():
+				hud.play_caught()
+				hud.show_notice("You need a key to open this door!")
 		elif interactable.is_in_group("key") and Input.is_action_just_pressed("interact"):
 			interactable.pick_up(multiplayer.get_unique_id())
 			

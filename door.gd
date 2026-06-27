@@ -36,6 +36,7 @@ func open(player_id: int):
 	if is_open:
 		return
 	is_open = true
+	hud.play_door()
 	inv.add_item()
 	if is_multiplayer_authority():
 		$AnimationTree.set("parameters/conditions/unlock", true)
