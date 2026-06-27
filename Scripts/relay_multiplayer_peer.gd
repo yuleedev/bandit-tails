@@ -1,21 +1,17 @@
 class_name RelayMultiplayerPeer
 extends MultiplayerPeerExtension
 
-## A MultiplayerPeer that tunnels Godot's high-level multiplayer through the
-## cloud relay server (see relay/relay.js) using a short room code instead of
-## an IP address. This is what makes co-op work across different networks.
-##
-## It deliberately mimics ENetMultiplayerPeer's observable behaviour so the
-## rest of the game is unchanged:
-##   * the HOST is peer id 1 (the authoritative server)
-##   * the single GUEST is peer id 2
-## Both sides open an OUTBOUND WebSocket to the relay, so neither needs a
-## public IP or port forwarding. Works in native AND web exports (wss://).
+## Tunnels Godot's high-level multiplayer through the cloud relay (relay/relay.js)
+## via a short room code instead of an IP. Host is peer 1, guest is peer 2, so
+## the rest of the game is unchanged. Works in native and web exports.
 
 enum Role { NONE, HOST, CLIENT }
 
 const SERVER_ID := 1
-const GUEST_ID := 2 # only ever one guest in this 2-player game
+const GUEST_ID := 2
+
+const MAX_RETRIES := 20
+const RETRY_DELAY_MS := 3000
 
 ## Emitted when the relay assigns this host its room code (HOST only).
 signal code_received(code: String)
@@ -33,11 +29,14 @@ var _transfer_mode: int = MultiplayerPeer.TRANSFER_MODE_RELIABLE
 var _transfer_channel: int = 0
 var _refuse_connections: bool = false
 
+var _url: String = ""
+var _retry_count: int = 0
+var _reconnect_at_ms: int = 0
+
 var _join_code: String = ""
 var _handshake_sent: bool = false
 var _guest_connected: bool = false
 
-# Queue of incoming game packets: [{ "peer": int, "bytes": PackedByteArray }, ...]
 var _incoming: Array = []
 
 ## ================ [ PUBLIC ] ================ ##
@@ -56,12 +55,28 @@ func join(url: String, code: String) -> void:
 	_start(url)
 
 func _start(url: String) -> void:
-	_handshake_sent = false
+	_url = url
+	_retry_count = 0
+	_reconnect_at_ms = 0
+	_open_socket()
+
+func _open_socket() -> void:
+	_socket = WebSocketPeer.new()
 	_socket.inbound_buffer_size = 1 << 20
 	_socket.outbound_buffer_size = 1 << 20
 	_socket.max_queued_packets = 4096
-	var err := _socket.connect_to_url(url)
+	_handshake_sent = false
+	var err := _socket.connect_to_url(_url)
 	if err != OK:
+		_schedule_retry_or_fail()
+
+# Free hosting tiers sleep when idle and drop the first connection while waking;
+# retry quietly until MAX_RETRIES before reporting failure.
+func _schedule_retry_or_fail() -> void:
+	if _retry_count < MAX_RETRIES:
+		_retry_count += 1
+		_reconnect_at_ms = Time.get_ticks_msec() + RETRY_DELAY_MS
+	else:
 		_status = MultiplayerPeer.CONNECTION_DISCONNECTED
 		error_occurred.emit("connect_failed")
 
@@ -106,11 +121,13 @@ func _handle_control(text: String) -> void:
 func _handle_socket_closed() -> void:
 	if _status == MultiplayerPeer.CONNECTION_DISCONNECTED:
 		return
+	# Dropped before reaching the host => likely a cold-starting relay, so retry.
+	if _status == MultiplayerPeer.CONNECTION_CONNECTING and _reconnect_at_ms == 0:
+		_schedule_retry_or_fail()
+		return
 	var was_connected := _status == MultiplayerPeer.CONNECTION_CONNECTED
 	_status = MultiplayerPeer.CONNECTION_DISCONNECTED
 	if _role == Role.CLIENT:
-		# CONNECTING -> DISCONNECTED  => MultiplayerAPI emits connection_failed
-		# CONNECTED  -> DISCONNECTED  => MultiplayerAPI emits server_disconnected
 		if was_connected:
 			peer_disconnected.emit(SERVER_ID)
 	elif _role == Role.HOST:
@@ -122,6 +139,11 @@ func _handle_socket_closed() -> void:
 
 func _poll() -> void:
 	if _role == Role.NONE:
+		return
+	if _reconnect_at_ms != 0:
+		if Time.get_ticks_msec() >= _reconnect_at_ms:
+			_reconnect_at_ms = 0
+			_open_socket()
 		return
 	_socket.poll()
 	match _socket.get_ready_state():
@@ -153,7 +175,7 @@ func _get_packet_script() -> PackedByteArray:
 func _get_available_packet_count() -> int:
 	return _incoming.size()
 
-# Engine reads the sender id BEFORE popping the packet, so peek at the head.
+# Engine reads the sender id before popping the packet, so peek at the head.
 func _get_packet_peer() -> int:
 	if _incoming.is_empty():
 		return 1
@@ -202,8 +224,8 @@ func _is_server_relay_supported() -> bool:
 	return true
 
 func _disconnect_peer(_peer: int, _force: bool) -> void:
-	# 2-player relay: the only link we have is to the relay itself. Closing it
-	# here would also drop us, so leave teardown to _close().
+	# Our only link is to the relay; closing it would drop us too, so leave
+	# teardown to _close().
 	pass
 
 func _close() -> void:

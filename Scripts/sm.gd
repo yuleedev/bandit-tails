@@ -6,7 +6,7 @@ extends Node
 ## After you deploy the relay, replace this with your own URL, e.g.
 ##   "wss://mole-heist-relay.onrender.com"
 ## Use ws:// (not wss://) only for local testing against `node relay.js`.
-const RELAY_URL := "wss://CHANGE-ME.onrender.com"
+const RELAY_URL := "wss://mole-heist-2.onrender.com"
 
 var peer: RelayMultiplayerPeer
 
