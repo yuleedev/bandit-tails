@@ -76,7 +76,8 @@ func new_round() -> void:
 	print("awaited")
 	if get_tree().current_scene.scene_file_path != "res://Levels/main.tscn":
 		get_tree().change_scene_to_file("res://Levels/main.tscn")
-	
+
+	hud.visible = true
 	round_dur = ROUND_DURATION
 	game_paused = false
 

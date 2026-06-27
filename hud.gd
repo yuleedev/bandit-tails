@@ -36,6 +36,7 @@ func play_defeat() -> void:
 
 
 func show_punishment_label(time_left: float) -> void:
+	visible = true
 	_set_punishment_text(time_left)
 	punishment_label.visible = true
 
