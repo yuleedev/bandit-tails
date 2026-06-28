@@ -5,12 +5,12 @@
   "description": "Room-code relay server for Mole Heist co-op (cross-network play).",
   "main": "relay.js",
   "scripts": {
-    "start": "node relay.js"
+	"start": "node relay.js"
   },
   "dependencies": {
-    "ws": "^8.18.0"
+	"ws": "^8.18.0"
   },
   "engines": {
-    "node": ">=18"
+	"node": ">=18"
   }
 }

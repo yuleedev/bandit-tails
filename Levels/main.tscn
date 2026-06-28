@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://rcpyya18rmci"]
+[gd_scene format=3 uid="uid://rcpyya18rmci"]
 
 [ext_resource type="Script" uid="uid://bvpa01djx1mc4" path="res://Levels/main.gd" id="1_ovrsl"]
 [ext_resource type="PackedScene" uid="uid://c1ta55yk5nxar" path="res://Assets/Raccoon/raccoon.tscn" id="2_5mxy1"]
@@ -69,7 +69,7 @@ point_count = 3
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ouevp"]
 albedo_color = Color(0.395288, 0.322571, 0.308367, 1)
 
-[node name="Main" type="Node3D"]
+[node name="Main" type="Node3D" unique_id=1159071880]
 transform = Transform3D(0.995721, 0, 0, 0, 0.995721, 0, 0, 0, 0.995721, 0, 0, 0)
 script = ExtResource("1_ovrsl")
 PLAYER_1 = ExtResource("2_5mxy1")
@@ -77,370 +77,370 @@ SPAWN_1 = Vector3(0, 1, 5)
 PLAYER_2 = ExtResource("2_hbaan")
 SPAWN_2 = Vector3(4, 1, 5)
 
-[node name="Doors" type="Node3D" parent="."]
+[node name="Doors" type="Node3D" parent="." unique_id=1439477306]
 
-[node name="Door" parent="Doors" instance=ExtResource("4_nj2yk")]
+[node name="Door" parent="Doors" unique_id=235766820 instance=ExtResource("4_nj2yk")]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 8.09669, -0.041, -8.423)
 
-[node name="Door3" parent="Doors" instance=ExtResource("4_nj2yk")]
+[node name="Door3" parent="Doors" unique_id=550215937 instance=ExtResource("4_nj2yk")]
 transform = Transform3D(-4.37114e-08, 0, -0.999999, 0, 0.999999, 0, 0.999999, 0, -4.37114e-08, 10.519, -0.041, 6.73308)
 
-[node name="Door4" parent="Doors" instance=ExtResource("4_nj2yk")]
+[node name="Door4" parent="Doors" unique_id=2051836393 instance=ExtResource("4_nj2yk")]
 transform = Transform3D(-0.999999, 0, -8.74227e-08, 0, 0.999999, 0, 8.74227e-08, 0, -0.999999, -15.1059, -0.041, 13.8898)
 
-[node name="Door2" parent="Doors" instance=ExtResource("4_nj2yk")]
+[node name="Door2" parent="Doors" unique_id=831702274 instance=ExtResource("4_nj2yk")]
 transform = Transform3D(-4.37114e-08, 0, 0.999999, 0, 0.999999, 0, -0.999999, 0, -4.37114e-08, 5.547, -0.041, -15.215)
 
-[node name="LootSpawner" type="Node3D" parent="."]
+[node name="LootSpawner" type="Node3D" parent="." unique_id=2067651665]
 script = ExtResource("4_u05pv")
 loot_scene = ExtResource("3_lwy2l")
 
-[node name="Spawner" type="MultiplayerSpawner" parent="LootSpawner"]
+[node name="Spawner" type="MultiplayerSpawner" parent="LootSpawner" unique_id=1110890367]
 _spawnable_scenes = PackedStringArray("uid://bwydvcfxfddhp")
 spawn_path = NodePath("..")
 spawn_limit = 6
 
-[node name="Spawn1" type="Marker3D" parent="LootSpawner"]
+[node name="Spawn1" type="Marker3D" parent="LootSpawner" unique_id=257119681]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.13017, 0.247855, -19.0356)
 
-[node name="Spawn2" type="Marker3D" parent="LootSpawner"]
+[node name="Spawn2" type="Marker3D" parent="LootSpawner" unique_id=1389300805]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0474, 0.326836, -16.7178)
 
-[node name="Spawn3" type="Marker3D" parent="LootSpawner"]
+[node name="Spawn3" type="Marker3D" parent="LootSpawner" unique_id=145475856]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1414, 1.05244, 4.75385)
 
-[node name="Spawn7" type="Marker3D" parent="LootSpawner"]
+[node name="Spawn7" type="Marker3D" parent="LootSpawner" unique_id=2035726037]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -18.4879, 0.628769, 15.1072)
 
-[node name="Spawn8" type="Marker3D" parent="LootSpawner"]
+[node name="Spawn8" type="Marker3D" parent="LootSpawner" unique_id=961263794]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -8.91678, 0.236592, 20.8707)
 
-[node name="Spawn4" type="Marker3D" parent="LootSpawner"]
+[node name="Spawn4" type="Marker3D" parent="LootSpawner" unique_id=843748062]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.42679, 0.247855, -8.61733)
 
-[node name="Spawn5" type="Marker3D" parent="LootSpawner"]
+[node name="Spawn5" type="Marker3D" parent="LootSpawner" unique_id=1173887699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.0093, 0.175807, 13.4432)
 
-[node name="Spawn6" type="Marker3D" parent="LootSpawner"]
+[node name="Spawn6" type="Marker3D" parent="LootSpawner" unique_id=1768284778]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9498, 0.108439, -8.11521)
 
-[node name="Spawn9" type="Marker3D" parent="LootSpawner"]
+[node name="Spawn9" type="Marker3D" parent="LootSpawner" unique_id=1610447453]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 16.9295, 0.119439, 4.84954)
 
-[node name="KeySpawner" type="Node3D" parent="."]
+[node name="KeySpawner" type="Node3D" parent="." unique_id=1274051576]
 script = ExtResource("7_wgfyn")
 key_scene = ExtResource("9_u05pv")
 
-[node name="Marker3D" type="Marker3D" parent="KeySpawner"]
+[node name="Marker3D" type="Marker3D" parent="KeySpawner" unique_id=482606428]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.49854, 1.01115, 16.3223)
 
-[node name="Spawner" type="MultiplayerSpawner" parent="KeySpawner"]
+[node name="Spawner" type="MultiplayerSpawner" parent="KeySpawner" unique_id=178588217]
 _spawnable_scenes = PackedStringArray("uid://cbvne5fpxlq0t")
 spawn_path = NodePath("../..")
 
-[node name="Marker3D2" type="Marker3D" parent="KeySpawner"]
+[node name="Marker3D2" type="Marker3D" parent="KeySpawner" unique_id=923666267]
 transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, -6.09459, 0.844501, -8.05085)
 visible = false
 
-[node name="Marker3D3" type="Marker3D" parent="KeySpawner"]
+[node name="Marker3D3" type="Marker3D" parent="KeySpawner" unique_id=821939364]
 transform = Transform3D(0.999997, 0, 0, 0, 0.999997, 0, 0, 0, 0.999997, -18.8513, 1.4694, -1.40058)
 
-[node name="Marker3D4" type="Marker3D" parent="KeySpawner"]
+[node name="Marker3D4" type="Marker3D" parent="KeySpawner" unique_id=1873401675]
 transform = Transform3D(0.999993, 0, 0, 0, 0.999993, 0, 0, 0, 0.999993, 11.9666, 0.118509, -1.04604)
 
-[node name="Marker3D5" type="Marker3D" parent="KeySpawner"]
+[node name="Marker3D5" type="Marker3D" parent="KeySpawner" unique_id=469523490]
 transform = Transform3D(0.999993, 0, 0, 0, 0.999993, 0, 0, 0, 0.999993, -4.66891, 0.215068, -19.908)
 
-[node name="CanvasLayer" parent="." instance=ExtResource("9_he5fp")]
+[node name="CanvasLayer" parent="." unique_id=2021775385 instance=ExtResource("9_he5fp")]
 
-[node name="Spawner" type="MultiplayerSpawner" parent="."]
+[node name="Spawner" type="MultiplayerSpawner" parent="." unique_id=697045497]
 _spawnable_scenes = PackedStringArray("uid://ct2v1laxjo67f", "uid://c1ta55yk5nxar")
 spawn_path = NodePath("..")
 spawn_limit = 2
 
-[node name="100total" parent="." instance=ExtResource("10_u05pv")]
+[node name="100total" parent="." unique_id=374070367 instance=ExtResource("10_u05pv")]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="100total"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="100total" unique_id=457673011]
 transform = Transform3D(1.01115, -0.00655041, 0.0474141, -0.0452913, -0.0356047, 1.05999, 0.00293843, 1.70528, 0.0223138, -3.58014, 2.47678, -3.29038)
 light_color = Color(0.930264, 0.825468, 0.563066, 1)
 light_energy = 0.222
 
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="100total"]
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="100total" unique_id=1927848595]
 transform = Transform3D(1.00329, -0.00385688, 0.0448681, -0.0449391, -0.0209641, 1.00307, 0.00291558, 1.00407, 0.0211156, -3.23592, 2.13545, -21.7981)
 light_color = Color(0.930264, 0.825468, 0.563066, 1)
 light_energy = 0.111
 
-[node name="Candles" type="Node3D" parent="."]
+[node name="Candles" type="Node3D" parent="." unique_id=1826011821]
 transform = Transform3D(1.0043, 0, 0, 0, 1.0043, 0, 0, 0, 1.0043, 0, 0, 0)
 
-[node name="candleA3" parent="Candles" instance=ExtResource("11_5mxy1")]
+[node name="candleA3" parent="Candles" unique_id=107219746 instance=ExtResource("11_5mxy1")]
 transform = Transform3D(0.149358, 0, 0, 0, 0.149358, 0, 0, 0, 0.149358, -9.58368, 1.23171, -21.7891)
 
-[node name="candleA2" parent="Candles" instance=ExtResource("11_5mxy1")]
+[node name="candleA2" parent="Candles" unique_id=215064785 instance=ExtResource("11_5mxy1")]
 transform = Transform3D(0.149358, 0, 0, 0, 0.149358, 0, 0, 0, 0.149358, -12.0572, 2.80611, 22.1724)
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="Candles/candleA2"]
+[node name="OmniLight3D6" type="OmniLight3D" parent="Candles/candleA2" unique_id=552693539]
 transform = Transform3D(-2.92661e-07, 0, -6.69531, 0, 6.69531, 0, 6.69531, 0, -2.92661e-07, 0.0575027, 4.03065, 0.677353)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D10" type="OmniLight3D" parent="Candles/candleA2"]
+[node name="OmniLight3D10" type="OmniLight3D" parent="Candles/candleA2" unique_id=94185709]
 transform = Transform3D(-2.92661e-07, 0, -6.69531, 0, 6.69531, 0, 6.69531, 0, -2.92661e-07, -72.6063, 4.03065, -69.9742)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D7" type="OmniLight3D" parent="Candles/candleA2"]
+[node name="OmniLight3D7" type="OmniLight3D" parent="Candles/candleA2" unique_id=1302501467]
 transform = Transform3D(-2.92661e-07, 0, -6.69531, 0, 6.69531, 0, 6.69531, 0, -2.92661e-07, 207.791, -0.798969, -135.788)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D8" type="OmniLight3D" parent="Candles/candleA2"]
+[node name="OmniLight3D8" type="OmniLight3D" parent="Candles/candleA2" unique_id=1304742123]
 transform = Transform3D(-2.92661e-07, 0, -6.69531, 0, 6.69531, 0, 6.69531, 0, -2.92661e-07, -24.0166, 7.79511, -119.397)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D9" type="OmniLight3D" parent="Candles/candleA2"]
+[node name="OmniLight3D9" type="OmniLight3D" parent="Candles/candleA2" unique_id=57744827]
 transform = Transform3D(-2.92661e-07, 0, -6.69531, 0, 6.69531, 0, 6.69531, 0, -2.92661e-07, -24.0166, 7.79511, -194.154)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D11" type="OmniLight3D" parent="Candles/candleA2"]
+[node name="OmniLight3D11" type="OmniLight3D" parent="Candles/candleA2" unique_id=543247927]
 transform = Transform3D(-2.92661e-07, 0, -6.69531, 0, 6.69531, 0, 6.69531, 0, -2.92661e-07, -58.2306, -5.51099, -158.239)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="candleB3" parent="Candles" instance=ExtResource("12_3lhg3")]
+[node name="candleB3" parent="Candles" unique_id=1430746400 instance=ExtResource("12_3lhg3")]
 transform = Transform3D(-6.52865e-09, 0, 0.149358, 0, 0.149358, 0, -0.149358, 0, -6.52865e-09, 18.8429, 2.0995, 1.87883)
 
-[node name="candleB2" parent="Candles" instance=ExtResource("12_3lhg3")]
+[node name="candleB2" parent="Candles" unique_id=1311697873 instance=ExtResource("12_3lhg3")]
 transform = Transform3D(-6.52865e-09, 0, 0.149358, 0, 0.149358, 0, -0.149358, 0, -6.52865e-09, -21.0865, 0.984973, -1.50221)
 
-[node name="canC" parent="Candles" instance=ExtResource("13_wgfyn")]
+[node name="canC" parent="Candles" unique_id=1109606015 instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-0.149358, 0, -2.25525e-08, 0, 0.149358, 0, 2.25525e-08, 0, -0.149358, -3.58795, 1.52828, 6.57256)
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="Candles/canC"]
+[node name="OmniLight3D5" type="OmniLight3D" parent="Candles/canC" unique_id=1897610394]
 transform = Transform3D(1.30363e-06, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 1.30363e-06, 0.0317173, 3.6388, 2.19031)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="canC3" parent="Candles" instance=ExtResource("13_wgfyn")]
+[node name="canC3" parent="Candles" unique_id=1118266683 instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-6.52865e-09, 0, -0.149358, 0, 0.149358, 0, 0.149358, 0, -6.52865e-09, -1.19468, 3.13268, -5.45543)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="Candles/canC3"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="Candles/canC3" unique_id=1731599954]
 transform = Transform3D(6.69531, 0, 0, 0, 6.69531, 0, 0, 0, 6.69531, 0.13485, 5.37457, 0.803265)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="canC8" parent="Candles" instance=ExtResource("13_wgfyn")]
+[node name="canC8" parent="Candles" unique_id=1762324879 instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-6.52865e-09, 0, -0.149358, 0, 0.149358, 0, 0.149358, 0, -6.52865e-09, -15.1784, 3.13268, -7.01992)
 
-[node name="canC9" parent="Candles" instance=ExtResource("13_wgfyn")]
+[node name="canC9" parent="Candles" unique_id=1475732802 instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-6.52866e-09, 0, -0.149358, 0, 0.149358, 0, 0.149358, 0, -6.52866e-09, -15.2234, 3.11015, 4.42772)
 
-[node name="canC4" parent="Candles" instance=ExtResource("13_wgfyn")]
+[node name="canC4" parent="Candles" unique_id=37002392 instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-6.52865e-09, 0, -0.149358, 0, 0.149358, 0, 0.149358, 0, -6.52865e-09, -1.19994, 3.13268, -11.2613)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Candles/canC4"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Candles/canC4" unique_id=1644750255]
 transform = Transform3D(6.69531, 0, 0, 0, 6.69531, 0, 0, 0, 6.69531, -1.32915, 4.0724, 1.08348)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.112
 omni_range = 3.659
 
-[node name="canC11" parent="Candles" instance=ExtResource("13_wgfyn")]
+[node name="canC11" parent="Candles" unique_id=1495478077 instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-6.52865e-09, 0, -0.149358, 0, 0.149358, 0, 0.149358, 0, -6.52865e-09, 7.9502, 3.07303, -11.5383)
 
-[node name="canC12" parent="Candles" instance=ExtResource("13_wgfyn")]
+[node name="canC12" parent="Candles" unique_id=77560365 instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-6.52865e-09, 0, -0.149358, 0, 0.149358, 0, 0.149358, 0, -6.52865e-09, 7.9502, 3.07303, -5.29303)
 
-[node name="canC13" parent="Candles" instance=ExtResource("13_wgfyn")]
+[node name="canC13" parent="Candles" unique_id=2111747284 instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-6.52865e-09, 0, 0.149358, 0, 0.149358, 0, -0.149358, 0, -6.52865e-09, 3.19107, 3.07303, -11.5384)
 
-[node name="canC14" parent="Candles" instance=ExtResource("13_wgfyn")]
+[node name="canC14" parent="Candles" unique_id=373805952 instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-6.52865e-09, 0, 0.149358, 0, 0.149358, 0, -0.149358, 0, -6.52865e-09, 3.19107, 3.07303, -5.29303)
 
-[node name="canC6" parent="Candles" instance=ExtResource("13_wgfyn")]
+[node name="canC6" parent="Candles" unique_id=869351248 instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-0.149358, 0, -1.30573e-08, 0, 0.149358, 0, 1.30573e-08, 0, -0.149358, -4.69119, 2.84679, -14.6793)
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="Candles/canC6"]
+[node name="OmniLight3D4" type="OmniLight3D" parent="Candles/canC6" unique_id=2059884586]
 transform = Transform3D(8.77984e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77984e-07, 0.370253, 6.47277, 2.17306)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="canC7" parent="Candles" instance=ExtResource("13_wgfyn")]
+[node name="canC7" parent="Candles" unique_id=489185394 instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-0.149358, 0, -1.30573e-08, 0, 0.149358, 0, 1.30573e-08, 0, -0.149358, -11.4877, 2.84679, -14.6795)
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="Candles/canC7"]
+[node name="OmniLight3D3" type="OmniLight3D" parent="Candles/canC7" unique_id=67173535]
 transform = Transform3D(8.77984e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77984e-07, -1.29349, 6.47277, 2.17173)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="Candles/canC7"]
+[node name="OmniLight3D4" type="OmniLight3D" parent="Candles/canC7" unique_id=700872624]
 transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -12.7429, -5.22283, 47.6575)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="Candles/canC7"]
+[node name="OmniLight3D5" type="OmniLight3D" parent="Candles/canC7" unique_id=719746737]
 transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -105.337, -9.10878, 54.7294)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="Candles/canC7"]
+[node name="OmniLight3D6" type="OmniLight3D" parent="Candles/canC7" unique_id=226819806]
 transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -145.478, -9.10878, 54.7294)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D9" type="OmniLight3D" parent="Candles/canC7"]
+[node name="OmniLight3D9" type="OmniLight3D" parent="Candles/canC7" unique_id=1987260860]
 transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -161.372, -9.10878, 25.2954)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D10" type="OmniLight3D" parent="Candles/canC7"]
+[node name="OmniLight3D10" type="OmniLight3D" parent="Candles/canC7" unique_id=7006559]
 transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -128.854, 5.48794, -21.1147)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D12" type="OmniLight3D" parent="Candles/canC7"]
+[node name="OmniLight3D12" type="OmniLight3D" parent="Candles/canC7" unique_id=17377564]
 transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -100.174, 5.48794, -21.1147)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D11" type="OmniLight3D" parent="Candles/canC7"]
+[node name="OmniLight3D11" type="OmniLight3D" parent="Candles/canC7" unique_id=861416169]
 transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -128.854, 5.48794, -62.7736)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D13" type="OmniLight3D" parent="Candles/canC7"]
+[node name="OmniLight3D13" type="OmniLight3D" parent="Candles/canC7" unique_id=757053864]
 transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -99.8598, 5.48794, -62.7736)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D7" type="OmniLight3D" parent="Candles/canC7"]
+[node name="OmniLight3D7" type="OmniLight3D" parent="Candles/canC7" unique_id=1506560128]
 transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -158.105, -9.10878, -64.2322)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D8" type="OmniLight3D" parent="Candles/canC7"]
+[node name="OmniLight3D8" type="OmniLight3D" parent="Candles/canC7" unique_id=655781636]
 transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -198.245, -9.10878, -64.2322)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="OmniLight3D14" type="OmniLight3D" parent="Candles/canC7"]
+[node name="OmniLight3D14" type="OmniLight3D" parent="Candles/canC7" unique_id=1450407178]
 transform = Transform3D(8.77983e-07, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 8.77983e-07, -158.717, -5.61493, -86.2289)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="canC5" parent="Candles" instance=ExtResource("13_wgfyn")]
+[node name="canC5" parent="Candles" unique_id=1331663718 instance=ExtResource("13_wgfyn")]
 transform = Transform3D(0.149358, 0, 0, 0, 0.149358, 0, 0, 0, 0.149358, 0.946042, 3.15125, -2.72492)
 
-[node name="canC2" parent="Candles" instance=ExtResource("13_wgfyn")]
+[node name="canC2" parent="Candles" unique_id=1086184295 instance=ExtResource("13_wgfyn")]
 transform = Transform3D(-0.149358, 0, -2.25525e-08, 0, 0.149358, 0, 2.25525e-08, 0, -0.149358, 0.258296, 1.52828, 6.57256)
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="Candles/canC2"]
+[node name="OmniLight3D6" type="OmniLight3D" parent="Candles/canC2" unique_id=2052909439]
 transform = Transform3D(1.30363e-06, 0, 6.69531, 0, 6.69531, 0, -6.69531, 0, 1.30363e-06, 0.483932, 3.6388, 2.19031)
 light_color = Color(0.891056, 0.714115, 0.259406, 1)
 light_energy = 1.445
 omni_range = 3.659
 
-[node name="Path3D" type="Path3D" parent="."]
+[node name="Path3D" type="Path3D" parent="." unique_id=1457938587]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.14402, 0, 5.33284)
 curve = SubResource("Curve3D_ovrsl")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.695604, -5.25065e-05, 0.718408, 0, 0.999983, 7.30867e-05, -0.718408, 5.08398e-05, -0.695604, -17.5145, 0.0507543, -18.3467)
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1590266246]
+transform = Transform3D(-0.69560355, -5.2506537e-05, 0.7184084, 0, 0.999983, 7.308672e-05, -0.7184084, 5.0839793e-05, -0.69560355, -17.5145, 0.0507543, -18.3467)
 script = ExtResource("4_7pswh")
 
-[node name="Guard" parent="Path3D/PathFollow3D" instance=ExtResource("5_34bfm")]
+[node name="Guard" parent="Path3D/PathFollow3D" unique_id=490034270 instance=ExtResource("5_34bfm")]
 transform = Transform3D(-1.49878, 0.0245985, -0.0553951, 0.0235096, 1.49952, 0.0297912, 0.0558659, 0.0288987, -1.49868, -0.877999, 1.44098, -0.788991)
 
-[node name="Path3D2" type="Path3D" parent="."]
+[node name="Path3D2" type="Path3D" parent="." unique_id=1144065327]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41893, 0, 0)
 curve = SubResource("Curve3D_3lhg3")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(0.865475, 0.0243648, 0.500346, 2.79395e-09, 0.998792, -0.0486385, -0.500941, 0.042095, 0.864448, 10.5934, 0, 0.994187)
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2" unique_id=1835439453]
+transform = Transform3D(0.86547524, 0.024364771, 0.50034606, 2.7939522e-09, 0.99879193, -0.04863853, -0.5009406, 0.042095024, 0.86444795, 10.5934, 0, 0.994187)
 script = ExtResource("4_7pswh")
 
-[node name="Guard" parent="Path3D2/PathFollow3D" instance=ExtResource("5_34bfm")]
+[node name="Guard" parent="Path3D2/PathFollow3D" unique_id=998768978 instance=ExtResource("5_34bfm")]
 transform = Transform3D(-1.49062, 1.23715e-10, -0.167463, 1.3867e-10, 1.5, -1.26192e-10, 0.167463, -1.40884e-10, -1.49062, 0, 1.48811, 0)
 
-[node name="Path3D5" type="Path3D" parent="."]
+[node name="Path3D5" type="Path3D" parent="." unique_id=434849406]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3956, 0, 8.84157)
 curve = SubResource("Curve3D_ouevp")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D5"]
-transform = Transform3D(0.989087, 0, -0.147312, 0, 0.999999, 0, 0.147312, 0, 0.989087, 1.2682, 0, 1.20933)
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D5" unique_id=26964569]
+transform = Transform3D(0.98908705, 0, -0.14731152, 0, 0.999999, 0, 0.14731152, 0, 0.98908705, 1.2682, 0, 1.20933)
 script = ExtResource("4_7pswh")
 
-[node name="Guard" parent="Path3D5/PathFollow3D" instance=ExtResource("5_34bfm")]
+[node name="Guard" parent="Path3D5/PathFollow3D" unique_id=584079935 instance=ExtResource("5_34bfm")]
 transform = Transform3D(-1.5, 0, -2.2538e-07, 0, 1.5, 0, 2.27243e-07, 0, -1.5, 0.172, 1.48599, -0.00199986)
 
-[node name="Path3D7" type="Path3D" parent="."]
+[node name="Path3D7" type="Path3D" parent="." unique_id=2089738743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5695, 0, -7.12015)
 curve = SubResource("Curve3D_ja5tu")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D7"]
-transform = Transform3D(-0.0766961, 0, -0.997044, 0, 1, 0, 0.997044, 0, -0.0766961, 2.01065, 0.000215499, -1.09691)
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D7" unique_id=1418699276]
+transform = Transform3D(-0.07669606, 0, -0.997044, 0, 1, 0, 0.997044, 0, -0.07669606, 2.01065, 0.000215499, -1.09691)
 script = ExtResource("4_7pswh")
 
-[node name="Guard" parent="Path3D7/PathFollow3D" instance=ExtResource("5_34bfm")]
+[node name="Guard" parent="Path3D7/PathFollow3D" unique_id=1410334464 instance=ExtResource("5_34bfm")]
 transform = Transform3D(-1.47721, 0, -0.260472, 0, 1.5, 0, 0.260472, 0, -1.47721, 0, 1.52803, 0)
 
-[node name="Path3D6" type="Path3D" parent="."]
+[node name="Path3D6" type="Path3D" parent="." unique_id=1549286785]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6131, 0, -20.2113)
 curve = SubResource("Curve3D_5uk0a")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D6"]
-transform = Transform3D(0.0568677, 0, -0.99837, 0, 1, 0, 0.99837, 0, 0.0568677, 3.71079, 0, 1.8322)
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D6" unique_id=1825653859]
+transform = Transform3D(0.056867663, 0, -0.99836993, 0, 1, 0, 0.99836993, 0, 0.056867663, 3.71079, 0, 1.8322)
 script = ExtResource("4_7pswh")
 
-[node name="Guard" parent="Path3D6/PathFollow3D" instance=ExtResource("5_34bfm")]
+[node name="Guard" parent="Path3D6/PathFollow3D" unique_id=1266252 instance=ExtResource("5_34bfm")]
 transform = Transform3D(-1.5, 0, -2.23517e-07, 0, 1.5, 0, 2.23517e-07, 0, -1.5, 0, 1.48777, 0)
 
-[node name="Path3D3" type="Path3D" parent="."]
+[node name="Path3D3" type="Path3D" parent="." unique_id=283922749]
 transform = Transform3D(0.999999, 0.000366519, 0, -0.000366519, 0.999999, 0, 0, 0, 1, 10.6275, 0.00533527, -8.57837)
 curve = SubResource("Curve3D_wgfyn")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D3"]
-transform = Transform3D(0.487068, 0, -0.873363, 0, 1, 0, 0.873363, 0, 0.487068, 1.2817, -0.000359343, -5.03337)
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D3" unique_id=95035020]
+transform = Transform3D(0.48706803, 0, -0.873363, 0, 1, 0, 0.873363, 0, 0.48706803, 1.2817, -0.000359343, -5.03337)
 script = ExtResource("4_7pswh")
 
-[node name="Guard" parent="Path3D3/PathFollow3D" instance=ExtResource("5_34bfm")]
+[node name="Guard" parent="Path3D3/PathFollow3D" unique_id=693717767 instance=ExtResource("5_34bfm")]
 transform = Transform3D(-1.5, 0, -1.78814e-07, 0, 1.5, 0, 1.78814e-07, 0, -1.5, 0, 1.53439, 0)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=160556119]
 stream = ExtResource("17_ouevp")
 volume_db = -12.0
 autoplay = true
 
-[node name="Ceiling" type="CSGBox3D" parent="."]
+[node name="Ceiling" type="CSGBox3D" parent="." unique_id=895179369]
 transform = Transform3D(51.529, 0, 0, 0, 1.00404, 0, 0, 0, 5.28394, -2.61124, 6.66114, 1.94166)
 use_collision = true
 size = Vector3(0.899292, 0.150879, 10.223)
 material = SubResource("StandardMaterial3D_ouevp")
 
-[node name="Key" parent="." instance=ExtResource("9_u05pv")]
+[node name="Key" parent="." unique_id=1239031179 instance=ExtResource("9_u05pv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1959.31)
 
-[node name="tallcabinet" parent="." instance=ExtResource("17_ja5tu")]
+[node name="tallcabinet" parent="." unique_id=952570090 instance=ExtResource("17_ja5tu")]
 transform = Transform3D(-4.38992e-08, 0, -1.0043, 0, 1.0043, 0, 1.0043, 0, -4.38992e-08, -7.29412, 0.0382712, 19.1424)
