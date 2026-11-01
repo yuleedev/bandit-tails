@@ -8,6 +8,10 @@ var _notice_timer: Timer
 
 func _ready():
 	hud.visible = false
+	# main.tscn instances its own HUD, so the autoload only keeps its popups and sounds.
+	if self == hud:
+		for gameplay_node in [$InventoryBG, $Control, $Inventory, $Crosshair, $Key]:
+			gameplay_node.visible = false
 	_add_sfx("collect", "res://Assets/Audio/collect.mp3", 0.0)
 	_add_sfx("caught", "res://Assets/Audio/caught.mp3", -6.0)
 	_add_sfx("win", "res://Assets/Audio/win.mp3", -6.0)
